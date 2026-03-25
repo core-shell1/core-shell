@@ -38,8 +38,9 @@ from playwright.async_api import async_playwright
 # ─────────────────────────────────────────────
 # 설정
 # ─────────────────────────────────────────────
-REGION    = sys.argv[1] if len(sys.argv) > 1 else "양주"
+REGION    = next((a for a in sys.argv[1:] if not a.startswith("--")), "양주")
 DO_VERIFY = "--verify" in sys.argv
+ONLY      = next((a.split("=")[1] for a in sys.argv if a.startswith("--only=")), None)
 
 # 지역별 서브지역 (카카오맵 검색에 전부 사용)
 SUB_AREAS = {
@@ -572,19 +573,30 @@ async def main():
 
     t0 = datetime.now()
 
-    # ── 모든 소스 동시 실행 ──────────────────────
-    print("🚀 전체 수집 시작 (모든 소스 동시 실행)...")
+    # ── 소스 선택 실행 ──────────────────────────
+    kakao_n = nmap_n = daangn_n = naver_n = ddg_n = place_n = 0
 
-    kakao_task   = asyncio.create_task(scrape_kakao(region))
-    nmap_task    = asyncio.create_task(scrape_naver_map(short))
-    daangn_task  = asyncio.create_task(scrape_daangn(short))
-    naver_task   = asyncio.create_task(scrape_naver_web(short))
-    ddg_task     = asyncio.create_task(scrape_ddg(short))
-    place_task   = asyncio.create_task(scrape_naver_place(short))
+    if ONLY:
+        print(f"🚀 단독 실행: {ONLY}")
+        if ONLY == "kakao":    kakao_n  = await scrape_kakao(region)
+        elif ONLY == "nmap":   nmap_n   = await scrape_naver_map(short)
+        elif ONLY == "daangn": daangn_n = await scrape_daangn(short)
+        elif ONLY == "web":    naver_n  = await scrape_naver_web(short)
+        elif ONLY == "place":  place_n  = await scrape_naver_place(short)
+        elif ONLY == "ddg":    ddg_n    = await scrape_ddg(short)
+        else: print(f"  알 수 없는 소스: {ONLY}")
+    else:
+        print("🚀 전체 수집 시작 (모든 소스 동시 실행)...")
+        kakao_task   = asyncio.create_task(scrape_kakao(region))
+        nmap_task    = asyncio.create_task(scrape_naver_map(short))
+        daangn_task  = asyncio.create_task(scrape_daangn(short))
+        naver_task   = asyncio.create_task(scrape_naver_web(short))
+        ddg_task     = asyncio.create_task(scrape_ddg(short))
+        place_task   = asyncio.create_task(scrape_naver_place(short))
 
-    kakao_n, nmap_n, daangn_n, naver_n, ddg_n, place_n = await asyncio.gather(
-        kakao_task, nmap_task, daangn_task, naver_task, ddg_task, place_task
-    )
+        kakao_n, nmap_n, daangn_n, naver_n, ddg_n, place_n = await asyncio.gather(
+            kakao_task, nmap_task, daangn_task, naver_task, ddg_task, place_task
+        )
 
     elapsed = (datetime.now() - t0).seconds
     records = list(_records.values())
