@@ -1,5 +1,5 @@
 """
-io/excel_reader.py — 엑셀에서 업체 정보 읽기 (단건 + 배치)
+file_io/excel_reader.py — 엑셀에서 업체 정보 읽기 (단건 + 배치)
 """
 import sys
 import os
