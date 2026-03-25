@@ -16,6 +16,8 @@ from copy import deepcopy
 from datetime import datetime
 from typing import Optional, Dict, Any, List
 
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
 import httpx
 import openpyxl
 from pptx import Presentation
