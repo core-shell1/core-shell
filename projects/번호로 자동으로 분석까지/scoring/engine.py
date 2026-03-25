@@ -208,13 +208,11 @@ def calc_relative(my_result: ScoreResult, competitor_data_list: list) -> ScoreRe
         my_result.relative_pct = 0
         return my_result
 
-    from scoring.engine import calc_score as _calc
-
     # 경쟁사 각각 점수 계산
     comp_scores = []
     for comp in competitor_data_list:
         try:
-            r = _calc(comp)
+            r = calc_score(comp)
             comp_scores.append(r.total_score)
         except Exception:
             pass
