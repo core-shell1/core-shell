@@ -94,8 +94,8 @@ def _build_slide_cover(slide, business_name: str, category: str):
         _replace_in_shape(shape, replacements)
 
 
-def _build_slide_score(slide, score_result, business_name: str):
-    """슬라이드 2: 종합 점수 + 등급"""
+def _build_slide_score(slide, score_result, business_name: str, lost_customers: int = 0):
+    """슬라이드 2: 종합 점수 + 등급 + 기회비용"""
     total = score_result.total_score
     grade = score_result.grade
     grade_color = score_result.grade_color
@@ -137,10 +137,21 @@ def _build_slide_score(slide, score_result, business_name: str):
             color=COLOR["BAD"] if relative_pct < 80 else COLOR["GOOD"],
         )
 
+    # 기회비용 (잃고 있는 고객 수)
+    if lost_customers > 0:
+        _add_textbox(
+            slide,
+            f"⚠  현재 순위 기준, 매달 약 {lost_customers:,}명의 고객을 놓치고 있습니다",
+            left=Inches(0.5), top=Inches(3.5),
+            width=Inches(9), height=Inches(0.65),
+            font_size=14, bold=True,
+            color=COLOR["BAD"],
+        )
+
     # 카테고리별 점수 바 (텍스트박스 너비 비율 표현)
     cat_scores = score_result.category_scores
     cat_max = {"기본정보": 20, "콘텐츠": 35, "운영관리": 20, "플랫폼연동": 12, "외부채널": 8}
-    y_start = Inches(3.6)
+    y_start = Inches(4.3)
     for cat_name, score in cat_scores.items():
         max_s = cat_max.get(cat_name, 20)
         pct_w = score / max_s if max_s > 0 else 0
