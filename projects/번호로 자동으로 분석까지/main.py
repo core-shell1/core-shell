@@ -7,6 +7,7 @@ import sys
 import os
 import re
 from datetime import datetime
+from playwright.async_api import async_playwright
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
