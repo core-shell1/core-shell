@@ -142,22 +142,26 @@ async def crawl_place(browser, place_id: str) -> Dict[str, Any]:
         if addr_el:
             result["address"] = (await addr_el.inner_text()).strip()
 
-        # 사진 수: 텍스트에서 "사진 N" 패턴
-        photo_match = re.search(r"사진\s*(\d+)", text)
-        if photo_match:
-            result["photo_count"] = int(photo_match.group(1))
-        else:
-            # 대안: photo 페이지에서 가져오기
-            photo_url = f"https://m.place.naver.com/place/{place_id}/photo"
+        # 사진 수: /photo 페이지에서 SasImage total 패턴으로 추출
+        for photo_url in [
+            f"https://m.place.naver.com/restaurant/{place_id}/photo",
+            f"https://m.place.naver.com/place/{place_id}/photo",
+        ]:
             try:
                 p2 = await context.new_page()
-                await p2.goto(photo_url, timeout=20000)
-                await p2.wait_for_load_state("domcontentloaded", timeout=10000)
-                photo_text = await p2.inner_text("body")
-                pm = re.search(r"(\d+)\s*장", photo_text)
-                if pm:
-                    result["photo_count"] = int(pm.group(1))
+                await p2.goto(photo_url, timeout=30000)
+                await p2.wait_for_load_state("networkidle", timeout=30000)
+                photo_html = await p2.content()
                 await p2.close()
+
+                m1 = re.findall(r'SasImage[^}]*total["\s:]+(\d+)', photo_html)
+                if m1:
+                    result["photo_count"] = max(int(v) for v in m1)
+                    break
+                m2 = re.findall(r'"relation"\s*:\s*"[^"]*사진[^"]*"[^}]*"total"\s*:\s*(\d+)', photo_html)
+                if m2:
+                    result["photo_count"] = max(int(v) for v in m2)
+                    break
             except Exception:
                 pass
 
