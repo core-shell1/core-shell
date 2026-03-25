@@ -661,6 +661,24 @@ def _build_slide_estimate(slide, business_name: str, grade: str, lost_customers:
 
 # ── 메인 PPT 생성 함수 ─────────────────────────────────────
 
+def _add_blank_slides(prs: Presentation, target_count: int):
+    """target_count에 달할 때까지 빈 슬라이드를 자동 추가"""
+    blank_layout = None
+    for layout in prs.slide_layouts:
+        if layout.name.lower() in ("blank", "빈 화면", "blank slide"):
+            blank_layout = layout
+            break
+    if blank_layout is None:
+        blank_layout = prs.slide_layouts[-1]
+
+    added = 0
+    while len(prs.slides) < target_count:
+        prs.slides.add_slide(blank_layout)
+        added += 1
+    if added:
+        log("PPT", f"슬라이드 {added}장 자동 추가 (총 {len(prs.slides)}장)")
+
+
 def generate_ppt(
     template_path: str,
     output_path: str,
@@ -673,10 +691,11 @@ def generate_ppt(
     score_result,
     competitors: list,
     screenshot_path: str = "",
+    lost_customers: int = 0,
 ) -> str:
     """
     11슬라이드 PPT 생성.
-    템플릿에 슬라이드가 11개 미만이면 기존 슬라이드만 처리.
+    템플릿 슬라이드가 부족하면 자동으로 빈 슬라이드를 추가한다.
     반환값: 저장된 파일 경로
     """
     try:
@@ -684,13 +703,11 @@ def generate_ppt(
         slide_count = len(prs.slides)
         log("PPT", f"템플릿 슬라이드 수: {slide_count}")
 
-        # CRITICAL 검증: 예상 슬라이드 수 vs 실제 템플릿 슬라이드 수
+        # 슬라이드 부족 시 자동 추가
         expected_count = max(SLIDE_INDEX.values()) + 1  # 11
         if slide_count < expected_count:
-            missing_slides = [name for name, idx in SLIDE_INDEX.items() if idx >= slide_count]
-            log("PPT", f"⚠️ [경고] 템플릿 슬라이드 {slide_count}장 (예상 {expected_count}장)")
-            log("PPT", f"⚠️ 누락된 슬라이드 {len(missing_slides)}개: {missing_slides}")
-            log("PPT", "   → 해당 슬라이드는 건너뜁니다. 템플릿에 슬라이드를 추가하면 생성됩니다.")
+            _add_blank_slides(prs, expected_count)
+            slide_count = len(prs.slides)
 
         # 먼저 전체 PPT에서 공통 플레이스홀더 일괄 교체
         global_replacements = {
