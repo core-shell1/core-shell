@@ -58,7 +58,7 @@ async def get_keyword_stats(keyword: str) -> Dict[str, Any]:
     default = {"pc": 0, "mobile": 0, "total": 0, "related": []}
 
     try:
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(follow_redirects=True) as client:
             resp = await client.get(
                 f"https://api.naver.com{path}",
                 headers=headers,
