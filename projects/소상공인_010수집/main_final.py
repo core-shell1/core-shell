@@ -69,12 +69,30 @@ MOBILE_UA = (
 
 # ── 카카오맵 카테고리 (39개) ──────────────────
 KAKAO_CATS = [
+    # 음식
     "치킨", "피자", "족발", "삼겹살", "분식", "중국집", "일식", "돈까스",
     "국밥", "냉면", "빵집", "도시락", "맛집", "식당", "떡볶이", "순대국",
+    "곱창", "막창", "칼국수", "해장국", "초밥", "라멘",
+    "마라탕", "양꼬치", "쌀국수", "베트남음식",
+    "술집", "포차", "막걸리",
+    # 뷰티/헬스
     "미용실", "네일", "헬스장", "필라테스", "피부관리", "왁싱", "속눈썹",
+    "타투", "반영구화장", "눈썹문신",
+    "마사지", "스포츠마사지",
+    "요가", "크로스핏", "PT",
+    # 카페
     "카페", "커피숍", "버블티",
+    # 교육
     "학원", "공부방", "과외", "레슨",
+    "피아노", "기타레슨", "음악학원",
+    "태권도", "검도", "무술",
+    "미술학원", "영어학원", "수학학원",
+    # 서비스
     "세탁소", "청소업체", "인테리어", "수리", "이사", "꽃집",
+    "자동차정비", "세차", "핸드폰수리", "컴퓨터수리",
+    "에어컨청소", "보일러수리", "열쇠",
+    "부동산", "사진관", "대리운전",
+    # 반려동물
     "반려동물", "동물병원", "애견미용",
 ]
 
@@ -84,8 +102,12 @@ WEB_CATS = [
     "학원", "병원", "치과", "한의원", "피부과",
     "세탁소", "꽃집", "베이커리", "빵집",
     "치킨", "피자", "족발", "보쌈", "분식",
+    "곱창", "마라탕", "칼국수", "술집",
+    "타투", "마사지", "요가", "크로스핏",
+    "피아노", "태권도", "미술학원",
     "인테리어", "반려동물", "애견미용",
-    "부동산", "사진관", "게스트하우스",
+    "부동산", "사진관", "대리운전",
+    "자동차정비", "핸드폰수리", "컴퓨터수리",
 ]
 
 NAVER_MAP_CATS = [
@@ -567,7 +589,7 @@ async def main():
     print(f"  소상공인 010번호 수집기 — 최종본")
     print(f"  지역: {region} ({len(areas)}개 서브지역)  검증: {'ON' if DO_VERIFY else 'OFF'}")
     print(f"  카카오: {len(areas)}지역 × {len(KAKAO_CATS)}카테고리 × 15페이지")
-    print(f"  소스: 카카오맵(서브지역) + 당근 + 네이버웹(5p) + 네이버place + DDG")
+    print(f"  소스: 카카오맵(서브지역) + 당근 + 네이버웹(5p) + DDG")
     print("=" * 62)
     print()
 
@@ -582,7 +604,6 @@ async def main():
         elif ONLY == "nmap":   nmap_n   = await scrape_naver_map(short)
         elif ONLY == "daangn": daangn_n = await scrape_daangn(short)
         elif ONLY == "web":    naver_n  = await scrape_naver_web(short)
-        elif ONLY == "place":  place_n  = await scrape_naver_place(short)
         elif ONLY == "ddg":    ddg_n    = await scrape_ddg(short)
         else: print(f"  알 수 없는 소스: {ONLY}")
     else:
@@ -592,10 +613,9 @@ async def main():
         daangn_task  = asyncio.create_task(scrape_daangn(short))
         naver_task   = asyncio.create_task(scrape_naver_web(short))
         ddg_task     = asyncio.create_task(scrape_ddg(short))
-        place_task   = asyncio.create_task(scrape_naver_place(short))
 
-        kakao_n, nmap_n, daangn_n, naver_n, ddg_n, place_n = await asyncio.gather(
-            kakao_task, nmap_task, daangn_task, naver_task, ddg_task, place_task
+        kakao_n, nmap_n, daangn_n, naver_n, ddg_n = await asyncio.gather(
+            kakao_task, nmap_task, daangn_task, naver_task, ddg_task
         )
 
     elapsed = (datetime.now() - t0).seconds
@@ -607,7 +627,6 @@ async def main():
     print(f"  네이버맵  : +{nmap_n}개")
     print(f"  당근마켓  : +{daangn_n}개")
     print(f"  네이버웹  : +{naver_n}개")
-    print(f"  네이버place: +{place_n}개")
     print(f"  DuckDuckGo: +{ddg_n}개")
     print(f"  총 (중복제거): {len(records)}개")
     print(f"{'─'*62}")

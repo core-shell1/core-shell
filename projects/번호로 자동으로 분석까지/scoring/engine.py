@@ -13,6 +13,35 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import get_grade, GRADE_COLOR, COLOR, log
 
 
+# ── 순위별 CTR 추정치 (네이버 플레이스 업계 평균 기준) ──────────
+_RANK_CTR = {
+    1: 0.185, 2: 0.120, 3: 0.085,
+    4: 0.060, 5: 0.050,
+    6: 0.040, 7: 0.033, 8: 0.027, 9: 0.022, 10: 0.018,
+}
+
+
+def calc_lost_customers(rank: int, monthly_searches: int) -> int:
+    """
+    현재 순위 CTR vs 1위 CTR 차이 × 월 검색량 = 잃고 있는 월 예상 방문자 수.
+    rank=0이면 사실상 미노출로 처리.
+    """
+    top_ctr = _RANK_CTR[1]  # 1위 CTR = 18.5%
+    if rank <= 0:
+        current_ctr = 0.001  # 미노출
+    elif rank in _RANK_CTR:
+        current_ctr = _RANK_CTR[rank]
+    elif rank <= 20:
+        current_ctr = 0.015
+    elif rank <= 30:
+        current_ctr = 0.008
+    else:
+        current_ctr = 0.003
+
+    gap = max(0.0, top_ctr - current_ctr)
+    return int(monthly_searches * gap)
+
+
 def _tiered_score(value: int, tiers: List[tuple]) -> int:
     """
     구간별 점수 반환.
