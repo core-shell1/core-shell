@@ -96,6 +96,7 @@ async def crawl_place(browser, place_id: str) -> Dict[str, Any]:
         "name": "",
         "category": "",
         "address": "",
+        "phone": "",
         "photo_count": 0,
         "visitor_review_count": 0,
         "blog_review_count": 0,
