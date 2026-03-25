@@ -733,7 +733,7 @@ def generate_ppt(
 
         # 슬라이드 2: 종합 점수
         if _has_slide(SLIDE_INDEX["score"]):
-            _build_slide_score(prs.slides[SLIDE_INDEX["score"]], score_result, business_name)
+            _build_slide_score(prs.slides[SLIDE_INDEX["score"]], score_result, business_name, lost_customers)
 
         # 슬라이드 3: 경쟁사 비교 차트
         if _has_slide(SLIDE_INDEX["competitor"]):
