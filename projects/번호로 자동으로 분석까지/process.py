@@ -127,20 +127,25 @@ async def crawl_place(browser, place_id: str) -> Dict[str, Any]:
         text = await page.inner_text("body")
         content = await page.content()
 
-        # 업체명
-        title_el = await page.query_selector("h1, .place_name, .Fc1rA")
-        if title_el:
-            result["name"] = (await title_el.inner_text()).strip()
+        # JSON에서 업체 기본정보 추출 (name, address, phone, category)
+        import json
+        json_match = re.search(r'"name"\s*:\s*"([^"]+)"', content)
+        if json_match:
+            result["name"] = json_match.group(1)
 
-        # 카테고리
-        cat_el = await page.query_selector(".lnJFt, .category, .KglL4")
-        if cat_el:
-            result["category"] = (await cat_el.inner_text()).strip()
+        addr_match = re.search(r'"roadAddress"\s*:\s*"([^"]+)"', content)
+        if not addr_match:
+            addr_match = re.search(r'"address"\s*:\s*"([^"]+)"', content)
+        if addr_match:
+            result["address"] = addr_match.group(1)
 
-        # 주소
-        addr_el = await page.query_selector(".LDgIH, address, .road-address")
-        if addr_el:
-            result["address"] = (await addr_el.inner_text()).strip()
+        phone_match = re.search(r'"phone"\s*:\s*"([0-9\-]+)"', content)
+        if phone_match:
+            result["phone"] = phone_match.group(1)
+
+        cat_match = re.search(r'"category"\s*:\s*"([^"]+)"', content)
+        if cat_match:
+            result["category"] = cat_match.group(1)
 
         # 사진 수: /photo 페이지에서 SasImage total 패턴으로 추출
         for photo_url in [
