@@ -548,7 +548,7 @@ async def main():
 
     business_name = str(row.get("업체명", "") or "")
     category = str(row.get("업종", "") or "")
-    place_url = str(row.get("네이버플레이스", "") or "")
+    place_url = str(row.get("_place_url", "") or row.get("네이버플레이스", "") or row.get("주소", "") or "")
     place_id = extract_place_id(place_url)
 
     if not place_id:
