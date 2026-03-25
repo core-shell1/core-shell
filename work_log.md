@@ -311,3 +311,431 @@
 ## 2026-03-24 14:58 세션 종료
 - 프로젝트: 포천_영업타겟_자동발굴
 - 변경 파일: projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py,projects/Marketingtool/backend/crawlers/__init__.py
+
+## 2026-03-24 14:59 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:03 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:04 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:05 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:06 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:09 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:10 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:11 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:11 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:19 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: work_log.md
+
+## 2026-03-24 15:22 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: "projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 15:25 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: "projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 15:28 세션 종료
+- 프로젝트: lian_company
+- 변경 파일: "projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 15:34 세션 종료
+- 프로젝트: lian_company
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 15:36 세션 종료
+- 프로젝트: lian_company
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:03 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:04 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:16 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:36 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:40 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:41 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:43 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:44 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:46 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:49 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:51 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 16:58 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 17:32 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 17:37 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 17:38 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 18:37 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 18:37 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 18:46 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 18:51 세션 종료
+- 프로젝트: 지역_소상공인_010번호_+_인스타
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 18:55 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 18:57 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 19:02 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 19:18 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 19:20 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 19:27 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 19:51 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 19:51 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 20:04 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 20:11 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 20:13 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 20:25 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 20:34 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 20:43 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 20:52 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 21:07 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 21:49 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 21:51 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 21:54 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 21:58 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 21:58 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 21:59 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 22:01 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 22:25 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 22:40 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 23:20 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 23:25 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-24 23:28 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 04:50 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:27 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:27 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:29 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:31 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:32 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:37 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:42 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:43 세션 종료
+- 프로젝트: lian1
+- 변경 파일: 
+
+## 2026-03-25 06:44 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:44 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:47 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 06:49 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 07:03 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 07:04 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,"projects/\352\265\254\353\247\244\353\214\200\355\226\211 \354\236\220\353\217\231\355\231\224/\355\201\254\353\241\254\355\224\204\353\241\234\355\225\204.txt",work_log.md
+
+## 2026-03-25 07:16 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 08:14 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 08:19 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 09:51 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 10:43 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 10:47 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 10:50 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 10:53 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 10:54 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 10:54 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 10:55 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 10:57 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 11:20 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 11:36 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 11:39 세션 종료
+- 프로젝트: LAINCP
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 11:48 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 11:55 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 12:00 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 12:08 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 12:25 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 12:26 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 12:28 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 12:29 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 12:38 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 12:45 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 12:46 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 13:00 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 13:03 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 13:04 세션 종료
+- 프로젝트: 소상공인_010수집
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
+
+## 2026-03-25 13:05 세션 종료
+- 프로젝트: 샘플
+- 변경 파일: STATUS.md,projects/Marketingtool/README.md,projects/Marketingtool/backend/.env.example,projects/Marketingtool/backend/.gitignore,projects/Marketingtool/backend/api/__init__.py,projects/Marketingtool/backend/api/routes.py,projects/Marketingtool/backend/app/main.py,projects/Marketingtool/backend/clients/__init__.py,projects/Marketingtool/backend/clients/keyword_client.py,projects/Marketingtool/backend/clients/naver_client.py
