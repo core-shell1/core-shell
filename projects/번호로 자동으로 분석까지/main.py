@@ -20,7 +20,7 @@ from crawlers.place_crawler import crawl_place, capture_search_screenshot
 from crawlers.rank_crawler import get_keyword_rank
 from crawlers.competitor_crawler import get_competitors
 from api.keyword_api import get_keyword_stats
-from scoring.engine import calc_score, calc_relative
+from scoring.engine import calc_score, calc_relative, calc_lost_customers
 from generators.ppt_generator import generate_ppt
 
 
