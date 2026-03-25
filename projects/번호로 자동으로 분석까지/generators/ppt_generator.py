@@ -788,7 +788,7 @@ def generate_ppt(
         if _has_slide(SLIDE_INDEX["estimate"]):
             _build_slide_estimate(
                 prs.slides[SLIDE_INDEX["estimate"]],
-                business_name, score_result.grade
+                business_name, score_result.grade, lost_customers
             )
 
         prs.save(output_path)
