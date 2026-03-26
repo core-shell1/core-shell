@@ -97,6 +97,9 @@
 
 | 날짜 | 변경 내용 | 파일 |
 |------|----------|------|
+| 2026-03-26 | 영업툴 Wave 3 QA 검증 완료 (조건부 통과, 버그 2건 수정) | naver-diagnosis/ + qa/ |
+| 2026-03-26 | models.py competitor_avg_photo 필드 추가 | naver-diagnosis/models.py |
+| 2026-03-26 | batch.py background_tasks 호출 방식 수정 | naver-diagnosis/routers/batch.py |
 | 2026-03-26 | CDO 에이전트 UX/비주얼/전환 업그레이드 | .claude/agents/cdo.md |
 | 2026-03-26 | 수아 마케팅 퍼널/PAS/Hook 업그레이드 | .claude/agents/marketing.md |
 | 2026-03-26 | /work Wave 1 순서 변경 | .claude/commands/work.md |
