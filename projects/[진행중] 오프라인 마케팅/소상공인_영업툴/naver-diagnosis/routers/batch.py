@@ -220,7 +220,9 @@ async def start_batch(
                 _batch_store[batch_id]["status"] = "failed"
                 _batch_store[batch_id]["error"] = str(e)
 
-    background_tasks.add_task(asyncio.create_task, _run())
+    # asyncio.create_task(_run()) 대신 background_tasks에 직접 코루틴 함수로 등록
+    # add_task에 코루틴 객체를 넘기면 이벤트 루프 없이 즉시 실행 시도해서 오류 발생
+    background_tasks.add_task(_run)
 
     return {
         "success": True,
