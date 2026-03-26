@@ -33,29 +33,40 @@ CLAUDE.md를 읽고 다음을 파악해라:
 
 ---
 
-## Wave 1: C-Level 독립 분석 (CPO + CTO + CDO)
+## Wave 1: C-Level 독립 분석 (채널→CPO+CTO→CDO)
 
-### CPO (Opus)
-agents/cpo.md 기준으로 실행:
+### Wave 1-0: 수아 채널 사전 판단 (Sonnet) — 상용화만
+agents/marketing.md의 "Wave 1 채널 사전 판단" 기준으로 실행:
+- CLAUDE.md 타겟/시장 정보 기반 주력 채널 TOP 2 빠르게 판단
+- CDO가 디자인에 채널 특성을 반영할 수 있도록 선행 실행
+→ `wave1_채널사전판단.md` 저장
+
+개인 툴이면 이 단계 스킵.
+
+### CPO (Opus) + CTO (Opus) — 병렬 실행
+수아 채널 판단과 동시에 실행 가능 (CDO만 수아 결과 필요).
+
+**CPO** — agents/cpo.md 기준:
 - 제품 전략 + MVP 범위 확정
 - 사용자 가치 정의
 - 성공 기준(KPI) 설정
 - 배포 블로커 파악
 → `wave1_cpo.md` 저장
 
-### CTO (Opus)
-agents/cto.md 기준으로 실행:
+**CTO** — agents/cto.md 기준:
 - 기술 스택 최종 확정
 - 아키텍처 설계
 - 예상 기술 리스크
 - Engineering Rules
 → `wave1_cto.md` 저장
 
-### CDO (Sonnet)
+### CDO (Sonnet) — 수아 채널 판단 완료 후 실행
 agents/cdo.md 기준으로 실행:
-- 디자인 비전 + UX 원칙
-- 핵심 화면 흐름
-- 컴포넌트 시스템 방향
+- `wave1_채널사전판단.md` 읽고 채널 특성 반영
+- CLAUDE.md의 시장 리서치 섹션 반영
+- 비주얼 디자인 비전 + UX 원칙
+- 전환 최적화된 화면 흐름
+- shadcn/ui 기반 컴포넌트 시스템
 → `wave1_cdo.md` 저장
 
 ---
