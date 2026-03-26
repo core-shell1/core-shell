@@ -92,6 +92,7 @@ CTO 리뷰 결과: PASS, 버그 6개 발견 → 즉시 수정 완료
 
 | 날짜 | 변경 내용 | 파일 |
 |------|----------|------|
+| 2026-03-26 | Wave 5 마케팅 전략 + 콘텐츠 완성 (블로그/카페/인스타) | marketing/wave5_1_채널전략.md, wave5_2_콘텐츠.md |
 | 2026-03-26 | CTO 통합 리뷰 — 치명 버그 4개 + 중간 2개 수정 | main.py, routers/crawl.py, routers/batch.py |
 | 2026-03-26 | /history, /batch 페이지 라우터 추가 | main.py |
 | 2026-03-26 | messages 구조 변환 + sales_priority 동적 속성 | main.py |
