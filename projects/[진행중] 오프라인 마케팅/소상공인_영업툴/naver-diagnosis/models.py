@@ -92,6 +92,9 @@ class DiagnosisHistory(Base):
     # 경쟁사 평균 리뷰 수 (크롤링 또는 폴백)
     competitor_avg_review: Mapped[int] = mapped_column(Integer, default=0)
 
+    # 경쟁사 평균 사진 수
+    competitor_avg_photo: Mapped[int] = mapped_column(Integer, default=0)
+
     # 경쟁사 평균 블로그 수
     competitor_avg_blog: Mapped[int] = mapped_column(Integer, default=0)
 
