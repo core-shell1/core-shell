@@ -4,12 +4,14 @@
 
 ---
 
-## 마지막 세션 (2026-03-26 저녁)
+## 마지막 세션 (2026-03-26 저녁 — Wave 3 QA 완료)
 
 **뭘 했나 (2026-03-26 저녁 세션):**
-소상공인 영업툴 백엔드 업그레이드 전체 구현 완료.
+소상공인 영업툴 Wave 3 백엔드 업그레이드 QA 검증 완료.
 
-신규 생성:
+**QA 결과: CONDITIONAL PASS (조건부 통과)**
+
+신규 생성 (Wave 3 FE/BE):
 - `config/industry_weights.py` — 업종별 가중치/객단가/경쟁사폴백/패키지 정의
 - `config/__init__.py`
 - `services/message_generator.py` — 1~4차 영업 메시지 자동 생성 (A/B/C 자동 선택)
@@ -17,19 +19,27 @@
 - `services/batch_processor.py` — xlsx 배치 처리 (openpyxl, 3초 딜레이)
 - `routers/message.py` — GET /message/{id}, POST /message/regenerate/{id}, PATCH /api/businesses/{id}/priority
 - `routers/batch.py` — POST /batch/start, GET /batch/status/{id}, POST /batch/cancel/{id}, GET /batch/list
+- `qa/test_results.md` — QA 검증 결과 상세 문서
 
-기존 수정:
+기존 수정 (Wave 3 FE/BE):
 - `services/scorer.py` — 업종별 가중치 자동 적용, 새소식패널티, 답글률, 경쟁사 상대점수
 - `services/ppt_generator.py` — 표지 충격 문구, 경쟁사 비교 슬라이드, 손익분기 슬라이드, 개선 슬라이드 "비어있는 항목" 형식으로 변경 (7→9슬라이드)
-- `models.py` — DiagnosisHistory 신규 컬럼 6개 추가 + BusinessPriority 모델 신규
+- `models.py` — DiagnosisHistory 신규 컬럼 7개 추가 (competitor_avg_photo 포함) + BusinessPriority 모델 신규
 - `routers/__init__.py` — message_router, batch_router 등록
+- `routers/batch.py` — background_tasks.add_task() 호출 방식 수정 (코루틴 직접 등록)
 - `main.py` — 신규 라우터 2개 등록
 - `requirements.txt` — openpyxl==3.1.2 추가
 
+**발견 및 수정한 버그 (QA):**
+1. 🔴 [치명적] `models.py` — `competitor_avg_photo` 필드 누락 → 즉시 추가
+2. 🟡 [중간] `routers/batch.py` — `background_tasks.add_task()` 호출 방식 오류 → 자동 수정됨
+
 **다음 세션에서 이어할 것:**
-- [ ] DB_RESET=true로 서버 재시작해서 새 컬럼 반영 확인
-- [ ] pip install openpyxl 실행
-- [ ] 메시지 생성 API 테스트 (기존 diagnosis 기록으로 /message/{id} 호출)
+- [ ] **즉시 실행**: `cd naver-diagnosis && pip install openpyxl`
+- [ ] **즉시 실행**: `.env` 파일에 `DB_RESET=true` 추가 → 서버 재시작 → 제거
+- [ ] 단건 진단 1건 테스트 (양주 미용실)
+- [ ] 메시지 생성 API 테스트 (/message/{id})
+- [ ] xlsx 배치 처리 5개 업체 테스트
 - [ ] 포천/의정부 main_final.py로 실행 (양주만 해봄)
 - [ ] lian_company/.env 생성 후 파이프라인 테스트
 
