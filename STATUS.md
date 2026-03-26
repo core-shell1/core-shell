@@ -89,9 +89,12 @@
 
 | 날짜 | 변경 내용 | 파일 |
 |------|----------|------|
+| 2026-03-26 | CTO 통합 리뷰 — 치명 버그 4개 + 중간 2개 수정 | main.py, routers/crawl.py, routers/batch.py |
+| 2026-03-26 | /history, /batch 페이지 라우터 추가 | main.py |
+| 2026-03-26 | messages 구조 변환 + sales_priority 동적 속성 | main.py |
+| 2026-03-26 | crawl.py 경쟁사 크롤링/우선순위/메시지 통합 | routers/crawl.py |
+| 2026-03-26 | CTO 리뷰 결과 저장 | qa/cto_review.md |
 | 2026-03-26 | 영업툴 Wave 3 QA 검증 완료 (조건부 통과, 버그 2건 수정) | naver-diagnosis/ + qa/ |
-| 2026-03-26 | models.py competitor_avg_photo 필드 추가 | naver-diagnosis/models.py |
-| 2026-03-26 | batch.py background_tasks 호출 방식 수정 | naver-diagnosis/routers/batch.py |
 | 2026-03-26 | CDO 에이전트 UX/비주얼/전환 업그레이드 | .claude/agents/cdo.md |
 | 2026-03-26 | 수아 마케팅 퍼널/PAS/Hook 업그레이드 | .claude/agents/marketing.md |
 | 2026-03-26 | /work Wave 1 순서 변경 | .claude/commands/work.md |
