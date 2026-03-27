@@ -1037,7 +1037,7 @@ class PPTGenerator:
         # 연락처 안내
         self._add_text_frame(
             slide, 0.5, 6.5, 9, 0.5,
-            "상세 컨설팅 문의: contact@example.com",
+            "상세 컨설팅 문의: 010-5641-1803",
             font_size=12, color=RGBColor(0xCC, 0xCC, 0xCC),
             alignment=PP_ALIGN.CENTER
         )
