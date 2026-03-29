@@ -1,6 +1,156 @@
 # 진행 상태
 
-> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-03-28
+> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-03-30 (CPO 분석 완료)
+
+---
+
+## ✅ 2026-03-30 Wave 1 CPO 분석 완료
+
+**작성 항목**: wave1_cpo.md (소상공인 카카오톡 자동 응대 챗봇 빌더)
+
+**포함 내용**:
+- 제품 전략 (포지셔닝 + 핵심 메시지)
+- MVP 범위 5가지 기능
+- 가격 전략 (3단계 플랜 + LTV/CAC 분석)
+- 배포 경로 (3개월 로드맵 + 월별 성장)
+- 성공 기준 KPI (30일/90일 목표)
+- 배포 블로커 체크리스트
+- CTO 요청 (4대 필수 + 권장 구현)
+- 리스크 & 기회 분석
+- CPO 최종 판단 (GO, 제약 조건 있음)
+
+**준혁 조건 반영**:
+- MVP 범위 강제 준수 (AI 개인화/ROI 대시보드 제외)
+- 카카오 메시지 비용 안내 팝업 필수 (온보딩 3단계)
+- 5분 완성 검증 (액션 10회 이내, 로깅 필수)
+- 카카오 API 격리 아키텍처
+
+**다음 단계**: CTO Wave 1 기술 설계 실행 (wave1_cto.md)
+
+---
+
+## ✅ 2026-03-30 폴더 이름 변경 완료
+
+- `LAINCP - 복사본` → `LIANCP` (이름 변경 완료)
+- memory 복사 완료 (LAINCP → LIANCP memory 폴더)
+- CLAUDE.md 경로 참조 LAINCP → LIANCP 수정 완료
+
+### 이어서 할 것
+- 디스코드 봇 설계 + 구현 (토론 중이었음)
+- /work 자동 연결 (pipeline.py 마지막에 claude -p "/work" 추가)
+
+---
+
+## 2026-03-30 세션에서 한 것
+
+**1. E2E 테스트 완료**
+- `python main.py` 전체 파이프라인 완주 확인
+- 이사팀(태호→서윤→민수→하은→토론→준혁) + 실행팀(지훈→종범→수아) 전부 작동
+- 버그 수정: Windows 폴더명 콜론 오류, surrogate 유니코드 오류
+
+**2. 시은 방향 확인 추가**
+- 명확화 후 4줄 요약 보여줌 ("이 방향 맞아? [맞아/아니]")
+- 틀리면 수정 받고 재요약
+- 파일: `lian_company/agents/sieun.py`
+
+**3. Cloudflare 스택으로 전환**
+- Vercel → Cloudflare Pages
+- Supabase → Cloudflare D1 + R2
+- 백엔드 → Cloudflare Workers (Hono, TypeScript)
+- 파일: `.claude/agents/cto.md`, `.claude/agents/be.md`, `.claude/commands/work.md`
+
+**4. 아키텍처 토론 결론**
+- 지금 구조(Python 이사팀 + Claude Code 개발팀) = 업계 정석 (CrewAI, AutoGen과 동일)
+- Python 통합(A안) = 퀄 안 좋아짐, 할 필요 없음
+- 디스코드 봇으로 자동화(B안) = 맞는 방향
+
+**5. 디스코드 봇 설계 토론 (미완, 이어서 할 것)**
+
+```
+이사팀 (Python 직접 호출) → 디스코드 채널에 실시간 출력 ✅ 쉬움
+개발팀 (Claude Code /work) → 두 가지 안:
+  A) 봇이 claude -p "/work" 백그라운드 실행 후 결과만 전송
+  B) 개발팀도 디스코드 캐릭터로 등장 (Claude API 직접 호출)
+```
+
+**추천: A안 먼저, 나중에 B안으로 업그레이드**
+
+---
+
+---
+
+## 마지막 세션 (2026-03-29 — LAINCP 복사본 Phase 1 업그레이드 완료)
+
+**뭘 했나 (2026-03-29 세션):**
+인스타 10개 + 유튜브 14개 분석 → 5대 문제 도출 → 복사본에 Phase 1 전체 구현.
+
+**핵심 변경 사항:**
+
+1. **모델 최적화** — Opus 5회→1회 (비용 ~60% 절감)
+   - junhyeok.py: Opus→Sonnet
+   - CPO/CTO/BE 에이전트: Opus→Sonnet
+   - CTO Wave 4 통합 리뷰만 Opus 유지 (전체 파이프라인 유일한 Opus 사용)
+
+2. **품질 안전장치**
+   - junhyeok.py: JSON 파싱 실패 기본값 GO→CONDITIONAL_GO (안전방향)
+   - jihun.py: 하은 반론을 PRD 리스크 섹션에 강제 반영
+   - temperature 전 에이전트 명시: 판단=0, 창의=0.7, 균형=0.3
+   - haeun.py: JSON 구조 출력 (verdict + severity + critical_risks)
+
+3. **토론 루프** — 민수↔하은 최대 2라운드
+   - 신규: `lian_company/core/discussion.py` (DiscussionRoom 클래스)
+   - pipeline.py: [4.5/9] 토론 루프 단계 추가
+   - junhyeok.py: 토론 결과 transcript 참조
+
+4. **CDO 레퍼런스 사냥** — Perplexity로 경쟁사 디자인 수집 후 설계
+   - cdo.md: "레퍼런스 사냥" 섹션 추가 (작업 전 필수)
+
+5. **FE CDO 준수** — CDO 설계 스펙 그대로 구현 강제
+   - fe.md: "CDO 설계 준수 원칙" 섹션 추가
+
+6. **QA 5항목 체크리스트**
+   - qa.md: 단순 "Must Have 작동" → 5개 항목 표 (보안/에러/CDO/모바일 포함)
+
+7. **work.md 업데이트**
+   - Wave 3.5 린터 단계 추가 (ESLint + Ruff 자동 수정)
+   - Wave 4 CTO 리뷰 Opus로 변경
+
+8. **jongbum.py 업그레이드**
+   - 준혁 조건/주의사항 → "구현 주의사항" 섹션으로 전달
+   - 토론 transcript 참조 추가
+   - temperature=0
+
+**변경된 파일 (복사본):**
+- `lian_company/agents/junhyeok.py` — 모델+기본값+토론참조+temperature
+- `lian_company/agents/jihun.py` — 하은참조+temperature
+- `lian_company/agents/haeun.py` — JSON출력+temperature
+- `lian_company/agents/sieun.py` — temperature
+- `lian_company/agents/minsu.py` — temperature
+- `lian_company/agents/jongbum.py` — 준혁조건+토론참조+temperature
+- `lian_company/core/discussion.py` — 신규 생성
+- `lian_company/core/pipeline.py` — 토론루프 추가
+- `.claude/agents/cdo.md` — 레퍼런스 사냥 섹션
+- `.claude/agents/cto.md` — 모델 명시
+- `.claude/agents/cpo.md` — 모델 명시
+- `.claude/agents/be.md` — 모델 명시
+- `.claude/agents/fe.md` — CDO 준수 원칙, 모델 업그레이드
+- `.claude/agents/qa.md` — 5항목 체크리스트, 모델 업그레이드
+- `.claude/commands/work.md` — Wave 3.5 린터, CTO Opus 명시
+
+**다음에 할 것:**
+- 복사본에서 E2E 테스트 (python main.py "테스트 아이디어")
+- 테스트 통과하면 원본 LAINCP에 반영
+- Phase 2: 텔레그램 봇 연동 (telegram_bot.py + notifier.py)
+
+---
+
+## 마지막 세션 (2026-03-29 — 인스타+유튜브 분석)
+
+**뭘 했나 (2026-03-29 세션 前):**
+- video_analyzer.py 생성 (Gemini로 영상/이미지 분석)
+- 인스타 10개 폴더 분석 → `업그레이드 해야할거/_전체분석결과.md`
+- 유튜브 14개 스크립트 분석 → `11/_유튜브분석결과.md`
+- 심층 분석 → `_심층분석_종합.md` (5대 문제 + 해결 설계)
 
 ---
 
