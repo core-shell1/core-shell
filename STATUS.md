@@ -1,6 +1,37 @@
 # 진행 상태
 
-> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-03-30 (CPO 분석 완료)
+> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-03-30 (CTO 기술 설계 완료)
+
+---
+
+## ✅ 2026-03-30 Wave 1 CTO 기술 설계 완료
+
+**작성 항목**: wave1_cto.md (소상공인 카카오톡 자동 응대 챗봇 빌더)
+
+**포함 내용**:
+- Cloudflare 스택 아키텍처 (Pages + Workers + D1 + R2 + Queues)
+- 카카오 API 격리 모듈 설계 (정책 변경 1~2일 대응)
+- 데이터 모델 (6개 테이블: users, chatbots, templates, responses, messages, analytics)
+- API 엔드포인트 (15개: 인증 3개, 온보딩 4개, 챗봇 관리 4개, 대시보드 2개, 웹훅 1개, 관리 1개)
+- 온보딩 플로우 (액션 10회, 7분 목표, 시간 로깅)
+- 보안 설계 (HTTPS, CSRF, Rate Limiting, 토큰 암호화, 비밀번호 해싱)
+- 성능 요구사항 (API 응답 < 500ms, 동시 100명 수용)
+- 기술 리스크 및 대응책 (NextAuth.js 호환성, SQLite 성능, 카카오 정책 변경)
+- 배포 블로커 체크리스트 (Cloudflare 계정, D1 생성, 카카오 OAuth 테스트)
+
+**준혁 조건 반영**:
+1. ✅ MVP 범위 강제 (AI 개인화/ROI 대시보드 제외)
+2. ✅ 비용 팝업 필수 (온보딩 Step 3)
+3. ✅ 5분 완성 검증 (액션 10회 이내, 시간 로깅)
+4. ✅ 카카오 API 격리 모듈 (services/kakao/ 폴더만 수정)
+
+**최종 판단**: **CONDITIONAL_GO**
+- 전제 1: Cloudflare Workers 계정 + D1 생성 (리안 담당)
+- 전제 2: 카카오 OAuth 손수 테스트 (리안 담당)
+- 전제 3: Wave 2-3 코드 후 온보딩 실제 테스트 (7분 이내)
+- 유효기간: 2026-04-15 (2주)
+
+**다음 단계**: Wave 2 CDO 화면 설계 → Wave 3 FE/BE 코드
 
 ---
 
