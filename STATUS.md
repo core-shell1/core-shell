@@ -1,6 +1,66 @@
 # 진행 상태
 
-> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-03-30 (CDO 화면 설계 완료)
+> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-03-30 (테마 2/3/5 + 디스코드 완료)
+
+---
+
+## ✅ 2026-03-30 리안 컴퍼니 자동화 완성 (테마 2/3/5 + 디스코드)
+
+**완성 항목**:
+
+### 1. 테마 2 — 실행 자동화 (Cloudflare 배포)
+- `lian_company/core/deployer.py` — wrangler CLI 래퍼
+- pipeline.py에 통합: `deploy(project_dir, dry_run=True)` 호출
+- 환경변수: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, CF_PROJECT_NAME
+
+### 2. 테마 3 — 24/7 모니터링 크론 (sentinel/mijeong/doctor)
+- `lian_company/cron/scheduler.py` — 메인 스케줄러 (schedule 라이브러리)
+- `lian_company/cron/sentinel.py` — 30분마다 PROJECT_URL 헬스체크
+- `lian_company/cron/mijeong.py` — 매일 08:00 일일 보고 (Claude Haiku)
+- `lian_company/cron/doctor.py` — 이상 감지 시 Claude로 수정 분석
+- `lian_company/cron/notify.py` — 크론 전용 디스코드 래퍼
+
+### 3. 테마 5 — 리안의 입력 최소화
+제거된 input() 호출:
+- ~~"이사팀 실행할까?"~~ → main.py에서 자동 진행
+- ~~"실행팀 진행할까?"~~ → pipeline.py에서 CONDITIONAL_GO 시만 wait_confirm()
+- ~~PRD 피드백 루프~~ → 1회 자동 ok (while루프 제거)
+- ~~마케팅 피드백 루프~~ → 1회 자동 ok (while루프 제거)
+
+**유지된 입력** (2곳):
+1. ✅ 시은: "예상 방향 맞아?" — 터미널 방향 확인
+2. ✅ 준혁 CONDITIONAL_GO: 디스코드 알림 + 터미널 y/n
+
+### 4. 추가: 디스코드 실시간 알림
+- `lian_company/core/notifier.py` — 핵심 디스코드 웹훅 통합
+- 각 에이전트 완료 후 실시간 알림: 태호→서윤→민수→하은→준혁→지훈→종범→수아
+- 파이프라인 시작/완료/에러 알림
+- wait_confirm() — 디스코드 메시지 전송 후 터미널에서 y/n 입력
+
+**환경변수 추가**:
+- DISCORD_WEBHOOK_URL
+- PROJECT_URL (크론 헬스체크 대상)
+
+**파일 변경 정리**:
+| 파일 | 변경 |
+|------|------|
+| `lian_company/main.py` | "이사팀 실행할까?" input() 제거, notify_pipeline_start() 추가 |
+| `lian_company/core/pipeline.py` | 4개 input() 제거/축소, 각 에이전트 완료 후 notify, deployer 통합 |
+| `lian_company/.env.example` | 4개 환경변수 추가 (디스코드, Cloudflare, 크론) |
+| `lian_company/core/notifier.py` | **신규** |
+| `lian_company/core/deployer.py` | **신규** |
+| `lian_company/cron/__init__.py` | **신규** |
+| `lian_company/cron/scheduler.py` | **신규** |
+| `lian_company/cron/sentinel.py` | **신규** |
+| `lian_company/cron/mijeong.py` | **신규** |
+| `lian_company/cron/doctor.py` | **신규** |
+| `lian_company/cron/notify.py` | **신규** |
+
+**다음 단계**:
+1. `.env` 파일 생성 후 API 키/토큰 입력
+2. `python main.py "테스트아이디어"` 실행 → 디스코드 채널 확인
+3. CONDITIONAL_GO 시 터미널 y/n 컨펌 작동 확인
+4. `pythonw lian_company/cron/scheduler.py` 백그라운드 실행 → 30분 후 sentinel 체크
 
 ---
 
