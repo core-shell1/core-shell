@@ -8,7 +8,7 @@ CLAUDE_HAIKU  = "claude-haiku-4-5-20251001"
 
 # Google
 GEMINI_FLASH  = "gemini-2.5-flash"
-GEMINI_PRO    = "gemini-2.5-pro-preview-03-25"
+GEMINI_PRO    = "gemini-2.5-pro-preview-05-06"
 
 # OpenAI
 GPT4O         = "gpt-4o"
