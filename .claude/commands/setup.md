@@ -62,9 +62,35 @@ cd lian_company && python -m venv venv && venv/Scripts/pip install -r requiremen
 
 ---
 
-## Step 6 — 완료 안내
+## Step 6 — MCP 설치
 
-세팅 완료 메시지:
+아래 명령어들을 순서대로 실행해:
+
+```
+claude mcp add playwright -- npx @playwright/mcp
+claude mcp add perplexity -- npx @jschuller/perplexity-mcp
+claude mcp add nano-banana -- npx nano-banana-mcp
+```
+
+실행 후 `claude mcp list`로 3개 다 Connected 뜨는지 확인해.
+
+그 다음 사용자에게 안내:
+"Gmail이랑 Google Calendar MCP는 Claude Code 안에서 /mcp 쳐서 직접 연결해야 해."
+
+---
+
+## Step 7 — Cloudflare 로그인
+
+```
+npx wrangler login
+```
+
+브라우저가 열리면 Cloudflare 계정으로 로그인.
+
+---
+
+## Step 8 — 완료 안내
+
 ```
 ✅ 세팅 완료!
 
