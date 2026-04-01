@@ -1,6 +1,44 @@
 # 진행 상태
 
-> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-03-31 (강의 자료 전체 주입 완료)
+> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-04-01 (naver-diagnosis 버그 수정 완료)
+
+---
+
+## 2026-04-01 naver-diagnosis 버그 수정 완료
+
+**작업 내용**: 이전 세션 이어서 — batch/crawl/ppt/message 라우터 전체 통합 버그 수정
+
+**수정된 버그 목록**:
+| 버그 | 파일 | 수정 내용 |
+|------|------|---------|
+| batch.js `data.total_count` 오타 | `static/js/batch.js` | `data.total_count` → `data.total` |
+| batch.js 파일 업로드 엔드포인트 불일치 | `static/js/batch.js` | `/batch/start` → `/batch/upload` |
+| 배치 파일 업로드 엔드포인트 없음 | `routers/batch.py` | `/batch/upload` (multipart) 신규 추가 |
+| 배치 상태 필드명 불일치 | `routers/batch.py` | `completed`→`success`, `done`→`completed`, `processed` 계산, `last_processed` 추가 |
+| `delay_seconds` 존재하지 않는 파라미터 | `routers/batch.py` | `delay_seconds=3` → `delay_min=3, delay_max=6` |
+| PPT 재생성 시 신규 필드 누락 | `routers/ppt.py` | `competitor_avg_*`, `estimated_lost_customers`, `related_keywords`, 모든 `has_*` 필드 추가 |
+| 경쟁사 폴백 시 `competitor_avg_photo` 미설정 | `routers/crawl.py` | `competitor_avg_photo = fb["avg_photo"]` 추가 |
+| result 페이지 메시지 재생성 시 `competitor_avg_photo` 하드코딩 0 | `main.py` | `history.competitor_avg_photo or 0` 로 수정 |
+
+**변경된 파일**:
+- `team/[진행중] 오프라인 마케팅/소상공인_영업툴/naver-diagnosis/static/js/batch.js`
+- `team/[진행중] 오프라인 마케팅/소상공인_영업툴/naver-diagnosis/routers/batch.py`
+- `team/[진행중] 오프라인 마케팅/소상공인_영업툴/naver-diagnosis/routers/ppt.py`
+- `team/[진행중] 오프라인 마케팅/소상공인_영업툴/naver-diagnosis/routers/crawl.py`
+- `team/[진행중] 오프라인 마케팅/소상공인_영업툴/naver-diagnosis/main.py`
+
+**이전 세션에서 수정된 버그** (crawl.py, message_tabs.js):
+- `naver_place_rank` 하드코딩 0 수정
+- `place_id` 미전파 수정
+- `competitor_avg_photo` DB 저장 누락 수정
+- 업체명만으로 검색 → 주소+업체명 검색으로 수정
+- priority 드롭다운 값 불일치 수정 (`'1'` → `'1순위'`)
+- `/batch/stop/` → `/batch/cancel/` 수정
+
+**다음에 할 것**:
+1. 실제 서버 실행 테스트 (`uvicorn main:app --reload`)
+2. 업체 1~2개 테스트 크롤링으로 전체 파이프라인 확인
+3. GitHub 원격 연결 (lian_company 기준)
 
 ---
 
