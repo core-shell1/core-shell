@@ -207,6 +207,37 @@ cd lian_company
 | 승현 | Claude Sonnet | 영업 전략 설계 (오프라인) | offline_marketing/strategist.py |
 | 예진 | Claude Sonnet | DM/스크립트/카피 (오프라인) | offline_marketing/copywriter.py |
 
+### 온라인영업팀 (lian_company/teams/온라인영업팀/) — build_team.py 자동생성 2026-04-02
+| 이름 | AI | 역할 | 파일 |
+|------|-----|------|------|
+| 박탐정 | Claude Sonnet | 잠재고객 분석·식별 기준 설계 | 박탐정.py |
+| 이진단 | Claude Sonnet | 온라인 현황 무료 진단서 자동 생성 | 이진단.py |
+| 김작가 | Claude Sonnet | 인스타DM·이메일 아웃리치 스크립트 | 김작가.py |
+| 최제안 | Claude Sonnet | 맞춤 제안서 및 3Tier 가격표 | 최제안.py |
+| 정클로저 | Claude Sonnet | 30분 미팅 대본 및 거절 대응 스크립트 | 정클로저.py |
+| 한총괄 | Claude Sonnet | 전체 영업 파이프라인 품질 관리 | 한총괄.py |
+
+### 온라인납품팀 (lian_company/teams/온라인납품팀/) — build_team.py 자동생성 2026-04-02
+| 이름 | AI | 역할 | 파일 |
+|------|-----|------|------|
+| 서진호 | Claude Sonnet | SEO 키워드 전략가 | 서진호.py |
+| 한서연 | Claude Sonnet | 네이버 블로그 포스팅 작가 | 한서연.py |
+| 박지우 | Claude Sonnet | 인스타그램 콘텐츠 크리에이터 | 박지우.py |
+| 최도현 | Claude Sonnet | 퍼포먼스 광고 카피라이터 | 최도현.py |
+| 윤하은 | Claude Sonnet | 상세페이지·스마트스토어 카피라이터 | 윤하은.py |
+| 정민재 | Claude Sonnet | 성과 분석·리포트 매니저 | 정민재.py |
+| 김태리 | Claude Sonnet | 납품 총괄 PM | 김태리.py |
+
+### 온라인마케팅팀 (lian_company/teams/온라인마케팅팀/) — build_team.py 자동생성 2026-04-02
+| 이름 | AI | 역할 | 파일 |
+|------|-----|------|------|
+| 서진혁 | Claude Sonnet | 리드 헌터 — 잠재 셀러 발굴 | 서진혁.py |
+| 한소율 | Claude Sonnet | 세일즈 매니저 — 콜드아웃리치·클로징 | 한소율.py |
+| 윤채원 | Claude Sonnet | 마케팅 전략가 — 채널별 전략 | 윤채원.py |
+| 박시우 | Claude Sonnet | 크리에이티브 디렉터 — 카피·콘텐츠 | 박시우.py |
+| 이도현 | Claude Sonnet | 운영 매니저 — 납품·스케줄링·보고 | 이도현.py |
+| 강하린 | Claude Sonnet | 그로스 애널리스트 — 성과·개선 | 강하린.py |
+
 ### UltraProduct 팀 (.claude/agents/)
 | 이름 | AI | 역할 | 파일 |
 |------|-----|------|------|
