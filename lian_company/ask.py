@@ -12,8 +12,13 @@
 
 import sys
 import os
+import io
 from pathlib import Path
 from dotenv import load_dotenv
+
+# Windows 콘솔 UTF-8 출력
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 # 경로 설정
 ROOT = Path(__file__).parent
