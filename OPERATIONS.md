@@ -97,6 +97,48 @@ Wave 3부터 시작 (Wave 1-2 기획은 이미 완료된 상태):
 - .pdf → 현재 스킵 (pdfplumber 미설치)
 - 처리 완료 → 보고사항들.md에 자동 보고
 
+### 1-G. 직원 개별 호출
+
+리안이 직원 이름을 부르면 → 해당 직원만 단독으로 스폰해라.
+
+**Claude Code 에이전트 (UltraProduct팀) — Agent tool로 스폰:**
+| 이름/키워드 | subagent_type |
+|------------|---------------|
+| 현우 / CTO / 아키텍처 / 기술 | cto |
+| 나은 / CDO / 디자인 / UI | cdo |
+| 민준 / FE / 프론트엔드 | fe |
+| 정우 / BE / 백엔드 / API | be |
+| 소연 / QA / 테스트 / 버그 | qa |
+| 유진 / PM / 태스크 | pm |
+| 재원 / 재원아 / 리서처 | 재원 (jaewon) |
+| 승현 / 승현아 / 전략 | 승현 (seunghyun) |
+| 예진 / 예진아 / 카피 | 예진 (yejin) |
+| 영진 / 영진아 / 성과 | 영진 (youngjin) |
+
+예시: 리안이 "현우야 이 코드 아키텍처 봐줘" → `Agent(subagent_type="cto", prompt="...")`
+
+**Python 에이전트 (이사팀) — ask.py로 호출:**
+```bash
+cd lian_company
+./venv/Scripts/python.exe ask.py "서윤" "네이버 플레이스 시장 규모 알려줘"
+./venv/Scripts/python.exe ask.py "민수" "이 수익모델 분석해줘"
+./venv/Scripts/python.exe ask.py "하은" "이 데이터 팩트체크 해줘"
+./venv/Scripts/python.exe ask.py "준혁" "이 아이디어 GO/NO-GO 판단해줘"
+./venv/Scripts/python.exe ask.py "태호" "요즘 SNS 마케팅 트렌드 알려줘"
+./venv/Scripts/python.exe ask.py "시은" "이 아이디어 명확화 도와줘"
+```
+
+| 이름 | ask.py 키 |
+|------|---------|
+| 서윤 / 서윤아 / 시장조사 | 서윤 |
+| 민수 / 민수야 / 전략 / 수익모델 | 민수 |
+| 하은 / 하은아 / 팩트체크 / 검증 | 하은 |
+| 준혁 / 준혁아 / GO판단 | 준혁 |
+| 태호 / 태호야 / 트렌드 | 태호 |
+| 시은 / 시은아 | 시은 |
+
+---
+
 ### 1-F. 네이버 진단 도구 (오프라인 마케팅)
 ```
 "진단 돌려줘" / "네이버 플레이스 분석" / "PPT 만들어"
