@@ -137,6 +137,16 @@ cd lian_company
 | 태호 / 태호야 / 트렌드 | 태호 |
 | 시은 / 시은아 | 시은 |
 
+**피드백 주기 (직원 성장):**
+```bash
+./venv/Scripts/python.exe ask.py --feedback "직원이름" "점수(1~5)" "피드백 내용"
+```
+
+**성과 현황 조회:**
+```bash
+./venv/Scripts/python.exe ask.py --performance
+```
+
 ---
 
 ### 1-F. 네이버 진단 도구 (오프라인 마케팅)
