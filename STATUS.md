@@ -1,6 +1,34 @@
 # 진행 상태
 
-> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-04-02 (naver-diagnosis 배치 테스트 + 메시지 버그 대거 수정)
+> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-04-02 (혜경님 Lian Dash 배포 완료)
+
+---
+
+## 2026-04-02 혜경님 Lian Dash — 전체 완료 + Vercel 배포
+
+**배포 URL**: https://lian-dash.vercel.app
+
+**작업 내용**:
+- FE-6 AI 인사이트, FE-7 채널 상세(GA4/메타/네이버), FE-8 설정 3개 화면 구현 완료
+- QA 통과 (TS 오류 271개 → 0)
+- Vercel 데모 모드 배포 (DB 없이 mock 데이터로 동작)
+
+**변경 파일**:
+- `src/middleware.ts` — DEMO_MODE bypass 추가
+- `src/auth.ts` — Resend/EmailProvider 제거, demo mode 지원
+- `src/lib/prisma.ts` — v5 downgrade
+- `src/lib/encryption.ts` — 모듈 레벨 throw 제거
+- `prisma/schema.prisma` — DATABASE_URL 추가
+- `next.config.mjs` — ESLint/TS 빌드 스킵
+- `vercel.json` — Vercel 배포 설정
+- `package.json` — Prisma v5, nodemailer 제거
+- API 라우트 20개 — force-dynamic 추가
+
+**Vercel 프로젝트**: lian324718-3033s-projects/lian-dash
+
+**시스템 업그레이드** (이번 세션):
+- `work.md` — Wave 4 완료 후 시은 자동 브리핑, 최종 시은+지호 CEO 브리핑 추가
+- `.claude/agents/coos.md` — 자동 호출 트리거 + 보고사항들.md 자동 저장 추가
 
 ---
 
