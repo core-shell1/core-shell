@@ -62,7 +62,7 @@ def save_feedback(name: str, task: str, feedback: str, score: int = None):
     with open(feedback_path, "a", encoding="utf-8") as f:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
-    # 점수 낮으면 (1~2점) mistakes.md에도 기록
+    # 점수 낮으면 (1~2점) mistakes.md에도 기록 + 자기 개발 트리거
     if score and score <= 2:
         mistakes_path = agent_dir / "mistakes.md"
         with open(mistakes_path, "a", encoding="utf-8") as f:
@@ -70,6 +70,9 @@ def save_feedback(name: str, task: str, feedback: str, score: int = None):
             f.write(f"**업무**: {task[:100]}\n")
             f.write(f"**피드백**: {feedback}\n")
             f.write(f"**교훈**: (다음 작업에 반영)\n")
+
+        # 자기 개발 큐에 추가 (다음 실행 시 자동 학습)
+        _queue_self_training(name, task, feedback)
 
     # 성과 업데이트
     _update_performance(name, score)
