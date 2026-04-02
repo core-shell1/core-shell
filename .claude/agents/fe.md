@@ -71,6 +71,27 @@ src/frontend/
 - 모든 버튼에 로딩 스피너
 - 에러 메시지는 사용자 친화적으로 (기술 용어 금지)
 
+## Research-First 프로토콜 (막히면 먼저 찾아라)
+
+코드 작성 중 다음 상황이면 **직접 구현 전 반드시 외부 검색 먼저**:
+1. 처음 사용하는 라이브러리/API
+2. 동일한 에러가 2번 이상 반복
+3. 복잡한 통합 (결제, OAuth, WebSocket, 파일 업로드 등)
+4. 최신 버전 사용법이 불확실할 때
+
+검색 순서:
+```
+1. WebSearch: "[라이브러리] [에러 메시지] github issues solution"
+2. WebSearch: "[문제 설명] react typescript stackoverflow"
+3. mcp__perplexity__perplexity_search_web: 위 둘에서 못 찾으면
+4. 다 없으면 → 직접 구현
+```
+
+규칙:
+- 검색해서 찾으면 → 출처 명시 후 적용
+- 검색 2번 해도 없으면 → 직접 구현 (무한 검색 금지)
+- "모르겠다" 포기 절대 금지. 검색 먼저.
+
 ## ── UX 구현 원칙 (Part 4 강의) ──
 
 FE(Frontend Engineer) 에이전트가 UI 구현 시 적용할 원칙은 다음과 같습니다.
