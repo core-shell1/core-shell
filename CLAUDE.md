@@ -57,7 +57,7 @@
 
 ---
 
-## 전체 플로우 (2026-03-31 개편)
+## 전체 플로우 (2026-04-02 업데이트)
 
 ```
 리안: 아이디어 던짐
@@ -110,7 +110,10 @@ LIANCP/
 │   ├── main.py                  ✅ (이사팀 파이프라인)
 │   ├── build_team.py            ✅ (교육팀 실행 진입점)
 │   ├── offline_sales.py         ✅ (오프라인 마케팅팀 진입점)
-│   ├── .env                     ❌ 없음 — API 키 넣어야 함
+│   ├── run_온라인영업팀.py      ✅ (온라인영업팀 실행 진입점)
+│   ├── run_온라인납품팀.py      ✅ (온라인납품팀 실행 진입점)
+│   ├── run_온라인마케팅팀.py    ✅ (온라인마케팅팀 실행 진입점)
+│   ├── .env                     ✅ 설정됨 (Anthropic, OpenAI, Google, Perplexity, Discord)
 │   ├── .env.example             ✅
 │   ├── agents/                  ✅ 이사팀 에이전트
 │   │   ├── sieun.py             ✅ Claude Sonnet (오케스트레이터 + 팀설계)
@@ -126,14 +129,40 @@ LIANCP/
 │   │   │   ├── trainer.py              ← Perplexity 지식 수집
 │   │   │   ├── team_generator.py       ← 팀 파일 자동 생성
 │   │   │   └── pipeline.py
-│   │   ├── offline_marketing/   ✅ 오프라인 마케팅 팀 (재원+승현+예진)
+│   │   ├── offline_marketing/   ✅ 오프라인 마케팅 팀 (재원+승현+예진+검증자)
 │   │   │   ├── researcher.py    ← Perplexity 영업 자료 수집
 │   │   │   ├── strategist.py    ← Claude Sonnet 전략 수립
 │   │   │   ├── copywriter.py    ← Claude Sonnet DM/스크립트
+│   │   │   ├── validator.py     ← Claude Opus 현장 검증
 │   │   │   └── pipeline.py
-│   │   └── analysis/            ✅ 분석팀 (Gemini 비전)
-│   │       ├── analyzer.py      ← Gemini로 이미지/영상 분석
-│   │       └── pipeline.py      ← 독립 실행 (자료들/ 스캔)
+│   │   ├── analysis/            ✅ 분석팀 (Gemini 비전)
+│   │   │   ├── analyzer.py      ← Gemini로 이미지/영상 분석
+│   │   │   └── pipeline.py      ← 독립 실행 (자료들/ 스캔)
+│   │   ├── 온라인영업팀/        ✅ 온라인 영업 팀 (build_team.py 자동생성 2026-04-02)
+│   │   │   ├── 박탐정.py        ← 잠재고객 분석
+│   │   │   ├── 이진단.py        ← 온라인 현황 진단서
+│   │   │   ├── 김작가.py        ← 아웃리치 스크립트
+│   │   │   ├── 최제안.py        ← 제안서/가격표
+│   │   │   ├── 정클로저.py      ← 미팅 대본/클로징
+│   │   │   ├── 한총괄.py        ← 파이프라인 총괄
+│   │   │   └── pipeline.py
+│   │   ├── 온라인납품팀/        ✅ 온라인 납품 팀 (build_team.py 자동생성 2026-04-02)
+│   │   │   ├── 서진호.py        ← SEO 키워드 전략
+│   │   │   ├── 한서연.py        ← 네이버 블로그 작성
+│   │   │   ├── 박지우.py        ← 인스타그램 콘텐츠
+│   │   │   ├── 최도현.py        ← 퍼포먼스 광고 카피
+│   │   │   ├── 윤하은.py        ← 상세페이지 카피
+│   │   │   ├── 정민재.py        ← 성과 분석·리포트
+│   │   │   ├── 김태리.py        ← 납품 총괄 PM
+│   │   │   └── pipeline.py
+│   │   └── 온라인마케팅팀/      ✅ 온라인 마케팅 팀 (build_team.py 자동생성 2026-04-02)
+│   │       ├── 서진혁.py        ← 리드 헌터
+│   │       ├── 한소율.py        ← 세일즈 매니저
+│   │       ├── 윤채원.py        ← 마케팅 전략가
+│   │       ├── 박시우.py        ← 크리에이티브 디렉터
+│   │       ├── 이도현.py        ← 운영 매니저
+│   │       ├── 강하린.py        ← 그로스 애널리스트
+│   │       └── pipeline.py
 │   ├── knowledge/               ← 지식 관리 시스템 ✅
 │   │   ├── manager.py           ← 저장/검색/피드백/공유
 │   │   ├── index.json           ← 교육팀이 관리하는 인덱스

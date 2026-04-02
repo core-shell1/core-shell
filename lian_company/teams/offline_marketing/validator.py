@@ -63,7 +63,7 @@ def run(context: dict, client: anthropic.Anthropic) -> str:
     full_response = ""
     with client.messages.stream(
         model=MODEL,
-        max_tokens=2000,
+        max_tokens=4000,
         messages=[{"role": "user", "content": user_msg}],
         system=SYSTEM_PROMPT,
     ) as stream:

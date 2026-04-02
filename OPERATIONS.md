@@ -66,6 +66,18 @@
 → python lian_company/process_inbox.py
 ```
 ```
+온라인 영업 파이프라인 실행 (소상공인 타겟 온라인 영업):
+→ python lian_company/run_온라인영업팀.py "업무 내용"
+```
+```
+온라인 콘텐츠 납품 파이프라인 실행 (블로그/인스타/광고 카피 등):
+→ python lian_company/run_온라인납품팀.py "업무 내용"
+```
+```
+온라인 마케팅 전략/운영 파이프라인 실행:
+→ python lian_company/run_온라인마케팅팀.py "업무 내용"
+```
+```
 교육팀이 만든 팀 실행:
 → python lian_company/run_{팀명}.py "업무 내용"
 ```
