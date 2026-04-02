@@ -23,6 +23,17 @@
             "statusMessage": "GitHub에 저장 중..."
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_response.stdout // \"\"' | grep -q 'Aliased: https://lian-dash.vercel.app' && \"/c/Users/lian1/Documents/Work/core/lian_company/venv/Scripts/python.exe\" \"/c/Users/lian1/Documents/Work/core/lian_company/auto_visual_review.py\" > /dev/null 2>&1 & true",
+            "timeout": 5,
+            "async": true
+          }
+        ]
       }
     ]
   }
