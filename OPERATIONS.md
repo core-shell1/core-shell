@@ -147,6 +147,13 @@ cd lian_company
 ./venv/Scripts/python.exe ask.py --performance
 ```
 
+**자기 개발 실행 (낮은 평점 받은 분야 자동 학습):**
+```bash
+./venv/Scripts/python.exe ask.py --train "직원이름"   # 특정 직원
+./venv/Scripts/python.exe ask.py --train all           # 전체 직원
+```
+→ Perplexity가 부족한 분야 리서치 → `knowledge/agents/{이름}/training/` 저장 → 다음 업무 시 자동 반영
+
 ---
 
 ### 1-F. 네이버 진단 도구 (오프라인 마케팅)
