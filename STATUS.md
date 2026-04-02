@@ -1,6 +1,49 @@
 # 진행 상태
 
-> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-04-01 (naver-diagnosis 점수/메시지 전면 업그레이드)
+> Claude Code 켤 때마다 여기부터 확인. 마지막 업데이트: 2026-04-02 (시스템 업그레이드 Phase 1+2 완료)
+
+---
+
+## 2026-04-02 시스템 업그레이드 Phase 1+2 완료
+
+**작업 내용**: 리안 시스템 5대 업그레이드 중 Phase 1+2 구현
+
+### Phase 1 완료
+**#2 Research-First 프로토콜** — FE/BE/QA 에이전트 코드 막히면 GitHub/Reddit 검색 먼저
+- `.claude/agents/fe.md` — Research-First 섹션 추가
+- `.claude/agents/be.md` — Research-First 섹션 추가
+- `.claude/agents/qa.md` — Research-First 섹션 추가
+
+**#3 개별 직원 호출** — "서윤아 조사해줘" 식으로 직원 단독 호출 가능
+- `lian_company/ask.py` 신규 생성 (이사팀 6명 개별 호출)
+- `OPERATIONS.md` — 1-G 섹션 추가 (이름 매핑 테이블)
+
+### Phase 2 완료
+**#5a 업무 기억** — 직원이 매 업무 후 경험 기록, 다음 업무 시 자동 로드
+- `lian_company/knowledge/agent_memory.py` 신규 생성
+- ask.py에 메모리 연동 (업무 시작/완료 시 자동 기록)
+- CTO/CDO/FE/BE/QA `.md`에 업무 기억 섹션 추가
+
+**#5c 성과 시스템** — 직원별 업무 횟수, 피드백 점수, 평균 평점 추적
+- `knowledge/performance/` 디렉토리 자동 생성
+- `ask.py --performance` — 전체 직원 성과 현황 조회
+- `ask.py --feedback "이름" "점수" "내용"` — 리안이 직접 피드백 입력
+
+### 다음 할 것 (Phase 3+4)
+- Phase 3: `#4` 시스템 아키텍트 에이전트 (도현) — CLAUDE.md/에이전트 자동 수정
+- Phase 4: `#1` DevOps 에이전트 + `#5b` 자기 개발 (실패 후 자동 학습)
+
+**변경된 파일:**
+| 파일 | 변경 |
+|------|------|
+| `lian_company/ask.py` | 신규 생성 |
+| `lian_company/knowledge/agent_memory.py` | 신규 생성 |
+| `.claude/agents/fe.md` | Research-First + 업무 기억 |
+| `.claude/agents/be.md` | Research-First + 업무 기억 |
+| `.claude/agents/qa.md` | Research-First + 업무 기억 |
+| `.claude/agents/cto.md` | Research-First + 업무 기억 |
+| `.claude/agents/cdo.md` | 업무 기억 |
+| `OPERATIONS.md` | 1-G 직원 개별 호출 섹션 추가 |
 
 ---
 
