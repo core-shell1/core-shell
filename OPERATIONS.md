@@ -399,7 +399,7 @@ cd lian_company
 
 | 명령어 | 기능 | 위치 |
 |--------|------|------|
-| `/work` | UltraProduct Wave 3-6 실행 | .claude/commands/work.md |
+| `/work` | UltraProduct Wave 3-7 실행 (Wave 3.5 DevOps 포함) | .claude/commands/work.md |
 | `/setup` | 첫 설치 세팅 | .claude/commands/setup.md |
 | `/save` | 세션 저장 | .claude/commands/save.md |
 | `/shell` | /work와 동일 | .claude/commands/shell.md |
