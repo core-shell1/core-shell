@@ -1,7 +1,7 @@
 import os
 import anthropic
 from dotenv import load_dotenv
-from teams.offline_marketing import researcher, strategist, copywriter
+from teams.offline_marketing import researcher, strategist, copywriter, validator
 
 load_dotenv()
 
