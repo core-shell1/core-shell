@@ -111,7 +111,7 @@ def scrape_page(url: str) -> dict:
     # 3. 가격 플랜 -price/plan 관련 텍스트 블록
     price_hints = []
     price_patterns = re.compile(
-        r"(\$[\d,]+|₩[\d,]+|€[\d,]+|per\s+month|\/mo|\/year|free\s+trial|free\s+plan|starter|pro\s+plan|business|enterprise|growth)",
+        r"(\$[\d,]+|KRW[\d,]+|EUR[\d,]+|per\s+month|\/mo|\/year|free\s+trial|free\s+plan|starter|pro\s+plan|business|enterprise|growth)",
         re.I,
     )
     for el in soup.find_all(string=price_patterns):

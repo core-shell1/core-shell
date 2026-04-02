@@ -3,7 +3,7 @@
 다음을 실행해:
 
 ```bash
-lian_company/venv/Scripts/python.exe lian_company/auto_competitor_watch.py
+PYTHONIOENCODING=utf-8 lian_company/venv/Scripts/python.exe lian_company/auto_competitor_watch.py
 ```
 
 완료 후 변경사항을 다음 형식으로 요약해줘:
