@@ -221,6 +221,85 @@ def run(idea: str, client: anthropic.Anthropic, interactive: bool = True) -> dic
     return {"idea": idea, "clarified": clarified, "is_commercial": is_commercial, "is_software": is_software}
 
 
+BIG_PICTURE_PROMPT = """너는 시은이야. 이사팀이 방금 GO 판정을 냈어.
+
+근데 너는 오케스트레이터야. 이 프로젝트 하나만 보면 안 돼.
+리안이 운영하는 전체 회사 맥락에서 "이 프로젝트를 시작하면 뭐가 더 필요한지" 생각해야 해.
+
+분석할 것:
+1. 이 사업이 성공하려면 어떤 인프라가 필요한가? (홈페이지, SNS, 블로그, 포트폴리오 등)
+2. 현재 진행중인 다른 프로젝트들과 어떻게 연결되는가? (시너지, 공유 자원 등)
+3. 지금 당장 없으면 손해인 것들은 뭔가?
+4. 리안이 미처 생각 못 했을 것들은?
+
+출력 형식:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+시은의 큰그림 체크
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[프로젝트명]을 시작하면 이것도 필요해:
+
+🔴 지금 당장 필요 (없으면 손해):
+- [항목]: [왜 필요한지 한 줄]
+
+🟡 곧 필요 (초기 3개월 내):
+- [항목]: [왜 필요한지 한 줄]
+
+🔗 다른 프로젝트와 연결:
+- [연결 고리 설명]
+
+💡 리안이 놓쳤을 것:
+- [뜻밖의 제안]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+짧고 핵심만. 리안이 "아 맞다!" 할 것들만."""
+
+
+def big_picture_check(context: dict, client) -> str:
+    """GO 결정 후 연결 고리 + 빠진 것 자동 제안."""
+    print("\n" + "="*60)
+    print("🌐 시은 | 큰그림 체크")
+    print("="*60)
+
+    # PROJECTS.md 읽기 시도 (있으면 참고)
+    import os
+    projects_context = ""
+    projects_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "..", "PROJECTS.md")
+    try:
+        with open(projects_path, encoding="utf-8") as f:
+            projects_context = f.read()[:1500]
+    except Exception:
+        pass
+
+    idea = context.get("clarified", context.get("idea", ""))
+    verdict = context.get("verdict", "GO")
+    score = context.get("score", "")
+
+    user_msg = f"""방금 GO 판정 난 프로젝트:
+{idea}
+
+판정: {verdict} ({score}점)
+
+현재 진행중인 다른 프로젝트들:
+{projects_context if projects_context else "(PROJECTS.md 없음)"}
+
+이 프로젝트 시작하면 뭐가 더 필요한지 큰그림으로 봐줘."""
+
+    full_response = ""
+    with client.messages.stream(
+        model=MODEL,
+        max_tokens=600,
+        system=BIG_PICTURE_PROMPT,
+        messages=[{"role": "user", "content": user_msg}],
+        temperature=0.7,
+    ) as stream:
+        for text in stream.text_stream:
+            text = _safe(text)
+            print(text, end="", flush=True)
+            full_response += text
+
+    print()
+    return _safe(full_response)
+
+
 TEAM_INTERVIEW_PROMPT = """너는 시은이야. 이사팀 분석이 끝났고, 이제 실행할 팀을 설계해야 해.
 그 전에 리안한테 실제 워크플로우를 파악해야 해.
 
