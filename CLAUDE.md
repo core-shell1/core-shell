@@ -192,26 +192,11 @@ LIANCP/
 
 ---
 
-## 지금 해야 할 것
+## 환경 상태
 
-### 1. .env 파일 만들기
-```
-lian_company/.env 파일 생성:
-ANTHROPIC_API_KEY=...
-OPENAI_API_KEY=...
-GOOGLE_API_KEY=...
-PERPLEXITY_API_KEY=...
-```
-키는 lian_company/.env에 있음.
-
-### 2. 파이프라인 테스트
-```bash
-cd lian_company
-./venv/Scripts/python.exe main.py "테스트 아이디어"
-```
-
-### 3. GitHub 원격 연결
-레포 생성 후 URL 알려주면 연결. 자동 커밋 hook은 이미 설정됨.
+- `.env`: ✅ 전부 설정됨 (Anthropic, OpenAI, Google, Perplexity, Discord)
+- `venv`: ✅ lian_company/venv/ 설치됨
+- Git: ✅ 자동 커밋 hook 동작중 (.claude/settings.json)
 
 ---
 
