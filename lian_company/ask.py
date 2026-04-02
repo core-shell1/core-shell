@@ -8,6 +8,11 @@
   ./venv/Scripts/python.exe ask.py "준혁" "이 아이디어 GO/NO-GO 판단해줘"
   ./venv/Scripts/python.exe ask.py "태호" "요즘 AI 에이전트 트렌드 알려줘"
   ./venv/Scripts/python.exe ask.py "시은" "이 아이디어 정리 도와줘"
+
+피드백:
+  ./venv/Scripts/python.exe ask.py --feedback "서윤" "4" "이번 조사 좋았어"
+성과 조회:
+  ./venv/Scripts/python.exe ask.py --performance
 """
 
 import sys
