@@ -206,6 +206,12 @@ LIANCP/
 - UltraProduct = 실행 엔진 (코드 + 배포 + 마케팅까지)
 - 멀티 AI = 편향 방지 (GPT/Gemini/Perplexity/Claude 각자 다른 역할)
 - 에이전트 지식 = 정적 원칙(프롬프트) + 동적 트렌드(Perplexity 실시간)
+- 직원 성장 = 경험 기록(experience.jsonl) + 피드백 누적 + 자기 개발(낮은 평점 → Perplexity 학습)
+
+### 리안이 시스템 자체를 바꾸려면
+"시스템 바꿔줘" / "에이전트 수정해줘" / "플로우 업그레이드해줘"
+→ `Agent(subagent_type="architect")` 로 도현(시스템 아키텍트) 스폰
+→ 도현이 변경 계획서 제출 → 리안 컨펌 → 실행
 
 ## ⛔ 절대 금지 규칙
 
