@@ -38,22 +38,21 @@ if errorlevel 1 (
 echo [2/6] Python OK
 
 :: Claude Code install
-claude --version >nul 2>&1
-if not errorlevel 1 (
-    echo [3/6] Claude Code already installed - skip
-    goto :venv
-)
-echo [3/6] Installing Claude Code...
-call npm install -g @anthropic/claude-code
+where claude >nul 2>&1
 if errorlevel 1 (
-    echo.
-    echo [ERROR] Claude Code install failed.
-    echo         Try: npm install -g @anthropic/claude-code
-    pause
-    exit /b 1
+    echo [3/6] Installing Claude Code...
+    call npm install -g @anthropic/claude-code
+    if errorlevel 1 (
+        echo.
+        echo [ERROR] Claude Code install failed.
+        echo         Try: npm install -g @anthropic/claude-code
+        pause
+        exit /b 1
+    )
+    echo       Done
+) else (
+    echo [3/6] Claude Code already installed - skip
 )
-echo       Done
-:venv
 
 :: venv + packages
 if not exist "!REPO_DIR!\lian_company\venv" (
@@ -69,51 +68,20 @@ echo       Done
 
 :: Update config paths
 echo [5/6] Updating config paths...
-"!REPO_DIR!\lian_company\venv\Scripts\python.exe" -c "
-import sys, os
-
-repo = sys.argv[1]
-
-files = [
-    os.path.join(repo, '.claude', 'agents', 'architect.md'),
-    os.path.join(repo, '.claude', 'agents', 'coos.md'),
-    os.path.join(repo, '.agents', 'workflows', 'run-lian.md'),
-]
-
-old_patterns = [
-    'C:/Users/hkyou/Documents/work_youns/core-shell',
-    r'C:\Users\hkyou\Documents\work_youns\core-shell',
-    'C:/Users/lian1/Documents/Work/core',
-    r'C:\Users\lian1\Documents\Work\core',
-]
-
-for fpath in files:
-    if not os.path.exists(fpath):
-        continue
-    with open(fpath, 'r', encoding='utf-8') as f:
-        content = f.read()
-    new_content = content
-    repo_fwd = repo.replace(chr(92), '/')
-    for old in old_patterns:
-        old_fwd = old.replace(chr(92), '/')
-        new_content = new_content.replace(old_fwd, repo_fwd)
-        new_content = new_content.replace(old, repo)
-    if new_content != content:
-        with open(fpath, 'w', encoding='utf-8') as f:
-            f.write(new_content)
-        print('  Updated: ' + os.path.basename(fpath))
-" "!REPO_DIR!"
+"!REPO_DIR!\lian_company\venv\Scripts\python.exe" "!REPO_DIR!\setup_paths.py" "!REPO_DIR!"
 echo       Done
 
 :: API keys
 echo [6/6] API Key Setup
 echo.
 
-if exist "!REPO_DIR!\lian_company\.env" (
-    echo   .env already exists. Overwrite? (y/n, default=n):
-    set /p OVERWRITE=  >
-    if /i not "!OVERWRITE!"=="y" goto :done
-)
+if not exist "!REPO_DIR!\lian_company\.env" goto :setup_env
+echo   .env already exists. Overwrite? (y/n, default=n):
+set /p OVERWRITE=  Choice:
+if /i "!OVERWRITE!"=="y" goto :setup_env
+goto :done
+
+:setup_env
 
 echo.
 echo   Anthropic key is required. Others are optional (press Enter to skip).
