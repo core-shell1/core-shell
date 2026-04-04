@@ -97,39 +97,81 @@ def run(task: str = ""):
     save(output_dir, "00_팀인터뷰.md", interview)
 
     print("\n[1/7] 서진호...")
-    result_서진호 = 서진호.run(context, client)
-    context["서진호"] = result_서진호
-    save(output_dir, "서진호_결과.md", result_서진호)
+    if HAS_STATUS_TRACKER:
+        update_status("서진호", "온라인납품팀", "running", "SEO 키워드 전략 수립 중")
+    try:
+        result_서진호 = 서진호.run(context, client)
+        context["서진호"] = result_서진호
+        save(output_dir, "서진호_결과.md", result_서진호)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("서진호")
 
     print("\n[2/7] 한서연...")
-    result_한서연 = 한서연.run(context, client)
-    context["한서연"] = result_한서연
-    save(output_dir, "한서연_결과.md", result_한서연)
+    if HAS_STATUS_TRACKER:
+        update_status("한서연", "온라인납품팀", "running", "네이버 블로그 콘텐츠 작성 중")
+    try:
+        result_한서연 = 한서연.run(context, client)
+        context["한서연"] = result_한서연
+        save(output_dir, "한서연_결과.md", result_한서연)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("한서연")
 
     print("\n[3/7] 박지우...")
-    result_박지우 = 박지우.run(context, client)
-    context["박지우"] = result_박지우
-    save(output_dir, "박지우_결과.md", result_박지우)
+    if HAS_STATUS_TRACKER:
+        update_status("박지우", "온라인납품팀", "running", "인스타그램 콘텐츠 제작 중")
+    try:
+        result_박지우 = 박지우.run(context, client)
+        context["박지우"] = result_박지우
+        save(output_dir, "박지우_결과.md", result_박지우)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("박지우")
 
     print("\n[4/7] 최도현...")
-    result_최도현 = 최도현.run(context, client)
-    context["최도현"] = result_최도현
-    save(output_dir, "최도현_결과.md", result_최도현)
+    if HAS_STATUS_TRACKER:
+        update_status("최도현", "온라인납품팀", "running", "퍼포먼스 광고 카피 작성 중")
+    try:
+        result_최도현 = 최도현.run(context, client)
+        context["최도현"] = result_최도현
+        save(output_dir, "최도현_결과.md", result_최도현)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("최도현")
 
     print("\n[5/7] 윤하은...")
-    result_윤하은 = 윤하은.run(context, client)
-    context["윤하은"] = result_윤하은
-    save(output_dir, "윤하은_결과.md", result_윤하은)
+    if HAS_STATUS_TRACKER:
+        update_status("윤하은", "온라인납품팀", "running", "상세페이지 카피 작성 중")
+    try:
+        result_윤하은 = 윤하은.run(context, client)
+        context["윤하은"] = result_윤하은
+        save(output_dir, "윤하은_결과.md", result_윤하은)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("윤하은")
 
     print("\n[6/7] 정민재...")
-    result_정민재 = 정민재.run(context, client)
-    context["정민재"] = result_정민재
-    save(output_dir, "정민재_결과.md", result_정민재)
+    if HAS_STATUS_TRACKER:
+        update_status("정민재", "온라인납품팀", "running", "성과 분석·리포트 작성 중")
+    try:
+        result_정민재 = 정민재.run(context, client)
+        context["정민재"] = result_정민재
+        save(output_dir, "정민재_결과.md", result_정민재)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("정민재")
 
     print("\n[7/7] 김태리...")
-    result_김태리 = 김태리.run(context, client)
-    context["김태리"] = result_김태리
-    save(output_dir, "김태리_결과.md", result_김태리)
+    if HAS_STATUS_TRACKER:
+        update_status("김태리", "온라인납품팀", "running", "납품 최종 점검 중")
+    try:
+        result_김태리 = 김태리.run(context, client)
+        context["김태리"] = result_김태리
+        save(output_dir, "김태리_결과.md", result_김태리)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("김태리")
 
 
     # 자가점검
