@@ -144,6 +144,45 @@ def save_insight(category: str, insight_text: str, source_url: str = ""):
         f.write(entry)
 
 
+def _extract_analysis_sections(content: str) -> list[tuple[str, str]]:
+    """보고사항들.md에서 분석 섹션 추출.
+
+    여러 형식 지원:
+    1. 마크다운 테이블 형식 (현재 분석팀 미디어 분석)
+    2. 인스타 분석 섹션 (미래 형식 A/B)
+
+    Returns:
+        [(url, analysis_text), ...] 리스트
+    """
+    sections = []
+
+    # 패턴 1: "## [인스타 분석]" 또는 "## 인스타 분석" 형식
+    # URL과 분석 내용을 포함하는 섹션
+    pattern_header = r"^## (?:\[)?인스타 분석(?:\])?[^\n]*\n(.*?)(?=^##|\Z)"
+    for match in re.finditer(pattern_header, content, re.MULTILINE | re.DOTALL):
+        section_content = match.group(1)
+
+        # 섹션 내에서 URL 찾기
+        url_pattern = r"\*\*URL\*\*:\s*(https://www\.instagram\.com/\S+)"
+        url_match = re.search(url_pattern, section_content)
+        if not url_match:
+            continue
+
+        url = url_match.group(1)
+
+        # URL 이후의 분석 내용 추출 (분석** 섹션까지)
+        # "분석**:" 또는 "분석**" 다음부터 시작
+        analysis_pattern = r"(?:\*\*분석\*\*|\*\*분석|\*\*내용|\*\*결과)[\s:]*\n?(.*?)(?=\*\*|^##|\Z)"
+        analysis_match = re.search(analysis_pattern, section_content, re.DOTALL)
+
+        if analysis_match:
+            analysis = analysis_match.group(1).strip()
+            if analysis:  # 공백이 아니면
+                sections.append((url, analysis))
+
+    return sections
+
+
 def extract_and_save():
     """보고사항들.md 전체 파싱 → 모든 분석 결과에서 인사이트 추출.
 
@@ -158,17 +197,17 @@ def extract_and_save():
     with open(report_path, "r", encoding="utf-8", errors="replace") as f:
         content = f.read()
 
-    # [인스타 분석] 섹션 모두 찾기
-    pattern = r"\*\*URL\*\*:\s*(https://www\.instagram\.com/\S+)\n.*?\*\*분석\*\*:\s*(.*?)(?=---|\Z)"
-    matches = re.finditer(pattern, content, re.DOTALL)
+    # 분석 섹션 추출
+    sections = _extract_analysis_sections(content)
+
+    if not sections:
+        print("[배치 완료] 분석 섹션 0개 (또는 파싱 실패)")
+        return
 
     client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
     total_insights = 0
 
-    for match in matches:
-        url = match.group(1)
-        analysis = match.group(2)
-
+    for url, analysis in sections:
         insights = {}
         for category in INSIGHT_CATEGORIES:
             insight = categorize_insight(analysis, category, client)
@@ -178,7 +217,7 @@ def extract_and_save():
 
         total_insights += len(insights)
 
-    print(f"[배치 완료] {total_insights}개 인사이트 추출 및 저장됨")
+    print(f"[배치 완료] {len(sections)}개 분석에서 {total_insights}개 인사이트 추출 및 저장됨")
 
 
 def get_latest_insights(category: str, limit: int = 5) -> list[str]:
