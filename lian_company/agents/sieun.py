@@ -580,3 +580,116 @@ def autopilot_interview(context: dict, client: anthropic.Anthropic) -> str:
 
     print()
     return _safe(full_response)
+
+
+# ── 시은 재검토 (델타봇 패턴) ──────────────────────────────────────
+
+REVIEW_PROMPT = """너는 시은이야. 이사팀 분석이 모두 끝났어.
+
+근데 여기서 멈추면 안 돼. 한 발 물러서서 전체를 다시 봐야 해.
+
+네가 할 것:
+1. 내가 처음에 명확화한 방향이 현재 상황과 일치하는지 체크
+2. 민수(전략), 하은(검증), 토론 결과에서 새로운 인사이트가 나왔는지 확인
+3. 초기 명확화와 최종 분석이 맞지 않으면 "여기가 안 맞아" 지적
+4. 없으면 "일관성 있어" 승인
+5. 최종 context 제안 (다음 단계로 넘어갈 때 이걸 기준으로)
+
+체크할 것:
+- 타겟 고객이 처음과 같은지
+- 핵심 기능이 처음과 같은지, 아니면 더 정제됐는지
+- 수익 모델이 현실적인지
+- 경쟁사/시장 조건이 이전 가정과 일치하는지
+- 놓친 risk가 있는지
+
+출력 형식:
+## 시은의 최종 재검토
+
+✅ 방향 일관성: [일관 / 부분 수정 필요 / 전면 수정]
+
+📊 초기 vs 최종 비교:
+| 항목 | 초기 명확화 | 최종 분석 | 일치 여부 |
+|------|----------|---------|---------|
+
+🔴 불일치 항목 (있으면만):
+- [항목]: [초기] → [최종] (수정 사유)
+
+💡 새로운 인사이트:
+- [토론/검증에서 나온 새로운 것]
+
+⚠️ 추가 risk:
+- [새로 발견된 risk]
+
+🚀 최종 승인:
+[일관 / 부분 수정 / 전면 재검토 필요]"""
+
+
+def review(context: dict, client: anthropic.Anthropic) -> dict:
+    """모든 에이전트 결과 종합 검토 — 놓친 사항 + 일관성 체크."""
+    print("\n" + "="*60)
+    print("🔍 시은 | 최종 재검토 (델타봇 패턴)")
+    print("="*60)
+
+    # context에서 핵심 정보 추출
+    idea = context.get("idea", "")
+    clarified = context.get("clarified", "")
+    minsu = context.get("minsu", "")
+    haeun = context.get("haeun", "")
+    discussion = context.get("discussion_transcript", [])
+    junhyeok_text = context.get("junhyeok_text", "")
+    verdict = context.get("verdict", "")
+    score = context.get("score", "")
+
+    # 토론 내용 정리
+    discussion_summary = ""
+    if discussion:
+        for t in discussion:
+            discussion_summary += f"\n[라운드 {t.get('round', '?')}]\n민수 수정: {t.get('minsu_revised', '')[:200]}\n하은 최종: {t.get('haeun_final', '')[:200]}\n"
+
+    user_msg = f"""초기 아이디어:
+{idea[:300]}
+
+초기 명확화:
+{clarified[:500]}
+
+민수(전략) 분석:
+{minsu[:500]}
+
+하은(검증) 분석:
+{haeun[:500]}
+
+토론 결과:
+{discussion_summary[:500] if discussion_summary else "(토론 없음)"}
+
+준혁 최종 판단:
+{verdict} ({score}점)
+{junhyeok_text[:300]}
+
+이 모든 정보를 종합해서 처음 방향과 최종 분석이 일치하는지 재검토해줘."""
+
+    full_response = ""
+    with client.messages.stream(
+        model=MODEL,
+        max_tokens=800,
+        system=inject_context(REVIEW_PROMPT),
+        messages=[{"role": "user", "content": user_msg}],
+        temperature=0.3,
+    ) as stream:
+        for text in stream.text_stream:
+            text = _safe(text)
+            print(text, end="", flush=True)
+            full_response += text
+
+    print()
+
+    # context에 재검토 결과 추가
+    context["sieun_review"] = _safe(full_response)
+
+    # 불일치 감지 및 경고
+    if "전면 수정" in full_response or "다시" in full_response or "맞지 않" in full_response:
+        print("\n⚠️ 재검토 결과: 일부 불일치 발견됨")
+        print("   → 아래 제안사항을 고려해서 진행")
+    else:
+        print("\n✅ 재검토 결과: 방향 일관성 확인됨")
+
+    return context
