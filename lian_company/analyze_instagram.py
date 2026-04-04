@@ -121,7 +121,7 @@ def main():
         print(f"   → 캡션: {caption[:80]}...")
 
         # 분석
-        print("🔍 Gemini 분석 중...")
+        print("[분석] Gemini 분석 중...")
         analysis = analyze_with_gemini(files, caption, url)
 
         # 출력
