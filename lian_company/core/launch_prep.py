@@ -12,11 +12,7 @@ GO 판정 후, 개발/실행 전에 돌리는 단계.
     python -m core.launch_prep "프로젝트 설명"
 """
 import os
-import sys
-import io
-if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+os.environ.setdefault("PYTHONUTF8", "1")
 import anthropic
 from dotenv import load_dotenv
 from core.context_loader import inject_context
