@@ -311,6 +311,9 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
             print(f"{'='*60}\n")
         except Exception as e:
             print(f"\n⚠️  핸드오프 에러: {e}")
+        finally:
+            if HAS_STATUS_TRACKER:
+                clear_status("시은")
 
     # ── 리안 인터뷰 + 팀 설계 + 교육팀 ────────────────────────────
 
