@@ -31,6 +31,8 @@ def get_company_context() -> str:
             parts.append(f.read())
     except FileNotFoundError:
         parts.append("[회사 컨텍스트 파일 없음 — company_context.md 생성 필요]")
+    except (UnicodeDecodeError, PermissionError) as e:
+        parts.append(f"[회사 컨텍스트 파일 읽기 실패: {e}]")
 
     # 프로젝트 현황 (있으면)
     try:
@@ -40,6 +42,8 @@ def get_company_context() -> str:
                 parts.append(f"\n\n## 현재 프로젝트 현황\n{content[:1500]}")
     except FileNotFoundError:
         pass
+    except (UnicodeDecodeError, PermissionError) as e:
+        print(f"⚠️  프로젝트 파일 읽기 실패: {e}")
 
     _CONTEXT_CACHE = "\n".join(parts)
     return _CONTEXT_CACHE

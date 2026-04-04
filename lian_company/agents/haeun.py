@@ -16,9 +16,16 @@ def run(context: dict, client=None) -> str:
     market_research = context.get("seoyun", "")
     strategy = context.get("minsu", "")
 
-    gemini = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+    api_key = os.getenv("GOOGLE_API_KEY")
+    if not api_key:
+        error_msg = "[하은 실패: GOOGLE_API_KEY 없음 — .env 확인 필요]"
+        print(f"\n⚠️  {error_msg}")
+        return error_msg
 
-    system = """너는 하은이야. 리안 컴퍼니의 팩트체커이자 악마의 변호인이야.
+    try:
+        gemini = genai.Client(api_key=api_key)
+
+        system = """너는 하은이야. 리안 컴퍼니의 팩트체커이자 악마의 변호인이야.
 
 민수의 전략을 냉정하게 검증해:
 1. 시장 숫자 검증 (근거 있나?)
@@ -48,20 +55,35 @@ def run(context: dict, client=None) -> str:
 마지막 줄에 반드시 JSON으로:
 {"verdict": "GO" | "NO_GO", "critical_risks": ["리스크1", "리스크2"], "severity": "CRITICAL" | "HIGH" | "MEDIUM"}"""
 
-    prompt = f"아이디어: {idea}\n\n[서윤 시장조사]\n{market_research}\n\n[민수 전략]\n{strategy}\n\n냉정하게 검증해줘."
+        prompt = f"아이디어: {idea}\n\n[서윤 시장조사]\n{market_research}\n\n[민수 전략]\n{strategy}\n\n냉정하게 검증해줘."
 
-    full_response = ""
-    for chunk in gemini.models.generate_content_stream(
-        model=MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            system_instruction=inject_context(system),
-            temperature=0
-        )
-    ):
-        text = chunk.text or ""
-        print(text, end="", flush=True)
-        full_response += text
+        full_response = ""
+        try:
+            for chunk in gemini.models.generate_content_stream(
+                model=MODEL,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    system_instruction=inject_context(system),
+                    temperature=0
+                )
+            ):
+                # chunk.text가 None일 때 방어
+                text = chunk.text if chunk.text is not None else ""
+                print(text, end="", flush=True)
+                full_response += text
+        except Exception as e:
+            # 스트림 중단/할당량 초과 시 graceful fallback
+            if "429" in str(e) or "quota" in str(e).lower():
+                error_msg = "[하은 할당량 초과 — 다음 단계로 넘어감]"
+            else:
+                error_msg = f"[하은 스트림 에러 — 다음 단계로 넘어감]"
+            print(f"\n⚠️  {error_msg}")
+            return error_msg
 
-    print()
-    return full_response
+        print()
+        return full_response if full_response.strip() else "[하은 응답 없음]"
+
+    except Exception as e:
+        error_msg = f"[하은 실패: {str(e)[:100]} — 다음 단계로 넘어감]"
+        print(f"\n⚠️  {error_msg}")
+        return error_msg

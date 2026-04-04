@@ -65,8 +65,28 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
     with ThreadPoolExecutor(max_workers=2) as pool:
         fut_taeho = pool.submit(_run_taeho)
         fut_seoyun = pool.submit(_run_seoyun)
-        taeho_result = fut_taeho.result()
-        seoyun_result = fut_seoyun.result()
+        try:
+            # 각 에이전트에 180초(3분) 타임아웃 설정
+            taeho_result = fut_taeho.result(timeout=180)
+        except Exception as e:
+            print(f"\n⚠️  태호 타임아웃 또는 에러: {e}")
+            taeho_result = "[태호 타임아웃 — 건너뜀]"
+
+        try:
+            seoyun_result = fut_seoyun.result(timeout=180)
+        except Exception as e:
+            print(f"\n⚠️  서윤 타임아웃 또는 에러: {e}")
+            seoyun_result = "[서윤 타임아웃 — 건너뜀]"
+
+    # 에러 결과 필터링 (다음 에이전트 context에 유효한 데이터만 주입)
+    def _is_error_result(result: str) -> bool:
+        """에러/빈 결과 판정."""
+        if not result or not result.strip():
+            return True
+        return result.strip().startswith("[")
+
+    taeho_clean = "" if _is_error_result(taeho_result) else taeho_result
+    seoyun_clean = "" if _is_error_result(seoyun_result) else seoyun_result
 
     context["taeho"] = taeho_result
     save_file(output_dir, "08_트렌드_태호.md", taeho_result)
@@ -78,10 +98,13 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
     print_save_ok("01_시장조사_서윤.md")
     notify_agent_complete("서윤 | 시장조사", 2, 9)
 
-    # 민수: 전략
+    # 민수: 전략 (clean 데이터 사용)
+    context_for_minsu = dict(context)
+    if seoyun_clean:
+        context_for_minsu["seoyun"] = seoyun_clean
     print(f"\n[3/9] 전략 수립...")
     try:
-        minsu_result = minsu.run(context, client)
+        minsu_result = minsu.run(context_for_minsu, client)
     except Exception as e:
         print(f"\n⚠️  민수 에러 (건너뜀): {e}")
         minsu_result = f"전략 수립 실패: {e}"
@@ -90,10 +113,14 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
     print_save_ok("02_전략_민수.md")
     notify_agent_complete("민수 | 전략 수립", 3, 9)
 
-    # 하은: 검증
+    # 하은: 검증 (clean 데이터 사용)
+    context_for_haeun = dict(context)
+    minsu_clean = "" if _is_error_result(minsu_result) else minsu_result
+    context_for_haeun["minsu"] = minsu_clean
+    context_for_haeun["seoyun"] = seoyun_clean
     print(f"\n[4/9] 검증/반론...")
     try:
-        haeun_result = haeun.run(context, client)
+        haeun_result = haeun.run(context_for_haeun, client)
     except Exception as e:
         print(f"\n⚠️  하은 에러 (건너뜀): {e}")
         haeun_result = f"검증 실패: {e}"
@@ -248,7 +275,7 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
         if autopilot:
             interview = sieun.autopilot_interview(context, client)
         else:
-            interview = sieun.interview_for_team(context, client)
+            interview = sieun.interview_for_team(context, client, interactive=True)
         context["interview"] = interview
     except Exception as e:
         print(f"\n⚠️  인터뷰 에러: {e}")

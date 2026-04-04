@@ -15,7 +15,12 @@ def create_output_dir(project_name: str) -> str:
 
 
 def save_file(output_dir: str, filename: str, content: str) -> str:
-    filepath = os.path.join(output_dir, filename)
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(content)
-    return filepath
+    try:
+        filepath = os.path.join(output_dir, filename)
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(content)
+        return filepath
+    except Exception as e:
+        # 저장 실패 시 경고하고 계속 진행
+        print(f"\n⚠️  파일 저장 실패 [{filename}]: {e}")
+        return ""

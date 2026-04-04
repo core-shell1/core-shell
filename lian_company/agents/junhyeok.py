@@ -90,22 +90,29 @@ def run(context: dict, client: anthropic.Anthropic) -> dict:
 
 최종 판단을 내려줘."""
 
-    with client.messages.stream(
-        model=MODEL,
-        max_tokens=4000,
-        system=inject_context(SYSTEM_PROMPT),
-        messages=[{"role": "user", "content": content}],
-        temperature=0,
-    ) as stream:
-        for text in stream.text_stream:
-            print(text, end="", flush=True)
-            full_response += text
+    try:
+        with client.messages.stream(
+            model=MODEL,
+            max_tokens=4000,
+            system=inject_context(SYSTEM_PROMPT),
+            messages=[{"role": "user", "content": content}],
+            temperature=0,
+            timeout=180,
+        ) as stream:
+            for text in stream.text_stream:
+                print(text, end="", flush=True)
+                full_response += text
 
-    print()
+        print()
+    except Exception as e:
+        error_msg = f"[준혁 판단 실패: {str(e)[:100]}]"
+        print(f"\n⚠️  {error_msg}")
+        full_response = error_msg
 
     # JSON 파싱
     verdict = "CONDITIONAL_GO"
     score = 7.0
+
     json_match = re.search(r'\{[^{}]*"verdict"[^{}]*\}', full_response, re.DOTALL)
     if json_match:
         try:
@@ -113,6 +120,16 @@ def run(context: dict, client: anthropic.Anthropic) -> dict:
             verdict = data.get("verdict", "CONDITIONAL_GO")
             score = float(data.get("score", 7.0))
         except (json.JSONDecodeError, ValueError):
-            pass
+            # JSON 파싱 실패 시 키워드 검색
+            if "NO_GO" in full_response.upper():
+                verdict = "NO_GO"
+                score = 3.0
+            elif "GO" in full_response.upper():
+                verdict = "GO"
+                score = 8.0
+            else:
+                # 둘 다 못 찾으면 REVIEW_NEEDED (자동 GO 금지)
+                verdict = "REVIEW_NEEDED"
+                score = 0.0
 
     return {"text": full_response, "verdict": verdict, "score": score}

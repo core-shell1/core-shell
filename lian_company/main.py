@@ -16,10 +16,13 @@ import io
 # 프로젝트 루트를 경로에 추가
 sys.path.insert(0, os.path.dirname(__file__))
 
-# Windows UTF-8 강제 설정
+# Windows UTF-8 강제 설정 (robust하게)
 if sys.platform == "win32":
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    try:
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    except Exception:
+        pass  # 이미 설정되어 있거나 실패했으면 무시
 
 from dotenv import load_dotenv
 load_dotenv()

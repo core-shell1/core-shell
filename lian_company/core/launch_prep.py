@@ -138,15 +138,26 @@ def _deploy_landing_page(context: dict, launch_plan: str):
     # Cloudflare Pages 배포
     print(f"\n  🌐 Cloudflare Pages 배포 중 ({slug})...")
     try:
-        # 프로젝트 생성 시도 (이미 있으면 무시)
-        subprocess.run(
-            ["npx", "wrangler", "pages", "project", "create", slug, "--production-branch", "main"],
-            capture_output=True, cwd=deploy_dir
-        )
-        result = subprocess.run(
-            ["npx", "wrangler", "pages", "deploy", ".", "--project-name", slug, "--branch", "main"],
-            capture_output=True, text=True, cwd=deploy_dir, timeout=120
-        )
+        try:
+            # 프로젝트 생성 시도 (이미 있으면 무시)
+            subprocess.run(
+                ["npx", "wrangler", "pages", "project", "create", slug, "--production-branch", "main"],
+                capture_output=True, cwd=deploy_dir, timeout=60
+            )
+        except Exception as e:
+            print(f"  ⚠️  프로젝트 생성 실패 (계속 진행): {e}")
+
+        try:
+            result = subprocess.run(
+                ["npx", "wrangler", "pages", "deploy", ".", "--project-name", slug, "--branch", "main"],
+                capture_output=True, text=True, cwd=deploy_dir, timeout=120
+            )
+        except subprocess.TimeoutExpired:
+            print(f"  ⚠️  배포 타임아웃 (120초)")
+            return
+        except Exception as e:
+            print(f"  ⚠️  배포 subprocess 에러: {e}")
+            return
         if "Deployment complete" in result.stdout or "pages.dev" in result.stdout:
             url = re.search(r"https://[\w.-]+\.pages\.dev", result.stdout)
             url_str = url.group(0) if url else f"https://{slug}.pages.dev"

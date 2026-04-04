@@ -14,9 +14,16 @@ def run(context: dict, client=None) -> str:
     idea = context.get("clarified", context.get("idea", ""))
     market_research = context.get("seoyun", "")
 
-    openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        error_msg = "[민수 실패: OPENAI_API_KEY 없음 — .env 확인 필요]"
+        print(f"\n⚠️  {error_msg}")
+        return error_msg
 
-    system = """너는 민수야. 리안 컴퍼니의 비즈니스 전략가야.
+    try:
+        openai_client = OpenAI(api_key=api_key, timeout=90.0)
+
+        system = """너는 민수야. 리안 컴퍼니의 비즈니스 전략가야.
 
 서윤의 시장조사를 바탕으로 전략을 수립해:
 1. 포지셔닝 (한 줄 정의)
@@ -55,22 +62,46 @@ def run(context: dict, client=None) -> str:
 - 피벗 신호: 핵심 지표 정체, 유료 전환 0, 고객이 다른 문제를 말함.
 """
 
-    content = f"아이디어: {idea}\n\n[서윤의 시장조사]\n{market_research}\n\n전략을 수립해줘."
+        content = f"아이디어: {idea}\n\n[서윤의 시장조사]\n{market_research}\n\n전략을 수립해줘."
 
-    full_response = ""
-    stream = openai_client.chat.completions.create(
-        model=MODEL,
-        messages=[
-            {"role": "system", "content": inject_context(system)},
-            {"role": "user", "content": content}
-        ],
-        stream=True,
-        temperature=0.7
-    )
-    for chunk in stream:
-        text = chunk.choices[0].delta.content or ""
-        print(text, end="", flush=True)
-        full_response += text
+        full_response = ""
+        attempt = 0
+        max_retries = 1
 
-    print()
-    return full_response
+        while attempt <= max_retries:
+            try:
+                stream = openai_client.chat.completions.create(
+                    model=MODEL,
+                    messages=[
+                        {"role": "system", "content": inject_context(system)},
+                        {"role": "user", "content": content}
+                    ],
+                    stream=True,
+                    temperature=0.7,
+                    timeout=90
+                )
+                for chunk in stream:
+                    # chunk.choices[0] IndexError 방어
+                    if not chunk.choices:
+                        continue
+                    text = chunk.choices[0].delta.content or ""
+                    print(text, end="", flush=True)
+                    full_response += text
+                break  # 성공하면 루프 탈출
+            except Exception as e:
+                attempt += 1
+                if attempt > max_retries:
+                    raise
+                # 429나 네트워크 에러면 1회 재시도
+                if "429" in str(e) or "timeout" in str(e).lower():
+                    print(f"\n⚠️  API 한도/타임아웃 — {attempt}회 재시도...")
+                else:
+                    raise
+
+        print()
+        return full_response if full_response.strip() else "[민수 응답 없음]"
+
+    except Exception as e:
+        error_msg = f"[민수 실패: {str(e)[:100]} — 다음 단계로 넘어감]"
+        print(f"\n⚠️  {error_msg}")
+        return error_msg

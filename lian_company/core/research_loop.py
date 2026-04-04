@@ -75,11 +75,11 @@ def _save_cache(query: str, content: str):
         pass
 
 
-def _query_perplexity(query: str) -> str:
-    """Perplexity에 단일 쿼리 실행."""
+def _query_perplexity(query: str) -> str | None:
+    """Perplexity에 단일 쿼리 실행. 실패 시 None 반환."""
     api_key = os.getenv("PERPLEXITY_API_KEY")
     if not api_key:
-        return f"[PERPLEXITY_API_KEY 없음 — {query} 스킵]"
+        return None
 
     try:
         client = OpenAI(
@@ -100,7 +100,8 @@ def _query_perplexity(query: str) -> str:
         )
         return resp.choices[0].message.content
     except Exception as e:
-        return f"[수집 실패: {e}]"
+        # 실패 시 None 반환 (context에 "[수집 실패]" 문자열 들어가지 않게)
+        return None
 
 
 def research_before_task(role: str, task: str, queries: list[str] = None, auto_generate: bool = True) -> str:
@@ -149,15 +150,19 @@ def research_before_task(role: str, task: str, queries: list[str] = None, auto_g
             for future in as_completed(futures):
                 q = futures[future]
                 content = future.result()
-                _save_cache(q, content)
-                results.append(f"### {q}\n{content}")
-                print(f"    🔍 수집: {q[:40]}...")
+                # None 결과는 제외 (실패한 쿼리)
+                if content is not None:
+                    _save_cache(q, content)
+                    results.append(f"### {q}\n{content}")
+                    print(f"    🔍 수집: {q[:40]}...")
+                else:
+                    print(f"    ❌ 수집 실패: {q[:40]}...")
 
     if not results:
         return ""
 
     header = f"=== 최신 리서치 ({role}, {datetime.now().strftime('%Y-%m-%d')}) ===\n"
-    return header + "\n\n".join(results) + "\n=== 리서치 끝 ==="
+    return header + "\n\n".join(results) + "\n=== 리서치 끝 ===" if results else ""
 
 
 def auto_research_queries(topic: str, count: int = 3) -> list[str]:
