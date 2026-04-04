@@ -25,11 +25,9 @@
 - **원인**: 파일명에 괄호 `()` 포함. Windows에서 일부 케이스 경로 생성 실패
 - **해결 방향**: 파일명에서 괄호 제거하는 sanitize 추가
 
-### [BUG-004] 팀 인터뷰에서 input() 대기 — 자동화 차단
+### [BUG-004] ✅ 수정됨 — 팀 인터뷰에서 input() 대기 — 자동화 차단
 - **위치**: `teams/온라인영업팀/pipeline.py`, `teams/온라인납품팀/pipeline.py`, `teams/온라인마케팅팀/pipeline.py`
-- **증상**: CLI 인자로 태스크 넘겨도 인터뷰 단계에서 `input()` 대기 → autopilot에서 호출 시 빈 응답으로 넘어감
-- **원인**: pipeline이 autopilot에서 subprocess로 호출될 때 stdin 없음. 현재는 EOFError 처리로 빈 값 넘어가지만, 인터뷰 결과가 비어 있으면 품질 저하
-- **해결 방향**: CLI 인자가 있을 때 인터뷰 스킵하거나, 인자를 인터뷰 답변으로 직접 주입
+- **수정**: `sys.stdin.isatty()` 체크로 자동화 모드 감지 → subprocess/autopilot 호출 시 인터뷰 스킵, 직접 실행 시에만 인터뷰 진행
 
 ### [BUG-005] index.html 없음 경고 — launch_prep 불필요 경고
 - **위치**: `core/launch_prep.py`
