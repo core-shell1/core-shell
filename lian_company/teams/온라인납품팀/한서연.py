@@ -153,12 +153,15 @@ def run(context: dict, client: anthropic.Anthropic) -> str:
 
     user_msg = f"""업무: {context['task']}\n\n이전 결과:\n{str(context)[:2000]}"""
 
+    # 팀 지식 자동 주입 (분석 결과 기반 학습)
+    team_system_prompt = get_team_system_prompt(SYSTEM_PROMPT, TEAM_NAME)
+
     full_response = ""
     with client.messages.stream(
         model=MODEL,
         max_tokens=3000,
         messages=[{"role": "user", "content": user_msg}],
-        system=SYSTEM_PROMPT,
+        system=team_system_prompt,
     ) as stream:
         for text in stream.text_stream:
             print(text, end="", flush=True)
