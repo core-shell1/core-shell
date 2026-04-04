@@ -88,6 +88,16 @@ def run(task: str = ""):
 
     output_dir = os.path.join(OUTPUT_BASE, "온라인영업팀")
 
+    # 자동 레퍼런스 수집 (팀 실행 전)
+    if HAS_PRE_RESEARCH:
+        try:
+            research = auto_research(task, max_accounts=3, posts_per_account=3)
+            if research:
+                context["reference_research"] = research
+                save(output_dir, "00_자동레퍼런스.md", research)
+        except Exception as e:
+            print(f"⚠️ 자동 레퍼런스 수집 실패: {e}")
+
     # 미션 + 학습 자동 로드 (에이전트한테 자동 전달)
     enrich_context = None
     self_critique_all = None
