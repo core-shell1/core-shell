@@ -119,7 +119,7 @@ def analyze_with_gemini(files: list[Path], caption: str, url: str) -> str:
 
 
 def save_report(url: str, analysis: str, caption: str):
-    """보고사항들.md에 저장"""
+    """보고사항들.md에 저장 + 인사이트 자동 추출"""
     report_path = Path(__file__).parent.parent / "보고사항들.md"
 
     from datetime import datetime
@@ -141,6 +141,13 @@ def save_report(url: str, analysis: str, caption: str):
         f.write(entry)
 
     print(f"\n[완료] 보고사항들.md에 저장됨")
+
+    # 인사이트 자동 추출 (배경 작업)
+    try:
+        from core.insight_extractor import extract_and_save_single
+        extract_and_save_single(url, analysis)
+    except Exception as e:
+        print(f"⚠️  인사이트 추출 실패: {e}")
 
 
 def get_analyzed_urls() -> set:
