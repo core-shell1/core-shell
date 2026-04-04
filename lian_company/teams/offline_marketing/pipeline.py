@@ -398,9 +398,16 @@ def run(industry: str = "소상공인 네이버 플레이스 마케팅 대행"):
         print(f"⚠️  자가점검 루프 에러 (파이프라인 계속 진행): {e}")
         context["critique_result"] = {"passed": False, "error": str(e)}
 
+    # 자가점검
+    try:
+        critique = self_critique_all(context, client, team_name="offline_marketing")
+        context["critique"] = critique
+        save("_자가점검_결과.md", critique.get("full_critique", ""))
+    except Exception as e:
+        print(f"\n⚠️ 자가점검 실패: {e}")
+
     # 보고사항들.md 업데이트
     try:
-        import sys
         sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
         from knowledge.manager import write_report, save_team_result, collect_feedback
 
