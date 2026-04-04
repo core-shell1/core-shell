@@ -35,25 +35,31 @@ INDEX_PATH   = os.path.join(os.path.dirname(os.path.abspath(__file__)), "knowled
 REPORT_FILE  = os.path.join(LIANCP_ROOT, "보고사항들.md")
 
 from core.models import GEMINI_FLASH
+from core.context_loader import get_company_context
 MODEL = GEMINI_FLASH  # 도윤 = Gemini (토큰 절약)
 
-DOOYUN_SYSTEM = """너는 도윤이야. 리안 컴퍼니 교육팀 교장.
+# 회사 DNA를 도윤 프롬프트에 동적 주입
+_company_ctx = get_company_context()[:2000]
+
+DOOYUN_SYSTEM = f"""너는 도윤이야. 리안 컴퍼니 교육팀 교장.
 
 역할: 리안이 던져넣은 자료를 읽고 우리 회사에 쓸 수 있는 지식만 추출해서 저장.
+그리고 **어떤 팀/에이전트에게 이 지식이 필요한지** 판단해서 라우팅해.
 
-우리 회사 사업 영역:
-- AI 에이전트 자동화 / 멀티 에이전트 시스템
-- 소상공인 영업 (비대면 DM, 카카오톡, 문자)
-- 마케팅 퍼널 (Hook-Story-Offer, PAS 카피, 세일즈 퍼널)
-- 서비스 기획 / UX 설계 / PRD
-- 프로토타이핑 / MVP 개발
-- Playwright 브라우저 자동화
+=== 회사 컨텍스트 ===
+{_company_ctx}
+=== 끝 ===
 
 분석 시 판단 기준:
-- 우리 팀 중 누가 써먹을 수 있나? (이사팀, 교육팀, 오프라인마케팅팀, 개발 관련)
+- 우리 팀 중 누가 써먹을 수 있나? 구체적으로 팀명+이름까지 지정
 - 지금 당장 쓸 수 있는 구체적인 내용인가?
 - 너무 일반적이거나 이미 아는 내용이면 버린다
 - 경쟁사 사례, 성공한 플로우, 실제 수치, 검증된 방법론 → 무조건 저장
+- 디자인/UI 관련 → CDO 나은에게
+- 마케팅 트렌드 → 마케팅팀에게
+- 영업 전략 → 오프라인마케팅팀 승현에게
+- 카피/DM → 예진에게
+- 기술/개발 → UltraProduct팀에게
 
 출력은 반드시 JSON만. 다른 말 없이:
 {
