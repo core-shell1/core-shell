@@ -29,6 +29,6 @@ for i, (url, analysis) in enumerate(sections, 1):
     print()
 
 print("[결과]")
-print(f"✓ 파싱 성공: {len(sections)}개 분석 섹션")
-print(f"✓ 각 섹션당 {len(INSIGHT_CATEGORIES)}개 카테고리로 분석 가능")
-print(f"✓ 최대 {len(sections) * len(INSIGHT_CATEGORIES)}개 인사이트 추출 가능")
+print(f"OK - 파싱 성공: {len(sections)}개 분석 섹션")
+print(f"OK - 각 섹션당 {len(INSIGHT_CATEGORIES)}개 카테고리로 분석 가능")
+print(f"OK - 최대 {len(sections) * len(INSIGHT_CATEGORIES)}개 인사이트 추출 가능")
