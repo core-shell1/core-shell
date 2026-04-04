@@ -28,9 +28,10 @@ from typing import Optional
 from dataclasses import dataclass
 from core.models import (
     CLAUDE_OPUS, CLAUDE_SONNET, CLAUDE_HAIKU,
-    GEMINI_FLASH, GEMINI_PRO,
+    GEMINI_FLASH, GEMINI_PRO, GEMINI_31_PRO, GEMINI_31_FLASH,
     GPT4O, GPT4O_MINI, GPT41, GPT41_MINI, GPT41_NANO,
-    SONAR_PRO, SONAR,
+    O4_MINI, O3_MINI,
+    SONAR_PRO, SONAR, SONAR_REASONING,
 )
 
 
