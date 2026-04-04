@@ -333,7 +333,7 @@ def interview_for_team(context: dict, client: anthropic.Anthropic) -> str:
     with client.messages.stream(
         model=MODEL,
         max_tokens=400,
-        system=TEAM_INTERVIEW_PROMPT,
+        system=inject_context(TEAM_INTERVIEW_PROMPT),
         messages=[{"role": "user", "content": f"이사팀 분석 결과:\n{board_summary}"}],
         temperature=0.7,
     ) as stream:
