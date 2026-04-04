@@ -134,7 +134,43 @@ def run(context: dict, client: anthropic.Anthropic) -> str:
     print("🤖 최도현 | 퍼포먼스 광고 카피라이터 — 네이버GFA/메타/카카오모먼트 채널별 광고 카피+타겟팅 전략을 설계한다")
     print("="*60)
 
-    user_msg = f"""업무: {context['task']}\n\n이전 결과:\n{str(context)[:2000]}"""
+    # Meta Ads 카피 생성 및 점수 평가 자동 실행
+    copy_generation = ""
+    if generate_copy and score:
+        task_lower = context.get('task', '').lower()
+
+        # 광고 카피 생성 관련 키워드가 있으면 자동 실행
+        if any(keyword in task_lower for keyword in ['카피', '카피라이팅', '광고문', '문안', '소재']):
+            print("\n📝 광고 카피 자동 생성 및 점수 평가 중...")
+
+            # task에서 상품명, 타겟, pain point 추출 시도
+            product = context.get('product', 'AI 마케팅 플랫폼')
+            target = context.get('target', '소상공인')
+            pain_point = context.get('pain_point', '시간 부족, 광고 효율 낮음')
+
+            # 간단한 정규식 추출 시도
+            task_text = context.get('task', '')
+            if '상품:' in task_text:
+                product_match = re.search(r'상품:\s*([^\n]+)', task_text)
+                if product_match:
+                    product = product_match.group(1).strip()
+
+            if '타겟:' in task_text:
+                target_match = re.search(r'타겟:\s*([^\n]+)', task_text)
+                if target_match:
+                    target = target_match.group(1).strip()
+
+            # 단계 1: 카피 생성
+            copy_generation += "\n\n=== 자동 생성 광고 카피 ===\n"
+            generated_copies = generate_copy(product, target, pain_point)
+            copy_generation += generated_copies
+
+            # 단계 2: 각 카피 점수 평가 (80점 이상만 납품)
+            copy_generation += "\n\n=== 카피 품질 점수 평가 ===\n"
+            copy_generation += score(generated_copies, target)
+            copy_generation += "\n\n💡 팁: 80점 이상 카피만 즉시 집행 가능합니다.\n"
+
+    user_msg = f"""업무: {context['task']}\n\n이전 결과:\n{str(context)[:2000]}{copy_generation}"""
 
     full_response = ""
     with client.messages.stream(
