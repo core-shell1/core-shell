@@ -146,11 +146,16 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
     context_for_haeun["minsu"] = minsu_clean
     context_for_haeun["seoyun"] = seoyun_clean
     print(f"\n[4/9] 검증/반론...")
+    if HAS_STATUS_TRACKER:
+        update_status("하은", "이사팀", "running", "검증/반론 중")
     try:
         haeun_result = haeun.run(context_for_haeun, client)
     except Exception as e:
         print(f"\n⚠️  하은 에러 (건너뜀): {e}")
         haeun_result = f"검증 실패: {e}"
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("하은")
     context["haeun"] = haeun_result
     save_file(output_dir, "03_검증_하은.md", haeun_result)
     print_save_ok("03_검증_하은.md")
