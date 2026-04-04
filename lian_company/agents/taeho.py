@@ -31,7 +31,7 @@ def _run_claude_haiku(idea: str, client) -> str:
     with client.messages.stream(
         model=CLAUDE_HAIKU,
         max_tokens=1000,
-        system=SYSTEM_PROMPT,
+        system=inject_context(SYSTEM_PROMPT),
         messages=[{"role": "user", "content": f"이 아이디어 관련 트렌드 분석해줘: {idea}"}],
         temperature=0.5,
     ) as stream:
