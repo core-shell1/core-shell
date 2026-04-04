@@ -39,3 +39,14 @@
 - 범용적인 "마케팅 대행 어떠세요" DM
 - 타겟 분석 없는 무차별 아웃리치
 - 제안서에 기능 나열만
+
+## 학습 주제 (매 실행 전 Perplexity로 자동 수집)
+### 한국어
+- "스마트스토어 쿠팡 셀러 마케팅 대행 영업 실전 사례 2025 2026"
+- "온라인 셀러 대상 DM 아웃리치 답장률 높이는 첫 문장 한국"
+- "B2B 제안서 작성법 보고 바로 계약하고 싶은 구성"
+- "온라인 셀러 Pain Point 마케팅 직접 하는 고통 시간 비용"
+### English
+- "best cold email templates for ecommerce seller outreach 2025 highest open rate"
+- "B2B proposal design that converts consulting agency examples"
+- "online seller pain points marketing outsourcing decision triggers"
