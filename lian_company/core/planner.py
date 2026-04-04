@@ -100,7 +100,8 @@ PLANNER_PROMPT = f"""너는 리안 컴퍼니의 일일 작업 계획기야.
 ]
 ```
 
-JSON만 출력해. 설명 붙이지 마."""
+반드시 JSON 배열만 출력해. 설명, 마크다운 코드블록, 주석 붙이지 마.
+짧고 핵심만. 태스크 5개 이하."""
 
 
 def plan_daily(assets: dict) -> list[dict]:
