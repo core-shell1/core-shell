@@ -153,7 +153,7 @@ def analyze_with_gemini(client, image_path: Path) -> str:
 한국어로, 각 항목 2문장으로."""
 
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-2.5-flash",
             contents=[
                 gtypes.Part.from_bytes(data=image_bytes, mime_type="image/png"),
                 gtypes.Part.from_text(text=prompt)
