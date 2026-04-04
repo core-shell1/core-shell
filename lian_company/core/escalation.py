@@ -11,6 +11,7 @@ from core.notifier import send as discord_send
 _ROOT = os.path.dirname(os.path.dirname(__file__))
 PENDING_PATH = os.path.join(_ROOT, ".pending_questions.json")
 ARCHIVE_PATH = os.path.join(_ROOT, ".pending_questions_archive.jsonl")
+APPROVALS_PATH = os.path.join(_ROOT, ".autopilot_approvals.json")
 
 # ── 에스컬레이션 기준 ──
 
