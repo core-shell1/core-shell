@@ -9,6 +9,14 @@ from teams.온라인영업팀 import 최제안
 from teams.온라인영업팀 import 정클로저
 from teams.온라인영업팀 import 한총괄
 
+# 상태 추적
+try:
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+    from utils.status_tracker import update_status, clear_status
+    HAS_STATUS_TRACKER = True
+except ImportError:
+    HAS_STATUS_TRACKER = False
+
 load_dotenv()
 
 OUTPUT_BASE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), "team")
