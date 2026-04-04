@@ -1,6 +1,7 @@
 import os
 
 from core.models import CLAUDE_HAIKU
+from core.context_loader import inject_context
 
 SYSTEM_PROMPT = """너는 태호야. 리안 컴퍼니의 트렌드 스카우터야.
 
