@@ -17,6 +17,11 @@ import os
 import json
 from datetime import datetime
 import sys
+import io
+
+# Windows 콘솔 인코딩 수정
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 sys.path.insert(0, os.path.dirname(__file__))
 

@@ -1,15 +1,22 @@
 {
   "team": "offline_marketing",
-  "last_updated": "2026-04-04T00:00:00",
+  "last_updated": "2026-04-04T17:47:41.974197",
   "kpi": {
     "계약전환율": null,
     "답장률": null,
     "클로징사이클_일": null,
-    "월계약건수": 0
+    "월계약건수": 1
   },
   "current_version": "v1",
-  "data_count": 0,
-  "results_log": [],
+  "data_count": 1,
+  "results_log": [
+    {
+      "timestamp": "2026-04-04T17:47:41.974197",
+      "type": "계약",
+      "value": 1,
+      "reason": "미용실"
+    }
+  ],
   "last_improvement_reason": "초기 세팅",
   "next_action": "데이터 수집 대기 (5건 이상 시 자동 분석)"
 }
