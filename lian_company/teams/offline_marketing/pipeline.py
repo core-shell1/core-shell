@@ -338,24 +338,48 @@ def run(industry: str = "소상공인 네이버 플레이스 마케팅 대행"):
     if priority in ("research", "strategy", "copy", "validation", "full") or priority not in ("research", "strategy", "copy", "validation", "full"):
         # 모든 경우 전체 실행 (부분 실행은 폐기)
         print("\n[1] 영업 전문가 자료 수집...")
-        research = researcher.run(context)
-        context["research"] = research
-        save("_research_영업전문가자료.md", research)
+        if HAS_STATUS_TRACKER:
+            update_status("researcher", "offline_marketing", "running", "영업 자료 수집 중")
+        try:
+            research = researcher.run(context)
+            context["research"] = research
+            save("_research_영업전문가자료.md", research)
+        finally:
+            if HAS_STATUS_TRACKER:
+                clear_status("researcher")
 
         print("\n[2] 영업 전략 설계...")
-        strategy = strategist.run(context, client)
-        context["strategy"] = strategy
-        save("영업_전략_재설계.md", strategy)
+        if HAS_STATUS_TRACKER:
+            update_status("strategist", "offline_marketing", "running", "전략 수립 중")
+        try:
+            strategy = strategist.run(context, client)
+            context["strategy"] = strategy
+            save("영업_전략_재설계.md", strategy)
+        finally:
+            if HAS_STATUS_TRACKER:
+                clear_status("strategist")
 
         print("\n[3] 스크립트 + PPT 카피 생성...")
-        copy = copywriter.run(context, client)
-        context["copy"] = copy
-        save("영업_스크립트_v2.md", copy)
+        if HAS_STATUS_TRACKER:
+            update_status("copywriter", "offline_marketing", "running", "스크립트 작성 중")
+        try:
+            copy = copywriter.run(context, client)
+            context["copy"] = copy
+            save("영업_스크립트_v2.md", copy)
+        finally:
+            if HAS_STATUS_TRACKER:
+                clear_status("copywriter")
 
         print("\n[4] 현장 관점 검증...")
-        validation = validator.run(context, client)
-        context["validation"] = validation
-        save("영업_사업검증.md", validation)
+        if HAS_STATUS_TRACKER:
+            update_status("validator", "offline_marketing", "running", "검증 중")
+        try:
+            validation = validator.run(context, client)
+            context["validation"] = validation
+            save("영업_사업검증.md", validation)
+        finally:
+            if HAS_STATUS_TRACKER:
+                clear_status("validator")
 
     # ── 5. 아웃풋 자가점검 (리안 보고 전 마지막 QA) ───────────────────
     print("\n[5] 최종 품질 검사 | 자가점검 루프...")
