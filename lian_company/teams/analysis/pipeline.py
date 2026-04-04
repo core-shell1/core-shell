@@ -118,11 +118,16 @@ def run(root: str = DEFAULT_ROOT, delete_after: bool = True) -> list:
         fpath = os.path.join(root, fname)
         print(f"\n[{fname}]")
 
+        if HAS_STATUS_TRACKER:
+            update_status("analyzer", "analysis", "running", f"{fname} 분석 중")
+
         try:
             result = analyze(fpath)
         except Exception as e:
             print(f"  오류: {e}")
             entries.append({"original": fname, "skip": True, "skip_reason": str(e)})
+            if HAS_STATUS_TRACKER:
+                clear_status("analyzer")
             continue
 
         if result.get("useful"):
