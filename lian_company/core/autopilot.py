@@ -246,8 +246,11 @@ class Autopilot:
                 result = daily_loop(project)
                 return {"task": task, "success": True, "result_summary": result[:300] if result else "생성 완료"}
 
-            elif task_type == "outreach" and team:
-                return self._run_team_script(team)
+            elif task_type == "outreach":
+                # team 없으면 온라인영업팀 기본값
+                target = team or "온라인영업팀"
+                run_task = task.get("description", "영업 DM 생성")
+                return self._run_team_script_with_task(target, run_task)
 
             elif task_type == "research":
                 from core.research_loop import research_before_task
