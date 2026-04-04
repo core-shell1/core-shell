@@ -140,6 +140,47 @@ def save_report(url: str, analysis: str, caption: str):
     print(f"\n[완료] 보고사항들.md에 저장됨")
 
 
+def get_analyzed_urls() -> set:
+    """보고사항들.md에서 이미 분석된 URL 목록 추출"""
+    report_path = Path(__file__).parent.parent / "보고사항들.md"
+    if not report_path.exists():
+        return set()
+    content = report_path.read_text(encoding="utf-8", errors="replace")
+    import re
+    return set(re.findall(r'\*\*URL\*\*:\s*(https://www\.instagram\.com/\S+)', content))
+
+
+def analyze_one(url: str):
+    """단일 URL 분석 (모듈로 임포트 가능)"""
+    print(f"[다운로드] {url}")
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp_path = Path(tmp)
+        files = download_post(url, tmp_path)
+        print(f"   → {len(files)}개 파일")
+        caption = get_caption(url)
+        print(f"   → 캡션: {caption[:60]}...")
+        print("[분석] Gemini 분석 중...")
+        analysis = analyze_with_gemini(files, caption, url)
+        save_report(url, analysis, caption)
+
+
+def batch_analyze(urls: list[str]):
+    """URL 목록 배치 분석 — 이미 완료된 건 자동 스킵"""
+    done = get_analyzed_urls()
+    todo = [u for u in urls if u.strip() and u.strip() not in done]
+
+    print(f"\n[배치] 전체 {len(urls)}개 | 완료 {len(done) & len(urls)}개 스킵 | 남은 {len(todo)}개 분석")
+
+    for i, url in enumerate(todo, 1):
+        print(f"\n[{i}/{len(todo)}] ", end="")
+        try:
+            analyze_one(url)
+        except Exception as e:
+            print(f"오류 ({url}): {e}")
+
+    print(f"\n[배치 완료] {len(todo)}개 분석 → 보고사항들.md 저장됨")
+
+
 def main():
     if len(sys.argv) < 2:
         print("사용법: python analyze_instagram.py 'https://www.instagram.com/p/XXX/'")
