@@ -1,13 +1,12 @@
 import os
 import anthropic
 from dotenv import load_dotenv
-from teams.뷰티샵전문납품팀 import 한서연
-from teams.뷰티샵전문납품팀 import 박도윤
-from teams.뷰티샵전문납품팀 import 최예린
-from teams.뷰티샵전문납품팀 import 정민호
-from teams.뷰티샵전문납품팀 import 윤하은
-from teams.뷰티샵전문납품팀 import 강태현
-from teams.뷰티샵전문납품팀 import 이수빈
+from teams.뷰티샵전문납품팀 import 한소율
+from teams.뷰티샵전문납품팀 import 박채린
+from teams.뷰티샵전문납품팀 import 윤다인
+from teams.뷰티샵전문납품팀 import 정하윤
+from teams.뷰티샵전문납품팀 import 이서진
+from teams.뷰티샵전문납품팀 import 강민재
 
 load_dotenv()
 
@@ -70,40 +69,35 @@ def run(task: str = ""):
     context["interview"] = interview
     save(output_dir, "00_팀인터뷰.md", interview)
 
-    print("\n[1/7] 한서연...")
-    result_한서연 = 한서연.run(context, client)
-    context["한서연"] = result_한서연
-    save(output_dir, "한서연_결과.md", result_한서연)
+    print("\n[1/6] 한소율...")
+    result_한소율 = 한소율.run(context, client)
+    context["한소율"] = result_한소율
+    save(output_dir, "한소율_결과.md", result_한소율)
 
-    print("\n[2/7] 박도윤...")
-    result_박도윤 = 박도윤.run(context, client)
-    context["박도윤"] = result_박도윤
-    save(output_dir, "박도윤_결과.md", result_박도윤)
+    print("\n[2/6] 박채린...")
+    result_박채린 = 박채린.run(context, client)
+    context["박채린"] = result_박채린
+    save(output_dir, "박채린_결과.md", result_박채린)
 
-    print("\n[3/7] 최예린...")
-    result_최예린 = 최예린.run(context, client)
-    context["최예린"] = result_최예린
-    save(output_dir, "최예린_결과.md", result_최예린)
+    print("\n[3/6] 윤다인...")
+    result_윤다인 = 윤다인.run(context, client)
+    context["윤다인"] = result_윤다인
+    save(output_dir, "윤다인_결과.md", result_윤다인)
 
-    print("\n[4/7] 정민호...")
-    result_정민호 = 정민호.run(context, client)
-    context["정민호"] = result_정민호
-    save(output_dir, "정민호_결과.md", result_정민호)
+    print("\n[4/6] 정하윤...")
+    result_정하윤 = 정하윤.run(context, client)
+    context["정하윤"] = result_정하윤
+    save(output_dir, "정하윤_결과.md", result_정하윤)
 
-    print("\n[5/7] 윤하은...")
-    result_윤하은 = 윤하은.run(context, client)
-    context["윤하은"] = result_윤하은
-    save(output_dir, "윤하은_결과.md", result_윤하은)
+    print("\n[5/6] 이서진...")
+    result_이서진 = 이서진.run(context, client)
+    context["이서진"] = result_이서진
+    save(output_dir, "이서진_결과.md", result_이서진)
 
-    print("\n[6/7] 강태현...")
-    result_강태현 = 강태현.run(context, client)
-    context["강태현"] = result_강태현
-    save(output_dir, "강태현_결과.md", result_강태현)
-
-    print("\n[7/7] 이수빈...")
-    result_이수빈 = 이수빈.run(context, client)
-    context["이수빈"] = result_이수빈
-    save(output_dir, "이수빈_결과.md", result_이수빈)
+    print("\n[6/6] 강민재...")
+    result_강민재 = 강민재.run(context, client)
+    context["강민재"] = result_강민재
+    save(output_dir, "강민재_결과.md", result_강민재)
 
 
     # 결과물을 지식으로 저장 + 리안 피드백 수집
