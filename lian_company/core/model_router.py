@@ -64,8 +64,12 @@ class TaskType(str, Enum):
     TREND_SCOUTING      = "trend_scouting"       # 트렌드 탐색 → Sonar Pro
     COMPETITOR_RESEARCH = "competitor_research"  # 경쟁사 조사 → Sonar Pro
 
+    # 추론 특화 (수학·논리·복잡한 계획)
+    REASONING           = "reasoning"            # 복잡한 추론 → o4-mini
+    RESEARCH_REASONING  = "research_reasoning"   # 실시간 검색 + 추론 → Sonar Reasoning
+
     # 속도/비용 최적화
-    FAST_CHEAP          = "fast_cheap"           # 빠름+저렴 → Haiku / GPT-4.1-nano
+    FAST_CHEAP          = "fast_cheap"           # 빠름+저렴 → GPT-4.1-nano
     DAILY_CONTENT       = "daily_content"        # 매일 반복 콘텐츠 → Haiku
 
 
