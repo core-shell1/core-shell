@@ -9,6 +9,14 @@ from teams.온라인마케팅팀 import 박시우
 from teams.온라인마케팅팀 import 이도현
 from teams.온라인마케팅팀 import 강하린
 
+# 상태 추적
+try:
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+    from utils.status_tracker import update_status, clear_status
+    HAS_STATUS_TRACKER = True
+except ImportError:
+    HAS_STATUS_TRACKER = False
+
 load_dotenv()
 
 OUTPUT_BASE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), "team")
