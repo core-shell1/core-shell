@@ -72,14 +72,13 @@ def run(task: str = ""):
 
     output_dir = os.path.join(OUTPUT_BASE, "온라인마케팅팀")
 
-    # 미션 로드
-    mission_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mission.md")
+    # 미션 + 학습 자동 로드 (에이전트한테 자동 전달)
     try:
-        with open(mission_path, encoding="utf-8") as f:
-            context["mission"] = f.read()
-        print(f"\n📋 미션 로드 완료")
-    except FileNotFoundError:
-        context["mission"] = ""
+        sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+        from core.pipeline_utils import enrich_context, self_critique_all
+        context = enrich_context(context, team_slug="온라인마케팅팀")
+    except Exception as e:
+        print(f"⚠️ 미션/학습 로드 실패: {e}")
 
     # 팀 인터뷰 (리안한테 디테일 파악)
     interview = team_interview(task, client)
