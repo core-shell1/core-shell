@@ -1,5 +1,17 @@
 import os
+import sys
+import io
 import anthropic
+
+# Windows UTF-8 환경 설정
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+# Meta Ads 분석 모듈 임포트
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../utils'))
+try:
+    from meta_ads import audit
+except ImportError:
+    audit = None
 
 MODEL = "claude-sonnet-4-5"
 
