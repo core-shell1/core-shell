@@ -149,7 +149,7 @@ def run_qa(url: str, project_name: str = "프로젝트") -> dict:
 
     # 점수 추출
     import re
-    score_match = re.search(r"종합 점수.*?(\d+)/10", qa_result)
+    score_match = re.search(r"종합 점수.*?(\d+\.?\d*)/10", qa_result)
     score = int(score_match.group(1)) if score_match else 5
 
     # 7점 이하면 보고사항들.md에 올림
