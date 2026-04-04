@@ -463,3 +463,100 @@ Go/No-Go: {context.get('verdict', '')} (점수: {context.get('score', '')})
     print(f"📋 팀 업무: {team_purpose.strip()[:100]}...")
 
     return team_name.strip(), team_purpose.strip()
+
+
+# ── 자동파일럿 모드 ──────────────────────────────────────────────
+
+AUTOPILOT_CLARIFY_PROMPT = """너는 시은이야. 리안 컴퍼니의 오케스트레이터야.
+
+리안이 아이디어를 던졌어. 리안한테 질문하지 마. 네가 알아서 명확화해.
+회사 컨텍스트를 보면 리안이 어떤 사람이고, 회사가 뭐하는지, 뭘 가지고 있는지 다 나와있어.
+
+네가 할 것:
+1. 아이디어가 대행 사업인지 SaaS인지 판단
+2. 타겟이 누군지 추론 (회사 컨텍스트 기반)
+3. 핵심 기능/서비스가 뭔지 정리
+4. 수익 모델 추론
+5. 우리 자산 중 활용할 수 있는 것
+
+출력 형식:
+## 시은의 자동 명확화
+- 유형: [대행 사업 / SaaS / 자동화 툴 / 기타]
+- 타겟: [구체적으로]
+- 핵심: [한 줄]
+- 수익 모델: [추론]
+- 우리 자산 활용: [naver-diagnosis, 온라인팀 등]
+- 상용화 여부: [상용화 / 개인 툴]
+
+확신이 없는 부분은 "추정:" 표기. 절대 리안한테 질문하지 마."""
+
+
+def autopilot_run(idea: str, client: anthropic.Anthropic) -> dict:
+    """자동파일럿 모드 — input() 없이 회사DNA 기반으로 자동 명확화."""
+    print("\n" + "="*60)
+    print("🤖 시은 | 자동파일럿 명확화")
+    print("="*60)
+
+    full_response = ""
+    with client.messages.stream(
+        model=MODEL,
+        max_tokens=600,
+        system=inject_context(AUTOPILOT_CLARIFY_PROMPT),
+        messages=[{"role": "user", "content": f"아이디어: {idea}"}],
+        temperature=0.3,
+    ) as stream:
+        for text in stream.text_stream:
+            text = _safe(text)
+            print(text, end="", flush=True)
+            full_response += text
+
+    print()
+
+    clarified = f"아이디어: {idea}\n\n{full_response}"
+    is_commercial = _detect_commercial(clarified)
+    is_software = _detect_software(clarified)
+
+    return {
+        "idea": idea,
+        "clarified": clarified,
+        "is_commercial": is_commercial,
+        "is_software": is_software,
+        "autopilot": True,
+    }
+
+
+def autopilot_interview(context: dict, client: anthropic.Anthropic) -> str:
+    """자동파일럿 인터뷰 — 리안한테 안 물어보고 회사DNA로 추론."""
+    print("\n" + "="*60)
+    print("🤖 시은 | 자동파일럿 워크플로우 추론")
+    print("="*60)
+
+    system = """너는 시은이야. 팀 설계를 위해 리안의 워크플로우를 파악해야 하는데,
+리안한테 직접 물어보지 않고 회사 컨텍스트에서 추론해.
+
+회사 컨텍스트를 보면 리안이 뭘 하고 있고, 어떤 자산이 있고, 어떤 채널을 쓰는지 나와있어.
+이걸 기반으로 이 프로젝트의 실제 워크플로우를 추론해서 정리해줘.
+
+출력: "추론된 리안 워크플로우:" + 구체적 내용 5줄 이내"""
+
+    idea = context.get("clarified", context.get("idea", ""))
+    board_summary = f"""프로젝트: {idea}
+트렌드: {context.get('taeho', '')[:200]}
+시장: {context.get('seoyun', '')[:200]}
+전략: {context.get('minsu', '')[:200]}"""
+
+    full_response = ""
+    with client.messages.stream(
+        model=MODEL,
+        max_tokens=400,
+        system=inject_context(system),
+        messages=[{"role": "user", "content": f"이사팀 분석 결과:\n{board_summary}"}],
+        temperature=0.3,
+    ) as stream:
+        for text in stream.text_stream:
+            text = _safe(text)
+            print(text, end="", flush=True)
+            full_response += text
+
+    print()
+    return _safe(full_response)
