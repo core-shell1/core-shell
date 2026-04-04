@@ -158,8 +158,68 @@ ISSUES: [이슈1] | [이슈2] | ...
         print(f"\n✅ 자가점검 통과 ({score}/40)")
     else:
         print(f"\n❌ 자가점검 미통과 ({score}/40) — 이슈 {len(issues)}개")
+        # 미통과 시 mission.md에 피드백 자동 기록
+        if team_name:
+            _write_critique_to_mission(team_name, score, issues, full_response)
 
     return result
+
+
+def _write_critique_to_mission(team_name: str, score: int, issues: list, full_critique: str):
+    """자가점검 미통과 시 mission.md에 개선 필요 항목 자동 기록.
+    다음 실행 때 에이전트들이 enrich_context()로 이 내용을 읽게 됨.
+    """
+    import re
+    from datetime import datetime
+
+    team_dir = _find_team_dir(team_name)
+    if not team_dir:
+        return
+
+    mission_path = os.path.join(team_dir, "mission.md")
+    if not os.path.exists(mission_path):
+        return
+
+    date_str = datetime.now().strftime("%Y-%m-%d")
+
+    # 이슈 요약 추출 (없으면 full_critique에서 핵심 줄 뽑기)
+    if issues:
+        issue_text = "\n".join(f"- {i}" for i in issues[:5])
+    else:
+        # 점수 관련 줄 파싱 시도
+        lines = [l.strip() for l in full_critique.split("\n") if l.strip() and any(
+            kw in l for kw in ["미달", "부족", "없음", "오류", "틀림", "미완성", "문제"]
+        )]
+        issue_text = "\n".join(f"- {l}" for l in lines[:5]) if lines else "- 상세 이슈는 _자가점검_결과.md 참고"
+
+    feedback_block = f"""
+
+## 자가점검 피드백 ({date_str}) — {score}/40점
+> 이전 실행에서 발견된 문제. 이번 실행에서 반드시 개선할 것.
+
+{issue_text}
+
+"""
+
+    try:
+        with open(mission_path, encoding="utf-8") as f:
+            content = f.read()
+
+        # 기존 피드백 블록 제거 후 새 것으로 교체
+        content = re.sub(
+            r"\n## 자가점검 피드백 \([\d-]+\).*?(?=\n## |\Z)",
+            "",
+            content,
+            flags=re.DOTALL
+        )
+        content = content.rstrip() + feedback_block
+
+        with open(mission_path, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        print(f"📝 mission.md 피드백 업데이트 완료 ({score}/40 → 다음 실행에 반영)")
+    except Exception as e:
+        print(f"⚠️ mission.md 피드백 업데이트 실패: {e}")
 
 
 def _find_team_dir(team_slug: str) -> str | None:
