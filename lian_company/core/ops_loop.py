@@ -331,6 +331,98 @@ KPI 데이터:
     return full_response
 
 
+# ── 모니터링 루프 ───────────────────────────────────────────────
+
+MONITOR_PROMPT = """너는 리안 컴퍼니의 모니터 AI야. 2시간마다 돌면서 이상 신호를 감지해.
+
+분석할 것:
+1. **에러/이슈 감지** — 보고사항들.md에서 에러/실패 키워드 스캔
+2. **점수 이상** — 팀 실행 결과 중 평점 낮은 것 (7점 이하)
+3. **응답 지연** — 에이전트가 30분 이상 응답 없으면 알림
+4. **패턴 인식** — 같은 종류의 에러가 반복되면 근본 원인 지적
+
+출력 형식 (간결하게):
+## 모니터링 리포트
+
+🟢 정상: [점검 내용]
+🟡 주의: [항목] (이유)
+🔴 긴급: [항목] (즉시 조치 필요)
+
+[추천 액션 (있으면)]
+
+문제 없으면 "✅ 모니터링: 정상" 한 줄만."""
+
+
+def monitor(project_name: str = "all"):
+    """2시간마다 자동 체크 — 이슈 감지 + 알림."""
+    client = _get_client()
+    print(f"\n{'='*60}")
+    print(f"🔍 모니터링 | {project_name}")
+    print(f"{'='*60}")
+
+    # 1. 보고사항들.md 스캔
+    report_content = ""
+    if os.path.exists(REPORT_PATH):
+        with open(REPORT_PATH, encoding="utf-8") as f:
+            report_content = f.read()
+
+    # 최근 2시간 분량만 추출 (마지막 1000자)
+    recent_report = report_content[-2000:] if len(report_content) > 2000 else report_content
+
+    # 2. 에러 키워드 스캔
+    error_keywords = ["에러", "실패", "안 됨", "문제", "timeout", "exception", "failed", "error"]
+    issues_found = []
+
+    for kw in error_keywords:
+        if kw.lower() in recent_report.lower():
+            # 해당 라인 추출
+            for line in recent_report.split("\n"):
+                if kw.lower() in line.lower() and len(line.strip()) > 5:
+                    issues_found.append(line.strip()[:100])
+
+    # 3. 점수 이상 스캔 (점수: X/10 패턴)
+    import re
+    score_pattern = r'점수[:\s]+(\d+(?:\.\d+)?)\s*/\s*10'
+    scores = re.findall(score_pattern, recent_report)
+    low_scores = [f"{float(s)}/10" for s in scores if float(s) < 7.0]
+
+    # 4. 모니터링 분석 요청
+    user_msg = f"""프로젝트: {project_name}
+
+최근 보고사항 (최근 2시간):
+{recent_report}
+
+감지된 이슈:
+- 에러 키워드: {', '.join(issues_found) if issues_found else '없음'}
+- 낮은 점수: {', '.join(low_scores) if low_scores else '없음'}
+
+모니터링 분석해줘."""
+
+    full_response = ""
+    with client.messages.stream(
+        model=MODEL,
+        max_tokens=600,
+        system=inject_context(MONITOR_PROMPT),
+        messages=[{"role": "user", "content": user_msg}],
+        temperature=0.3,
+    ) as stream:
+        for text in stream.text_stream:
+            print(text, end="", flush=True)
+            full_response += text
+
+    print()
+
+    # 5. 보고사항들.md에 기록
+    _save_to_report(f"모니터링 체크 ({project_name})", full_response)
+    print(f"\n📋 모니터링 결과 저장 완료")
+
+    # 6. 디스코드 알림 (이슈 있으면만)
+    if "🔴" in full_response or "🟡" in full_response or issues_found or low_scores:
+        _send_discord(f"⚠️ 모니터링 알림 — {project_name}", full_response)
+
+    return full_response
+
+
 # ── CLI ──────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -339,10 +431,11 @@ if __name__ == "__main__":
         print('  python -m core.ops_loop daily "프로젝트명"')
         print('  python -m core.ops_loop weekly "프로젝트명" ["성과 데이터"]')
         print('  python -m core.ops_loop pivot "프로젝트명" [미달주수]')
+        print('  python -m core.ops_loop monitor ["프로젝트명" | "all"]')
         sys.exit(1)
 
     mode = sys.argv[1]
-    project = sys.argv[2]
+    project = sys.argv[2] if len(sys.argv) > 2 else "all"
 
     if mode == "daily":
         daily_loop(project)
@@ -352,5 +445,7 @@ if __name__ == "__main__":
     elif mode == "pivot":
         weeks = int(sys.argv[3]) if len(sys.argv) > 3 else 3
         pivot_check(project, weeks_failing=weeks)
+    elif mode == "monitor":
+        monitor(project)
     else:
-        print(f"알 수 없는 모드: {mode}. daily / weekly / pivot 사용.")
+        print(f"알 수 없는 모드: {mode}. daily / weekly / pivot / monitor 사용.")
