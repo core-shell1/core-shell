@@ -143,7 +143,7 @@ def run(context: dict, client=None) -> str:
     stream = openai_client.chat.completions.create(
         model=MODEL,
         messages=[
-            {"role": "system", "content": system},
+            {"role": "system", "content": inject_context(system)},
             {"role": "user", "content": content}
         ],
         stream=True,
