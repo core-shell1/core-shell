@@ -406,12 +406,30 @@ def run(industry: str = "소상공인 네이버 플레이스 마케팅 대행"):
                          tags=["영업", "DM", "스크립트", "카피"])
 
         # 보고
+        critique_summary = ""
+        if context.get("critique_result"):
+            cr = context["critique_result"]
+            if cr.get("passed"):
+                critique_summary = (
+                    f"\n\n**✅ 자가점검 통과** (총 {cr.get('iterations', 0)}회 검토)\n"
+                    f"- 발견 이슈: {len(cr.get('issues', []))}개\n"
+                    f"- 적용 개선안: {len(cr.get('improvements', []))}개"
+                )
+            else:
+                unresolved = len([i for i in cr.get('issues', []) if i.get('status') == '문제있음'])
+                critique_summary = (
+                    f"\n\n**⚠️  자가점검 진행 중** (총 {cr.get('iterations', 0)}회 검토)\n"
+                    f"- 미해결 이슈: {unresolved}개\n"
+                    f"- 상세: `_critique_report.json` 참조"
+                )
+
         report_content = (
             f"**{industry}** 영업 자료 완성.\n\n"
             f"- 재원: 영업 전문가 자료 수집 완료\n"
             f"- 승현: 영업 전략 재설계 완료 (운영 7개 항목 포함)\n"
             f"- 예진: DM 스크립트 + PPT 카피 완성\n"
-            f"- 검증자: 현장 관점 사업 검증 완료\n\n"
+            f"- 검증자: 현장 관점 사업 검증 완료"
+            f"{critique_summary}\n\n"
             f"저장 위치: `{OUTPUT_DIR}`\n\n"
             f"리안, **영업_사업검증.md 먼저 봐줘.** "
             f"영업 시작 전에 고쳐야 할 것들 정리되어 있어."
