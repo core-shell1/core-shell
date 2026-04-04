@@ -27,6 +27,13 @@ load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file_
 
 from teams.analysis.analyzer import analyze, IMAGE_EXT, VIDEO_EXT
 
+# 상태 추적
+try:
+    from utils.status_tracker import update_status, clear_status
+    HAS_STATUS_TRACKER = True
+except ImportError:
+    HAS_STATUS_TRACKER = False
+
 LIANCP_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 KNOWLEDGE_BASE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "knowledge", "base")
 INDEX_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "knowledge", "index.json")
