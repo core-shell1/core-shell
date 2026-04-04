@@ -10,6 +10,10 @@ import sys
 import json
 from pathlib import Path
 
+# Windows UTF-8 인코딩
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+
 def test_patterns():
     """패턴 매칭 테스트"""
     test_cases = [
