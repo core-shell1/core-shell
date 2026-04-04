@@ -275,6 +275,9 @@ if __name__ == "__main__":
     print(f"\n팀 생성 완료: {team_dir}")
     print(f"실행: python {runner_name} \"업무 내용\"")
 
+    # mission.md 자동 생성 (팀 목표 설정 — 없으면 붕뜸)
+    _generate_mission(team_name, slug, team_dir, curriculum)
+
     # 조직도 자동 업데이트
     _update_org_chart(team_name, agents)
 
