@@ -41,12 +41,21 @@ def save_report(title: str, content: str):
 
 def upload_video(client, path: Path):
     print(f"  [영상 업로드] {path.name[:50]}...")
-    uploaded = client.files.upload(file=path)
-    while uploaded.state.name == "PROCESSING":
-        time.sleep(2)
-        uploaded = client.files.get(name=uploaded.name)
-    if uploaded.state.name == "FAILED":
-        raise RuntimeError("업로드 실패")
+    # 한글 파일명 → ASCII 임시 파일로 복사 후 업로드
+    suffix = path.suffix.lower()
+    with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as tmp:
+        tmp_path = Path(tmp.name)
+    import shutil
+    shutil.copy2(path, tmp_path)
+    try:
+        uploaded = client.files.upload(file=tmp_path)
+        while uploaded.state.name == "PROCESSING":
+            time.sleep(2)
+            uploaded = client.files.get(name=uploaded.name)
+        if uploaded.state.name == "FAILED":
+            raise RuntimeError("업로드 실패")
+    finally:
+        tmp_path.unlink(missing_ok=True)
     return uploaded
 
 
