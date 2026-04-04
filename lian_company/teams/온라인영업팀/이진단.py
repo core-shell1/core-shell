@@ -147,7 +147,22 @@ def run(context: dict, client: anthropic.Anthropic) -> str:
     print("🤖 이진단 | 업체별 온라인 현황 무료 진단서 자동 생성 전문가")
     print("="*60)
 
-    user_msg = f"""업무: {context['task']}\n\n이전 결과:\n{str(context)[:2000]}"""
+    # Meta Ads 감사 자동 실행 (광고 계정 정보가 있으면)
+    audit_analysis = ""
+    if audit:
+        task_lower = context.get('task', '').lower()
+
+        # 광고 관련 키워드가 있으면 audit 실행
+        if any(keyword in task_lower for keyword in ['광고', '계정', '감사', 'ads', '메타']):
+            print("\n🔍 광고 계정 종합 감사 중...")
+
+            # context에서 계정 정보 추출
+            account_info = str(context)[:1000]  # 첫 1000자까지 계정 정보로 간주
+
+            audit_analysis = f"\n\n=== 광고 계정 종합 감사 결과 ===\n"
+            audit_analysis += audit(account_info)
+
+    user_msg = f"""업무: {context['task']}\n\n이전 결과:\n{str(context)[:2000]}{audit_analysis}"""
 
     full_response = ""
     with client.messages.stream(
