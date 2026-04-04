@@ -8,8 +8,33 @@
 
 ## 0. 빠른 시작 (리안용 치트시트)
 
-### 새 프로젝트 시작
-리안: "~한 프로젝트 할거야" → Claude가 이사팀 소집 → 자동 진행
+### 새 프로젝트 시작 (자동파일럿)
+```bash
+cd lian_company
+./venv/Scripts/python.exe main.py "온라인 마케팅 대행 사업"
+# → input() 없이 이사팀 자동 실행 → 보고서가 보고사항들.md에 저장됨
+# → 리안은 보고서만 보고 "진행" 또는 "수정해" 한마디
+```
+
+### 새 프로젝트 시작 (대화형 — 시은과 대화)
+```bash
+cd lian_company
+./venv/Scripts/python.exe main.py
+# → 시은이 질문하면서 명확화 → 이사팀 실행
+```
+
+### 매일 운영 루프 (콘텐츠 자동 생성)
+```bash
+cd lian_company
+./venv/Scripts/python.exe -m core.ops_loop daily "프로젝트명"
+# → 인스타 캡션 + 블로그 제목 + 영업 DM 자동 생성 → 보고사항들.md
+```
+
+### 매주 성과 리뷰
+```bash
+cd lian_company
+./venv/Scripts/python.exe -m core.ops_loop weekly "프로젝트명" "이번 주 성과 데이터"
+```
 
 ### 영업 결과 입력 (팀 학습)
 ```bash
