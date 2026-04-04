@@ -106,40 +106,80 @@ def run(industry: str = "소상공인 네이버 플레이스 마케팅 대행"):
     context = {"industry": industry}
 
     print(f"\n{'='*60}")
-    print(f"🏢 오프라인 마케팅 팀 가동")
-    print(f"대상: {industry}")
+    print(f"🏢 오프라인 마케팅 팀 자율 가동")
     print(f"{'='*60}")
 
-    # 현재 영업 자료 로드 (개선 참고용)
+    # ── 0. 미션 로드 ──────────────────────────────────────────
+    mission_path = os.path.join(TEAM_DIR, "mission.md")
     try:
-        with open(os.path.join(OUTPUT_DIR, "영업_스크립트.md"), encoding="utf-8") as f:
-            context["current_materials"] = f.read()
+        with open(mission_path, encoding="utf-8") as f:
+            mission = f.read()
     except Exception:
-        context["current_materials"] = ""
+        mission = "소상공인 대상 카톡/문자 비대면 영업으로 월 5건 계약 달성"
 
-    # Step 1: 리서처 — 영업 전문가 자료 방대 수집
-    print("\n[1/3] 영업 전문가 자료 수집...")
-    research = researcher.run(context)
-    context["research"] = research
-    save("_research_영업전문가자료.md", research)
+    # ── 1. 현재 상태 파악 ─────────────────────────────────────
+    print("\n[자가진단] 현재 팀 산출물 상태 파악 중...")
+    state = _read_current_state()
 
-    # Step 2: 전략가 — 영업 전략 재설계
-    print("\n[2/3] 영업 전략 재설계...")
-    strategy = strategist.run(context, client)
-    context["strategy"] = strategy
-    save("영업_전략_재설계.md", strategy)
+    # 기존 자료 컨텍스트로 로드
+    for key, info in state.items():
+        if isinstance(info, dict) and info.get("exists"):
+            context[f"current_{key}"] = info.get("preview", "")
+    context["current_materials"] = context.get("current_스크립트", "")
 
-    # Step 3: 카피라이터 — 스크립트 + PPT 생성
-    print("\n[3/4] 스크립트 + PPT 카피 생성...")
-    copy = copywriter.run(context, client)
-    context["copy"] = copy
-    save("영업_스크립트_v2.md", copy)
+    # ── 2. 자율 판단 — 이번에 뭘 집중할지 ────────────────────
+    print("[자가진단] 이번 실행 우선순위 판단 중...")
+    assessment = _self_assess(client, state, mission)
+    priority = assessment.get("priority", "full")
+    focus = assessment.get("focus", "")
+    context["focus"] = focus
+    context["assessment"] = assessment.get("assessment", "")
 
-    # Step 4: 검증자 — 현장 관점 사업 검증 (Claude Opus)
-    print("\n[4/4] 현장 관점 사업 검증...")
-    validation = validator.run(context, client)
-    context["validation"] = validation
-    save("영업_사업검증.md", validation)
+    print(f"\n📋 팀 자가진단 결과:")
+    print(f"   현재 상태: {assessment.get('assessment', '')}")
+    print(f"   이번 집중: {priority} — {assessment.get('reason', '')}")
+    print(f"   포커스: {focus}")
+
+    # ── 3. 우선순위에 따른 선택적 실행 ───────────────────────
+    if priority in ("research", "full"):
+        print("\n[1] 영업 전문가 자료 수집...")
+        research = researcher.run(context)
+        context["research"] = research
+        save("_research_영업전문가자료.md", research)
+
+    if priority in ("strategy", "full"):
+        print("\n[2] 영업 전략 설계...")
+        strategy = strategist.run(context, client)
+        context["strategy"] = strategy
+        save("영업_전략_재설계.md", strategy)
+
+    if priority in ("copy", "full"):
+        print("\n[3] 스크립트 + PPT 카피 생성...")
+        copy = copywriter.run(context, client)
+        context["copy"] = copy
+        save("영업_스크립트_v2.md", copy)
+
+    if priority in ("validation", "full"):
+        print("\n[4] 현장 관점 검증...")
+        validation = validator.run(context, client)
+        context["validation"] = validation
+        save("영업_사업검증.md", validation)
+
+    # 부분 실행인 경우 단일 집중 실행
+    if priority not in ("research", "strategy", "copy", "validation", "full"):
+        print(f"\n[전체] 통합 실행 (판단값 '{priority}' 알 수 없어 전체 실행)...")
+        research = researcher.run(context)
+        context["research"] = research
+        save("_research_영업전문가자료.md", research)
+        strategy = strategist.run(context, client)
+        context["strategy"] = strategy
+        save("영업_전략_재설계.md", strategy)
+        copy = copywriter.run(context, client)
+        context["copy"] = copy
+        save("영업_스크립트_v2.md", copy)
+        validation = validator.run(context, client)
+        context["validation"] = validation
+        save("영업_사업검증.md", validation)
 
     # 보고사항들.md 업데이트
     try:
