@@ -357,6 +357,40 @@ def run(industry: str = "소상공인 네이버 플레이스 마케팅 대행"):
         context["validation"] = validation
         save("영업_사업검증.md", validation)
 
+    # ── 5. 아웃풋 자가점검 (리안 보고 전 마지막 QA) ───────────────────
+    print("\n[5] 최종 품질 검사 | 자가점검 루프...")
+    try:
+        critique_output = {
+            "copy": copy,
+            "strategy": strategy,
+            "industry": industry,
+            "context": context
+        }
+        critique_result = post_run_critique(critique_output, client, max_iterations=2)
+
+        # 수정된 스크립트 저장 (이슈가 있더라도 개선된 버전 저장)
+        if critique_result["final_copy"] != copy:
+            save("영업_스크립트_v2_자가수정.md", critique_result["final_copy"])
+            copy = critique_result["final_copy"]
+            context["copy"] = copy
+
+        # 자가점검 보고서 저장
+        critique_report = {
+            "passed": critique_result["passed"],
+            "iterations": critique_result["iterations"],
+            "issues_found": len(critique_result["issues"]),
+            "improvements_applied": len(critique_result["improvements"]),
+            "unresolved_issues": [i for i in critique_result["issues"] if i.get("status") == "문제있음"]
+        }
+        with open(os.path.join(OUTPUT_DIR, "_critique_report.json"), "w", encoding="utf-8") as f:
+            json.dump(critique_report, f, ensure_ascii=False, indent=2)
+
+        context["critique_result"] = critique_result
+
+    except Exception as e:
+        print(f"⚠️  자가점검 루프 에러 (파이프라인 계속 진행): {e}")
+        context["critique_result"] = {"passed": False, "error": str(e)}
+
     # 보고사항들.md 업데이트
     try:
         import sys
