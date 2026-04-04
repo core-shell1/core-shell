@@ -246,6 +246,9 @@ def weekly_loop(project_name: str, performance_data: str = ""):
     _save_to_report(f"주간 리뷰 ({project_name})", full_response)
     print(f"\n📋 보고사항들.md에 저장 완료")
 
+    # 디스코드 알림
+    _send_discord(f"주간 리뷰 — {project_name}", full_response)
+
     # 자기 점검
     try:
         post_run_review("주간 리뷰", {"project": project_name}, full_response)
