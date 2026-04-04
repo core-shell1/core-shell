@@ -53,7 +53,7 @@ def run(context: dict, client=None) -> str:
     stream = perplexity.chat.completions.create(
         model=MODEL,
         messages=[
-            {"role": "system", "content": system},
+            {"role": "system", "content": inject_context(system)},
             {"role": "user", "content": f"다음 아이디어를 시장 조사해줘:\n\n{idea}"}
         ],
         stream=True
