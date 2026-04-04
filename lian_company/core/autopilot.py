@@ -280,6 +280,29 @@ class Autopilot:
         except Exception as e:
             return {"task": task, "success": False, "error": str(e), "result_summary": f"실행 실패: {e}"}
 
+    def _run_team_script_with_task(self, team_name: str, task_desc: str) -> dict:
+        """팀 스크립트를 태스크 설명과 함께 실행."""
+        SCRIPT_MAP = {
+            "offline_marketing": "offline_sales.py",
+        }
+        script_name = SCRIPT_MAP.get(team_name, f"run_{team_name}.py")
+        script = os.path.join(_ROOT, script_name)
+        if not os.path.exists(script):
+            return {"success": False, "error": f"스크립트 없음: {script_name}", "result_summary": ""}
+        try:
+            result = subprocess.run(
+                [VENV_PYTHON, script, task_desc],
+                capture_output=True, text=True, timeout=300, cwd=_ROOT,
+                env={**os.environ, "PYTHONIOENCODING": "utf-8"},
+            )
+            output = result.stdout[-500:] if result.stdout else ""
+            success = result.returncode == 0
+            return {"success": success, "result_summary": output, "error": result.stderr[-200:] if not success else ""}
+        except subprocess.TimeoutExpired:
+            return {"success": False, "error": "타임아웃 (5분)", "result_summary": ""}
+        except Exception as e:
+            return {"success": False, "error": str(e), "result_summary": ""}
+
     def _run_team_script(self, team_name: str) -> dict:
         """run_{팀명}.py 실행."""
         # 팀명 → 스크립트명 매핑 (예외 처리)
