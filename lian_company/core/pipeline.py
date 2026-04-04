@@ -293,6 +293,8 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
     handoff_path = None
     if is_software:
         print(f"\n[6.5/9] UltraProduct 브리핑 문서 생성...")
+        if HAS_STATUS_TRACKER:
+            update_status("시은", "이사팀", "running", "UltraProduct 브리핑 생성 중")
         try:
             handoff = PipelineHandoff(context, output_dir)
             handoff_path = handoff.generate()
