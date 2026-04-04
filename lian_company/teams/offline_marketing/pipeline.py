@@ -1,10 +1,13 @@
 import os
+import json
 import anthropic
+from datetime import datetime
 from dotenv import load_dotenv
 from teams.offline_marketing import researcher, strategist, copywriter, validator
 
 load_dotenv()
 
+TEAM_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), "team", "[진행중] 오프라인 마케팅", "소상공인_영업툴")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -21,6 +24,81 @@ def save(filename: str, content: str):
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"\n💾 저장: {path}")
+
+
+def _read_current_state() -> dict:
+    """현재 팀 산출물 + 피드백 전부 읽어서 상태 파악."""
+    state = {}
+    files = {
+        "스크립트": "영업_스크립트_v2.md",
+        "전략": "영업_전략_재설계.md",
+        "검증": "영업_사업검증.md",
+        "실전가이드": "영업_실전가이드_최종.md",
+        "퍼널": "영업_퍼널_설계.md",
+        "플레이북": "영업_플레이북.md",
+    }
+    for key, fname in files.items():
+        path = os.path.join(OUTPUT_DIR, fname)
+        try:
+            with open(path, encoding="utf-8") as f:
+                content = f.read()
+            state[key] = {"exists": True, "preview": content[:500], "size": len(content)}
+        except Exception:
+            state[key] = {"exists": False}
+
+    # 피드백 파일 확인
+    feedback_path = os.path.join(OUTPUT_DIR, "_feedback.json")
+    try:
+        with open(feedback_path, encoding="utf-8") as f:
+            state["feedback"] = json.load(f)
+    except Exception:
+        state["feedback"] = {}
+
+    return state
+
+
+def _self_assess(client, state: dict, mission: str) -> dict:
+    """팀이 스스로 현재 상태 진단 → 이번 실행에서 뭘 집중할지 결정."""
+    existing = [k for k, v in state.items() if isinstance(v, dict) and v.get("exists")]
+    missing = [k for k, v in state.items() if isinstance(v, dict) and not v.get("exists") and k != "feedback"]
+    feedback_text = str(state.get("feedback", {}))
+
+    prompt = f"""너는 오프라인 마케팅팀 팀장이야.
+
+=== 팀 미션 ===
+{mission}
+
+=== 현재 산출물 상태 ===
+있는 것: {existing}
+없는 것: {missing}
+
+=== 최근 피드백 ===
+{feedback_text if feedback_text != '{}' else '피드백 없음 (첫 실행 또는 아직 없음)'}
+
+=== 지시 ===
+지금 우리 팀이 가장 임팩트 있는 결과를 내려면 이번에 뭘 집중해야 하는지 판단해라.
+
+반환 형식 (JSON만):
+{{
+  "assessment": "현재 상태 한 줄 요약",
+  "priority": "이번 실행 최우선 과제 (research/strategy/copy/validation/full 중 하나)",
+  "reason": "왜 이게 우선인지",
+  "focus": "이번 실행에서 특히 집중할 포인트 (구체적으로)"
+}}"""
+
+    response = client.messages.create(
+        model="claude-sonnet-4-5",
+        max_tokens=500,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    text = response.content[0].text.strip()
+    # JSON 파싱
+    if "```" in text:
+        text = text.split("```")[1].replace("json", "").strip()
+    try:
+        return json.loads(text)
+    except Exception:
+        return {"assessment": "판단 실패", "priority": "full", "reason": "자동 판단 불가", "focus": "전체 실행"}
 
 
 def run(industry: str = "소상공인 네이버 플레이스 마케팅 대행"):
