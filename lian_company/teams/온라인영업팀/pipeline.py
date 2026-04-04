@@ -116,6 +116,14 @@ def run(task: str = ""):
     save(output_dir, "한총괄_결과.md", result_한총괄)
 
 
+    # 자가점검
+    try:
+        critique = self_critique_all(context, client, team_name="온라인영업팀")
+        context["critique"] = critique
+        save(output_dir, "_자가점검_결과.md", critique.get("full_critique", ""))
+    except Exception as e:
+        print(f"\n⚠️ 자가점검 실패: {e}")
+
     # 결과물을 지식으로 저장 + 리안 피드백 수집
     try:
         import sys
