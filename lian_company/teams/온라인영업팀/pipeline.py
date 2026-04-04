@@ -9,6 +9,14 @@ from teams.온라인영업팀 import 최제안
 from teams.온라인영업팀 import 정클로저
 from teams.온라인영업팀 import 한총괄
 
+# 자동 레퍼런스 수집
+try:
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+    from core.pre_research import auto_research
+    HAS_PRE_RESEARCH = True
+except ImportError:
+    HAS_PRE_RESEARCH = False
+
 # 상태 추적
 try:
     sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
