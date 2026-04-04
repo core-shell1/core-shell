@@ -96,34 +96,70 @@ def run(task: str = ""):
     save(output_dir, "00_팀인터뷰.md", interview)
 
     print("\n[1/6] 박탐정...")
-    result_박탐정 = 박탐정.run(context, client)
-    context["박탐정"] = result_박탐정
-    save(output_dir, "박탐정_결과.md", result_박탐정)
+    if HAS_STATUS_TRACKER:
+        update_status("박탐정", "온라인영업팀", "running", "잠재고객 분석 시작")
+    try:
+        result_박탐정 = 박탐정.run(context, client)
+        context["박탐정"] = result_박탐정
+        save(output_dir, "박탐정_결과.md", result_박탐정)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("박탐정")
 
     print("\n[2/6] 이진단...")
-    result_이진단 = 이진단.run(context, client)
-    context["이진단"] = result_이진단
-    save(output_dir, "이진단_결과.md", result_이진단)
+    if HAS_STATUS_TRACKER:
+        update_status("이진단", "온라인영업팀", "running", "온라인 현황 진단서 작성 중")
+    try:
+        result_이진단 = 이진단.run(context, client)
+        context["이진단"] = result_이진단
+        save(output_dir, "이진단_결과.md", result_이진단)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("이진단")
 
     print("\n[3/6] 김작가...")
-    result_김작가 = 김작가.run(context, client)
-    context["김작가"] = result_김작가
-    save(output_dir, "김작가_결과.md", result_김작가)
+    if HAS_STATUS_TRACKER:
+        update_status("김작가", "온라인영업팀", "running", "아웃리치 스크립트 작성 중")
+    try:
+        result_김작가 = 김작가.run(context, client)
+        context["김작가"] = result_김작가
+        save(output_dir, "김작가_결과.md", result_김작가)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("김작가")
 
     print("\n[4/6] 최제안...")
-    result_최제안 = 최제안.run(context, client)
-    context["최제안"] = result_최제안
-    save(output_dir, "최제안_결과.md", result_최제안)
+    if HAS_STATUS_TRACKER:
+        update_status("최제안", "온라인영업팀", "running", "제안서/가격표 작성 중")
+    try:
+        result_최제안 = 최제안.run(context, client)
+        context["최제안"] = result_최제안
+        save(output_dir, "최제안_결과.md", result_최제안)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("최제안")
 
     print("\n[5/6] 정클로저...")
-    result_정클로저 = 정클로저.run(context, client)
-    context["정클로저"] = result_정클로저
-    save(output_dir, "정클로저_결과.md", result_정클로저)
+    if HAS_STATUS_TRACKER:
+        update_status("정클로저", "온라인영업팀", "running", "미팅 대본/클로징 작성 중")
+    try:
+        result_정클로저 = 정클로저.run(context, client)
+        context["정클로저"] = result_정클로저
+        save(output_dir, "정클로저_결과.md", result_정클로저)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("정클로저")
 
     print("\n[6/6] 한총괄...")
-    result_한총괄 = 한총괄.run(context, client)
-    context["한총괄"] = result_한총괄
-    save(output_dir, "한총괄_결과.md", result_한총괄)
+    if HAS_STATUS_TRACKER:
+        update_status("한총괄", "온라인영업팀", "running", "파이프라인 통합 중")
+    try:
+        result_한총괄 = 한총괄.run(context, client)
+        context["한총괄"] = result_한총괄
+        save(output_dir, "한총괄_결과.md", result_한총괄)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("한총괄")
 
 
     # 자가점검
