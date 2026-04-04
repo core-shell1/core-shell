@@ -49,11 +49,23 @@ def run(team_name: str, team_purpose: str):
 
     # Step 1: Opus가 커리큘럼 설계
     print("\n[1/4] 커리큘럼 설계 (Claude Opus)...")
-    curriculum = curriculum_designer.run(team_name, team_purpose, client)
+    if HAS_STATUS_TRACKER:
+        update_status("curriculum_designer", "education", "running", "커리큘럼 설계 중")
+    try:
+        curriculum = curriculum_designer.run(team_name, team_purpose, client)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("curriculum_designer")
 
     # Step 2: Perplexity로 전문 지식 방대 수집
     print("\n[2/4] 전문 지식 수집 (Perplexity)...")
-    agent_knowledge = trainer.run(curriculum)
+    if HAS_STATUS_TRACKER:
+        update_status("trainer", "education", "running", "전문 지식 수집 중")
+    try:
+        agent_knowledge = trainer.run(curriculum)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("trainer")
 
     # 기존 지식이 있으면 각 에이전트에 추가
     if existing:
@@ -78,6 +90,12 @@ def run(team_name: str, team_purpose: str):
 
     # Step 4: 팀 파일 자동 생성
     print("\n[4/4] 팀 파일 생성...")
-    team_dir = team_generator.generate(curriculum, agent_knowledge, BASE_PATH)
+    if HAS_STATUS_TRACKER:
+        update_status("team_generator", "education", "running", "팀 파일 생성 중")
+    try:
+        team_dir = team_generator.generate(curriculum, agent_knowledge, BASE_PATH)
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("team_generator")
 
     return team_dir
