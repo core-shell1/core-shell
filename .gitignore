@@ -18,9 +18,11 @@ stitch_prompt_setup.md
 가장 먼저 해야할거.md
 *.pdf
 
-# API 키
+# API 키 / 개인 인증
 .env
 lian_company/.env
+lian_company/instagram_cookies.txt
+lian_company/.agent_status.json
 
 # Python
 lian_company/venv/
