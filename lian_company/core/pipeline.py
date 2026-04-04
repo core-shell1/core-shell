@@ -206,6 +206,20 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
     notify_agent_complete("준혁 | 최종 판단", 5, 9)
     notify_verdict(junhyeok_result["verdict"], junhyeok_result["score"])
 
+    # ── 시은: 최종 재검토 (델타봇 패턴) ────────────────────────────
+    print(f"\n[5.2/9] 최종 재검토 (시은 델타봇)...")
+    if HAS_STATUS_TRACKER:
+        update_status("시은", "이사팀", "running", "최종 재검토 중")
+    try:
+        context = sieun.review(context, client)
+        save_file(output_dir, "04c_최종재검토_시은.md", context.get("sieun_review", ""))
+        print_save_ok("04c_최종재검토_시은.md")
+    except Exception as e:
+        print(f"\n⚠️  시은 재검토 에러 (건너뜀): {e}")
+    finally:
+        if HAS_STATUS_TRACKER:
+            clear_status("시은")
+
     # ── 보고서 생성 + 저장 ────────────────────────────────────────
     report = generate_board_report(context)
     save_file(output_dir, "00_이사팀_보고서.md", report)
