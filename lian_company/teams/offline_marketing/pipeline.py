@@ -324,42 +324,27 @@ def run(industry: str = "소상공인 네이버 플레이스 마케팅 대행"):
     print(f"   포커스: {focus}")
 
     # ── 3. 우선순위에 따른 선택적 실행 ───────────────────────
-    if priority in ("research", "full"):
+    # BUG-FIX: 첫 실행 시 strategy/copy가 비어있으므로 validation을 선택하기 전에 먼저 생성해야 함
+    # 부분 실행도 "full"과 동일하게 전체 흐름 실행 (strategy/copy 없이는 validation 불가)
+
+    if priority in ("research", "strategy", "copy", "validation", "full") or priority not in ("research", "strategy", "copy", "validation", "full"):
+        # 모든 경우 전체 실행 (부분 실행은 폐기)
         print("\n[1] 영업 전문가 자료 수집...")
         research = researcher.run(context)
         context["research"] = research
         save("_research_영업전문가자료.md", research)
 
-    if priority in ("strategy", "full"):
         print("\n[2] 영업 전략 설계...")
         strategy = strategist.run(context, client)
         context["strategy"] = strategy
         save("영업_전략_재설계.md", strategy)
 
-    if priority in ("copy", "full"):
         print("\n[3] 스크립트 + PPT 카피 생성...")
         copy = copywriter.run(context, client)
         context["copy"] = copy
         save("영업_스크립트_v2.md", copy)
 
-    if priority in ("validation", "full"):
         print("\n[4] 현장 관점 검증...")
-        validation = validator.run(context, client)
-        context["validation"] = validation
-        save("영업_사업검증.md", validation)
-
-    # 부분 실행인 경우 단일 집중 실행
-    if priority not in ("research", "strategy", "copy", "validation", "full"):
-        print(f"\n[전체] 통합 실행 (판단값 '{priority}' 알 수 없어 전체 실행)...")
-        research = researcher.run(context)
-        context["research"] = research
-        save("_research_영업전문가자료.md", research)
-        strategy = strategist.run(context, client)
-        context["strategy"] = strategy
-        save("영업_전략_재설계.md", strategy)
-        copy = copywriter.run(context, client)
-        context["copy"] = copy
-        save("영업_스크립트_v2.md", copy)
         validation = validator.run(context, client)
         context["validation"] = validation
         save("영업_사업검증.md", validation)
