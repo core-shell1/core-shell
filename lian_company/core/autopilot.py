@@ -259,7 +259,9 @@ class Autopilot:
 
             elif task_type == "launch" and project:
                 from core.launch_prep import run_launch_prep
-                result = run_launch_prep(project)
+                import anthropic as _anthropic
+                _client = _anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+                result = run_launch_prep({"project": project, "idea": project}, _client)
                 return {"task": task, "success": True, "result_summary": str(result)[:300]}
 
             elif task_type == "team_run" and team:
