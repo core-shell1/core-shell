@@ -147,3 +147,4 @@ GLB 모델 없이 award-winning 수준 가능한 기술:
 검증된 구현체:
 - `C:\Users\lian1\Desktop\lian_3d_v2.html` — 모핑 파티클 + GLSL + 마퀴 + 커서 풀세트
 - `C:\Users\lian1\Desktop\lian_activetheory.html` — 5씬 쇼케이스 + 씬별 파티클 + 글리치 텍스트 + 씬 전환
+- `C:\Users\lian1\Desktop\lian_particlemorph.html` — 파티클 텍스트 모핑 (LIAN/CODE/BUILD/구/산발) + 스프링 물리 + 마우스 리펄전
