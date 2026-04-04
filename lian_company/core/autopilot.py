@@ -202,6 +202,13 @@ class Autopilot:
         else:
             review_result = "이번 주 실행 기록 없음. 첫 프로젝트를 시작해야 합니다."
 
+        # 에이전트 자기 개선 제안
+        try:
+            from core.agent_improver import propose_improvements
+            propose_improvements()
+        except Exception as e:
+            print(f"  ⚠️  에이전트 개선 제안 실패: {e}")
+
         # 피벗 판단
         pivot_recommendation = self._check_pivot(stats, recent)
         if pivot_recommendation:
