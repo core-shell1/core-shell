@@ -108,11 +108,9 @@
 - **원인**: outreach 분기에서 `team` 변수가 None인데 `_run_team_script(team)` 호출
 - **해결 방향**: outreach 태스크에 `target_team` 명시적으로 설정하거나, team이 None이면 온라인영업팀 기본값으로
 
-### [BUG-006] offline_sales.py — research 변수 미바인딩
-- **위치**: `offline_sales.py` 마지막 보고/저장 단계
-- **증상**: `cannot access local variable 'research' where it is not associated with a value`
-- **원인**: research 변수가 조건부로만 할당되는데 항상 참조됨
-- **심각도**: LOW (팀은 완주됨, 저장만 일부 실패)
+### [BUG-006] ✅ 수정됨 — offline_sales.py — research 변수 미바인딩
+- **위치**: `teams/offline_marketing/pipeline.py`
+- **수정**: `run()` 함수 시작 부분에 research, strategy, copy, validation 빈 문자열로 사전 선언
 
 ### [BUG-007] run_offline_marketing.py 없음 — 팀명 매핑 불일치
 - **위치**: `core/autopilot.py` → `_run_team_script()`
