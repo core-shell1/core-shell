@@ -287,6 +287,50 @@ if __name__ == "__main__":
     return team_dir
 
 
+def _generate_mission(team_name: str, slug: str, team_dir: str, curriculum: dict):
+    """팀 목표(mission.md) 자동 생성 — 없으면 팀이 방향 없이 붕뜸."""
+    mission_path = os.path.join(team_dir, "mission.md")
+    if os.path.exists(mission_path):
+        return  # 이미 있으면 스킵
+
+    purpose = curriculum.get("team_purpose", curriculum.get("goal", ""))
+    agents = curriculum.get("agents", [])
+    agent_list = "\n".join(f"- {a['name']}: {a.get('role', '')}" for a in agents)
+
+    mission_content = f"""# {team_name} — 우리는 {purpose[:30] if purpose else team_name}에 특화된 전문 회사다
+
+## 존재 이유 (단 하나의 Pain)
+{purpose if purpose else f"이 팀이 해결하는 핵심 Pain을 여기에 명시하라."}
+
+## 우리 팀이 하는 일 (딱 하나)
+> [팀 생성 후 이 줄을 한 줄로 채워라: "A → B → C → 결과"]
+
+## 팀 구성
+{agent_list}
+
+## 핵심 KPI
+1. [KPI 1: 측정 가능한 수치]
+2. [KPI 2: 측정 가능한 수치]
+3. [KPI 3: 측정 가능한 수치]
+
+## 자기 평가 기준
+매 실행 후: "이 결과물로 리안이 실제로 돈을 벌 수 있는가?"
+8점 미만이면 세계 최고 자료 다시 수집 후 재작성.
+
+## 절대 금지
+- 두루뭉술한 결과물
+- "이럴 수도 있고 저럴 수도 있어요" 식 조언
+- 리안이 읽어서 바로 실행 불가능한 내용
+
+## 피벗 트리거
+3회 연속 KPI 미달 → 더 좁히거나 방향 바꿔라.
+범용화 금지. 좁힐수록 전문성이 생긴다.
+"""
+    with open(mission_path, "w", encoding="utf-8") as f:
+        f.write(mission_content)
+    print(f"  ✅ mission.md (팀 목표 설정)")
+
+
 def _generate_claude_agents(team_name: str, slug: str, agents: list, base_path: str):
     """각 에이전트용 .claude/agents/{name}.md 생성."""
     # LIANCP 루트 = base_path의 부모 (lian_company의 부모)
