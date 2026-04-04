@@ -70,7 +70,7 @@ def analyze_with_gemini(files: list[Path], caption: str, url: str) -> str:
 분석은 실무자 관점으로, 짧고 날카롭게. 이론 설명 말고 바로 쓸 수 있는 인사이트 위주로."""
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash-preview-04-17",
+        model="gemini-2.5-flash",
         contents=[prompt] + parts
     )
     return response.text
