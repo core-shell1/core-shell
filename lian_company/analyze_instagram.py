@@ -10,7 +10,7 @@ import shutil
 import base64
 from pathlib import Path
 from dotenv import load_dotenv
-import google.generativeai as genai
+import google.genai as genai
 
 load_dotenv()
 
