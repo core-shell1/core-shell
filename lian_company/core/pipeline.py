@@ -57,16 +57,30 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
     print(f"\n[1-2/9] 트렌드 + 시장조사 (병렬)...")
 
     def _run_taeho():
+        if HAS_STATUS_TRACKER:
+            update_status("태호", "이사팀", "running", "트렌드 스카우팅 중")
         try:
-            return taeho.run(context, client)
+            result = taeho.run(context, client)
+            if HAS_STATUS_TRACKER:
+                clear_status("태호")
+            return result
         except Exception as e:
+            if HAS_STATUS_TRACKER:
+                clear_status("태호")
             print(f"\n⚠️  태호 에러 (건너뜀): {e}")
             return f"트렌드 스카우팅 실패: {e}"
 
     def _run_seoyun():
+        if HAS_STATUS_TRACKER:
+            update_status("서윤", "이사팀", "running", "시장조사 중")
         try:
-            return seoyun.run(context, client)
+            result = seoyun.run(context, client)
+            if HAS_STATUS_TRACKER:
+                clear_status("서윤")
+            return result
         except Exception as e:
+            if HAS_STATUS_TRACKER:
+                clear_status("서윤")
             print(f"\n⚠️  서윤 에러 (건너뜀): {e}")
             return f"시장조사 실패: {e}"
 
