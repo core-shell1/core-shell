@@ -276,12 +276,16 @@ def run_pipeline(sieun_result: dict, autopilot: bool = False) -> None:
         if line.strip():
             print(f"    {line.strip()}")
     print(f"{'='*60}")
-    print(f"\n리안, 이대로 갈까? (수정할 거 있으면 말해, 없으면 엔터)")
-    print("리안: ", end="")
-    try:
-        team_feedback = input().strip()
-    except EOFError:
+    if autopilot:
         team_feedback = ""
+        print(f"\n🚀 자동파일럿 — 팀 설계 자동 승인")
+    else:
+        print(f"\n리안, 이대로 갈까? (수정할 거 있으면 말해, 없으면 엔터)")
+        print("리안: ", end="")
+        try:
+            team_feedback = input().strip()
+        except EOFError:
+            team_feedback = ""
 
     if team_feedback and team_feedback.lower() not in ("", "ㅇ", "ㅇㅇ", "ok", "맞아", "그래", "진행"):
         # 시은이 피드백 반영해서 재설계
