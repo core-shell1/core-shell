@@ -144,6 +144,12 @@ def daily_loop(project_name: str):
     _save_to_report(f"매일 운영 루프 ({project_name})", full_response)
     print(f"\n📋 보고사항들.md에 저장 완료")
 
+    # 자기 점검
+    try:
+        post_run_review("매일 운영 루프", {"project": project_name}, full_response)
+    except Exception:
+        pass
+
     return full_response
 
 
