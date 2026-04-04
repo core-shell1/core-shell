@@ -83,11 +83,48 @@
 - 섹션 구분: `border-top: 1px solid #080808` — 컬러 구분선 금지
 - 푸터: border-top + 좌우 split
 
-## 7. SaaS 구조 기본값
+## 8. Bloom 안전 설정 (⚠️ 필수)
+
+**UnrealBloomPass 과노출 방지:**
+- `threshold`: 최소 **0.1** 이상 — 0.0~0.05 절대 금지 (전체 화면 하얗게 됨)
+- `strength`: 최대 **1.5** — 2.0 이상은 폭발
+- `radius`: 0.4~0.6 범위
+
+**파티클 크기:**
+- `gl_PointSize = clamp(aScale * (120.0~150.0 / -mvPos.z), 0.5, 10.0)`
+- 400.0 분모 금지 — 카메라 가까울 때 파티클이 화면 꽉 채움
+- 카메라 z: 최소 5.0 이상 유지 (파티클 구 반지름 1.5~2.0일 때)
+
+## 9. 포트폴리오/쇼케이스 레이아웃 (activetheory 패턴)
+
+씬 기반 쇼케이스 페이지:
+- 우상단: `WORK — CONTACT` 알약버튼 (border: 1px solid #333, border-radius: 20px)
+- 좌측: 마우스 < 200px 접근 시 카테고리 nav 등장 (`opacity: 0 → 1`)
+- 씬 카운터: 우하단 `01 / 05` 형태
+- 텍스트 효과: 글리치 스크램블 (랜덤 문자 → 실제 텍스트, 약 1.5초)
+- 씬 전환: fade out → camera zoom out → 씬 교체 → camera zoom in → fade in
+
+**씬 설계 원칙:**
+- 씬마다 완전히 다른 색상 + 파티클 구조 (구/토러스/폭발/나선/기둥)
+- 배경색 `scene.background`를 씬마다 변경
+- 블룸 강도도 씬마다 다르게
+
+## 10. 차세대 기술 (다음 목표)
+
+GLB 모델 없이 award-winning 수준 가능한 기술:
+1. **파티클 텍스트 모핑** (GPGPU/FBO) — 텍스트↔파티클↔형태 전환
+   - 레퍼런스: Codrops Dec 2024 오픈소스
+   - Three.js `GPUComputationRenderer` 사용
+2. **WebGL 유체 시뮬레이션** — Navier-Stokes, 커서가 잉크처럼 번짐
+   - 레퍼런스: paveldogreat.github.io/WebGL-Fluid-Simulation (오픈소스)
+3. **Curl Noise 파티클 플로우** — 오로라 같은 빛 궤적
+4. **Ray Marching SDF** — 모델 없이 포토리얼 3D 세계 (ShaderToy 스타일)
+
+## SaaS 구조 기본값
 
 - 마케팅/랜딩 페이지 → 위 모든 규칙 풀 적용
 - 앱/대시보드 UI → Stitch 설계 + 클린/미니멀 (파티클 없음)
-- 레퍼런스 수준: https://www.instagram.com/reel/DWswXHYDP-a/
+- 쇼케이스/포트폴리오 → activetheory 패턴 (섹션 9)
 
 ## 출력 체크리스트
 
@@ -102,8 +139,11 @@
 - [ ] 마퀴 배너 있나?
 - [ ] 숫자 카운트업 있나?
 - [ ] 모바일 반응형 있나?
+- [ ] **Bloom threshold ≥ 0.1** 인가? (과노출 방지)
+- [ ] **카메라 z ≥ 5.0** 인가? (파티클 크기 안전)
 
 ## 레퍼런스 파일
 
 검증된 구현체:
 - `C:\Users\lian1\Desktop\lian_3d_v2.html` — 모핑 파티클 + GLSL + 마퀴 + 커서 풀세트
+- `C:\Users\lian1\Desktop\lian_activetheory.html` — 5씬 쇼케이스 + 씬별 파티클 + 글리치 텍스트 + 씬 전환
