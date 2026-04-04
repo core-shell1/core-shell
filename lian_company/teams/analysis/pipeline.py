@@ -165,6 +165,8 @@ def run(root: str = DEFAULT_ROOT, delete_after: bool = True) -> list:
                 "tags": result.get("tags", []),
                 "report": result.get("report_to_lian", ""),
             })
+            if HAS_STATUS_TRACKER:
+                clear_status("analyzer")
         else:
             if delete_after:
                 os.remove(fpath)
