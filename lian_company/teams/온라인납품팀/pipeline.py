@@ -184,6 +184,33 @@ def run(task: str = ""):
     except Exception as e:
         print(f"\n⚠️ 자가점검 실패: {e}")
 
+    # 이미지 자동 생성 (optional feature)
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+        from tools.image_generator import generate_content_images
+        from datetime import datetime
+
+        # 콘텐츠 결과물에서 필요한 정보 추출
+        content_results = {
+            'instagram': context.get('박지우', ''),
+            'blog': context.get('한서연', ''),
+            'client_name': task if task else '납품건',
+            'business_type': 'business'
+        }
+
+        img_output_dir = os.path.join(output_dir, "images")
+        images = generate_content_images(content_results, img_output_dir)
+
+        if images.get('instagram_image'):
+            print(f"\n📸 인스타그램 이미지: {images['instagram_image']}")
+            context['instagram_image'] = images['instagram_image']
+        if images.get('blog_thumbnail'):
+            print(f"🖼️  블로그 썸네일: {images['blog_thumbnail']}")
+            context['blog_thumbnail'] = images['blog_thumbnail']
+
+    except Exception as e:
+        print(f"\n⚠️ 이미지 생성 스킵: {e}")
+
     # 결과물을 지식으로 저장 + 리안 피드백 수집
     try:
         sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
