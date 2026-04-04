@@ -3,8 +3,8 @@
 리안 컴퍼니 — AI 멀티에이전트 기획 자동화 시스템
 
 사용법:
-  python main.py                          # 대화형 모드
-  python main.py "소상공인 AI 상세페이지"   # 직접 입력 모드
+  python main.py                          # 대화형 모드 (시은과 대화)
+  python main.py "소상공인 AI 상세페이지"   # 자동파일럿 모드 (한마디 → 보고서)
 """
 import sys
 import os
@@ -48,8 +48,23 @@ def main():
     # 아이디어 받기
     if len(sys.argv) > 1:
         idea = " ".join(sys.argv[1:])
-        print(f"💡 아이디어: {idea}\n")
-        interactive = False
+        print(f"💡 아이디어: {idea}")
+        print(f"🚀 자동파일럿 모드 — 리안 개입 없이 보고서까지 자동 진행\n")
+
+        # 자동파일럿: input() 없이 시은이 자동 명확화
+        sieun_result = sieun.autopilot_run(idea, client)
+
+        # 예상 비용 안내 (자동파일럿에서도 비용은 확인)
+        if not confirm_proceed():
+            print("\n취소됐어. 아이디어 수정 후 다시 실행해줘.")
+            sys.exit(0)
+
+        # 이사팀 자동 실행 (자동파일럿)
+        print(f"\n{'='*60}")
+        print("이사팀 자동파일럿 실행 중...")
+        notify_pipeline_start(idea)
+        run_pipeline(sieun_result, autopilot=True)
+
     else:
         print("💡 아이디어를 입력해줘 (엔터로 제출):")
         print("리안: ", end="")
@@ -57,25 +72,20 @@ def main():
         if not idea:
             print("아이디어를 입력해야 해.")
             sys.exit(1)
-        interactive = True
 
-    # 시은: 아이디어 명확화
-    sieun_result = sieun.run(idea, client, interactive=interactive)
+        # 대화형: 시은과 대화하며 명확화
+        sieun_result = sieun.run(idea, client, interactive=True)
 
-    # 예상 비용 안내 + 진행 확인
-    if not confirm_proceed():
-        print("\n취소됐어. 아이디어 수정 후 다시 실행해줘.")
-        sys.exit(0)
+        # 예상 비용 안내 + 진행 확인
+        if not confirm_proceed():
+            print("\n취소됐어. 아이디어 수정 후 다시 실행해줘.")
+            sys.exit(0)
 
-    # 이사팀 자동 실행
-    print(f"\n{'='*60}")
-    print("이사팀 자동 실행 중...")
-
-    # 디스코드 알림
-    notify_pipeline_start(idea)
-
-    # 파이프라인 실행
-    run_pipeline(sieun_result)
+        # 이사팀 대화형 실행
+        print(f"\n{'='*60}")
+        print("이사팀 자동 실행 중...")
+        notify_pipeline_start(idea)
+        run_pipeline(sieun_result, autopilot=False)
 
 
 if __name__ == "__main__":
