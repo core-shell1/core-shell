@@ -92,9 +92,18 @@
 ## 출력 체크리스트
 
 웹 페이지 뽑기 전 이것만 확인:
-- [ ] Three.js 파티클 or 동급 배경 있나?
-- [ ] 커스텀 커서 있나?
-- [ ] clamp() 타이포 썼나?
-- [ ] IntersectionObserver 스크롤 애니메이션 있나?
-- [ ] 노이즈 텍스처 있나?
+- [ ] Three.js ShaderMaterial 파티클 (AdditiveBlending) 있나?
+- [ ] GLSL에 uTime/uMouse/uScroll uniform 있나?
+- [ ] 마우스 리펄전 or 시차 있나?
+- [ ] 커스텀 커서 (dot + ring) 있나?
+- [ ] clamp() 반응형 타이포 썼나?
+- [ ] GSAP ScrollTrigger 스크롤 애니메이션 있나?
+- [ ] 노이즈 텍스처 오버레이 있나?
+- [ ] 마퀴 배너 있나?
+- [ ] 숫자 카운트업 있나?
 - [ ] 모바일 반응형 있나?
+
+## 레퍼런스 파일
+
+검증된 구현체:
+- `C:\Users\lian1\Desktop\lian_3d_v2.html` — 모핑 파티클 + GLSL + 마퀴 + 커서 풀세트
