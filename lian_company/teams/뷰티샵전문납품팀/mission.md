@@ -26,3 +26,14 @@
 ## 피벗 트리거
 3개월 성과 저조 → 더 세분화 (예: 미용실만, 강남권만, 30대 여성 타겟만)
 범용화 절대 금지. 좁히면 좁힐수록 전문성이 생긴다.
+
+## 학습 주제 (매 실행 전 Perplexity로 자동 수집)
+### 한국어
+- "미용실 인스타그램 마케팅 성공 사례 팔로워 예약 전환 2025 2026"
+- "네일샵 피부관리실 네이버 플레이스 리뷰 관리 전략"
+- "뷰티 업종 헤어 트렌드 시즌별 콘텐츠 기획"
+- "미용실 재방문율 높이는 CRM 마케팅 단골 확보 전략"
+### English
+- "beauty salon instagram marketing strategy before after content 2025"
+- "nail salon social media marketing case study booking conversion"
+- "hair salon customer retention loyalty program marketing ideas"
