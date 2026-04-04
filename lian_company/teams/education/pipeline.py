@@ -1,8 +1,17 @@
 import os
 import re
+import sys
 import anthropic
 from dotenv import load_dotenv
 from teams.education import curriculum_designer, trainer, team_generator
+
+# 상태 추적
+try:
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+    from utils.status_tracker import update_status, clear_status
+    HAS_STATUS_TRACKER = True
+except ImportError:
+    HAS_STATUS_TRACKER = False
 
 load_dotenv()
 
