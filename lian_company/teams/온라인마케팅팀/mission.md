@@ -32,3 +32,14 @@
 강하린이 3주 연속 KPI 미달 감지하면 → 즉시 전략 재설계 제안.
 "이렇게 바꾸면 이 수치가 개선된다"까지 제시.
 리안한테 "안 됐어요" 보고 금지. "이렇게 바꿀게요" 보고만.
+
+## 학습 주제 (매 실행 전 Perplexity로 자동 수집)
+### 한국어
+- "마케팅 대행사 자체 인스타그램 운영 전략 브랜딩 사례 2025 2026"
+- "티스토리 블로그 SEO 상위 노출 전략 2026 알고리즘"
+- "메타 광고 소액 테스트 전략 ROAS 3.0 이상 달성 방법"
+- "소상공인 대상 마케팅 브랜드 신뢰 구축 콘텐츠 전략"
+### English
+- "marketing agency self-branding instagram strategy 2025 case study"
+- "meta ads low budget testing strategy high ROAS small business"
+- "content marketing for B2B lead generation agency brand building"
