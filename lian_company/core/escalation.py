@@ -72,6 +72,11 @@ def should_escalate(task: dict, approval_count: int = 0) -> tuple[bool, str]:
     task_type = task.get("type", "")
     category = task.get("category", "")
 
+    # 이미 리안이 이 카테고리를 승인한 적 있으면 자율 실행
+    approvals = _load_approvals()
+    if category in approvals and category not in ALWAYS_ESCALATE:
+        return False, f"이전 승인됨 ({approvals[category].get('approved_at', '?')[:10]})"
+
     # 무조건 에스컬레이션
     if category in ALWAYS_ESCALATE:
         return True, f"[필수 승인] {category}"
