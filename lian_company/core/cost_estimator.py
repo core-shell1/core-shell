@@ -5,12 +5,14 @@ main.py 시작 시 호출 → 과금 예정 금액 출력
 
 # ── 모델별 단가 (달러 / 1M 토큰) ──────────────────────────────
 PRICES = {
-    "claude-sonnet-4-6":       {"input": 3.0,   "output": 15.0},
-    "claude-haiku-4-5-20251001": {"input": 0.8,  "output": 4.0},
-    "claude-opus-4-6":         {"input": 15.0,  "output": 75.0},
-    "gpt-4o":                  {"input": 2.5,   "output": 10.0},
-    "gemini-2.5-flash":        {"input": 0.075, "output": 0.30},
-    "sonar-pro":               {"input": 3.0,   "output": 15.0},  # Perplexity
+    "claude-sonnet-4-6":          {"input": 3.0,   "output": 15.0},
+    "claude-haiku-4-5-20251001":  {"input": 0.8,   "output": 4.0},
+    "claude-opus-4-6":            {"input": 15.0,  "output": 75.0},
+    "gpt-4o":                     {"input": 2.5,   "output": 10.0},
+    "gpt-4.1":                    {"input": 2.0,   "output": 8.0},
+    "gemini-2.5-flash":           {"input": 0.075, "output": 0.30},
+    "gemini-2.5-pro":             {"input": 1.25,  "output": 10.0},
+    "sonar-pro":                  {"input": 3.0,   "output": 15.0},  # Perplexity
 }
 
 # ── 에이전트별 예상 토큰 (min / max) ──────────────────────────
@@ -64,6 +66,13 @@ AGENTS = [
         "input":  (7_000, 12_000),
         "output": (1_500, 3_000),
         "note": "Claude Opus ← 가장 비쌈",
+    },
+    {
+        "name": "시은 - 최종 재검토 (★신규)",
+        "model": "claude-sonnet-4-6",
+        "input":  (5_000, 9_000),
+        "output": (800, 1_500),
+        "note": "Claude Sonnet (델타봇 패턴)",
     },
     {
         "name": "지훈 - PRD 작성",
@@ -138,6 +147,7 @@ def estimate(verbose: bool = True) -> tuple[float, float]:
         print()
         print(f"  * 실제 금액은 아이디어 복잡도에 따라 달라질 수 있어요")
         print(f"  * NO-GO 판정 시 지훈/교육팀 단계는 생략되어 더 저렴해요")
+        print(f"  * 시은 재검토(신규)가 추가되어 구버전보다 약간 높아요")
         print("=" * 60)
 
     return total_min, total_max
