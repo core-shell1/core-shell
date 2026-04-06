@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "git add -A && git diff --cached --quiet || git commit -m \"auto: Claude 작업 저장\"",
+            "command": "git add -A && git diff --cached --quiet || git commit -m \"[$(git config user.name)] auto: Claude 작업 저장\"",
             "timeout": 30,
             "statusMessage": "저장 중..."
           }
