@@ -31,21 +31,21 @@ except:
 # ── 패턴 1: rm -rf ──────────────────────────────────────────
 if echo "$COMMAND" | grep -qiE 'rm\s+-rf|rm\s+-r\s+-f|rm\s+--recursive.*--force'; then
     echo "🚨 [안전 차단] 위험 명령어 감지: rm -rf" >&2
-    echo "   이 명령어는 파일을 영구 삭제합니다. 리안에게 확인받으세요." >&2
+    echo "   이 명령어는 파일을 영구 삭제합니다. 보스에게 확인받으세요." >&2
     exit 1
 fi
 
 # ── 패턴 2: git push --force ────────────────────────────────
 if echo "$COMMAND" | grep -qiE 'git\s+push\s+.*--force|git\s+push\s+.*-f\b'; then
     echo "🚨 [안전 차단] 위험 명령어 감지: git push --force" >&2
-    echo "   강제 푸시는 원격 히스토리를 덮어씁니다. 리안에게 확인받으세요." >&2
+    echo "   강제 푸시는 원격 히스토리를 덮어씁니다. 보스에게 확인받으세요." >&2
     exit 1
 fi
 
 # ── 패턴 3: DROP TABLE / DELETE FROM (조건 없이) ───────────
 if echo "$COMMAND" | grep -qiE 'DROP\s+TABLE|DELETE\s+FROM\s+\w+\s*;|DELETE\s+FROM\s+\w+\s*$'; then
     echo "🚨 [안전 차단] 위험 SQL 감지: DROP TABLE 또는 무조건 DELETE FROM" >&2
-    echo "   데이터 전체 삭제 위험. 리안에게 확인받으세요." >&2
+    echo "   데이터 전체 삭제 위험. 보스에게 확인받으세요." >&2
     exit 1
 fi
 
@@ -53,14 +53,14 @@ fi
 # Write 툴로 .env를 직접 쓰는 경우 차단
 if echo "$FILE_PATH" | grep -qE '(^|/)\.env$'; then
     echo "🚨 [안전 차단] .env 파일 직접 덮어쓰기 감지" >&2
-    echo "   API 키/비밀값이 손실될 수 있습니다. 리안에게 확인받으세요." >&2
+    echo "   API 키/비밀값이 손실될 수 있습니다. 보스에게 확인받으세요." >&2
     exit 1
 fi
 
 # Bash 명령어로 .env 덮어쓰는 경우
 if echo "$COMMAND" | grep -qE '>\s*\.env\b|>\s*[^/]*\.env\b'; then
     echo "🚨 [안전 차단] .env 파일 덮어쓰기 명령 감지" >&2
-    echo "   API 키/비밀값이 손실될 수 있습니다. 리안에게 확인받으세요." >&2
+    echo "   API 키/비밀값이 손실될 수 있습니다. 보스에게 확인받으세요." >&2
     exit 1
 fi
 

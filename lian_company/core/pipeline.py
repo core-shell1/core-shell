@@ -254,7 +254,7 @@ def run_pipeline(sieun_result: dict) -> None:
             print(f"    {line.strip()}")
     print(f"{'='*60}")
     print(f"\n리안, 이대로 갈까? (수정할 거 있으면 말해, 없으면 엔터)")
-    print("리안: ", end="")
+    print("보스: ", end="")
     try:
         team_feedback = input().strip()
     except EOFError:

@@ -6,25 +6,25 @@
 1. `STATUS.md` 읽기 — 현재 상태 + 마지막 세션 작업 내용
 2. `PROJECTS.md` 읽기 — 전체 프로젝트 목록
 3. `OPERATIONS.md` 읽기 — 시스템 전체 매뉴얼 (뭘 할 수 있는지, 어떻게 하는지)
-4. **자동 시스템 체크** (리안이 시키지 않아도 백그라운드로):
+4. **자동 시스템 체크** (보스가 시키지 않아도 백그라운드로):
    - `보고사항들.md` 마지막 30줄 읽어서 가장 최근 "[재원] 트렌드 브리핑" 날짜 확인
      → 7일 이상 지났으면 → `lian_company/venv/Scripts/python.exe lian_company/auto_trend_report.py` 백그라운드 실행
    - 가장 최근 "[지호] COO 주간 시스템 리뷰" 날짜 확인
      → 7일 이상 지났으면 → `lian_company/venv/Scripts/python.exe lian_company/auto_self_review.py` 백그라운드 실행
    - 가장 최근 "[재원] 경쟁사" 날짜 확인
      → 7일 이상 지났으면 → `lian_company/venv/Scripts/python.exe lian_company/auto_competitor_watch.py` 백그라운드 실행
-   - 실행 여부를 리안에게 말하지 않아도 됨. 조용히 백그라운드로.
+   - 실행 여부를 보스에게 말하지 않아도 됨. 조용히 백그라운드로.
 
-### 리안이 뭔가 시키면
+### 보스가 뭔가 시키면
 `OPERATIONS.md` 3번(의사결정 트리)를 보고 어떤 플로우를 태울지 스스로 판단해라.
-리안은 비개발자이므로 "main.py 돌려줘"라고 안 한다. "이거 해줘"라고 한다.
+보스는 비개발자이므로 "main.py 돌려줘"라고 안 한다. "이거 해줘"라고 한다.
 그 말이 어떤 시스템에 해당하는지 판단하는 건 Claude의 몫이다.
 
-### 대화 종료 시 (리안이 안 시켜도 자동으로 — 반드시 실행)
+### 대화 종료 시 (보스가 안 시켜도 자동으로 — 반드시 실행)
 
-⚠️ 이건 선택이 아니다. 리안이 비개발자라 저장 요청을 잊어버린다. 내가 알아서 해야 한다.
+⚠️ 이건 선택이 아니다. 보스가 비개발자라 저장 요청을 잊어버린다. 내가 알아서 해야 한다.
 
-1. **memory/ 업데이트** (`C:\Users\hkyou\.claude\projects\C--Users-hkyou-Documents-work-youns\memory\`):
+1. **memory/ 업데이트** (`C:\Users\김태은\.claude\projects\C--Users-----Documents-work-core-shell\memory\`):
    - 이번 대화에서 변경된 프로젝트 현황 → 관련 project_*.md 업데이트
    - 새로운 피드백/결정사항 → feedback_*.md 또는 신규 파일
    - MEMORY.md 인덱스 최신화
@@ -37,9 +37,9 @@
 3. 변경한 파일이 있으면 Git 커밋 확인
 
 ### 언제 저장하냐
-- 리안이 "끝", "다음에", "나중에", "저장", "바이" 같은 말 하면 → 즉시 저장
+- 보스가 "끝", "다음에", "나중에", "저장", "바이" 같은 말 하면 → 즉시 저장
 - 대화가 자연스럽게 마무리되는 느낌이면 → 즉시 저장
-- 리안이 "/save" 치면 → 즉시 저장
+- 보스가 "/save" 치면 → 즉시 저장
 - 확신 없으면 → 그냥 저장해라. 저장은 손해없다.
 
 ### 파일 수정 시
@@ -68,7 +68,7 @@
 ## 전체 플로우 (2026-04-02 업데이트)
 
 ```
-리안: 아이디어 던짐
+보스: 아이디어 던짐
     ↓
 [이사팀 — python main.py]
 시은 (Claude Sonnet) — 오케스트레이터. 아이디어 명확화
@@ -176,7 +176,7 @@ LIANCP/
 │   │   ├── index.json           ← 교육팀이 관리하는 인덱스
 │   │   ├── base/                ← 공유 지식 (교육팀이 수집/관리)
 │   │   ├── teams/               ← 팀별 결과물 + 피드백
-│   │   ├── inbox/               ← 리안이 넣는 캡쳐/영상 (분석팀이 처리)
+│   │   ├── inbox/               ← 보스가 넣는 캡쳐/영상 (분석팀이 처리)
 │   │   └── trends/              ← 자동 수집 트렌드 (❌ 미구현)
 │   ├── core/
 │   │   ├── pipeline.py          ✅
@@ -186,7 +186,7 @@ LIANCP/
 │   │   ├── lian_company_design/   리안 컴퍼니 자체 설계 결과물 (CPO/CTO/CDO + QA)
 │   │   └── Lian_Dash/            마케팅 데이터 분석 SaaS 설계 결과물 (CPO/CTO/CDO)
 │   └── venv/                    ✅ anthropic, openai, google-genai, python-dotenv
-├── 자료들/                      ← 리안이 자료 던져넣는 폴더 ✅
+├── 자료들/                      ← 보스가 자료 던져넣는 폴더 ✅
 │   (txt/md/html → 도윤이 읽고 knowledge/base/ 저장 + 파일 삭제)
 │   (이미지/영상 → 분석팀(Gemini) 자동 처리 ✅)
 │   (PDF → pdfplumber 필요, 현재 스킵)
@@ -214,7 +214,7 @@ LIANCP/
 ## 자료 던져넣기 + 보고 확인
 
 ### 자료들/ 폴더
-리안이 아무 자료나 던져넣으면 도윤이 알아서 처리:
+보스가 아무 자료나 던져넣으면 도윤이 알아서 처리:
 ```
 자료들/아무파일.txt  or  .md  or  .html
 → python lian_company/process_inbox.py
@@ -223,7 +223,7 @@ LIANCP/
 지원: .txt .md .html .png .jpg .jpeg .webp .gif .bmp .mp4 .mov .avi .mkv .webm | 스킵: PDF(pdfplumber 필요)
 
 ### 보고사항들.md
-에이전트들이 일 끝나면 여기에 자동 보고. 리안이 확인하는 공간.
+에이전트들이 일 끝나면 여기에 자동 보고. 보스가 확인하는 공간.
 - `write_report(agent_name, role, content)` — knowledge/manager.py에서 임포트
 - 모든 팀 pipeline.py에서 완료 시 자동 호출
 
@@ -238,14 +238,14 @@ LIANCP/
 ---
 
 ## 핵심 원칙
-- 리안은 비개발자 CEO. 개입 최소화.
+- 보스는 비개발자 CEO. 개입 최소화.
 - 리안 컴퍼니 = 기획 엔진 (시장 리서치 + 설계서까지)
 - UltraProduct = 실행 엔진 (코드 + 배포 + 마케팅까지)
 - 멀티 AI = 편향 방지 (GPT/Gemini/Perplexity/Claude 각자 다른 역할)
 - 에이전트 지식 = 정적 원칙(프롬프트) + 동적 트렌드(Perplexity 실시간)
 - 직원 성장 = 경험 기록(experience.jsonl) + 피드백 누적 + 자기 개발(낮은 평점 → Perplexity 학습)
 
-### 리안이 시스템 자체를 바꾸려면
+### 보스가 시스템 자체를 바꾸려면
 "시스템 바꿔줘" / "에이전트 수정해줘" / "플로우 업그레이드해줘"
 → `Agent(subagent_type="architect")` 로 도현(시스템 아키텍트) 스폰
 → 도현이 변경 계획서 제출 → 리안 컨펌 → 실행
@@ -261,7 +261,7 @@ LIANCP/
 - 기존 프로젝트 폴더가 있으면 **무조건 그 안에서 작업**
 - 새 폴더 생성 금지 (v2, _new, _backup, _copy 같은 변형도 금지)
 - 작업 전에 `team/` 아래에 이미 해당 프로젝트 폴더가 있는지 확인
-- 모르겠으면 리안에게 "어디서 작업할까?" 물어봐라
+- 모르겠으면 보스에게 "어디서 작업할까?" 물어봐라
 - 이 규칙은 /work 실행 시에도, 수동 작업 시에도, 어떤 상황에서도 적용
 
 ### 새 팀은 반드시 교육팀(build_team.py)으로 만들어라

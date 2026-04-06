@@ -174,7 +174,7 @@ def collect_feedback(team_name: str):
     print("  - 뭐가 구렸어?")
     print("  - 다음에 바꿔야 할 거 있어?")
     print("  (없으면 엔터)")
-    print("\n리안: ", end="")
+    print("\n보스: ", end="")
     try:
         feedback = input().strip()
     except EOFError:

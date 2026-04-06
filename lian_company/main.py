@@ -52,7 +52,7 @@ def main():
         interactive = False
     else:
         print("💡 아이디어를 입력해줘 (엔터로 제출):")
-        print("리안: ", end="")
+        print("보스: ", end="")
         idea = input().strip()
         if not idea:
             print("아이디어를 입력해야 해.")

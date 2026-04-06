@@ -48,10 +48,10 @@ def wait_confirm(msg: str) -> bool:
     Returns:
         y 입력 시 True, n 입력 시 False
     """
-    send("⏳ 리안 확인 필요", msg, color=0xFFD700)
+    send("⏳ 보스 확인 필요", msg, color=0xFFD700)
 
     print(f"\n{msg}")
-    print("리안 (y/n): ", end="")
+    print("보스 (y/n): ", end="")
     try:
         answer = input().strip().lower()
     except EOFError:

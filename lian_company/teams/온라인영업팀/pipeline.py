@@ -26,12 +26,12 @@ def save(output_dir: str, filename: str, content: str):
 
 
 def team_interview(task: str, client: anthropic.Anthropic) -> str:
-    """팀 시작 전 리안한테 디테일 인터뷰."""
+    """팀 시작 전 보스한테 디테일 파악 인터뷰."""
     print("\n" + "="*60)
-    print("🎤 팀 인터뷰 | 리안한테 디테일 파악")
+    print("🎤 팀 인터뷰 | 보스한테 디테일 파악")
     print("="*60)
 
-    interview_prompt = "너는 온라인영업팀의 팀 리더야. 리안(CEO, 비개발자)한테 실제 업무를 파악해야 해. 구체적이고 실용적인 질문 3~5개를 한번에 물어봐. 짧고 친근하게."
+    interview_prompt = "너는 온라인영업팀의 팀 리더야. 보스(CEO, 비개발자)한테 실제 업무를 파악해야 해. 구체적이고 실용적인 질문 3~5개를 한번에 물어봐. 짧고 친근하게."
 
     resp = ""
     with client.messages.stream(
@@ -44,7 +44,7 @@ def team_interview(task: str, client: anthropic.Anthropic) -> str:
             print(text, end="", flush=True)
             resp += text
 
-    print("\n\n리안: ", end="")
+    print("\n\n보스: ", end="")
     try:
         answer = input().strip()
     except EOFError:
@@ -64,7 +64,7 @@ def run(task: str = ""):
 
     output_dir = os.path.join(OUTPUT_BASE, "온라인영업팀")
 
-    # 팀 인터뷰 (리안한테 디테일 파악)
+    # 팀 인터뷰 (보스한테 디테일 파악)
     interview = team_interview(task, client)
     context["interview"] = interview
     save(output_dir, "00_팀인터뷰.md", interview)
