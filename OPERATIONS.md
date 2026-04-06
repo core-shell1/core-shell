@@ -1,50 +1,50 @@
-# 리안 컴퍼니 운영 매뉴얼
+# 혜경 컴퍼니 운영 매뉴얼
 
 > 이 문서는 Claude가 자율적으로 시스템을 운영하기 위한 완전한 매뉴얼이다.
-> 리안이 "이거 해줘"라고 하면 이 문서를 보고 어떤 플로우를 태울지 스스로 판단해라.
+> 혜경이 "이거 해줘"라고 하면 이 문서를 보고 어떤 플로우를 태울지 스스로 판단해라.
 > 마지막 업데이트: 2026-04-04
 
 ---
 
-## 0. 빠른 시작 (리안용 치트시트)
+## 0. 빠른 시작 (혜경용 치트시트)
 
 ### 새 프로젝트 시작 (자동파일럿)
 ```bash
-cd lian_company
+cd hkyoun_company
 ./venv/Scripts/python.exe main.py "온라인 마케팅 대행 사업"
 # → input() 없이 이사팀 자동 실행 → 보고서가 보고사항들.md에 저장됨
-# → 리안은 보고서만 보고 "진행" 또는 "수정해" 한마디
+# → 혜경은 보고서만 보고 "진행" 또는 "수정해" 한마디
 ```
 
 ### 새 프로젝트 시작 (대화형 — 시은과 대화)
 ```bash
-cd lian_company
+cd hkyoun_company
 ./venv/Scripts/python.exe main.py
 # → 시은이 질문하면서 명확화 → 이사팀 실행
 ```
 
 ### 매일 운영 루프 (콘텐츠 자동 생성)
 ```bash
-cd lian_company
+cd hkyoun_company
 ./venv/Scripts/python.exe -m core.ops_loop daily "프로젝트명"
 # → 인스타 캡션 + 블로그 제목 + 영업 DM 자동 생성 → 보고사항들.md
 ```
 
 ### 매주 성과 리뷰
 ```bash
-cd lian_company
+cd hkyoun_company
 ./venv/Scripts/python.exe -m core.ops_loop weekly "프로젝트명" "이번 주 성과 데이터"
 ```
 
 ### 영업 결과 입력 (팀 학습)
 ```bash
-cd lian_company
+cd hkyoun_company
 python input_results.py "오늘 미용실 3곳 DM, 1곳 답장, 거절 이유 비싸다"
 ```
 
 ### 전체 팀 현황 확인 (2주마다)
 ```bash
-python lian_company/orchestrate.py
+python hkyoun_company/orchestrate.py
 ```
 
 ### 보고 확인
@@ -52,8 +52,8 @@ python lian_company/orchestrate.py
 
 ### 직원 개별 호출
 ```bash
-python lian_company/ask.py 서윤 "양주 미용실 경쟁사 현황"
-python lian_company/ask.py 승현 "3차 메시지 개선 방향"
+python hkyoun_company/ask.py 서윤 "양주 미용실 경쟁사 현황"
+python hkyoun_company/ask.py 승현 "3차 메시지 개선 방향"
 ```
 
 ---
@@ -61,11 +61,11 @@ python lian_company/ask.py 승현 "3차 메시지 개선 방향"
 ## 0-1. 이 시스템이 뭐냐
 
 아이디어 하나 → AI 에이전트들이 자동으로 기획→팀 생성→실행→개발→마케팅→운영까지.
-리안(CEO, 비개발자)의 개입을 최소화하는 것이 핵심 설계 원칙.
+혜경(CEO, 비개발자)의 개입을 최소화하는 것이 핵심 설계 원칙.
 **만들고 끝이 아니라, 배포 후 매일 돌아가는 것이 목표.**
 
 **네 개의 레이어:**
-- **Layer 1: 리안 컴퍼니** (`lian_company/`) = 기획 엔진. 아이디어 평가 + 팀 설계 + 지식 주입.
+- **Layer 1: 혜경 컴퍼니** (`hkyoun_company/`) = 기획 엔진. 아이디어 평가 + 팀 설계 + 지식 주입.
 - **Layer 2: UltraProduct** (`.claude/commands/work.md`) = 실행 엔진. 코드 개발 + 배포.
 - **Layer 3: 런칭 준비** (`core/launch_prep.py`) = 타겟/상품/가격/채널 구체화.
 - **Layer 4: 운영 루프** (`core/ops_loop.py`) = 매일 콘텐츠 + 영업 + 성과 추적.
@@ -79,7 +79,7 @@ python lian_company/ask.py 승현 "3차 메시지 개선 방향"
 
 ## 1. 할 수 있는 것 전체 목록
 
-리안이 뭘 시키면 아래에서 해당하는 걸 골라서 실행해라.
+혜경이 뭘 시키면 아래에서 해당하는 걸 골라서 실행해라.
 
 ### 1-A. 새 아이디어 평가
 ```
@@ -87,11 +87,11 @@ python lian_company/ask.py 승현 "3차 메시지 개선 방향"
 → 이사팀 파이프라인
 
 자동파일럿 (CLI 인자):
-→ python lian_company/main.py "아이디어"
+→ python hkyoun_company/main.py "아이디어"
 → input() 없이 자동 실행 → 보고서 보고사항들.md에 저장
 
 대화형 (인자 없이):
-→ python lian_company/main.py
+→ python hkyoun_company/main.py
 → 시은과 대화하며 명확화 → 이사팀 실행
 ```
 - 시은이 아이디어 명확화 대화
@@ -106,7 +106,7 @@ python lian_company/ask.py 승현 "3차 메시지 개선 방향"
 ```
 "OO팀 만들어" / "이 일 할 팀 필요해"
 → 교육팀
-→ python lian_company/build_team.py "팀이름" "팀 목적 상세 설명"
+→ python hkyoun_company/build_team.py "팀이름" "팀 목적 상세 설명"
 ```
 **⚠️ 새 팀은 반드시 이 명령어로 만들어야 한다. 수동으로 .py 파일 직접 만들지 마라.**
 
@@ -116,8 +116,8 @@ python lian_company/ask.py 승현 "3차 메시지 개선 방향"
 3. Perplexity가 쿼리 병렬 수집 (세계 최고 수준 전문 지식)
 4. 수집된 지식을 knowledge/base/에 저장
 5. 자동 생성:
-   - `lian_company/teams/{팀명}/` — 에이전트 .py + pipeline.py
-   - `lian_company/run_{팀명}.py` — 실행 진입점
+   - `hkyoun_company/teams/{팀명}/` — 에이전트 .py + pipeline.py
+   - `hkyoun_company/run_{팀명}.py` — 실행 진입점
    - `.claude/agents/{에이전트}.md` — Claude Code 에이전트 정의
    - `회사 조직도.md` — 자동 업데이트
 
@@ -126,27 +126,27 @@ python lian_company/ask.py 승현 "3차 메시지 개선 방향"
 ### 1-C. 기존 팀 실행
 ```
 "오프라인 영업 자료 만들어" / "영업 스크립트 새로 뽑아줘"
-→ python lian_company/offline_sales.py "업종"
+→ python hkyoun_company/offline_sales.py "업종"
 ```
 ```
 "자료 분석해줘" / (자료들/ 폴더에 파일 있으면)
-→ python lian_company/process_inbox.py
+→ python hkyoun_company/process_inbox.py
 ```
 ```
 온라인 영업 파이프라인 실행 (소상공인 타겟 온라인 영업):
-→ python lian_company/run_온라인영업팀.py "업무 내용"
+→ python hkyoun_company/run_온라인영업팀.py "업무 내용"
 ```
 ```
 온라인 콘텐츠 납품 파이프라인 실행 (블로그/인스타/광고 카피 등):
-→ python lian_company/run_온라인납품팀.py "업무 내용"
+→ python hkyoun_company/run_온라인납품팀.py "업무 내용"
 ```
 ```
 온라인 마케팅 전략/운영 파이프라인 실행:
-→ python lian_company/run_온라인마케팅팀.py "업무 내용"
+→ python hkyoun_company/run_온라인마케팅팀.py "업무 내용"
 ```
 ```
 교육팀이 만든 팀 실행:
-→ python lian_company/run_{팀명}.py "업무 내용"
+→ python hkyoun_company/run_{팀명}.py "업무 내용"
 ```
 
 ### 1-D. 코드 개발 (UltraProduct)
@@ -157,7 +157,7 @@ python lian_company/ask.py 승현 "3차 메시지 개선 방향"
 Wave 3부터 시작 (Wave 1-2 기획은 이미 완료된 상태):
 - CTO + CDO 병렬 설계
 - PM 태스크 분해
-- 🔴 리안 컨펌
+- 🔴 혜경 컨펌
 - FE + BE 병렬 개발
 - QA 테스트
 - 배포 (상용화만)
@@ -167,8 +167,8 @@ Wave 3부터 시작 (Wave 1-2 기획은 이미 완료된 상태):
 
 ### 1-E. 자료 처리
 ```
-리안이 자료들/ 폴더에 파일 던져넣으면:
-→ python lian_company/process_inbox.py
+혜경이 자료들/ 폴더에 파일 던져넣으면:
+→ python hkyoun_company/process_inbox.py
 ```
 - .txt .md .html → 도윤이 읽고 knowledge/base/ 저장 + 원본 삭제
 - .png .jpg .webp .gif .bmp → 분석팀(Gemini) 이미지 분석
@@ -178,7 +178,7 @@ Wave 3부터 시작 (Wave 1-2 기획은 이미 완료된 상태):
 
 ### 1-G. 직원 개별 호출
 
-리안이 직원 이름을 부르면 → 해당 직원만 단독으로 스폰해라.
+혜경이 직원 이름을 부르면 → 해당 직원만 단독으로 스폰해라.
 
 **Claude Code 에이전트 (UltraProduct팀) — Agent tool로 스폰:**
 | 이름/키워드 | subagent_type |
@@ -194,7 +194,7 @@ Wave 3부터 시작 (Wave 1-2 기획은 이미 완료된 상태):
 | 예진 / 예진아 / 카피 | 예진 (yejin) |
 | 영진 / 영진아 / 성과 | 영진 (youngjin) |
 
-예시: 리안이 "현우야 이 코드 아키텍처 봐줘" → `Agent(subagent_type="cto", prompt="...")`
+예시: 혜경이 "현우야 이 코드 아키텍처 봐줘" → `Agent(subagent_type="cto", prompt="...")`
 
 **온라인팀 에이전트 — run_{팀명}.py 직접 실행 또는 pipeline.py 임포트:**
 | 팀 | 이름/역할 | 실행 방법 |
@@ -205,7 +205,7 @@ Wave 3부터 시작 (Wave 1-2 기획은 이미 완료된 상태):
 
 **Python 에이전트 (이사팀) — ask.py로 호출:**
 ```bash
-cd lian_company
+cd hkyoun_company
 ./venv/Scripts/python.exe ask.py "서윤" "네이버 플레이스 시장 규모 알려줘"
 ./venv/Scripts/python.exe ask.py "민수" "이 수익모델 분석해줘"
 ./venv/Scripts/python.exe ask.py "하은" "이 데이터 팩트체크 해줘"
@@ -257,7 +257,7 @@ cd lian_company
 
 ## 2. 직원 목록 (에이전트)
 
-### 이사팀 (lian_company/agents/)
+### 이사팀 (hkyoun_company/agents/)
 | 이름 | AI | 역할 | 파일 |
 |------|-----|------|------|
 | 시은 | Claude Sonnet | 오케스트레이터, 아이디어 명확화, 인터뷰, 팀 설계 | sieun.py |
@@ -267,13 +267,13 @@ cd lian_company
 | 하은 | Gemini | 팩트 검증/반론 | haeun.py |
 | 준혁 | Claude Opus | GO/NO-GO 최종 판단 | junhyeok.py |
 
-### 교육팀 (lian_company/teams/education/)
+### 교육팀 (hkyoun_company/teams/education/)
 | 이름 | AI | 역할 | 파일 |
 |------|-----|------|------|
 | 도윤 | Claude Opus | 커리큘럼 설계 | curriculum_designer.py |
 | 서윤 | Perplexity | 전문 지식 수집 (겸직) | trainer.py |
 
-### 분석·마케팅팀 (lian_company/teams/)
+### 분석·마케팅팀 (hkyoun_company/teams/)
 | 이름 | AI | 역할 | 파일 |
 |------|-----|------|------|
 | 지수 | Gemini Vision | 이미지/영상 분석 | analysis/analyzer.py |
@@ -281,7 +281,7 @@ cd lian_company
 | 승현 | Claude Sonnet | 영업 전략 설계 (오프라인) | offline_marketing/strategist.py |
 | 예진 | Claude Sonnet | DM/스크립트/카피 (오프라인) | offline_marketing/copywriter.py |
 
-### 온라인영업팀 (lian_company/teams/온라인영업팀/) — build_team.py 자동생성 2026-04-02
+### 온라인영업팀 (hkyoun_company/teams/온라인영업팀/) — build_team.py 자동생성 2026-04-02
 | 이름 | AI | 역할 | 파일 |
 |------|-----|------|------|
 | 박탐정 | Claude Sonnet | 잠재고객 분석·식별 기준 설계 | 박탐정.py |
@@ -291,7 +291,7 @@ cd lian_company
 | 정클로저 | Claude Sonnet | 30분 미팅 대본 및 거절 대응 스크립트 | 정클로저.py |
 | 한총괄 | Claude Sonnet | 전체 영업 파이프라인 품질 관리 | 한총괄.py |
 
-### 온라인납품팀 (lian_company/teams/온라인납품팀/) — build_team.py 자동생성 2026-04-02
+### 온라인납품팀 (hkyoun_company/teams/온라인납품팀/) — build_team.py 자동생성 2026-04-02
 | 이름 | AI | 역할 | 파일 |
 |------|-----|------|------|
 | 서진호 | Claude Sonnet | SEO 키워드 전략가 | 서진호.py |
@@ -302,7 +302,7 @@ cd lian_company
 | 정민재 | Claude Sonnet | 성과 분석·리포트 매니저 | 정민재.py |
 | 김태리 | Claude Sonnet | 납품 총괄 PM | 김태리.py |
 
-### 온라인마케팅팀 (lian_company/teams/온라인마케팅팀/) — build_team.py 자동생성 2026-04-02
+### 온라인마케팅팀 (hkyoun_company/teams/온라인마케팅팀/) — build_team.py 자동생성 2026-04-02
 | 이름 | AI | 역할 | 파일 |
 |------|-----|------|------|
 | 서진혁 | Claude Sonnet | 리드 헌터 — 잠재 셀러 발굴 | 서진혁.py |
@@ -328,10 +328,10 @@ cd lian_company
 
 ---
 
-## 3. 의사결정 트리 — 리안이 뭘 시키면 어떻게 하냐
+## 3. 의사결정 트리 — 혜경이 뭘 시키면 어떻게 하냐
 
 ```
-리안의 요청
+혜경의 요청
     │
     ├─ "아이디어 평가해줘" / "이거 될까?"
     │   → 1-A. python main.py "아이디어"
@@ -368,11 +368,11 @@ cd lian_company
     │
     ├─ "전체 상황 봐줘" / "뭐 빠진 거 없어?" / "지호야 체크해줘"
     │   → 1-I. 지호(참모) 호출 → Agent(subagent_type="coos")
-    │       또는 python lian_company/watchdog.py
+    │       또는 python hkyoun_company/watchdog.py
     │
     └─ 기타
         → CLAUDE.md 규칙에 따라 판단
-        → 모르겠으면 리안에게 물어봐라
+        → 모르겠으면 혜경에게 물어봐라
 ```
 
 ---
@@ -399,7 +399,7 @@ knowledge/
 ### 지식 흐름
 1. 교육팀이 Perplexity로 수집 → `knowledge/base/`에 저장
 2. 팀 실행 결과물 → `knowledge/teams/{팀명}/`에 저장
-3. 리안 피드백 → `knowledge/teams/{팀명}/feedback/`에 저장
+3. 혜경 피드백 → `knowledge/teams/{팀명}/feedback/`에 저장
 4. 새 팀 생성 시 → 관련 지식 자동 검색 → 에이전트 프롬프트에 주입
 
 ### 사용 가능한 API (knowledge/manager.py)
@@ -410,7 +410,7 @@ from knowledge.manager import (
     save_feedback,            # 피드백 저장
     get_knowledge_for_team,   # 팀 관련 지식 검색
     write_report,             # 보고사항들.md에 보고
-    collect_feedback,         # 리안 피드백 수집
+    collect_feedback,         # 혜경 피드백 수집
 )
 ```
 
@@ -420,7 +420,7 @@ from knowledge.manager import (
 
 ### API 키 (.env)
 ```
-위치: lian_company/.env
+위치: hkyoun_company/.env
 상태: ✅ 전부 설정됨 (2026-04-01 확인)
 
 ANTHROPIC_API_KEY    → Claude 모델 전체
@@ -432,8 +432,8 @@ DISCORD_WEBHOOK_URL  → 디스코드 알림 (선택)
 
 ### Python 실행
 ```bash
-# lian_company 내 모든 스크립트:
-cd lian_company
+# hkyoun_company 내 모든 스크립트:
+cd hkyoun_company
 ./venv/Scripts/python.exe {스크립트}.py
 
 # naver-diagnosis:
@@ -466,7 +466,7 @@ SONAR_PRO     = "sonar-pro"
 | 프로젝트 | 위치 | 상태 |
 |----------|------|------|
 | 오프라인 마케팅 | `team/[진행중] 오프라인 마케팅/` | ✅ 진행중 (naver-diagnosis 운영중, 레퍼런스 클라이언트 대기) |
-| 온라인 마케팅 (3팀 완성) | `lian_company/teams/온라인{영업/납품/마케팅}팀/` | ✅ 팀 생성 완료 (2026-04-02), 실행 대기 중 |
+| 온라인 마케팅 (3팀 완성) | `hkyoun_company/teams/온라인{영업/납품/마케팅}팀/` | ✅ 팀 생성 완료 (2026-04-02), 실행 대기 중 |
 | 혜경님 인하우스 마케터 (Lian Dash) | `team/[혜경님] 인하우스_마케터_및_프리랜서를_위한/lian-dash/` | ✅ Vercel 배포 완료 (https://lian-dash.vercel.app, mock 데이터) |
 | 고객-마케터 플랫폼 | `team/[중단] 고객이랑 마케터랑 이어주는 플랫폼/` | ⏸️ 중단 |
 | 구매대행 자동화 | `team/[중단] 구매대행 자동화/` | ⏸️ 중단 |
@@ -479,14 +479,14 @@ SONAR_PRO     = "sonar-pro"
 이건 가장 중요한 플로우이므로 상세하게 기록한다.
 
 ### Step 1: 기획서 작성
-- 리안이 "OO팀 만들어"라고 하면
+- 혜경이 "OO팀 만들어"라고 하면
 - Claude가 먼저 Perplexity로 해당 도메인 조사
 - 조사 결과를 바탕으로 `team/{팀명}/기획서.md` 작성
-- 리안 검토 + 수정
+- 혜경 검토 + 수정
 
 ### Step 2: 교육팀 실행
 ```bash
-cd lian_company
+cd hkyoun_company
 ./venv/Scripts/python.exe build_team.py "팀이름" "팀 목적 (기획서 요약)"
 ```
 - 팀 목적은 기획서 핵심을 요약한 텍스트. 길수록 좋다.
@@ -496,28 +496,28 @@ cd lian_company
 
 ### Step 3: 자동 생성 결과물
 ```
-lian_company/teams/{팀명}/
+hkyoun_company/teams/{팀명}/
 ├── __init__.py
 ├── pipeline.py           ← 팀 실행 로직
 ├── {에이전트1}.py        ← 지식 주입된 에이전트
 ├── {에이전트2}.py
 └── ...
 
-lian_company/run_{팀명}.py   ← 실행 진입점
+hkyoun_company/run_{팀명}.py   ← 실행 진입점
 .claude/agents/{에이전트}.md  ← Claude Code 에이전트 정의
 회사 조직도.md               ← 자동 업데이트됨
 ```
 
 ### Step 4: 팀 실행
 ```bash
-cd lian_company
+cd hkyoun_company
 ./venv/Scripts/python.exe run_{팀명}.py "업무 내용"
 ```
-- 팀 인터뷰 (리안한테 질문)
+- 팀 인터뷰 (혜경한테 질문)
 - 에이전트 순차 실행
 - 결과물 `team/{팀명}/`에 저장
 - 보고사항들.md에 자동 보고
-- 리안 피드백 수집
+- 혜경 피드백 수집
 
 ---
 
@@ -553,7 +553,7 @@ cd lian_company
 
 | 문제 | 원인 | 해결 |
 |------|------|------|
-| main.py 실행 안 됨 | .env 없거나 키 오류 | lian_company/.env 확인 |
+| main.py 실행 안 됨 | .env 없거나 키 오류 | hkyoun_company/.env 확인 |
 | Perplexity 에러 | API 키 만료 or 한도 | PERPLEXITY_API_KEY 확인 |
 | 교육팀 생성 실패 | Opus 호출 실패 | ANTHROPIC_API_KEY 확인 + 잔액 |
 | naver-diagnosis 크롤링 실패 | Playwright 브라우저 없음 | `playwright install chromium` |
@@ -566,7 +566,7 @@ cd lian_company
 
 > **2026-04-03 아키텍처 노트:**
 > 에이전트 16명 워크샵 완료 — 온라인영업팀(6명), 온라인납품팀(7명), 온라인마케팅팀(6명) 모두 build_team.py로 자동 생성됨.
-> 이 팀들은 `lian_company/teams/` 아래에 있고 `run_{팀명}.py`로 실행.
+> 이 팀들은 `hkyoun_company/teams/` 아래에 있고 `run_{팀명}.py`로 실행.
 > 조직도에 반영됨 (`회사 조직도.md` 2026-04-02 변경이력 참고).
 
 
