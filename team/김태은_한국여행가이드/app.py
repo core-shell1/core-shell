@@ -111,8 +111,10 @@ class RestaurantDetail(BaseModel):
     hours: str
     signature_dishes: list[str] = []
     atmosphere_tags: list[str] = []
-    pros_cons: dict = {"pros": [], "cons": []}
+    pros_cons: dict = {"pros": "", "cons": ""}
     google_maps_url: str = ""
+    walk_minutes: Optional[int] = None
+    distance_km: Optional[float] = None
 
 
 # ─── 헬퍼 함수 ───────────────────────────────────────────────────────────
@@ -485,6 +487,8 @@ async def get_restaurant(restaurant_id: int):
         atmosphere_tags=r.get("atmosphere_tags", []),
         pros_cons=r.get("pros_cons", {"pros": "", "cons": ""}),
         google_maps_url=maps_url,
+        walk_minutes=r.get("walk_minutes"),
+        distance_km=r.get("distance_km"),
     )
 
 
