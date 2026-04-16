@@ -84,8 +84,20 @@
 |---|---|---|
 | 영상 생성 (Kling) | MCP: `mcp-kling` | `mcp__mcp-kling__*` |
 | 이미지 생성 (Imagen4) | `tools/image_generator.py` | import |
-| 배경영상 (Veo) | `tools/veo_generator.py` (있으면) | CLI or import |
+| 배경영상 (Veo) | `team/디자인팀/tools/veo_generator.py` | CLI or import |
+| **제품 광고 이미지** / 레퍼런스→제품 | `tools/nano_banana.py` (fal.ai nano-banana-2/edit) | `from tools.nano_banana import generate_from_references` |
 | 영상 MCP (fal.ai) | MCP: `fal-ai` (현재 disconnect — 재설정 필요) | `mcp__fal-ai__*` |
+
+### 모니터링/비용 관리
+| 리안이 말하면 | 써야 할 것 | 호출 |
+|---|---|---|
+| "비용 얼마 나왔어?" / 주간 비용 | `tools/cost_tracker.py` | `python tools/cost_tracker.py 7` |
+| 에이전트 호출 기록 | `cost_tracker.log_call()` / `track()` context manager | import |
+
+### 리서치 심화 (NotebookLM)
+| 리안이 말하면 | 써야 할 것 | 비고 |
+|---|---|---|
+| "이 문서들 Claude가 학습" | MCP: `notebooklm` | ⚠️ stub 상태. `.env`에 NOTEBOOKLM_EMAIL/PASSWORD 추가 후 `.mcp.json`에서 `_comment` 제거하면 활성 |
 
 ### UI 자동 생성
 | 리안이 말하면 | 써야 할 것 | 호출 |
