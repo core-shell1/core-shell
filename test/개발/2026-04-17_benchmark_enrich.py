@@ -22,7 +22,9 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent / "team" / "[진행중] 오�
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from dotenv import load_dotenv
-load_dotenv(PROJECT_ROOT / ".env")
+# core/company/.env 중앙 로드
+CORE_ROOT = Path(__file__).parent.parent.parent
+load_dotenv(CORE_ROOT / "company" / ".env")
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
