@@ -129,7 +129,9 @@
 
 ### Python 툴 (`company/tools/` + `company/utils/`)
 - **tools**: `design_scraper.py`, `image_generator.py`
-- **utils**: `awwwards_scraper.py`, `codepen_scraper.py`, `insta_analyze.py`, `insta_browse.py`, `meta_ads.py`, `monitor.py`, `naver_auth.py`, `naver_crawler.py`
+- **utils 스크래핑**: `awwwards_scraper.py`, `codepen_scraper.py`, `insta_analyze.py`, `insta_browse.py`, `naver_crawler.py`, `naver_auth.py`, `web_scraper.py`
+- **utils 분석/모니터**: `meta_ads.py`, `monitor.py`, `status_tracker.py`
+- **utils 복제/템플릿**: `video_cloner.py` (인스타/유튜브 URL → HTML 재현), `team_templates.py` (기존 팀 저장/신규 팀 템플릿화)
 
 ### MCP 서버 (`.mcp.json`)
 - `mcp-kling` — Kling AI 영상 생성
