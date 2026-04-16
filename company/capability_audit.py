@@ -9,9 +9,15 @@ capability_audit.py — .claude/CAPABILITIES.md drift 감지
 """
 import os
 import re
+import sys
 import json
 from pathlib import Path
 from datetime import datetime
+
+if sys.platform == "win32":
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).parent.parent
 CAPS = ROOT / ".claude" / "CAPABILITIES.md"
