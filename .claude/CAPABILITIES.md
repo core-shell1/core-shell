@@ -46,6 +46,10 @@
 | "Codepen 스크랩" | `utils/codepen_scraper.py` | 스크립트 |
 | "네이버 크롤" | `utils/naver_crawler.py` + `utils/naver_auth.py` | 스크립트 |
 | "Meta 광고 분석" | `utils/meta_ads.py` | 스크립트 |
+| "이 영상/릴스 복제" / "HTML로 재현" | `utils/video_cloner.py` | 스크립트 |
+| "이 웹페이지 분석" / "URL 스크랩" | `utils/web_scraper.py` | import |
+| "팀 템플릿으로 저장" / "유사팀 생성" | `utils/team_templates.py` | import |
+| "에이전트 상태 추적" | `utils/status_tracker.py` | import |
 
 ### 개발/코딩
 | 리안이 말하면 | 써야 할 것 | 호출 |
