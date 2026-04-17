@@ -124,8 +124,8 @@ def analyze():
 
         t_desc = f"{t_stats.get('file_count','?')}개, {t_stats.get('last_modified','?')}" if t_stats.get("exists") else "없음"
         ts_desc = f"{ts_stats.get('file_count','?')}개, {ts_stats.get('last_modified','?')}"
-        run_scripts = ", ".join(set(refs_t["run_script"] + refs_ts["run_script"])) or "-"
-        imports = ", ".join(set(refs_t["import"] + refs_ts["import"])[:3]) or "-"
+        run_scripts = ", ".join(sorted(set(refs_t["run_script"] + refs_ts["run_script"]))) or "-"
+        imports = ", ".join(sorted(set(refs_t["import"] + refs_ts["import"]))[:3]) or "-"
 
         # 판단 로직
         ts_active = len(refs_ts["import"]) > 0 or len(refs_ts["run_script"]) > 0
