@@ -93,10 +93,9 @@
 |---|---|---|
 | "비용 얼마 나왔어?" / 주간 비용 | `tools/cost_tracker.py` | `python tools/cost_tracker.py 7` |
 | 에이전트 호출 기록 | `cost_tracker.log_call()` / `track()` context manager | import |
-| "팀 폴더 drift 확인" / team vs teams 분석 | `team_drift_analyzer.py` | `python team_drift_analyzer.py` |
-| CAPABILITIES 드리프트 | `capability_audit.py` | weekly_runner 자동 실행 |
-| "프롬프트 긴 거 찾아" / 150줄 초과 스캔 | `audit_prompt_length.py` | `python audit_prompt_length.py` |
-| "안 쓰는 팀 있나" / 팀 활성 감사 | `audit_dead_teams.py` | `python audit_dead_teams.py` |
+| **통합 감사 (자동 조치 + JSON 로그)** | `audit_hub.py` | weekly_runner 자동 / 수동: `python audit_hub.py` |
+| 수동 진단 (콘솔 출력만) | `capability_audit.py`, `team_drift_analyzer.py`, `audit_prompt_length.py`, `audit_dead_teams.py` | 개별 실행 |
+| 감사 원본 데이터 조회 | `company/logs/audits.jsonl` | Python `json.loads` 각 줄 |
 
 ### 리서치 심화 (NotebookLM)
 | 리안이 말하면 | 써야 할 것 | 비고 |
