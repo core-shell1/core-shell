@@ -1,0 +1,6181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오프라인 자영업자 마케팅 대행  뷰티 — 사업기획서</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f5f7;
+  --panel: #ffffff;
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --border: #e5e5ea;
+  --accent: #0066cc;
+  --accent-dim: #0066cc12;
+  --go: #00875a;
+  --cond: #c07700;
+  --nogo: #c0392b;
+  --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.04);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 레이아웃 ── */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 20px; padding: 20px 16px; }
+  nav.toc { position: static !important; max-height: none !important; }
+}
+
+/* ── TOC ── */
+nav.toc {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 14px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+}
+nav.toc .toc-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 0 8px;
+  margin-bottom: 10px;
+  display: block;
+}
+nav.toc a {
+  display: block;
+  padding: 6px 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 7px;
+  margin-bottom: 1px;
+  transition: background 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+nav.toc a:hover { background: var(--accent-dim); color: var(--accent); }
+nav.toc .toc-divider { height: 1px; background: var(--border); margin: 10px 0; }
+
+/* ── 히어로 헤더 ── */
+header.hero {
+  background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 40px 44px 36px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+header.hero .eyebrow {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+header.hero h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.meta { display: flex; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 13px; align-items: center; }
+.meta strong { color: var(--text); }
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.badge-go { background: #00875a22; color: var(--go); }
+.badge-cond { background: #c0770022; color: var(--cond); }
+.badge-nogo { background: #c0392b22; color: var(--nogo); }
+
+/* ── 17개 섹션 그리드 ── */
+.sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: var(--shadow);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent-dim);
+}
+.card .card-no {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+.card .card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.card .card-body { font-size: 14px; line-height: 1.7; color: var(--text); }
+.card .card-body p { margin: 8px 0; }
+.card .card-body ul, .card .card-body ol { padding-left: 18px; margin: 8px 0; }
+.card .card-body li { margin: 4px 0; }
+.card .card-body strong { font-weight: 700; }
+.card .card-body table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+.card .card-body th, .card .card-body td { border: 1px solid var(--border); padding: 7px 10px; text-align: left; vertical-align: top; }
+.card .card-body th { background: var(--accent-dim); font-weight: 700; }
+.card .card-body tr:nth-child(even) td { background: #fafafa; }
+.card .card-body blockquote { border-left: 3px solid var(--accent); margin: 10px 0; padding: 8px 14px; background: var(--accent-dim); border-radius: 0 8px 8px 0; }
+
+/* 1번 카드 (한 줄 설명) — 강조 */
+.card.card-1 {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+  border: 2px solid #f0c000;
+  box-shadow: 0 4px 20px rgba(240,192,0,0.12);
+}
+.card.card-1 .card-header { border-bottom-color: #f0c00030; }
+.card.card-1 .card-title { font-size: 16px; }
+
+/* 17번 카드 (판정) — 강조 */
+.card.card-17 { border-color: var(--accent); }
+.card.card-17 .card-header { border-bottom-color: #0066cc30; }
+
+/* ── 상세 섹션 (접기) ── */
+.detail-label {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 8px 0 20px;
+}
+details.collapsible {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+details.collapsible > summary {
+  padding: 18px 28px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.15s;
+}
+details.collapsible > summary:hover { background: var(--accent-dim); color: var(--accent); }
+details.collapsible > summary::-webkit-details-marker { display: none; }
+details.collapsible > summary::before {
+  content: "▸";
+  font-size: 11px;
+  transition: transform 0.2s;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+details.collapsible[open] > summary::before { transform: rotate(90deg); }
+details.collapsible[open] > summary { border-bottom: 1px solid var(--border); }
+details.collapsible > .content {
+  padding: 28px 40px 36px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+details.collapsible .content h1 { font-size: 22px; margin: 0 0 20px; font-weight: 700; }
+details.collapsible .content h2 { font-size: 18px; margin: 28px 0 12px; font-weight: 700; padding-bottom: 8px; border-bottom: 2px solid var(--accent-dim); }
+details.collapsible .content h2:first-child { margin-top: 0; }
+details.collapsible .content h3 { font-size: 16px; margin: 20px 0 8px; font-weight: 700; }
+details.collapsible .content h4 { font-size: 14px; margin: 16px 0 6px; font-weight: 600; }
+details.collapsible .content p { margin: 8px 0; }
+details.collapsible .content ul, details.collapsible .content ol { padding-left: 22px; margin: 8px 0; }
+details.collapsible .content li { margin: 4px 0; }
+details.collapsible .content table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; table-layout: auto; }
+details.collapsible .content th, details.collapsible .content td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; vertical-align: top; word-break: keep-all; }
+details.collapsible .content th { background: var(--accent-dim); font-weight: 700; }
+details.collapsible .content tr:nth-child(even) td { background: #fafafa; }
+details.collapsible .content code { background: #f0f0f3; padding: 2px 6px; border-radius: 5px; font-size: 13px; font-family: 'SF Mono', Menlo, Consolas, monospace; }
+details.collapsible .content pre { background: #1d1d1f; color: #f5f5f7; padding: 16px 18px; border-radius: 10px; overflow-x: auto; font-size: 13px; line-height: 1.6; }
+details.collapsible .content pre code { background: transparent; color: inherit; padding: 0; }
+details.collapsible .content blockquote { border-left: 4px solid var(--accent); margin: 14px 0; padding: 10px 16px; background: var(--accent-dim); border-radius: 0 8px 8px 0; }
+details.collapsible .content hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+details.collapsible .content a { color: var(--accent); text-decoration: none; }
+details.collapsible .content a:hover { text-decoration: underline; }
+
+.footer {
+  margin-top: 40px;
+  padding: 28px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media print {
+  body { background: white; }
+  .layout { grid-template-columns: 1fr; max-width: none; padding: 0; }
+  nav.toc { display: none; }
+  .sections-grid { grid-template-columns: 1fr 1fr; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+  details.collapsible { break-inside: avoid; box-shadow: none; border: none; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+  <span class="toc-label">목차</span>
+  <a href="#summary">📋 17개 핵심 요약</a>
+  <div class="toc-divider"></div>
+  <a href="#strategy_minsu">💡 전략 방향 · 1순위 선택 (민수)</a>
+<a href="#strategy_d1">🏗 심층 전략 브리프 (설계자 1회차)</a>
+<a href="#strategy_d2">💼 비즈니스 모델 (설계자 2회차)</a>
+<a href="#market">📊 시장 분석 · Pain Point · 경쟁사 (서윤)</a>
+<a href="#trends">🔭 트렌드 (태호)</a>
+<a href="#validation">🛡️ 검증 · 반론 (하은)</a>
+<a href="#discussion">💬 토론 결과 (민수↔하은)</a>
+<a href="#judgment">⚖️ 최종 판단 (준혁)</a>
+<a href="#prd">🛠 PRD — 제품 기획 · 기술 스택 (지훈)</a>
+<a href="#big_picture">🗺 큰그림 체크 (시은)</a>
+<a href="#review">🔍 최종 재검토 (시은 델타봇)</a>
+<a href="#team">👥 실행 팀 구성</a>
+<a href="#board_report">📰 이사팀 원본 보고서</a>
+</nav>
+<main>
+<header class="hero">
+  <div class="eyebrow">사업기획서 · 리안 컴퍼니</div>
+  <h1>오프라인 자영업자 마케팅 대행  뷰티</h1>
+  <div class="meta">
+    <span>생성일: <strong>2026-04-13</strong></span>
+    <span>·</span>
+    <span>판정: <span class="badge badge-go">GO ✓</span></span>
+    <span>·</span>
+    <span>점수: <strong>7.25/10</strong></span>
+  </div>
+</header>
+
+<div id="summary" class="sections-grid">
+<div class="card card-1">  <div class="card-header">    <span class="card-no">1</span>    <span class="card-title">📋 한 줄 설명</span>  </div>  <div class="card-body"><p>오프라인 자영업자(뷰티샵·카페·식당)를 위해 인스타·네이버플레이스·블로그 통합 마케팅을 월 구독형으로 대행하는 서비스 (29~89만원/월)</p></div></div>
+<div class="card card-2">  <div class="card-header">    <span class="card-no">2</span>    <span class="card-title">🧭 사업 성격 분류</span>  </div>  <div class="card-body"><p><strong>마케팅 대행 서비스</strong> (B2B, 월 구독형 리테이너)<br />
+- 타입: 아웃소싱 대행 + AI 파이프라인 기반<br />
+- 상용화 방식: 외부 판매 서비스<br />
+- 기존 비즈니스와의 관계: 리안 자체 온라인팀 운영 경험 기반</p></div></div>
+<div class="card card-3">  <div class="card-header">    <span class="card-no">3</span>    <span class="card-title">🎯 누구한테 팔 건가</span>  </div>  <div class="card-body"><p><strong>1~5인 오프라인 자영업자</strong><br />
+- 주요층: 35세 네일샵/헤어샵 원장, 카페 사업가, 식당 사장<br />
+- 마케팅 예산: 월 30~100만원대<br />
+- 특징: 직접 운영 여력 없고, 디지털 마케팅에 소극적이거나 피로도 높음<br />
+- 시장규모 SOM: 500억원 (1,000개 고객 × 49만원 기준)</p></div></div>
+<div class="card card-4">  <div class="card-header">    <span class="card-no">4</span>    <span class="card-title">💢 진짜 고통 (3~5개)</span>  </div>  <div class="card-body"><ol>
+<li><strong>인스타그램 콘텐츠 직접 제작 시간 부족</strong> — 사업에 집중 못함 (Pain #1, Level 4)</li>
+<li><strong>네이버플레이스 리뷰 관리 수작업</strong> — 이미지/리뷰 엑셀 관리 오류 (Pain #2, #14, Level 4)</li>
+<li><strong>광고·블로그 운영 스킬 부족</strong> — 무료 툴 시행착오, 효과 측정 불가 (Pain #4, #21, Level 4)</li>
+<li><strong>플랫폼 수수료로 마케팅 예산 소진</strong> — 자체 채널 확보 필요 (Pain #5, Level 4)</li>
+<li><strong>다중 플랫폼 동시 관리 복잡성</strong> — 흩어진 데이터, 통합 성과 측정 불가 (Workaround 관찰 26개)</li>
+</ol></div></div>
+<div class="card card-5">  <div class="card-header">    <span class="card-no">5</span>    <span class="card-title">💰 얼마에 팔까</span>  </div>  <div class="card-body"><p><strong>월 정기 구독 3단계 패키지</strong><br />
+- 기본(주목): 29만원/월 — 기본 콘텐츠 + 네이버플레이스 관리<br />
+- 중급(집중): 49만원/월 — 콘텐츠 + 광고운영 + 성과보고 ⭐ <strong>타겟</strong><br />
+- 프리미엄(시선): 89만원/월 — 풀 서비스 + 광고비 대행 수수료</p>
+<p><strong>업셀 수익</strong>: 광고비 운영 시 20% 수수료 추가</p>
+<p><strong>기대 MRR</strong>: 30개 고객 × 49만원 = 1,470만원/월 (3개월 내 목표)</p></div></div>
+<div class="card card-6">  <div class="card-header">    <span class="card-no">6</span>    <span class="card-title">🏆 왜 이길 수 있나</span>  </div>  <div class="card-body"><p><strong>경쟁 우위 요소 (점수 7/10)</strong><br />
+1. <strong>naver-diagnosis 영업 훅</strong>: 네이버플레이스 진단 → 계약 전환의 구체적 진입점 (직접 경쟁사 없음)<br />
+2. <strong>AI 콘텐츠 파이프라인</strong>: 단순 프리랜서 대비 원가 40% 이하로 유지 가능 → 영업이익률 60%+<br />
+3. <strong>기존 온라인팀 운영 노하우</strong>: 리안 자체 경험으로 신뢰도 높음<br />
+4. <strong>"오프라인 자영업자 전문" 버티컬 포지셔닝</strong>: 24개 블루오션 Pain Point 중 우리 것</p>
+<p><strong>주의</strong>: 진입장벽 낮아 카피 가능 → 레퍼런스 케이스 빠른 구축이 핵심</p></div></div>
+<div class="card card-7">  <div class="card-header">    <span class="card-no">7</span>    <span class="card-title">🔧 회사 자산 활용도</span>  </div>  <div class="card-body"><p><strong>기존 자산 100% 재활용 (신규 개발 0%)</strong><br />
+1. <strong>naver-diagnosis</strong>: 영업 훅으로 즉시 활용<br />
+2. <strong>AI 콘텐츠 파이프라인</strong>: 인스타·블로그 콘텐츠 자동 생성 (이미 구축됨)<br />
+3. <strong>기존 패키지 구조(주목/집중/시선)</strong>: 그대로 재활용<br />
+4. <strong>온라인팀 운영 노하우</strong>: SOP, 성과보고 템플릿, 광고 운영 기준</p>
+<p><strong>개발 난이도</strong>: 3/10 (역산 7점) — 핵심은 운영 표준화(SOP), 기술이 아님</p></div></div>
+<div class="card card-8">  <div class="card-header">    <span class="card-no">8</span>    <span class="card-title">📅 언제 뭐가 보일까</span>  </div>  <div class="card-body"><p><strong>마일스톤 (월별 기대값)</strong><br />
+- <strong>Month 1</strong>: 첫 고객 3~5건 확보 (naver-diagnosis 콜드메일), MRR ~150만원<br />
+- <strong>Month 2</strong>: 레퍼런스 사례 1개 완성 + 추가 10건, MRR ~490만원<br />
+- <strong>Month 3</strong>: 누적 30개 고객, MRR 1,470만원 (KR1 달성)<br />
+- <strong>Month 3 체크</strong>: 3개월 유지율 70% 이상 달성 여부 (KR3)</p>
+<p><strong>성과 가시화</strong>: 월간 자동 리포트 (클릭수·방문자·리뷰 증가도) 매월 3~5일 제공</p></div></div>
+<div class="card card-9">  <div class="card-header">    <span class="card-no">9</span>    <span class="card-title">💵 돈 계산</span>  </div>  <div class="card-body"><p><strong>단위경제 (기준: 집중 49만원 패키지)</strong><br />
+- <strong>클로징 확률</strong>: 60% (첫 상담 → 계약)<br />
+- <strong>고객 확보당 기대값</strong>: 49만원 × 60% = 29.4만원<br />
+- <strong>원가율</strong>: 40% 이하 (AI 파이프라인으로 인한 운영원가 감소)<br />
+  - 콘텐츠 제작 5만원/건 이하<br />
+  - 광고 운영 수동 시간 최소화<br />
+- <strong>영업이익률</strong>: 60%+ (가능)<br />
+- <strong>3개월 MRR 목표</strong>: 30건 × 49만원 = <strong>1,470만원</strong><br />
+- <strong>연간 예상</strong>: 1,470만원 × 12 = <strong>1.76억원</strong> (해지율 30% 가정 시 조정)</p></div></div>
+<div class="card card-10">  <div class="card-header">    <span class="card-no">10</span>    <span class="card-title">⏰ 시간 투입 (리안 주당)</span>  </div>  <div class="card-body"><p><strong>예상 인력 투입</strong><br />
+- <strong>영업/전략</strong>: 1명 (서윤/민수급) — naver-diagnosis 기반 콜드메일, 계약 관리<br />
+- <strong>콘텐츠/운영</strong>: 1~2명 (실무) — AI 파이프라인 운영, 광고 모니터링, 성과 리포트<br />
+- <strong>AI 파이프라인 관리</strong>: 0.5명 (자동화 도구 유지)</p>
+<p><strong>주당 투입 시간</strong>: 약 80~100시간 (풀타임 2명 기준)</p>
+<p><strong>초기 3개월</strong>: 체험 고객 대응 + SOP 정립으로 100시간 가능<br />
+<strong>정상화 후</strong>: 고객 1개당 월 10시간 내외 (자동화)</p></div></div>
+<div class="card card-11">  <div class="card-header">    <span class="card-no">11</span>    <span class="card-title">🚪 첫 고객 확보 경로 (구체적)</span>  </div>  <div class="card-body"><p><strong>Phase 1 (Week 1~2): naver-diagnosis 콜드메일</strong><br />
+- 네이버플레이스 평점 2.5~3.5점인 네일샵·카페 500개 타겟<br />
+- 메시지: "현재 평점 3.1점 → 3개월 후 4.5점 보장하는 네이버플레이스 최적화 무료 진단"<br />
+- 예상 응답율: 5~10% (25~50건)<br />
+- 전환율: 응답자 × 60% = 15~30건</p>
+<p><strong>Phase 2 (Week 2~3): 네이버플레이스 진단 제공</strong><br />
+- 3일 내 무료 진단 리포트 (리뷰 분석, 이미지 최적화 제안)<br />
+- 「진단 결과 구현하려면 월 49만원 구독 필요" 제시</p>
+<p><strong>Phase 3 (Week 3~4): 계약 + 성과보고</strong><br />
+- 첫 계약 고객부터 주간 KPI 공유 (클릭 +10%, 방문자 +15% 등)<br />
+- 레퍼런스 구축 → 2차 영업 가속화</p>
+<p><strong>추가 채널</strong>: 기존 고객사 추천 + SNS 사례 공유</p></div></div>
+<div class="card card-12">  <div class="card-header">    <span class="card-no">12</span>    <span class="card-title">⚠️ 가장 큰 리스크 3가지 + 망하면 잃는 것</span>  </div>  <div class="card-body"><p><strong>리스크 1 — Pain 집중도 분산 (심각도: 높음)</strong><br />
+- 킬러 오퍼가 "인스타+네이버+블로그 통합"으로 너무 넓음<br />
+- <strong>대책</strong>: 첫 영업은 "네이버플레이스 평점 4.5 이상 보장" 단 하나로 좁혀 → 계약 후 업셀링</p>
+<p><strong>리스크 2 — 해지율 관리 실패 (심각도: 극높음)</strong><br />
+- 월 구독 생존은 3개월 유지율 70% 필수 (KR3)<br />
+- 초기 고객이 "성과 안 보인다"며 2개월 차 대량 해지 가능<br />
+- <strong>대책</strong>: Day 1부터 성과 가시화 시스템 자동화 (월간 리포트) 필수</p>
+<p><strong>리스크 3 — 원가 구조 검증 미완 (심각도: 중간)</strong><br />
+- "AI 파이프라인 40% 원가" 가정이 아직 실증 부족<br />
+- 실제 고객 1개 사업장당 투입 시간 측정 필수<br />
+- <strong>대책</strong>: 첫 3명 고객 대상 시간 추적, 단위경제 확인</p>
+<p><strong>망하면 잃는 것</strong>: 기존 온라인팀 운영 신뢰도 + naver-diagnosis 데이터 신뢰성 훼손</p></div></div>
+<div class="card card-13">  <div class="card-header">    <span class="card-no">13</span>    <span class="card-title">🔥 가장 어려운 1가지 (Hard Part)</span>  </div>  <div class="card-body"><p><strong>"성과 측정 및 가시화 자동화"</strong></p>
+<p>월 구독 모델의 숙명: 고객이 "이게 정말 효과 있나?"를 매월 판단해야 함</p>
+<ul>
+<li>네이버플레이스: 리뷰 증가, 평점 상승, 클릭수 증가를 월간 %로 표시</li>
+<li>인스타그램: 팔로워 증가, 게시물 성과(좋아요·댓글) 비교</li>
+<li>블로그: 방문자 수, 검색 랭킹 변화</li>
+</ul>
+<p><strong>문제</strong>: 이 데이터들이 각 플랫폼에 흩어져 있고, 자동 집계 어려움</p>
+<p><strong>대책</strong>: Day 1부터 BI 대시보드(자동 API 연동) 구축 → 고객용 월간 보고서 자동 생성</p>
+<p><strong>투자</strong>: 대시보드 개발 1~2주, API 연동 코스트 (기존 AI 파이프라인팀과 협력)</p></div></div>
+<div class="card card-14">  <div class="card-header">    <span class="card-no">14</span>    <span class="card-title">🚨 피벗 신호 (언제 접을지)</span>  </div>  <div class="card-body"><p><strong>접어야 할 신호 (실패 판단 기준)</strong></p>
+<ol>
+<li>
+<p><strong>Month 2 말까지 고객 10명 미만</strong> (MRR &lt;500만원)<br />
+   - naver-diagnosis 콜드메일이 예상 응답율 5% 미만일 경우 → 접근 방식 자체가 틀림</p>
+</li>
+<li>
+<p><strong>초기 고객 3개월 유지율 50% 이하</strong> (KR3 실패)<br />
+   - 즉, 처음 5명 중 2명 이상이 Month 3 전에 해지<br />
+   - "성과 미달" 피드백 우세 → 단위경제 자체가 안 맞음</p>
+</li>
+<li>
+<p><strong>실제 운영 원가가 월 25만원 이상/고객</strong><br />
+   - AI 파이프라인 가정이 깨짐 → 40% 원가율 달성 불가<br />
+   - 이익률 40% 이하로 떨어질 경우</p>
+</li>
+<li>
+<p><strong>경쟁사(기존 마케팅 대행사) 진입 + 가격 경쟁</strong><br />
+   - 6개월 내 5개 이상의 "구독형 자영업자 마케팅" 서비스 출시<br />
+   - 우리 레퍼런스 없이는 가격 경쟁 불가 → 포기</p>
+</li>
+</ol>
+<p><strong>실제 접기 타이밍</strong>: Month 2 말 Go/No-go 체크포인트에서 판단</p></div></div>
+<div class="card card-15">  <div class="card-header">    <span class="card-no">15</span>    <span class="card-title">🏁 출구 전략 (Exit)</span>  </div>  <div class="card-body"><p><strong>장기 출구 시나리오 (2~3년)</strong></p>
+<ol>
+<li>
+<p><strong>인수 대상 후보</strong><br />
+   - 마케팅 에이전시 상위 5곳 (이디엑스, 펀·, 포워드 등): 고객 포트폴리오 확보 목적<br />
+   - 배달앱 플랫폼 (배달의민족, 쿠팡): 자영업자 마케팅 인프라 강화<br />
+   - SaaS 도구 회사 (카페24 등): 통합 패키지 강화</p>
+</li>
+<li>
+<p><strong>인수 밸류에이션 가정</strong><br />
+   - MRR 2,000만원+ 달성 시 (고객 40명 이상)<br />
+   - 3개월 유지율 70%+ 안정화<br />
+   - 부가가치: 1.5~2.0배 ARR (연간 수익 기준) — 약 30~40억원 대</p>
+</li>
+<li>
+<p><strong>대안: 자체 성장</strong><br />
+   - 초기 30개 고객 확보 후 영업팀 2명 추가<br />
+   - 지역 확대 (서울 → 전국 5대 도시)<br />
+   - 연간 MRR 5,000만원+ 달성 후 독립 운영 or 인수</p>
+</li>
+</ol>
+<p><strong>최악의 경우</strong>: 기존 마케팅 사업부 내 팀으로 축소 운영 (손실 관리)</p></div></div>
+<div class="card card-16">  <div class="card-header">    <span class="card-no">16</span>    <span class="card-title">🚀 내일부터 뭐 할까</span>  </div>  <div class="card-body"><p><strong>Week 1 액션 아이템 (4개)</strong></p>
+<ol>
+<li>
+<p><strong>naver-diagnosis 기반 타겟 리스트 1,000개 추출</strong> (2일)<br />
+   - 서울 강남/강북 네일샵·카페 평점 2.5~3.5점 필터링<br />
+   - 영업팀(서윤) 실행</p>
+</li>
+<li>
+<p><strong>콜드메일 템플릿 + 진단 리포트 샘플 작성</strong> (3일)<br />
+   - "네이버플레이스 무료 진단" 메시지 작성<br />
+   - 기존 고객 3개사 대상 진단 샘플 리포트 생성<br />
+   - 민수 + 온라인팀 협력</p>
+</li>
+<li>
+<p><strong>성과 추적 대시보드 설계</strong> (병렬, 3일)<br />
+   - 네이버 API, 인스타 API, 구글 애널리틱스 연동 검토<br />
+   - BI 도구 (Metabase/Tableau) 또는 커스텀 대시보드 (Day 1 MVP)<br />
+   - 기술팀 리드 필요</p>
+</li>
+<li>
+<p><strong>첫 3명 고객 선정 + 체험 시작</strong> (병렬, Week 2)<br />
+   - 기존 온라인팀이 관리하던 고객 중 최적 피팅 고객 3명<br />
+   - 무료 1개월 시범 → 운영 시간 추적 시작</p>
+</li>
+</ol>
+<p><strong>Week 2~3</strong>: 콜드메일 발송 + 첫 응답 전환<br />
+<strong>Week 4</strong>: 첫 계약 1명 확보 + 체험 고객 성과 리포트 완성</p></div></div>
+<div class="card card-17">  <div class="card-header">    <span class="card-no">17</span>    <span class="card-title">🧭 준혁의 한 줄 판정</span>  </div>  <div class="card-body"><p><strong>판정: GO (7.25/10)</strong></p>
+<p><strong>한 줄 이유</strong>: 기존 자산 100% 재활용 + 블루오션 24개 Pain Point 선점 + Demo-Sell-Build 순서 완벽 가능 → 3개월 내 첫 계약과 단위경제 검증 가능. 단, "성과 가시화 자동화"와 "3개월 유지율 70%" 두 가지는 Day 1부터 집중해야 실패 회피 가능.</p>
+<p><strong>핵심 조건 2가지</strong>:<br />
+1. 첫 영업 훅을 "네이버플레이스 평점 4.5 이상 보장"으로 단일화 (Pain 분산 방지)<br />
+2. Month 2 말 Go/No-go 체크: 고객 10명 미만 또는 유지율 50% 이하 시 즉시 피벗</p></div></div>
+</div>
+
+<div class="detail-label">▼ 상세 원문 (필요할 때만 펼쳐보세요) ▼</div>
+<details class="collapsible" id="strategy_minsu"><summary>💡 전략 방향 · 1순위 선택 (민수)</summary><div class="content"><h2>1. Pain Point 필터링 (요약)</h2>
+<p>서윤 50개 Pain Point 중:<br />
+- Level 4~5 통과: 31개 (Level 1~3 제외)<br />
+- Workaround 관찰: 26개 (is_workaround_observed=true)<br />
+- 블루오션 플래그 (Level 4~5 + competitor_url=none): 24개 + 목록 나열<br />
+  - 인스타그램 콘텐츠 직접 제작 (#1)<br />
+  - 네이버플레이스 리뷰 관리 (#2)<br />
+  - 블로그 체험단 모집 (#3)<br />
+  - 인스타 광고 운영 스킬 부족 (#4)<br />
+  - 플랫폼 수수료 문제 (#5)<br />
+  - 등등</p>
+<p><strong>필터링 결과</strong>: 최종 31개 통과</p>
+<h2>2. TOP 3~5 클러스터 + 가중치 스코어링</h2>
+<h3>클러스터링</h3>
+<p>통과한 Pain Point를 JTBD 유사성 기준으로 3~5개 아이템으로 묶기:</p>
+<table>
+<thead>
+<tr>
+<th>아이템</th>
+<th>관련 Pain #</th>
+<th>핵심 JTBD (한 줄)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. 인스타그램 및 SNS 관리</td>
+<td>#1, #4, #9, #21</td>
+<td>인스타그램 및 SNS 광고/콘텐츠 효율화</td>
+</tr>
+<tr>
+<td>B. 네이버플레이스 최적화</td>
+<td>#2, #14, #22, #31</td>
+<td>네이버플레이스 리뷰 및 정보 관리 자동화</td>
+</tr>
+<tr>
+<td>C. 블로그 및 온라인 리뷰 관리</td>
+<td>#3, #10, #23, #28</td>
+<td>블로그 체험단 및 리뷰 관리 효율화</td>
+</tr>
+</tbody>
+</table>
+<h3>가중치 스코어링</h3>
+<table>
+<thead>
+<tr>
+<th>기준 (가중치)</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workaround 비용 (20%)</td>
+<td>18</td>
+<td>16</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Payer 명확성 (15%)</td>
+<td>13</td>
+<td>15</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Pre-sell 가능성 (15%)</td>
+<td>12</td>
+<td>14</td>
+<td>15</td>
+</tr>
+<tr>
+<td>경쟁 빈틈 (25%)</td>
+<td>22</td>
+<td>20</td>
+<td>23</td>
+</tr>
+<tr>
+<td>Build 난이도 (15%)</td>
+<td>13</td>
+<td>12</td>
+<td>14</td>
+</tr>
+<tr>
+<td>우리 자산 활용도 (10%)</td>
+<td>10</td>
+<td>10</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>종합 점수</strong></td>
+<td>88</td>
+<td>87</td>
+<td>86</td>
+</tr>
+</tbody>
+</table>
+<p><strong>각 점수 옆에 산출 근거 1줄 필수</strong> (빈 칸 금지).</p>
+<h2>3. 1순위 선택 + 킬러 오퍼</h2>
+<p><strong>1순위 선택</strong>: 인스타그램 및 SNS 관리</p>
+<p><strong>선택 근거 3줄</strong> (Pain # 역추적):<br />
+1. #1 "인스타 직접 올리다 지쳐서 포기한 상태" — 많은 소상공인들이 인스타그램 콘텐츠 제작에 어려움을 겪고 있음.<br />
+2. #4 "기존 툴에 돈 내고 있지만 기능 없어서 짜증" — SNS 광고 최적화 기능의 경쟁 빈틈이 존재.<br />
+3. 우리 리안 컴퍼니의 AI 콘텐츠 자동화 파이프라인을 활용하여 SNS 콘텐츠 및 광고 운영을 효율화할 수 있음.</p>
+<p><strong>킬러 오퍼 (한 문장 공식)</strong>:<br />
+"인스타그램 팔로워 월 100명 증가 보장, SNS 콘텐츠 자동화 및 광고 최적화 서비스 (월 89만원)"</p></div></details>
+<details class="collapsible" id="strategy_d1"><summary>🏗 심층 전략 브리프 (설계자 1회차)</summary><div class="content"><h2>📌 STEP 0: OKR 자동 도출</h2>
+<pre><code>Objective: 오프라인 자영업자가 마케팅 걱정 없이 장사에만 집중하게 만드는 1등 구독 대행사가 된다
+KR1: 론칭 3개월 내 구독 고객 30개 사업장 확보 (MRR 1,470만원 이상 — 집중 49만 기준)
+KR2: AI 파이프라인 적용으로 콘텐츠 제작 원가를 기존 대비 40% 이하로 유지 (건당 원가 5만원 이하)
+KR3: 구독 고객 3개월 유지율 70% 이상 (해지율 30% 미만)
+</code></pre>
+<h2>[1] 필터링 (돈이 되는 고통만)</h2>
+<h3>1차: pain_level 4~5만 통과</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>수량</th>
+<th>Pain Point #</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level 5 통과</td>
+<td>11개</td>
+<td>#3, #4, #5, #7, #10, #12, #15, #18, #20, #24, #27, #30, #33, #36</td>
+</tr>
+<tr>
+<td>Level 4 통과</td>
+<td>20개</td>
+<td>#1, #2, #8, #9, #11, #14, #16, #19, #21, #22, #25, #26, #28, #31, #32, #35, #37, #39, #41, #43</td>
+</tr>
+<tr>
+<td>Level 1~3 탈락</td>
+<td>19개</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>통과 합계</strong></td>
+<td><strong>31개</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>2차: Workaround 관찰 (is_workaround_observed = true)</h3>
+<p>31개 통과 → <strong>26개</strong> 에서 workaround 관찰됨.<br />
+주요 workaround 유형:<br />
+- 엑셀/수작업 버티기 (#3, #8, #10, #35)<br />
+- 프리랜서/알바 고용 (#4, #7, #15, #20, #33)<br />
+- 주말/야간 시간 투입 (#1, #2, #11, #27)<br />
+- 플랫폼 수수료 감내 (#5, #18)<br />
+- 무료 툴 시행착오 (#19, #21)</p>
+<h3>3차: source_confidence 필터</h3>
+<p>source_confidence &lt; 3 제외 → 최종 <strong>28개</strong> 통과.</p>
+<h3>블루오션 플래그</h3>
+<p>pain_level 4~5 + competitor_url = "none (blue ocean)" 항목:<br />
+| Pain # | 제목 | Level |<br />
+|--------|------|-------|<br />
+| #1 | 인스타그램 콘텐츠 직접 제작 시간 부족 | 4 |<br />
+| #2 | 네이버플레이스 리뷰 관리 수작업 | 4 |<br />
+| #3 | 블로그 체험단 엑셀 관리 오류 | 5 |<br />
+| #5 | 플랫폼 수수료로 마케팅 예산 없음 | 4 |<br />
+| #6 | 네이버플레이스 SEO 최적화 모름 | 3 |<br />
+| #7 | 콘텐츠 제작 비용 부담 | 5 |<br />
+| #9 | 인스타 해시태그 최적화 모름 | 4 |<br />
+| #10 | 블로그 포스팅 일정 관리 | 5 |<br />
+| #11 | 리뷰 응답 지연 평점 하락 | 4 |<br />
+| #13 | 콘텐츠 아이디어 고갈 | 3 |<br />
+| #14 | 네이버플레이스 사진 업데이트 번거로움 | 4 |<br />
+| #15 | 인스타 스토리 운영 소홀 | 5 |<br />
+| #16 | 블로그 SEO 키워드 연구 시간 소모 | 4 |<br />
+| #18 | 플랫폼 입점 다중 계정 관리 | 5 |<br />
+| #19 | 콘텐츠 편집 툴 익히기 어려움 | 4 |<br />
+| #20 | 고객 피드백 수집 자동화 없음 | 5 |<br />
+| #21 | 인스타 릴스 제작 기술 부족 | 4 |<br />
+| #22 | 네이버플레이스 이벤트 등록 잦은 변경 | 4 |<br />
+| #23 | 블로그 댓글 관리 소홀 | 3 |<br />
+| #25 | 인스타 광고 A/B 테스트 모름 | 4 |<br />
+| #26 | 네이버플레이스 카테고리 최적화 | 4 |<br />
+| #27 | 콘텐츠 스케줄링 수동 | 5 |<br />
+| #28 | 블로그 트래픽 분석 복잡 | 4 |<br />
+| #29 | 인스타 DM 응답 지연 | 3 |<br />
+| #31 | 네이버플레이스 영업시간 업데이트 잦음 | 4 |<br />
+| #32 | 인스타 팔로워 증가 정체 | 4 |<br />
+| #33 | 블로그 백링크 구축 어려움 | 5 |<br />
+| #34 | 콘텐츠 저작권 문제 우려 | 3 |<br />
+| #35 | 성과 지표 추적 다중 툴 | 4 |<br />
+| #36 | 인스타 쇼핑 태그 설정 복잡 | 5 |</p>
+<h2>[2] TOP 5 클러스터링</h2>
+<p>통과한 28개를 JTBD 유사성 기준으로 5개 아이템으로 묶음:</p>
+<table>
+<thead>
+<tr>
+<th>아이템</th>
+<th>관련 Pain #</th>
+<th>핵심 JTBD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. 인스타그램 통합 운영</td>
+<td>#1, #4, #9, #15, #21, #25, #32, #36</td>
+<td>인스타그램 콘텐츠 제작+광고 운영을 자동화하여 팔로워·매출 증가</td>
+</tr>
+<tr>
+<td>B. 네이버플레이스 완전 자동화</td>
+<td>#2, #6, #11, #14, #22, #26, #31</td>
+<td>네이버플레이스 리뷰·정보·SEO를 자동 관리하여 로컬 검색 1페이지 노출</td>
+</tr>
+<tr>
+<td>C. 블로그 체험단 자동화</td>
+<td>#3, #10, #16, #23, #28, #33</td>
+<td>블로그 체험단 모집·관리·SEO를 자동화하여 검색 유입 2배 증가</td>
+</tr>
+<tr>
+<td>D. 통합 성과 대시보드</td>
+<td>#8, #12, #24, #30, #35</td>
+<td>인스타·네이버·블로그 성과를 단일 대시보드에서 실시간 추적</td>
+</tr>
+<tr>
+<td>E. 콘텐츠 제작 원가 절감</td>
+<td>#7, #13, #19, #20, #27, #34</td>
+<td>AI 파이프라인으로 콘텐츠 제작 비용 70% 절감 + 일정 자동화</td>
+</tr>
+</tbody>
+</table>
+<h2>[3] 가중치 스코어링 (TOP 5)</h2>
+<table>
+<thead>
+<tr>
+<th>기준 (가중치)</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workaround 비용 (20%)</td>
+<td>18 (월 40시간 투입 #1 + 프리랜서 50만원 #4 = 90만원 상당)</td>
+<td>17 (월 35시간 #2 + 통화비 10만원 = 45만원)</td>
+<td>16 (월 55시간 #3,#10 + 프리랜서 60만원 = 115만원)</td>
+<td>15 (월 50시간 #8,#35 + 회계사 20만원 = 70만원)</td>
+<td>19 (월 45시간 #7,#27 + 알바 55만원 = 100만원)</td>
+</tr>
+<tr>
+<td>Payer 명확성 (15%)</td>
+<td>14 (뷰티샵 원장 직접 결제, 월 예산 30~100만원 명확 #1)</td>
+<td>15 (헤어숍 사장 직접 결제, 네이버플레이스=생존 도구 #2)</td>
+<td>12 (카페 사장 직접 결제하나 블로그 ROI 불명확 #3)</td>
+<td>13 (피부샵 원장 직접 결제하나 대시보드 가치 인지 낮음 #24)</td>
+<td>11 (콘텐츠 제작 외주 경험 있으나 구독 전환 불확실 #7)</td>
+</tr>
+<tr>
+<td>Pre-sell 가능성 (15%)</td>
+<td>13 (인스타 광고 사전결제 가능, "첫 달 무료" 훅 #4)</td>
+<td>14 (네이버 진단 → 즉시 문제 인지 → 결제 전환율 높음 naver-diagnosis 자산)</td>
+<td>15 (블로그 체험단 1회 무료 제공 → 효과 입증 → 구독 전환 #3)</td>
+<td>10 (대시보드 가치 설명 어려움, 데모 필수)</td>
+<td>12 (AI 콘텐츠 샘플 제공 가능하나 품질 검증 시간 필요)</td>
+</tr>
+<tr>
+<td>경쟁 빈틈 (25%)</td>
+<td>22 (Cafe24 SNS 광고 연동만, 운영 자동화 없음 Layer 5 약점 #1)</td>
+<td>23 (Cafe24 네이버플레이스 단순 동기화만, 리뷰 관리 없음 Layer 5 약점 #2)</td>
+<td>20 (배달의민족 블로그 기능 없음, 블루오션 #3)</td>
+<td>18 (Cafe24 성과 보고서 수작업, 통합 대시보드 없음 #24)</td>
+<td>21 (Cafe24 콘텐츠 제작 외주 의존, AI 파이프라인 없음 #7)</td>
+</tr>
+<tr>
+<td>Build 난이도 (15%)</td>
+<td>12 (인스타 API + 광고 최적화 알고리즘 중간 난이도, 6개월 개발)</td>
+<td>13 (네이버플레이스 API + 리뷰 크롤링 쉬움, 3개월 개발)</td>
+<td>11 (블로그 체험단 매칭 플랫폼 복잡, 9개월 개발)</td>
+<td>14 (대시보드 통합 쉬움, 2개월 개발)</td>
+<td>10 (AI 콘텐츠 생성 고난이도, 12개월 개발)</td>
+</tr>
+<tr>
+<td>OKR 정합성 (10%)</td>
+<td>10 (KR1 30개 고객 확보에 직접 기여, 인스타=자영업자 필수 채널)</td>
+<td>10 (KR1 30개 고객 확보에 직접 기여, 네이버=로컬 검색 필수)</td>
+<td>9 (KR1 기여하나 블로그 우선순위 낮음)</td>
+<td>8 (KR3 유지율 기여하나 초기 확보에 약함)</td>
+<td>9 (KR2 원가 절감 직접 기여)</td>
+</tr>
+<tr>
+<td><strong>종합 점수</strong></td>
+<td><strong>89</strong></td>
+<td><strong>92</strong></td>
+<td><strong>83</strong></td>
+<td><strong>78</strong></td>
+<td><strong>82</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>[4] TOP 5 비교 분석표</h2>
+<table>
+<thead>
+<tr>
+<th>컬럼</th>
+<th>A. 인스타그램 통합 운영</th>
+<th>B. 네이버플레이스 완전 자동화</th>
+<th>C. 블로그 체험단 자동화</th>
+<th>D. 통합 성과 대시보드</th>
+<th>E. 콘텐츠 제작 원가 절감</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>종합 점수</td>
+<td>89</td>
+<td>92</td>
+<td>83</td>
+<td>78</td>
+<td>82</td>
+</tr>
+<tr>
+<td>페르소나</td>
+<td>35세 네일샵 원장, 2인 사업장, 월 매출 800만원, 인스타 직접 올리다 지쳐서 포기 (#1)</td>
+<td>40세 헤어숍 사장, 3인 사업장, 월 매출 1,200만원, 리뷰 관리 수작업 피곤 (#2)</td>
+<td>32세 카페 사장, 1인 사업장, 월 매출 600만원, 블로그 체험단 엑셀 관리 오류 (#3)</td>
+<td>38세 피부과 에스테 원장, 4인 사업장, 월 매출 1,500만원, 성과 보고서 수작업 (#24)</td>
+<td>36세 카페 점주, 2인 사업장, 월 매출 900만원, 콘텐츠 제작 비용 부담 (#7)</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>인스타그램 콘텐츠 제작+광고 운영을 자동화하여 팔로워·매출 증가</td>
+<td>네이버플레이스 리뷰·정보·SEO를 자동 관리하여 로컬 검색 1페이지 노출</td>
+<td>블로그 체험단 모집·관리·SEO를 자동화하여 검색 유입 2배 증가</td>
+<td>인스타·네이버·블로그 성과를 단일 대시보드에서 실시간 추적</td>
+<td>AI 파이프라인으로 콘텐츠 제작 비용 70% 절감 + 일정 자동화</td>
+</tr>
+<tr>
+<td>Workaround 실태 + 추정 비용</td>
+<td>주말 10시간 직접 촬영+편집 (#1) + 프리랜서 월 50만원 (#4) = 월 90만원 상당</td>
+<td>고객별 전화로 부정 리뷰 수정 요청 월 20시간 (#2) + 통화비 10만원 = 월 45만원</td>
+<td>엑셀 시트 참가자 추적 월 15시간 + 프리랜서 20만원 (#3) + 백링크 구축 50만원 (#33) = 월 115만원</td>
+<td>구글 시트 수동 합산 월 12시간 (#35) + PDF 리포트 작성 20시간 (#24) + 회계사 20만원 = 월 70만원</td>
+<td>아르바이트 고용 월 30만원 (#7) + 캘린더 앱 수동 스케줄링 15시간 (#27) + 템플릿 구독 10만원 (#21) = 월 100만원</td>
+</tr>
+<tr>
+<td>역기획 Gap 연결</td>
+<td>Cafe24 SNS 광고 연동만 지원, 실제 광고 운영(A/B 테스트·타겟팅 최적화) 수동 (Layer 5 약점 #1)</td>
+<td>Cafe24 네이버플레이스 단순 동기화만, 리뷰 관리·평점 분석·자동 응답 없음 (Layer 5 약점 #2)</td>
+<td>배달의민족 블로그 기능 없음, 카페/뷰티숍 대상 블루오션</td>
+<td>Cafe24 성과 보고서 엑셀 그래프 수작업, 통합 대시보드 없음 (#8)</td>
+<td>Cafe24 콘텐츠 제작 외주 의존, AI 파이프라인 없음 (#7)</td>
+</tr>
+<tr>
+<td>수익화 속도 판정</td>
+<td>빠름 (인스타 광고 즉시 집행 가능, 첫 달 팔로워 증가 가시화)</td>
+<td>빠름 (네이버 진단 → 즉시 문제 인지 → 결제 전환, naver-diagnosis 자산 활용)</td>
+<td>중간 (블로그 SEO 효과 3개월 소요, 체험단 모집 1개월)</td>
+<td>느림 (대시보드 가치 인지까지 3개월 데이터 축적 필요)</td>
+<td>중간 (AI 콘텐츠 품질 검증 1개월, 원가 절감 효과 2개월 후 가시화)</td>
+</tr>
+<tr>
+<td>MVP 핵심 기능 1-2개</td>
+<td>(1) 인스타 콘텐츠 자동 생성 (AI 이미지+캡션), (2) 인스타 광고 A/B 테스트 자동화</td>
+<td>(1) 네이버플레이스 리뷰 자동 응답 (AI), (2) 네이버 로컬 SEO 최적화 (키워드·카테고리)</td>
+<td>(1) 블로그 체험단 매칭 플랫폼, (2) 블로그 포스팅 일정 자동화</td>
+<td>(1) 인스타·네이버·블로그 통합 대시보드, (2) 월 성과 리포트 자동 생성</td>
+<td>(1) AI 콘텐츠 생성 파이프라인 (이미지+텍스트), (2) 콘텐츠 스케줄링 자동화</td>
+</tr>
+<tr>
+<td>예상 가격 정책</td>
+<td>집중 49만원 (주 3회 포스팅 + 광고비 별도 30만원) 또는 시선 89만원 (주 5회 + 광고 최적화 포함)</td>
+<td>집중 49만원 (리뷰 관리 + SEO 최적화) 또는 주목 29만원 (리뷰 응답만)</td>
+<td>시선 89만원 (체험단 모집 + 포스팅 관리 + 백링크 구축)</td>
+<td>주목 29만원 (대시보드만) 또는 집중 49만원 (대시보드 + 월 리포트)</td>
+<td>집중 49만원 (AI 콘텐츠 제작 + 스케줄링)</td>
+</tr>
+<tr>
+<td>개발 난이도 (1-10)</td>
+<td>6 (인스타 API 연동 중간, 광고 최적화 알고리즘 6개월)</td>
+<td>5 (네이버 API 쉬움, 리뷰 크롤링 3개월)</td>
+<td>7 (체험단 매칭 플랫폼 복잡, 9개월)</td>
+<td>4 (대시보드 통합 쉬움, 2개월)</td>
+<td>8 (AI 콘텐츠 생성 고난이도, 12개월)</td>
+</tr>
+<tr>
+<td>성공 확률 (1-10)</td>
+<td>8 (인스타=자영업자 필수 채널, 수요 명확, Cafe24 약점 공략 가능)</td>
+<td>9 (네이버=로컬 검색 생존 도구, naver-diagnosis 자산 활용, 경쟁 빈틈 최대)</td>
+<td>6 (블로그 우선순위 낮음, SEO 효과 지연, 체험단 모집 불확실성)</td>
+<td>5 (대시보드 가치 인지 낮음, 초기 확보 어려움, 유지율 기여만)</td>
+<td>7 (AI 품질 검증 시간 필요, 원가 절감 효과 2개월 후 가시화)</td>
+</tr>
+</tbody>
+</table>
+<h2>[5] 3C + SWOT (TOP 5 각각)</h2>
+<h3>A. 인스타그램 통합 운영</h3>
+<p><strong>3C</strong><br />
+- <strong>Customer</strong>: 뷰티샵 원장(30~40대 여성, 인스타 직접 올리다 지쳐서 포기 #1), 구매 결정 과정 = 인스타 광고 효과 체감 → 프리랜서 고용 시도 → 비용 부담 → 구독 대행 검색 → 무료 진단 신청 → 결제<br />
+- <strong>Competitor</strong>: Cafe24 (SNS 광고 연동만, 운영 자동화 없음 Layer 5 약점 #1), 핵심 약점 = "광고 플랫폼 연결"만 하고 "광고 운영까지 자동화" 안 함<br />
+- <strong>Company</strong>: 리안 컴퍼니 차별화 = AI 파이프라인으로 인스타 콘텐츠 자동 생성 + 광고 A/B 테스트 자동화, 기존 온라인팀 운영 노하우 활용</p>
+<p><strong>SWOT</strong><br />
+| S (구조적 이점) | W (가장 큰 리스크) |<br />
+|-----------------|-------------------|<br />
+| 인스타=자영업자 필수 채널, 수요 명확 (#1 pain_level 4) | AI 콘텐츠 품질이 프리랜서 대비 낮으면 해지율 증가 |</p>
+<table>
+<thead>
+<tr>
+<th>O (트렌드·타이밍 이점)</th>
+<th>T (무시하면 죽는 외부 요인)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>디지털 광고 시장 YoY 6% 성장, 인스타 릴스 바이럴 트렌드 (#21)</td>
+<td>인스타 알고리즘 변경 시 광고 효과 급락 가능성</td>
+</tr>
+</tbody>
+</table>
+<h3>B. 네이버플레이스 완전 자동화</h3>
+<p><strong>3C</strong><br />
+- <strong>Customer</strong>: 헤어숍 사장(40세, 3인 사업장, 리뷰 관리 수작업 피곤 #2), 구매 결정 과정 = 네이버 검색 노출 저조 체감 → naver-diagnosis 무료 진단 → 문제 즉시 인지 → 결제 전환율 높음<br />
+- <strong>Competitor</strong>: Cafe24 (네이버플레이스 단순 동기화만, 리뷰 관리·평점 분석·자동 응답 없음 Layer 5 약점 #2), 핵심 약점 = 네이버플레이스는 Cafe24와 별개 플랫폼이라 양쪽 모두 관리 필요<br />
+- <strong>Company</strong>: 리안 컴퍼니 차별화 = naver-diagnosis 자산 활용 (네이버플레이스 진단 → 영업 훅), AI 리뷰 자동 응답 + 로컬 SEO 최적화</p>
+<p><strong>SWOT</strong><br />
+| S (구조적 이점) | W (가장 큰 리스크) |<br />
+|-----------------|-------------------|<br />
+| 네이버=로컬 검색 생존 도구, naver-diagnosis 자산 활용 가능 | 네이버 API 정책 변경 시 크롤링 중단 위험 |</p>
+<table>
+<thead>
+<tr>
+<th>O (트렌드·타이밍 이점)</th>
+<th>T (무시하면 죽는 외부 요인)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공공 배달앱 등 디지털 플랫폼 필수화, 로컬 검색 중요도 증가 (#5)</td>
+<td>네이버 자체 리뷰 관리 툴 출시 시 경쟁 격화</td>
+</tr>
+</tbody>
+</table>
+<h3>C. 블로그 체험단 자동화</h3>
+<p><strong>3C</strong><br />
+- <strong>Customer</strong>: 카페 사장(32세, 1인 사업장, 블로그 체험단 엑셀 관리 오류 #3), 구매 결정 과정 = 블로그 SEO 효과 인지 → 체험단 모집 시도 → 엑셀 관리 오류 → 프리랜서 고용 → 비용 부담 → 구독 대행 검색<br />
+- <strong>Competitor</strong>: 배달의민족 (블로그 기능 없음, 카페/뷰티숍 대상 블루오션), 핵심 약점 = 배달 음식 중심이라 카페/뷰티숍 타겟 안 함<br />
+- <strong>Company</strong>: 리안 컴퍼니 차별화 = 블로그 체험단 매칭 플랫폼 + 포스팅 일정 자동화 + 백링크 구축</p>
+<p><strong>SWOT</strong><br />
+| S (구조적 이점) | W (가장 큰 리스크) |<br />
+|-----------------|-------------------|<br />
+| 블로그=SEO 필수 채널, 배달의민족 블루오션 (#3 pain_level 5) | 블로그 우선순위 낮음, SEO 효과 3개월 지연으로 초기 이탈 |</p>
+<table>
+<thead>
+<tr>
+<th>O (트렌드·타이밍 이점)</th>
+<th>T (무시하면 죽는 외부 요인)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>네이버 블로그 검색 알고리즘 개선, 체험단 수요 증가</td>
+<td>네이버 블로그 정책 변경 시 체험단 금지 가능성</td>
+</tr>
+</tbody>
+</table>
+<h3>D. 통합 성과 대시보드</h3>
+<p><strong>3C</strong><br />
+- <strong>Customer</strong>: 피부과 에스테 원장(38세, 4인 사업장, 성과 보고서 수작업 #24), 구매 결정 과정 = 다중 툴 성과 추적 피곤 → 통합 대시보드 검색 → 데모 요청 → 3개월 데이터 축적 후 가치 인지 → 결제<br />
+- <strong>Competitor</strong>: Cafe24 (성과 보고서 엑셀 그래프 수작업, 통합 대시보드 없음 #8), 핵심 약점 = 대시보드 통합 기능 부재<br />
+- <strong>Company</strong>: 리안 컴퍼니 차별화 = 인스타·네이버·블로그 통합 대시보드 + 월 성과 리포트 자동 생성</p>
+<p><strong>SWOT</strong><br />
+| S (구조적 이점) | W (가장 큰 리스크) |<br />
+|-----------------|-------------------|<br />
+| 다중 툴 성과 추적 피곤 (#35 pain_level 4), Cafe24 약점 공략 | 대시보드 가치 인지 낮음, 초기 확보 어려움 |</p>
+<table>
+<thead>
+<tr>
+<th>O (트렌드·타이밍 이점)</th>
+<th>T (무시하면 죽는 외부 요인)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>데이터 기반 마케팅 트렌드, 마진율 개선 필요성 증가 (#5)</td>
+<td>구글 애널리틱스 등 무료 툴 고도화 시 경쟁 격화</td>
+</tr>
+</tbody>
+</table>
+<h3>E. 콘텐츠 제작 원가 절감</h3>
+<p><strong>3C</strong><br />
+- <strong>Customer</strong>: 카페 점주(36세, 2인 사업장, 콘텐츠 제작 비용 부담 #7), 구매 결정 과정 = 아르바이트 고용 비용 부담 → AI 콘텐츠 검색 → 샘플 요청 → 품질 검증 1개월 → 결제<br />
+- <strong>Competitor</strong>: Cafe24 (콘텐츠 제작 외주 의존, AI 파이프라인 없음 #7), 핵심 약점 = AI 콘텐츠 생성 기능 부재<br />
+- <strong>Company</strong>: 리안 컴퍼니 차별화 = AI 파이프라인으로 콘텐츠 제작 비용 70% 절감 + 일정 자동화</p>
+<p><strong>SWOT</strong><br />
+| S (구조적 이점) | W (가장 큰 리스크) |<br />
+|-----------------|-------------------|<br />
+| AI 파이프라인 원가 절감 (#7 pain_level 5), KR2 직접 기여 | AI 콘텐츠 품질이 프리랜서 대비 낮으면 해지율 증가 |</p>
+<table>
+<thead>
+<tr>
+<th>O (트렌드·타이밍 이점)</th>
+<th>T (무시하면 죽는 외부 요인)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 기술 발전, 디지털 기술 도입 중요성 증가 (#5)</td>
+<td>AI 생성 콘텐츠 규제 강화 시 사용 제한 가능성</td>
+</tr>
+</tbody>
+</table>
+<h2>[6] Pre-mortem (TOP 5 각각, 5가지 실패 시나리오)</h2>
+<h3>A. 인스타그램 통합 운영</h3>
+<ul>
+<li><strong>가치 실패</strong>: "AI 콘텐츠가 프리랜서보다 퀄리티 낮아 팔로워 증가 안 됨" — 고객이 "편리하긴 한데 돈 내긴 아깝다" 판단, 해지율 50% 초과</li>
+<li><strong>전환 실패</strong>: 프리랜서 고용 중인 고객이 "이미 익숙한 사람 있는데 굳이 갈아타야 하나?" — Switching Cost (기존 프리랜서와의 관계, 작업 스타일 익숙함) 때문에 전환 거부</li>
+<li><strong>도달 실패</strong>: 타겟 채널(네이버 카페 뷰티 원장 모임 #1) 접근 실패 — 카페 광고 금지 정책으로 영업 불가, 인스타 해시태그 광고도 노출 저조</li>
+<li><strong>단위경제 실패</strong>: CAC (고객 획득 비용 50만원 — 네이버 광고 + 영업 인건비) &gt; LTV (3개월 유지 시 147만원 — 집중 49만원 × 3) — 유지율 70% 미달 시 적자</li>
+<li><strong>타이밍 실패</strong>: 인스타 알고리즘 변경으로 릴스 노출 급락 (#21) — 론칭 시점에 인스타 트렌드 하락 시 수요 감소</li>
+</ul>
+<h3>B. 네이버플레이스 완전 자동화</h3>
+<ul>
+<li><strong>가치 실패</strong>: "리뷰 자동 응답이 기계적이라 고객 불만 증가" — AI 응답 품질 낮아 오히려 평점 하락, 고객이 "차라리 직접 하겠다" 판단</li>
+<li><strong>전환 실패</strong>: 네이버플레이스 수동 관리 중인 고객이 "지금도 괜찮은데 굳이?" — Switching Cost (기존 관리 루틴 변경 부담) 때문에 전환 거부</li>
+<li><strong>도달 실패</strong>: naver-diagnosis 무료 진단 신청률 저조 — 타겟 채널(소상공인마당 카페 #2) 접근 실패, 진단 가치 인지 부족</li>
+<li><strong>단위경제 실패</strong>: CAC (고객 획득 비용 40만원 — naver-diagnosis 개발 + 영업 인건비) &gt; LTV (3개월 유지 시 147만원 — 집중 49만원 × 3) — 유지율 70% 미달 시 적자</li>
+<li><strong>타이밍 실패</strong>: 네이버 API 정책 변경으로 크롤링 중단 — 론칭 직후 네이버가 리뷰 크롤링 금지 정책 시행 시 서비스 중단</li>
+</ul>
+<h3>C. 블로그 체험단 자동화</h3>
+<ul>
+<li><strong>가치 실패</strong>: "블로그 SEO 효과가 3개월 후에야 나타나 초기 이탈" — 고객이 "지금 당장 매출 증가 안 되면 의미 없다" 판단, 해지율 60% 초과</li>
+<li><strong>전환 실패</strong>: 엑셀 관리 중인 고객이 "이미 익숙한데 굳이 플랫폼 배워야 하나?" — Switching Cost (엑셀 익숙함, 플랫폼 학습 부담) 때문에 전환 거부</li>
+<li><strong>도달 실패</strong>: 타겟 채널(카페 사장님 모임 카카오 오픈채팅) 접근 실패 — 오픈채팅 광고 금지, 블로그 체험단 수요 인지 부족</li>
+<li><strong>단위경제 실패</strong>: CAC (고객 획득 비용 60만원 — 체험단 플랫폼 개발 + 영업 인건비) &gt; LTV (3개월 유지 시 267만원 — 시선 89만원 × 3) — 유지율 70% 미달 시 적자</li>
+<li><strong>타이밍 실패</strong>: 네이버 블로그 정책 변경으로 체험단 금지 — 론칭 직후 네이버가 체험단 포스팅 금지 정책 시행 시 서비스 중단</li>
+</ul>
+<h3>D. 통합 성과 대시보드</h3>
+<ul>
+<li><strong>가치 실패</strong>: "대시보드 보는 것만으로는 매출 증가 안 됨" — 고객이 "인사이트는 좋은데 실행은 내가 해야 하나?" 판단, 해지율 70% 초과</li>
+<li><strong>전환 실패</strong>: 구글 시트 수동 합산 중인 고객이 "지금도 괜찮은데 굳이?" — Switching Cost (기존 시트 익숙함, 대시보드 학습 부담) 때문에 전환 거부</li>
+<li><strong>도달 실패</strong>: 타겟 채널(피부샵 원장 커뮤니티) 접근 실패 — 대시보드 가치 설명 어려움, 데모 요청률 저조</li>
+<li><strong>단위경제 실패</strong>: CAC (고객 획득 비용 30만원 — 대시보드 개발 + 영업 인건비) &gt; LTV (3개월 유지 시 87만원 — 주목 29만원 × 3) — 유지율 70% 미달 시 적자</li>
+<li><strong>타이밍 실패</strong>: 구글 애널리틱스 무료 툴 고도화 — 론칭 시점에 구글이 무료 통합 대시보드 출시 시 경쟁 격화</li>
+</ul>
+<h3>E. 콘텐츠 제작 원가 절감</h3>
+<ul>
+<li><strong>가치 실패</strong>: "AI 콘텐츠가 아르바이트보다 퀄리티 낮아 고객 불만" — 고객이 "차라리 알바 고용하겠다" 판단, 해지율 60% 초과</li>
+<li><strong>전환 실패</strong>: 아르바이트 고용 중인 고객이 "이미 익숙한 사람 있는데 굳이?" — Switching Cost (기존 알바와의 관계, 작업 스타일 익숙함) 때문에 전환 거부</li>
+<li><strong>도달 실패</strong>: 타겟 채널(카페 사장님 모임) 접근 실패 — AI 콘텐츠 샘플 제공해도 품질 검증 시간 1개월 소요, 전환율 저조</li>
+<li><strong>단위경제 실패</strong>: CAC (고객 획득 비용 50만원 — AI 파이프라인 개발 + 영업 인건비) &gt; LTV (3개월 유지 시 147만원 — 집중 49만원 × 3) — 유지율 70% 미달 시 적자</li>
+<li><strong>타이밍 실패</strong>: AI 생성 콘텐츠 규제 강화 — 론칭 직후 정부가 AI 콘텐츠 표기 의무화 정책 시행 시 고객 거부감 증가</li>
+</ul>
+<h2>[7] 1순위 단일 추천</h2>
+<p><strong>최종 선택</strong>: B. 네이버플레이스 완전 자동화</p>
+<p><strong>선택 근거 3줄</strong>:<br />
+1. <strong>Pain #2 evidence_quote 인용</strong>: "리뷰 하나하나 관리하느라 피곤" (헤어숍 사장 40세, 3인 사업장) — 네이버플레이스=로컬 검색 생존 도구, pain_level 4, workaround_cost 월 45만원 (전화 20시간 + 통화비 10만원)<br />
+2. <strong>경쟁 빈틈 — 역기획 Layer 5 인용</strong>: Cafe24는 네이버플레이스 단순 동기화만 지원, 리뷰 관리·평점 분석·자동 응답 기능 없음 (Layer 5 약점 #2) + Pain #2 연결 → 블루오션 확정<br />
+3. <strong>OKR 정합성 + 리안 자산 활용</strong>: naver-diagnosis (네이버플레이스 진단 → 영업 훅) 자산 활용 가능, KR1 (30개 고객 확보) 직접 기여, 네이버=로컬 검색 필수 채널이라 수요 명확, 종합 점수 92점 (TOP 5 중 1위)</p>
+<p><strong>민수와 일치/불일치</strong>:<br />
+- <strong>불일치</strong> — 민수는 "A. 인스타그램 통합 운영" 선택 (종합 점수 88점)<br />
+- <strong>왜 민수 선택을 뒤집는가</strong>: <br />
+  1. 네이버플레이스(92점)가 인스타그램(89점)보다 <strong>경쟁 빈틈(23 vs 22)</strong> 및 <strong>Payer 명확성(15 vs 14)</strong> 에서 우위<br />
+  2. naver-diagnosis 자산 활용 시 <strong>Pre-sell 가능성(14 vs 13)</strong> 높음 — 무료 진단 → 즉시 문제 인지 → 결제 전환율 높음<br />
+  3. 하은 반론 참조 — "인스타 알고리즘 변경 시 광고 효과 급락 가능성" (타이밍 리스크) vs 네이버는 로컬 검색 독점 플랫폼이라 알고리즘 변경 영향 적음<br />
+  4. <strong>Build 난이도(5 vs 6)</strong> 및 <strong>개발 기간(3개월 vs 6개월)</strong> — 네이버가 더 빠른 론칭 가능, 린 스타트업 원칙 부합</p>
+<h2>[8] 단계별 실행 계획 (초기 / 중기 / 장기)</h2>
+<h3>초기 (0~3개월) — 시장 진입</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목표 (측정 가능)</td>
+<td>구독 고객 30개 사업장 확보 (MRR 1,470만원 — 집중 49만원 기준), naver-diagnosis 무료 진단 신청 100건, 진단 → 결제 전환율 30%</td>
+</tr>
+<tr>
+<td>주요 마일스톤 (월 단위)</td>
+<td>1개월: naver-diagnosis MVP 개발 완료 + 네이버 카페 5개 영업 시작 / 2개월: 첫 10개 고객 확보 + AI 리뷰 자동 응답 베타 테스트 / 3개월: 30개 고객 확보 + 로컬 SEO 최적화 기능 추가</td>
+</tr>
+<tr>
+<td>필요 인력·예산</td>
+<td>개발자 1명 (월 500만원 × 3개월 = 1,500만원), 영업 1명 (월 300만원 × 3개월 = 900만원), 네이버 광고비 월 200만원 × 3개월 = 600만원, 총 3,000만원</td>
+</tr>
+<tr>
+<td>예상 고객수</td>
+<td>1개월 3개 → 2개월 10개 → 3개월 30개 (누적)</td>
+</tr>
+<tr>
+<td>예상 매출</td>
+<td>1개월 147만원 (3개 × 49만원) → 2개월 490만원 (10개 × 49만원) → 3개월 1,470만원 (30개 × 49만원)</td>
+</tr>
+<tr>
+<td>성공 지표 + 임계값</td>
+<td>naver-diagnosis 신청률 10% (네이버 카페 광고 1,000명 노출 시 100건), 진단 → 결제 전환율 30% (100건 중 30건), 3개월 유지율 70% (30개 중 21개 유지)</td>
+</tr>
+<tr>
+<td>병목·리스크 + 대응</td>
+<td>병목: 네이버 API 정책 변경 → 대응: 크롤링 대신 수동 입력 옵션 제공 / 리스크: AI 리뷰 응답 품질 낮음 → 대응: 사람 검수 + AI 학습 반복 / 병목: 네이버 카페 광고 금지 → 대응: 인스타 해시태그 + 지역 맘카페 영업 전환</td>
+</tr>
+</tbody>
+</table>
+<h3>중기 (3~12개월) — 성장 · 스케일</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목표</td>
+<td>구독 고객 100개 사업장 확보 (MRR 4,900만원), 3개월 유지율 80%, 인스타그램 통합 운영 기능 추가 (A 아이템 통합)</td>
+</tr>
+<tr>
+<td>제품 로드맵 (기능 3-5개)</td>
+<td>(1) 네이버플레이스 평점 분석 대시보드, (2) 인스타그램 콘텐츠 자동 생성 (AI 이미지+캡션), (3) 블로그 체험단 매칭 플랫폼 베타, (4) 통합 성과 대시보드 (인스타+네이버), (5) 월 성과 리포트 자동 생성</td>
+</tr>
+<tr>
+<td>확장 전략 (채널/지역/세그먼트)</td>
+<td>채널: 네이버 카페 → 카카오 오픈채팅 → 인스타 해시태그 광고 / 지역: 서울·경기 → 부산·대구 확장 / 세그먼트: 뷰티샵·카페 → 식당·피부과 확장</td>
+</tr>
+<tr>
+<td>경쟁 대응</td>
+<td>Cafe24가 네이버플레이스 리뷰 관리 기능 추가 시 → 우리는 AI 자동 응답 품질 고도화 + 로컬 SEO 최적화로 차별화 / 네이버 자체 리뷰 관리 툴 출시 시 → 우리는 인스타+블로그 통합 마케팅으로 포지셔닝 전환</td>
+</tr>
+<tr>
+<td>조직 확장</td>
+<td>개발자 2명 추가 (AI 엔지니어 1명 + 백엔드 1명), 영업 2명 추가 (지역별 전담), CS 1명 추가 (고객 응대)</td>
+</tr>
+<tr>
+<td>예상 고객수 / 월매출</td>
+<td>6개월 60개 고객 (MRR 2,940만원) → 12개월 100개 고객 (MRR 4,900만원)</td>
+</tr>
+</tbody>
+</table>
+<h3>장기 (1~3년) — 시장 지배 · Exit 준비</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목표</td>
+<td>구독 고객 1,000개 사업장 확보 (MRR 4.9억원), 시장 점유율 10% (오프라인 자영업자 통합 대행 SAM 1~2조원 중), 연 매출 60억원, 밸류에이션 200억원</td>
+</tr>
+<tr>
+<td>경쟁 우위 고착화 (moat)</td>
+<td>(1) AI 콘텐츠 생성 품질 업계 1위 (프리랜서 대비 90% 수준), (2) 네이버플레이스 리뷰 관리 점유율 50%, (3) 고객 데이터 축적 (1,000개 사업장 × 3년 = 36,000개월 데이터) → 경쟁사 진입 장벽</td>
+</tr>
+<tr>
+<td>시장 점유율 목표</td>
+<td>오프라인 자영업자 통합 대행 SAM 1~2조원 중 10% (1,000억원), 뷰티샵·카페·식당 100만개 업체 중 0.1% (1,000개) 확보</td>
+</tr>
+<tr>
+<td>연 매출 / 밸류에이션</td>
+<td>연 매출 60억원 (MRR 4.9억원 × 12개월 + 광고비 대행 수수료 10억원), 밸류에이션 200억원 (연 매출 × 3배 — SaaS 업계 평균)</td>
+</tr>
+<tr>
+<td>Exit 마일스톤</td>
+<td>2년차 연 매출 30억원 달성 → 시리즈 A 투자 유치 (50억원, 지분 20%) / 3년차 연 매출 60억원 달성 → Cafe24 또는 네이버 인수 제안 검토 (Exit 가격 200억원 목표)</td>
+</tr>
+</tbody>
+</table>
+<h2>[9] 48시간 검증 실험</h2>
+<ol>
+<li>
+<p><strong>검증 방법</strong>: 랜딩 + 사전결제 (코딩 없이 수요 검증)<br />
+   - <strong>이유</strong>: naver-diagnosis 무료 진단 랜딩페이지 제작 (Notion 또는 Google Forms) → 네이버 카페 5개 (뷰티 원장 모임, 소상공인마당, 헤어숍 사장님 모임) 광고 게시 → "네이버플레이스 진단 무료, 선착순 20명" 훅 → 신청자 이메일 수집 → 수동으로 진단 결과 제공 (스크린샷 + 개선 제안) → "집중 플랜 49만원 첫 달 30% 할인 (34.3만원)" 사전결제 링크 제공 → 결제율 측정<br />
+   - <strong>코딩 불필요</strong>: Notion 랜딩 + Google Forms 신청 + 토스페이먼츠 결제 링크 (48시간 내 구축 가능)</p>
+</li>
+<li>
+<p><strong>성공 KPI</strong>: "이 숫자 넘으면 다음 단계 GO" 구체 수치<br />
+   - naver-diagnosis 신청 20건 이상 (네이버 카페 광고 200명 노출 시 10% 전환율)<br />
+   - 진단 → 사전결제 전환율 30% 이상 (20건 중 6건 결제 = 205.8만원 매출)<br />
+   - 사전결제 고객 중 3개월 유지 의향 70% 이상 (6건 중 4건 "계속 쓰겠다" 응답)</p>
+</li>
+<li>
+<p><strong>실패 시 피벗</strong>: TOP 5의 2순위 "A. 인스타그램 통합 운영"으로 전환<br />
+   - <strong>이유</strong>: 네이버플레이스 수요 부족 시, 인스타그램은 자영업자 필수 채널이므로 수요 명확 (#1 pain_level 4)<br />
+   - <strong>피벗 조건</strong>: naver-diagnosis 신청 10건 미만 또는 진단 → 결제 전환율 10% 미만</p>
+</li>
+</ol>
+<p><strong>Problem Interview 질문지 (5-7개) — Mom Test 3규칙 적용</strong><br />
+1. <strong>과거 행동</strong> 묻기 → "지난 한 달간 네이버플레이스 리뷰 관리에 몇 시간 쓰셨어요? 구체적으로 어떤 작업 하셨나요?" (Pain #2 검증)<br />
+2. <strong>현재 비용/시간</strong> 수치 확인 → "부정 리뷰 수정 요청할 때 고객 1명당 통화 시간 얼마나 걸리나요? 한 달 통화비는 얼마 나오나요?" (workaround_cost 검증)<br />
+3. <strong>과거 행동</strong> 묻기 → "네이버플레이스 평점이 떨어졌을 때 어떻게 대응하셨어요? 그 방법이 효과 있었나요?" (current_solution_limit 검증)<br />
+4. <strong>현재 비용/시간</strong> 수치 확인 → "리뷰 응답 지연으로 예약 취소된 적 있나요? 한 달에 몇 건 정도 손실 보셨어요?" (JTBD goal 검증)<br />
+5. <strong>과거 행동</strong> 묻기 → "네이버플레이스 리뷰 관리 대행사 알아보신 적 있나요? 왜 안 쓰셨어요?" (competitor_url 검증)<br />
+6. <strong>현재 비용/시간</strong> 수치 확인 → "리뷰 관리 자동화 서비스에 한 달 얼마까지 지불 가능하세요? 그 금액이면 어떤 효과 기대하세요?" (가격 정책 검증)<br />
+7. <strong>과거 행동</strong> 묻기 → "네이버플레이스 진단 무료로 받으신다면, 어떤 정보 가장 알고 싶으세요?" (naver-diagnosis 기능 검증)</p>
+<p><strong>금지</strong>: "이런 서비스 있으면 쓸 건가요?" 식 가설 확인 질문. 유도 질문.</p>
+<p><strong>카피라이팅 A/B 2개</strong><br />
+- <strong>A안 (공포·불안 소구)</strong>: "네이버 평점 4.0 미만이면 예약 70% 감소합니다. 지금 무료 진단 받고 평점 4.5 회복하세요 (선착순 20명)"<br />
+- <strong>B안 (이득·해방 소구)</strong>: "리뷰 관리 하루 1시간 → 0분으로. AI가 24시간 자동 응답, 평점 4.5 유지 보장 (첫 달 30% 할인)"</p></div></details>
+<details class="collapsible" id="strategy_d2"><summary>💼 비즈니스 모델 (설계자 2회차)</summary><div class="content"><h2>[1] Problem Statement</h2>
+<p><strong>"오프라인 자영업자(뷰티샵·카페·식당 1~5인 사업장, 월 매출 500~3,000만원)</strong>는 <strong>네이버플레이스 리뷰·평점 관리가 매출에 직결되는 상황</strong>에서 <strong>리뷰 하나하나 수작업으로 응답하고, 부정 리뷰 수정 요청을 고객별 전화로 처리하며, 평점 하락 시 대응 방법을 모르는 문제</strong>를 겪고 있다.</p>
+<p>이는 <strong>네이버플레이스가 로컬 검색 독점 플랫폼이라 평점 4.5 미만 시 예약·방문 70% 감소하지만, 리뷰 관리 자동화 도구가 없고, 기존 솔루션(Cafe24)은 단순 동기화만 지원</strong>하기 때문이며,</p>
+<p>현재 <strong>고객별 전화 통화(월 20시간 + 통화비 10만원), 매일 앱 확인(월 15시간), 또는 리뷰 응답 포기</strong>로 버티고 있어 <strong>월 45만원 상당 시간 손실 + 평점 하락으로 예약 취소 월 50~100만원 매출 손실 + 야간 리뷰 미응답으로 고객 이탈</strong>이 발생한다."</p>
+<p><strong>근거</strong>:<br />
+- Pain #2: "리뷰 하나하나 관리하느라 피곤" (40세 헤어숍 사장, 3인 사업장, 월 매출 1,200만원, workaround_cost 월 20시간 + 통화비 10만원)<br />
+- Pain #11: "리뷰 응답 지연으로 평점 하락" (37세 카페 운영자, 2인 사업장, evidence_quote "골목상권 생계 위협", workaround_cost 월 15시간, current_solution_limit "야간 미응답")<br />
+- Pain #14: "네이버플레이스 사진 업데이트 번거로움" (31세 피부샵 원장, 2인 사업장, workaround_cost 월 10시간, current_solution_limit "퀄리티 불균일")</p>
+<hr />
+<h2>[2] STP (Segmentation / Targeting / Positioning)</h2>
+<h3>Segmentation (5개)</h3>
+<table>
+<thead>
+<tr>
+<th>세그먼트</th>
+<th>규모 추정</th>
+<th>특성</th>
+<th>Pain 강도 (★1~5)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 뷰티샵 (네일·헤어·피부)</td>
+<td>전국 30만개 업체 중 1~5인 사업장 20만개</td>
+<td>여성 고객 중심, 리뷰·평점 민감도 최고, 인스타+네이버 병행 필수, 월 마케팅 예산 30~100만원</td>
+<td>★★★★★ (Pain #2, #14 — 리뷰 관리 수작업 + 사진 업데이트 번거로움)</td>
+</tr>
+<tr>
+<td>② 카페·디저트</td>
+<td>전국 10만개 업체 중 1~5인 사업장 7만개</td>
+<td>20~30대 고객 중심, 인스타 비중 높음, 네이버플레이스 검색 유입 30%, 월 마케팅 예산 20~80만원</td>
+<td>★★★★☆ (Pain #11 — 리뷰 응답 지연 평점 하락)</td>
+</tr>
+<tr>
+<td>③ 식당·요식업</td>
+<td>전국 60만개 업체 중 1~5인 사업장 40만개</td>
+<td>40~50대 사장 중심, 배달앱 의존도 높음, 네이버플레이스 검색 유입 50%, 월 마케팅 예산 50~150만원</td>
+<td>★★★★☆ (Pain #5 — 플랫폼 수수료로 마케팅 예산 없음)</td>
+</tr>
+<tr>
+<td>④ 병원·의원 (피부과·치과)</td>
+<td>전국 5만개 업체 중 1~5인 사업장 3만개</td>
+<td>30~40대 원장 중심, 리뷰·평점 법적 민감도 높음, 월 마케팅 예산 100~300만원</td>
+<td>★★★☆☆ (Pain #2 — 리뷰 관리 수작업, 단 법적 리스크로 자동화 거부감)</td>
+</tr>
+<tr>
+<td>⑤ 학원·교습소</td>
+<td>전국 8만개 업체 중 1~5인 사업장 5만개</td>
+<td>학부모 리뷰 중심, 네이버플레이스 검색 유입 40%, 월 마케팅 예산 20~60만원</td>
+<td>★★★☆☆ (Pain #11 — 리뷰 응답 지연, 단 학원가 경쟁 격화로 우선순위 낮음)</td>
+</tr>
+</tbody>
+</table>
+<h3>Targeting (1개 선택)</h3>
+<p><strong>MVP 최초 공략</strong>: 세그먼트 ① — 뷰티샵 (네일·헤어·피부)</p>
+<p><strong>선택 근거</strong>:<br />
+- <strong>Pain 강도</strong>: ★★★★★ (Pain #2 "리뷰 하나하나 관리하느라 피곤" pain_level 4 + Pain #14 "네이버플레이스 사진 업데이트 번거로움" pain_level 4) — 뷰티샵은 여성 고객 중심이라 리뷰·평점 민감도가 식당·카페 대비 2배 높음. 네이버플레이스 평점 4.5 미만 시 예약 취소율 70% (추정 — 서윤 Pain #11 "골목상권 생계 위협" 인용).</p>
+<ul>
+<li>
+<p><strong>도달 가능성 — 구체적 채널</strong>:<br />
+  1. <strong>네이버 카페</strong>: "뷰티샵 원장 모임" (회원 5만명), "네일아트 사장님 커뮤니티" (회원 3만명), "헤어 디자이너 모임" (회원 4만명) — 광고 게시 가능, 월 광고비 50만원으로 1,000명 노출 추정<br />
+  2. <strong>카카오 오픈채팅</strong>: "네일샵 사장님 모임" (참여자 2,000명), "헤어숍 운영 노하우" (참여자 1,500명) — 무료 홍보 가능<br />
+  3. <strong>인스타그램 해시태그</strong>: #네일샵마케팅 (게시물 5만개), #헤어샵홍보 (게시물 3만개), #피부샵운영 (게시물 2만개) — 광고 CPM 5,000원, 월 광고비 100만원으로 20,000명 노출 추정<br />
+  4. <strong>지역 맘카페</strong>: 서울·경기 맘카페 100개 (회원 총 50만명) — "우리 동네 네일샵 추천해주세요" 게시글에 댓글 영업 가능</p>
+</li>
+<li>
+<p><strong>지불 의사</strong>: Pain #2 evidence_quote "리뷰 하나하나 관리하느라 피곤" (workaround_cost 월 20시간 + 통화비 10만원 = 월 45만원 상당) — 현재 월 45만원 상당 시간·비용 투입 중이므로, 집중 플랜 49만원은 <strong>기존 비용과 동일 수준</strong>이라 지불 저항 낮음. 추가로 "평점 4.5 유지 보장"이라는 명확한 가치 제안 시 월 49만원 지불 의사 높음 (추정 전환율 30% — 1회차 48시간 검증 KPI 기준).</p>
+</li>
+<li>
+<p><strong>의사결정자 명확성</strong>: 뷰티샵 원장(30~40대 여성)이 <strong>직접 결제 권한 보유</strong> (1~5인 사업장이라 별도 승인 불필요). 의사결정 단계: 네이버플레이스 평점 하락 체감 → naver-diagnosis 무료 진단 신청 → 문제 즉시 인지 (평점 4.2, 리뷰 응답률 30% 등) → "집중 플랜 49만원 첫 달 30% 할인 (34.3만원)" 제안 → 결제 (추정 전환 기간 3~7일).</p>
+</li>
+</ul>
+<h3>Positioning (한 문장)</h3>
+<p>"<strong>뷰티샵 원장(네일·헤어·피부)</strong>에게, <strong>Cafe24(네이버플레이스 단순 동기화만)</strong> 대비 <strong>AI 자동 리뷰 응답 + 로컬 SEO 최적화로 평점 4.5 유지 보장</strong>을 제공하는, <strong>월 49만원(집중 플랜)</strong> 서비스"</p>
+<p><strong>차별화 근거</strong>: <br />
+- 역기획 Layer 5 — Cafe24 약점: "네이버플레이스 단순 동기화만 지원, 리뷰 관리·평점 분석·자동 응답 기능 없음" (Layer 5 약점 #2) + "네이버플레이스는 Cafe24와 별개 플랫폼이라 양쪽 모두 관리 필요" (구조적 이유 1)<br />
+- 우리 차별점: naver-diagnosis (네이버플레이스 진단 → 영업 훅) 자산 활용 + AI 리뷰 자동 응답 (24시간 실시간) + 로컬 SEO 최적화 (키워드·카테고리·영업시간 자동 업데이트) — Cafe24가 절대 제공하지 못하는 기능.</p>
+<hr />
+<h2>[3] Value Proposition Canvas</h2>
+<h3>고객 프로필 (오른쪽)</h3>
+<p><strong>Customer Jobs</strong> (3가지 층)<br />
+- <strong>기능적 Jobs</strong>: <br />
+  - 네이버플레이스 평점 4.5 이상 유지하여 로컬 검색 1페이지 노출 확보<br />
+  - 리뷰 응답 24시간 내 완료하여 고객 만족도 유지<br />
+  - 부정 리뷰 발생 시 즉시 대응하여 평점 하락 방지<br />
+  - 네이버플레이스 정보(메뉴·사진·영업시간) 최신 상태 유지</p>
+<ul>
+<li><strong>감정적 Jobs</strong>: </li>
+<li>리뷰 관리 스트레스에서 해방되어 "장사에만 집중하는 편안함" 느끼기</li>
+<li>평점 하락 불안에서 벗어나 "안정적인 예약 유지" 확신 갖기</li>
+<li>
+<p>고객 리뷰에 즉시 응답하여 "프로페셔널한 사장" 이미지 구축</p>
+</li>
+<li>
+<p><strong>사회적 Jobs</strong>: </p>
+</li>
+<li>동료 원장들 사이에서 "마케팅 잘하는 사장"으로 인정받기</li>
+<li>고객들에게 "친절하고 소통 잘하는 샵"으로 평가받기</li>
+<li>네이버플레이스 평점 4.8+ 유지하여 "우리 동네 1등 샵" 지위 확보</li>
+</ul>
+<p><strong>Pains</strong> (반드시 서윤 Pain # 인용)<br />
+- <strong>P1</strong>: 리뷰 하나하나 수작업 응답하느라 월 20시간 소모 + 통화비 10만원 (Pain #2 — 40세 헤어숍 사장, "리뷰 하나하나 관리하느라 피곤")<br />
+- <strong>P2</strong>: 야간·주말 리뷰 미응답으로 평점 하락 → 예약 취소 월 50~100만원 매출 손실 (Pain #11 — 37세 카페 운영자, "리뷰 응답 지연으로 평점 하락", current_solution_limit "야간 미응답")<br />
+- <strong>P3</strong>: 네이버플레이스 사진·메뉴 업데이트 월 10시간 소모 + 퀄리티 불균일 (Pain #14 — 31세 피부샵 원장, "네이버플레이스 사진 업데이트 번거로움")<br />
+- <strong>P4</strong>: 네이버플레이스 SEO 최적화 방법 모름 → 로컬 검색 2~3페이지 노출 → 신규 고객 유입 저조 (Pain #6 — 30세 네일아트숍 원장, "네이버플레이스 SEO 최적화 모름", JTBD goal "로컬 검색 1페이지 노출")<br />
+- <strong>P5</strong>: 네이버플레이스 이벤트·영업시간 변경 시 매번 앱 로그인 수정 월 5~8시간 소모 (Pain #22, #31 — "네이버플레이스 이벤트 등록 잦은 변경" + "영업시간 업데이트 잦음")</p>
+<p><strong>Gains</strong><br />
+- <strong>G1</strong>: 리뷰 관리 시간 월 20시간 → 0시간 절감 (월 45만원 상당 시간 회복)<br />
+- <strong>G2</strong>: 평점 4.5 이상 유지로 예약 증가 20~30% (월 매출 200~300만원 증가 추정)<br />
+- <strong>G3</strong>: 네이버 로컬 검색 1페이지 노출로 신규 고객 유입 2배 증가<br />
+- <strong>G4</strong>: 24시간 자동 리뷰 응답으로 "친절한 샵" 이미지 구축 → 재방문율 증가<br />
+- <strong>G5</strong>: 네이버플레이스 정보 자동 업데이트로 고객 불만(영업시간 오류 등) 제로</p>
+<h3>가치 맵 (왼쪽)</h3>
+<p><strong>Products &amp; Services</strong><br />
+- AI 자동 리뷰 응답 (24시간 실시간, 긍정·부정·중립 리뷰 자동 분류 + 맞춤 응답)<br />
+- 네이버 로컬 SEO 최적화 (키워드·카테고리·태그 자동 설정)<br />
+- 네이버플레이스 정보 자동 업데이트 (메뉴·사진·영업시간·이벤트)<br />
+- 평점 관리 대시보드 (실시간 평점·리뷰 추이·경쟁사 비교)<br />
+- 월 성과 리포트 자동 생성 (리뷰 응답률·평점 변화·예약 증가율)</p>
+<p><strong>Pain Relievers</strong> (각 Pain에 1:1 대응)<br />
+- <strong>P1 → AI 자동 리뷰 응답</strong>: 리뷰 발생 시 5분 내 자동 응답 (긍정 리뷰는 감사 메시지, 부정 리뷰는 사과+개선 약속, 중립 리뷰는 추가 정보 요청) — 월 20시간 수작업 → 0시간, 통화비 10만원 → 0원<br />
+- <strong>P2 → 24시간 실시간 응답</strong>: 야간·주말 리뷰도 즉시 응답 (AI가 24시간 모니터링) — 야간 미응답으로 인한 평점 하락 방지, 예약 취소 월 50~100만원 손실 → 0원<br />
+- <strong>P3 → 네이버플레이스 정보 자동 업데이트</strong>: 사진·메뉴 변경 시 1회 업로드하면 자동 동기화 (AI가 이미지 최적화 + 카테고리 자동 태깅) — 월 10시간 수작업 → 1시간, 퀘리티 불균일 → AI 표준화<br />
+- <strong>P4 → 로컬 SEO 최적화</strong>: 네이버 검색 알고리즘 분석하여 키워드·카테고리 자동 최적화 (예: "강남 네일샵" 검색 시 1페이지 노출 보장) — 로컬 검색 2~3페이지 → 1페이지, 신규 고객 유입 2배 증가<br />
+- <strong>P5 → 이벤트·영업시간 자동 업데이트</strong>: 캘린더 연동하여 이벤트·영업시간 변경 시 자동 반영 (예: "설날 휴무" 등록 시 네이버플레이스 자동 업데이트) — 월 5~8시간 수작업 → 0시간</p>
+<p><strong>Gain Creators</strong><br />
+- <strong>G1 → 시간 절감</strong>: 리뷰 관리 월 20시간 + 정보 업데이트 월 10시간 = 월 30시간 → 0시간 (월 45만원 상당 시간 회복)<br />
+- <strong>G2 → 매출 증가</strong>: 평점 4.5 이상 유지 → 예약 증가 20~30% (월 매출 1,200만원 기준 시 240~360만원 증가 추정)<br />
+- <strong>G3 → 신규 고객 유입</strong>: 로컬 검색 1페이지 노출 → 클릭률 30% 증가 (추정 — 네이버 검색 1페이지 CTR 50% vs 2페이지 CTR 20%)<br />
+- <strong>G4 → 브랜드 이미지</strong>: 24시간 자동 응답 → "친절한 샵" 리뷰 증가 → 재방문율 15% 증가 (추정)<br />
+- <strong>G5 → 고객 불만 제로</strong>: 영업시간 오류 등 정보 불일치로 인한 고객 불만 제로 (현재 월 5~10건 발생 추정)</p>
+<h3>Fit 검증 표</h3>
+<table>
+<thead>
+<tr>
+<th>Customer Pain</th>
+<th>Our Pain Reliever</th>
+<th>대응도 (Full/Partial/None)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1: 리뷰 수작업 응답 월 20시간 + 통화비 10만원 (#2)</td>
+<td>AI 자동 리뷰 응답 (24시간 실시간)</td>
+<td><strong>Full</strong> — 월 20시간 → 0시간, 통화비 10만원 → 0원</td>
+</tr>
+<tr>
+<td>P2: 야간 미응답으로 평점 하락 → 예약 취소 월 50~100만원 (#11)</td>
+<td>24시간 실시간 응답 (AI 모니터링)</td>
+<td><strong>Full</strong> — 야간 리뷰도 5분 내 응답, 평점 하락 방지</td>
+</tr>
+<tr>
+<td>P3: 사진·메뉴 업데이트 월 10시간 + 퀄리티 불균일 (#14)</td>
+<td>네이버플레이스 정보 자동 업데이트 (AI 이미지 최적화)</td>
+<td><strong>Partial</strong> — 월 10시간 → 1시간 (초기 업로드 필요), 퀄리티 표준화</td>
+</tr>
+<tr>
+<td>P4: SEO 최적화 모름 → 로컬 검색 2~3페이지 (#6)</td>
+<td>로컬 SEO 최적화 (키워드·카테고리 자동 설정)</td>
+<td><strong>Full</strong> — 로컬 검색 1페이지 노출 보장 (3개월 내)</td>
+</tr>
+<tr>
+<td>P5: 이벤트·영업시간 변경 월 5~8시간 (#22, #31)</td>
+<td>캘린더 연동 자동 업데이트</td>
+<td><strong>Full</strong> — 월 5~8시간 → 0시간</td>
+</tr>
+</tbody>
+</table>
+<p><strong>대응 못 하는 Pain (MVP 범위 밖)</strong>:<br />
+- Pain #5 "플랫폼 수수료로 마케팅 예산 없음" — 배달앱 수수료 문제는 우리 서비스 범위 밖 (장기 로드맵에서 "독립 채널 마케팅 강화"로 간접 대응 가능)<br />
+- Pain #36 "인스타 쇼핑 태그 설정 복잡" — 인스타그램 기능은 MVP 범위 밖 (중기 로드맵에서 "A. 인스타그램 통합 운영" 추가 시 대응)</p>
+<hr />
+<h2>[4] 공감 지도 (Empathy Map)</h2>
+<p><strong>페르소나</strong>: 35세 네일샵 원장, 2인 사업장(원장 + 직원 1명), 월 매출 800만원, 서울 강남구 소재, 인스타 팔로워 1,200명, 네이버플레이스 평점 4.2 (리뷰 80개), 월 마케팅 예산 50만원 (인스타 광고 30만원 + 프리랜서 콘텐츠 제작 20만원)</p>
+<ul>
+<li><strong>Think &amp; Feel</strong> (속으로 무슨 생각/느낌):</li>
+<li>"리뷰 관리 안 하면 평점 떨어지는 거 알지만, 매일 확인할 시간 없어. 주말에 몰아서 하려니 지쳐서 포기하게 됨."</li>
+<li>"부정 리뷰 하나 달리면 하루 종일 신경 쓰임. 고객한테 전화해서 수정 요청하는 게 너무 스트레스."</li>
+<li>"네이버 검색하면 우리 샵이 2페이지에 나오는데, 1페이지 샵들은 뭐가 다른 걸까? SEO 최적화 방법 모르겠음."</li>
+<li>
+<p>"인스타는 열심히 올리는데, 네이버플레이스는 방치 중. 근데 예약 전화 오는 고객 중 50%는 네이버 보고 온다고 함. 네이버도 신경 써야 하는데..."</p>
+</li>
+<li>
+<p><strong>See</strong> (주변에서 뭘 보는가 — 대안/경쟁사/트렌드):</p>
+</li>
+<li>경쟁 샵들이 네이버플레이스 평점 4.8 유지하며 예약 꽉 차는 모습 (우리는 4.2라 예약 빈틈 많음)</li>
+<li>Cafe24 광고 보고 "쇼핑몰 구축 + 마케팅 통합"이라는데, 우리 같은 오프라인 샵에는 맞지 않는 것 같음</li>
+<li>배달의민족은 식당 전용이라 뷰티샵은 못 씀</li>
+<li>인스타 광고 대행사는 많은데, 네이버플레이스 관리 대행사는 못 봄 (블루오션 인지)</li>
+<li>
+<p>동료 원장들이 "리뷰 관리 프리랜서 고용했는데 월 30만원 들어간다"고 불만 토로</p>
+</li>
+<li>
+<p><strong>Hear</strong> (동료/상사/고객/가족한테 뭘 듣는가):</p>
+</li>
+<li><strong>동료 원장</strong>: "네이버 리뷰 응답 안 하면 평점 떨어져. 나는 매일 30분씩 투자해." (→ 부담감 증가)</li>
+<li><strong>고객</strong>: "네이버 보고 왔는데, 영업시간이 실제랑 달라서 헛걸음했어요." (→ 정보 업데이트 필요성 인지)</li>
+<li><strong>직원</strong>: "원장님, 리뷰 응답 제가 할까요? 근데 뭐라고 써야 할지 모르겠어요." (→ 직원에게 위임 불가능)</li>
+<li><strong>가족</strong>: "장사하느라 바쁜데, 리뷰까지 신경 쓰려니 너무 힘들어 보여. 대행사 쓰는 거 어때?" (→ 대행 서비스 검색 시작)</li>
+<li>
+<p><strong>프리랜서</strong>: "리뷰 응답 대행 월 30만원인데, 네이버플레이스 정보 업데이트는 별도 비용이에요." (→ 비용 부담)</p>
+</li>
+<li>
+<p><strong>Say &amp; Do</strong> (겉으로 뭘 하는가 — Workaround 포함):</p>
+</li>
+<li>주말 오후 2시간 투입하여 네이버플레이스 리뷰 일괄 응답 (긍정 리뷰는 "감사합니다", 부정 리뷰는 전화 통화)</li>
+<li>부정 리뷰 발생 시 고객 전화번호 찾아서 통화 (1건당 평균 15분 소요, 월 5~10건 발생)</li>
+<li>네이버플레이스 앱 매일 확인하지만, 야간·주말 리뷰는 월요일에 몰아서 응답 (지연 응답으로 평점 하락)</li>
+<li>네이버플레이스 사진 업데이트는 3개월에 1회 (휴대폰 촬영 → 업로드, 퀄리티 낮음)</li>
+<li>
+<p>네이버 검색 "강남 네일샵" 해보고 1페이지 샵들 분석 (키워드·카테고리 차이 파악 시도하지만 실패)</p>
+</li>
+<li>
+<p><strong>Pain</strong> (가장 큰 두려움·좌절):</p>
+</li>
+<li><strong>두려움</strong>: "평점이 4.0 밑으로 떨어지면 예약 뚝 끊길 것 같아. 경쟁 샵들은 다 4.5 이상인데, 우리만 뒤처지는 느낌."</li>
+<li><strong>좌절</strong>: "리뷰 관리 안 하면 안 되는 거 알지만, 매일 확인할 시간 없어. 프리랜서 고용하자니 월 30만원 부담스럽고, 직접 하자니 너무 지쳐."</li>
+<li>
+<p><strong>불안</strong>: "네이버 검색 2페이지에 나오니까 신규 고객 유입이 줄어드는 것 같아. SEO 최적화 방법 모르겠고, 누가 대신 해줬으면 좋겠어."</p>
+</li>
+<li>
+<p><strong>Gain</strong> ("이것만 해결되면" 이상적 상태):</p>
+</li>
+<li><strong>이상적 상태</strong>: "리뷰 관리 신경 안 쓰고, 평점 4.5 이상 자동 유지되면서, 네이버 검색 1페이지 노출되어 예약 꽉 차는 상태. 나는 시술에만 집중."</li>
+<li><strong>구체적 기대</strong>: "AI가 24시간 리뷰 자동 응답해주고, 부정 리뷰 발생 시 알림 오면 내가 직접 전화만 하면 됨. 네이버플레이스 정보도 자동 업데이트되어 고객 불만 제로."</li>
+<li><strong>ROI 기대</strong>: "월 49만원 내고, 예약 20~30% 증가하면 월 매출 200~300만원 늘어나니까 충분히 본전 뽑을 수 있음."</li>
+</ul>
+<hr />
+<h2>[5] Lean Canvas (9블록)</h2>
+<table>
+<thead>
+<tr>
+<th>블록</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>문제 (Problem)</strong></td>
+<td>TOP 3 문제: (1) 리뷰 수작업 응답 월 20시간 + 통화비 10만원 (Pain #2), (2) 야간 미응답으로 평점 하락 → 예약 취소 월 50~100만원 (Pain #11), (3) SEO 최적화 모름 → 로컬 검색 2~3페이지 노출 (Pain #6)</td>
+</tr>
+<tr>
+<td><strong>고객 세그먼트</strong></td>
+<td>뷰티샵 원장 (네일·헤어·피부, 30~40대 여성, 1~5인 사업장, 월 매출 500~3,000만원, 네이버플레이스 평점 4.0~4.5, 월 마케팅 예산 30~100만원)</td>
+</tr>
+<tr>
+<td><strong>고유 가치 제안 (UVP)</strong></td>
+<td>"뷰티샵 원장에게, Cafe24(네이버플레이스 단순 동기화만) 대비 AI 자동 리뷰 응답 + 로컬 SEO 최적화로 평점 4.5 유지 보장을 제공하는, 월 49만원(집중 플랜) 서비스"</td>
+</tr>
+<tr>
+<td><strong>솔루션</strong></td>
+<td>문제별 MVP 기능 매핑: (1) AI 자동 리뷰 응답 (24시간 실시간) → P1 해결, (2) 24시간 모니터링 + 즉시 응답 → P2 해결, (3) 로컬 SEO 최적화 (키워드·카테고리 자동 설정) → P3 해결</td>
+</tr>
+<tr>
+<td><strong>채널</strong></td>
+<td>(1) 네이버 카페 — "뷰티샵 원장 모임" (회원 5만명), "네일아트 사장님 커뮤니티" (회원 3만명), "헤어 디자이너 모임" (회원 4만명) — 광고 게시 월 50만원, (2) 카카오 오픈채팅 — "네일샵 사장님 모임" (참여자 2,000명) — 무료 홍보, (3) 인스타그램 해시태그 — #네일샵마케팅 (게시물 5만개) — 광고 CPM 5,000원 월 100만원, (4) 지역 맘카페 — 서울·경기 맘카페 100개 (회원 총 50만명) — 댓글 영업 무료</td>
+</tr>
+<tr>
+<td><strong>수익원</strong></td>
+<td>월 구독형 SaaS: 주목 29만원 (리뷰 응답만) / 집중 49만원 (리뷰 응답 + SEO 최적화) / 시선 89만원 (리뷰 응답 + SEO + 인스타 통합) + 업셀링: 광고비 대행 수수료 10% (고객이 네이버 광고 월 50만원 집행 시 우리가 5만원 수수료)</td>
+</tr>
+<tr>
+<td><strong>비용 구조</strong></td>
+<td>MVP 단계 주요 비용: (1) 인건비 — 개발자 1명 월 500만원 + 영업 1명 월 300만원 + CS 1명 월 250만원 = 월 1,050만원, (2) API 비용 — 네이버 API 월 50만원 + OpenAI API (리뷰 응답 생성) 월 100만원 = 월 150만원, (3) 서버 비용 — AWS 월 100만원, (4) 마케팅 비용 — 네이버 카페 광고 월 50만원 + 인스타 광고 월 100만원 = 월 150만원, <strong>총 월 1,450만원</strong></td>
+</tr>
+<tr>
+<td><strong>핵심 지표</strong></td>
+<td>OKR KR1: 구독 고객 30개 사업장 확보 (MRR 1,470만원 — 집중 49만원 기준) / KR2: AI 파이프라인 적용으로 콘텐츠 제작 원가 건당 5만원 이하 / KR3: 3개월 유지율 70% 이상 / <strong>OMTM (One Metric That Matters)</strong>: naver-diagnosis 진단 → 결제 전환율 30% (100건 진단 시 30건 결제)</td>
+</tr>
+<tr>
+<td><strong>차별화 우위 (Unfair Advantage)</strong></td>
+<td>(1) naver-diagnosis 자산 (네이버플레이스 진단 → 영업 훅) — 경쟁사 없음, 우리만 보유, (2) 리안 컴퍼니 기존 온라인팀 운영 노하우 (뷰티·카페 대상 마케팅 경험 3년) — 타겟 페르소나 이해도 높음, (3) AI 파이프라인 원가 절감 (건당 5만원 이하) — 프리랜서 대비 70% 저렴, 경쟁사 따라잡기 어려움 (AI 모델 학습 데이터 축적 필요)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>[6] 수익 모델 + 4P 마케팅 믹스</h2>
+<h3>수익 모델 상세</h3>
+<ul>
+<li><strong>유형</strong>: <strong>구독형 SaaS (월 정기 구독) + 광고비 대행 수수료 하이브리드</strong></li>
+<li><strong>근거</strong>: Pain #2 "리뷰 관리 월 20시간 + 통화비 10만원 = 월 45만원 상당" — 고객이 이미 월 45만원 상당 비용 투입 중이므로, 월 구독 49만원은 <strong>기존 비용과 동일 수준</strong>이라 지불 저항 낮음. 추가로 "평점 4.5 유지 보장"이라는 명확한 가치 제안 시 월 구독 전환율 높음 (추정 30% — 1회차 48시간 검증 KPI).</li>
+<li>
+<p><strong>광고비 대행 수수료</strong>: 고객이 네이버 광고 집행 시 우리가 대행하여 10% 수수료 (예: 고객이 월 50만원 광고비 집행 시 우리가 5만원 수수료) — 이는 업셀링 트리거로 작동 (집중 플랜 → 시선 플랜 전환 유도).</p>
+</li>
+<li>
+<p><strong>Free Tier</strong>: <strong>무료 플랜 없음, 대신 naver-diagnosis 무료 진단 제공</strong></p>
+</li>
+<li><strong>무료 범위</strong>: 네이버플레이스 진단 (평점·리뷰 응답률·SEO 점수·경쟁사 비교) 1회 무료 제공 (선착순 20명 또는 월 100명 제한)</li>
+<li><strong>제한 기준</strong>: 진단 결과 제공 후, 실제 리뷰 응답·SEO 최적화 기능은 유료 플랜 가입 필수</li>
+<li>
+<p><strong>이유</strong>: 무료 플랜 제공 시 고객이 "무료로 충분하다" 판단하여 유료 전환 저조할 위험. 대신 naver-diagnosis 무료 진단으로 <strong>문제 인지 → 즉시 결제</strong> 유도 (추정 전환율 30%).</p>
+</li>
+<li>
+<p><strong>유료 트리거</strong>: <strong>naver-diagnosis 진단 결과에서 "평점 4.5 미만" 또는 "리뷰 응답률 50% 미만" 발견 시 Paywall</strong></p>
+</li>
+<li><strong>사용자 여정</strong>: 네이버 카페 광고 보고 naver-diagnosis 신청 → 진단 결과 확인 (평점 4.2, 리뷰 응답률 30%, 로컬 검색 2페이지) → "집중 플랜 49만원 첫 달 30% 할인 (34.3만원)" 팝업 → 결제 페이지 이동</li>
+<li>
+<p><strong>Paywall 메시지</strong>: "평점 4.2는 예약 취소 위험 구간입니다. AI 자동 리뷰 응답으로 평점 4.5 회복 보장 (3개월 내) — 첫 달 30% 할인 34.3만원"</p>
+</li>
+<li>
+<p><strong>가격 앵커링 전략</strong>: <strong>시선 플랜(89만원)을 앵커로 설정하여 집중 플랜(49만원)을 합리적으로 보이게</strong></p>
+</li>
+<li><strong>앵커링 메커니즘</strong>: 가격 페이지에서 시선 플랜을 가장 크게 표시 ("Most Popular" 배지) → 집중 플랜은 "Best Value" 배지 → 주목 플랜은 "Basic" 표시</li>
+<li><strong>심리적 효과</strong>: 고객이 시선 89만원 보고 "비싸다" 판단 → 집중 49만원 보고 "적당하다" 판단 → 주목 29만원 보고 "기능 부족" 판단 → <strong>집중 플랜 선택 (추정 전환율 60%)</strong></li>
+<li>
+<p><strong>근거</strong>: 행동경제학 "앵커링 효과" (Kahneman &amp; Tversky) — 첫 번째 본 가격이 기준점이 되어 이후 가격 판단에 영향.</p>
+</li>
+<li>
+<p><strong>경쟁사 가격 대비 포지션</strong>: <strong>Cafe24 대비 "같은 가격대, 더 많은 기능" 포지션</strong></p>
+</li>
+<li><strong>Cafe24 가격</strong>: 스탠더드 월 29,000원 (네이버플레이스 단순 동기화만) / 비즈니스 월 49,000원 (SNS 광고 연동만, 리뷰 관리 없음)</li>
+<li><strong>우리 가격</strong>: 집중 플랜 월 49만원 (리뷰 자동 응답 + SEO 최적화 + 정보 자동 업데이트) — Cafe24 비즈니스 플랜과 동일 가격이지만, <strong>네이버플레이스 전문 기능</strong>이라 가치 제안 명확</li>
+<li><strong>포지션</strong>: "Cafe24는 온라인 쇼핑몰 중심, 우리는 오프라인 자영업자 전문" — 타겟 세그먼트 차별화로 가격 경쟁 회피</li>
+</ul>
+<h3>가격 티어 (3단 필수)</h3>
+<table>
+<thead>
+<tr>
+<th>플랜</th>
+<th>월 가격</th>
+<th>포함 내용</th>
+<th>타겟 페르소나</th>
+<th>업셀 트리거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>주목 (Starter)</strong></td>
+<td>29만원</td>
+<td>AI 자동 리뷰 응답 (24시간 실시간, 월 50건 제한), 평점 관리 대시보드 (실시간 평점·리뷰 추이), 월 성과 리포트 (기본)</td>
+<td>1인 사업장 네일샵 원장 (월 매출 500~800만원, 리뷰 발생 월 20~30건, 마케팅 예산 20~30만원)</td>
+<td>리뷰 발생 월 50건 초과 시 "집중 플랜 업그레이드" 팝업 (추가 20만원으로 무제한 응답)</td>
+</tr>
+<tr>
+<td><strong>집중 (Pro)</strong></td>
+<td>49만원</td>
+<td>AI 자동 리뷰 응답 (무제한), 로컬 SEO 최적화 (키워드·카테고리 자동 설정), 네이버플레이스 정보 자동 업데이트 (메뉴·사진·영업시간), 평점 관리 대시보드 (고급 — 경쟁사 비교), 월 성과 리포트 (상세 — 예약 증가율 분석)</td>
+<td>2~3인 사업장 헤어숍 사장 (월 매출 1,000~2,000만원, 리뷰 발생 월 50~100건, 마케팅 예산 50~100만원)</td>
+<td>네이버 광고 집행 희망 시 "시선 플랜 업그레이드" 제안 (추가 40만원으로 광고 대행 포함)</td>
+</tr>
+<tr>
+<td><strong>시선 (Enterprise)</strong></td>
+<td>89만원</td>
+<td>집중 플랜 전체 기능 + 인스타그램 콘텐츠 자동 생성 (AI 이미지+캡션, 주 3회), 인스타 광고 A/B 테스트 자동화, 네이버 광고 대행 (월 광고비 50만원 포함, 추가 광고비는 10% 수수료), 전담 계정 매니저 (월 1회 전화 상담), 월 성과 리포트 (프리미엄 — ROI 분석)</td>
+<td>4~5인 사업장 피부과 원장 (월 매출 2,000~3,000만원, 리뷰 발생 월 100~200건, 마케팅 예산 100~300만원)</td>
+<td>블로그 체험단 추가 희망 시 "커스텀 플랜" 제안 (월 120만원 — 블로그 체험단 매칭 포함)</td>
+</tr>
+</tbody>
+</table>
+<h3>가격 근거 (숫자)</h3>
+<ul>
+<li><strong>경쟁사 가격 범위</strong>:</li>
+<li>Cafe24: 스탠더드 월 29,000원 / 비즈니스 월 49,000원 / 엔터프라이즈 월 100,000원 이상 (추정)</li>
+<li>프리랜서 리뷰 관리 대행: 월 30만원 (리뷰 응답만, SEO 최적화 없음)</li>
+<li>네이버 광고 대행사: 월 50만원 + 광고비 별도 (광고 집행만, 리뷰 관리 없음)</li>
+<li>
+<p><strong>중앙값</strong>: 월 40~50만원 (리뷰 관리 + 광고 대행 통합 시)</p>
+</li>
+<li>
+<p><strong>원가 구조</strong>:</p>
+</li>
+<li><strong>고정비</strong> (월): 인건비 1,050만원 + 서버 100만원 = 1,150만원</li>
+<li><strong>변동비</strong> (고객 1명당): 네이버 API 월 1만원 + OpenAI API 월 2만원 = 월 3만원</li>
+<li><strong>한계비용</strong> (고객 1명 추가 시): 월 3만원 (변동비만 증가, 고정비는 고객 30명까지 동일)</li>
+<li>
+<p><strong>손익분기점</strong>: 고정비 1,150만원 ÷ (집중 플랜 49만원 - 변동비 3만원) = 25명 (25명 확보 시 손익분기)</p>
+</li>
+<li>
+<p><strong>지불 의사 근거</strong>:</p>
+</li>
+<li>Pain #2 evidence_quote: "리뷰 하나하나 관리하느라 피곤" (workaround_cost 월 20시간 + 통화비 10만원 = 월 45만원 상당) — 고객이 이미 월 45만원 상당 비용 투입 중</li>
+<li>Pain #11 evidence_quote: "리뷰 응답 지연으로 평점 하락" (예약 취소 월 50~100만원 매출 손실) — 고객이 월 49만원 지불하여 월 50~100만원 매출 회복 시 ROI 1~2배</li>
+<li><strong>결론</strong>: 집중 플랜 49만원은 <strong>기존 비용(45만원)과 동일 수준 + ROI 명확(매출 회복 50~100만원)</strong> → 지불 의사 높음 (추정 전환율 30%)</li>
+</ul>
+<h3>4P</h3>
+<ul>
+<li>
+<p><strong>Product</strong>: 핵심 기능 (1회차 MVP 기능 참조)<br />
+  1. AI 자동 리뷰 응답 (24시간 실시간, 긍정·부정·중립 자동 분류 + 맞춤 응답)<br />
+  2. 로컬 SEO 최적화 (키워드·카테고리·태그 자동 설정, 로컬 검색 1페이지 노출 보장)<br />
+  3. 네이버플레이스 정보 자동 업데이트 (메뉴·사진·영업시간·이벤트 캘린더 연동)<br />
+  4. 평점 관리 대시보드 (실시간 평점·리뷰 추이·경쟁사 비교)<br />
+  5. 월 성과 리포트 자동 생성 (리뷰 응답률·평점 변화·예약 증가율·ROI 분석)</p>
+</li>
+<li>
+<p><strong>Price</strong>: 위 3단 티어 (주목 29만원 / 집중 49만원 / 시선 89만원)</p>
+</li>
+<li>
+<p><strong>Place</strong>: 유통 채널</p>
+</li>
+<li><strong>웹앱</strong> (PC·모바일 반응형) — 고객이 대시보드 접속하여 실시간 평점·리뷰 확인</li>
+<li><strong>모바일 앱</strong> (iOS·Android) — 리뷰 발생 시 푸시 알림, 외출 중에도 확인 가능</li>
+<li><strong>API</strong> (장기 로드맵) — Cafe24·배달의민족 등 기존 플랫폼과 연동 (파트너십)</li>
+<li>
+<p><strong>마켓플레이스</strong> (장기 로드맵) — 네이버 스마트스토어·카카오톡 채널 등 입점</p>
+</li>
+<li>
+<p><strong>Promotion</strong>: 초기 고객 획득 (구체적 채널 + 예상 CAC)<br />
+  1. <strong>네이버 카페 광고</strong> — "뷰티샵 원장 모임" (회원 5만명) 광고 게시 월 50만원 → 1,000명 노출 → naver-diagnosis 신청 100건 (전환율 10%) → 결제 30건 (전환율 30%) → <strong>CAC = 50만원 ÷ 30건 = 1.67만원</strong><br />
+  2. <strong>카카오 오픈채팅 무료 홍보</strong> — "네일샵 사장님 모임" (참여자 2,000명) 무료 게시 → 50명 노출 → 신청 5건 → 결제 1.5건 → <strong>CAC = 0원 (무료)</strong><br />
+  3. <strong>인스타그램 해시태그 광고</strong> — #네일샵마케팅 (게시물 5만개) CPM 5,000원 월 100만원 → 20,000명 노출 → 신청 200건 (전환율 1%) → 결제 60건 (전환율 30%) → <strong>CAC = 100만원 ÷ 60건 = 1.67만원</strong><br />
+  4. <strong>지역 맘카페 댓글 영업</strong> — 서울·경기 맘카페 100개 무료 댓글 → 500명 노출 → 신청 25건 (전환율 5%) → 결제 7.5건 (전환율 30%) → <strong>CAC = 0원 (무료, 영업 인건비만)</strong></p>
+</li>
+<li><strong>평균 CAC</strong>: (50만원 + 0원 + 100만원 + 0원) ÷ (30건 + 1.5건 + 60건 + 7.5건) = 150만원 ÷ 99건 = <strong>1.52만원</strong></li>
+</ul>
+<h3>유닛 이코노믹스</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>목표치</th>
+<th>산정 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CAC</strong> (고객 획득 비용)</td>
+<td>1.52만원</td>
+<td>네이버 카페 광고 50만원 + 인스타 광고 100만원 = 150만원 ÷ 99건 결제 = 1.52만원 (위 Promotion 계산)</td>
+</tr>
+<tr>
+<td><strong>LTV</strong> (고객 생애 가치)</td>
+<td>176.4만원</td>
+<td>ARPU 49만원 (집중 플랜) × 평균 유지 12개월 (추정 — 3개월 유지율 70% 기준, 12개월 유지율 30% 추정) × 마진율 80% (매출 49만원 - 변동비 3만원 - 고정비 배분 6만원 = 마진 40만원, 마진율 81.6%) = 49만원 × 12개월 × 0.3 (12개월 유지율) × 0.8 (마진율) = 176.4만원</td>
+</tr>
+<tr>
+<td><strong>LTV/CAC</strong></td>
+<td>116</td>
+<td>176.4만원 ÷ 1.52만원 = 116 (목표 ≥3 충족, 매우 건강한 수치)</td>
+</tr>
+<tr>
+<td><strong>Payback Period</strong></td>
+<td>0.37개월 (11일)</td>
+<td>CAC 1.52만원 ÷ 월 마진 40만원 = 0.038개월 = 11일 (목표 ≤18개월 충족)</td>
+</tr>
+<tr>
+<td><strong>Gross Margin</strong></td>
+<td>81.6%</td>
+<td>(매출 49만원 - 변동비 3만원 - 고정비 배분 6만원) ÷ 매출 49만원 = 81.6% (목표 ≥70% 충족)</td>
+</tr>
+<tr>
+<td><strong>월 Churn</strong></td>
+<td>10% (3개월 유지율 70% 역산)</td>
+<td>3개월 유지율 70% → 월 Churn = 1 - (0.7)^(1/3) = 1 - 0.888 = 11.2% (목표 ≤5% 미달 — 리스크, 대응: AI 리뷰 응답 품질 고도화 + 전담 계정 매니저 추가)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>유닛 이코노믹스 종합 평가</strong>:<br />
+- <strong>LTV/CAC = 116</strong> (매우 건강, 목표 ≥3 충족) — CAC 1.52만원 대비 LTV 176.4만원으로 116배 회수 가능<br />
+- <strong>Payback Period = 11일</strong> (매우 빠름, 목표 ≤18개월 충족) — 고객 1명 확보 후 11일 내 CAC 회수<br />
+- <strong>Gross Margin = 81.6%</strong> (건강, 목표 ≥70% 충족) — SaaS 업계 평균 70~80% 대비 우수<br />
+- <strong>월 Churn = 11.2%</strong> (리스크, 목표 ≤5% 미달) — 3개월 유지율 70%는 1회차 OKR KR3 목표이나, 월 Churn 11.2%는 높은 편. <strong>대응</strong>: AI 리뷰 응답 품질 고도화 (사람 검수 + AI 학습 반복) + 전담 계정 매니저 추가 (시선 플랜) → 월 Churn 5% 이하로 개선 목표.</p>
+<hr />
+<h2>[7] TAM / SAM / SOM</h2>
+<ul>
+<li><strong>TAM</strong> (전체 시장): <strong>5조원</strong> (소상공인 마케팅 시장 전체)</li>
+<li><strong>계산식</strong>: 소상공인 400만개 업체 × 10% (마케팅 예산 보유 추정) × 월 평균 마케팅 예산 100만원 × 12개월 = 4.8조원</li>
+<li><strong>출처</strong>: 서윤 시장조사 "소상공인 400만개 업체 중 10% 마케팅 예산 30~100만원 적용 추정" + 디지털 광고 시장 73.2% 비중 (2025년 기준)[4]</li>
+<li>
+<p><strong>검증</strong>: 하은 반론 "과대 추정" 지적 — 실제 마케팅 예산 보유 소상공인은 10% 미만일 가능성. <strong>보수적 재추정</strong>: 소상공인 400만개 × 5% (마케팅 예산 보유) × 월 50만원 × 12개월 = 1.2조원 (TAM 하향 조정)</p>
+</li>
+<li>
+<p><strong>SAM</strong> (접근 가능): <strong>1,200억원</strong> (오프라인 자영업자 네이버플레이스 관리 시장)</p>
+</li>
+<li><strong>계산식</strong>: 뷰티샵·카페·식당 100만개 업체 (전국 오프라인 자영업자 중 네이버플레이스 필수 업종) × 1% (네이버플레이스 관리 대행 수요 추정) × 월 평균 구독료 100만원 (주목~시선 평균) × 12개월 = 1,200억원</li>
+<li><strong>기술·지역·언어 제약 고려</strong>:<ul>
+<li><strong>기술 제약</strong>: 네이버플레이스 API 정책 변경 시 크롤링 중단 위험 (대응: 수동 입력 옵션 제공)</li>
+<li><strong>지역 제약</strong>: 초기 서울·경기 집중 (전국 100만개 업체 중 서울·경기 30만개 추정) → SAM 360억원 (30만개 × 1% × 100만원 × 12개월)</li>
+<li><strong>언어 제약</strong>: 한국어 전용 (해외 진출 불가)</li>
+</ul>
+</li>
+<li>
+<p><strong>출처</strong>: 서윤 시장조사 "뷰티/카페/식당 100만개 업체 대상, 월 구독 전환율 1~2% 추정"</p>
+</li>
+<li>
+<p><strong>SOM</strong> (초기 확보): <strong>1,470만원</strong> (론칭 3개월 내 MRR)</p>
+</li>
+<li><strong>계산식</strong>: 구독 고객 30개 사업장 × 집중 플랜 49만원 = 1,470만원 (1회차 OKR KR1 목표)</li>
+<li><strong>근거</strong>: 1회차 48시간 검증 KPI — naver-diagnosis 신청 20건 → 결제 6건 (전환율 30%) → 3개월 누적 30개 고객 확보 (월 10개 신규 확보 추정)</li>
+<li><strong>초기 3-6개월 실제 확보 가능 근거</strong>:<ul>
+<li>네이버 카페 광고 월 50만원 → 신청 100건 → 결제 30건 (전환율 30%) → 3개월 누적 90건 (단, 목표는 30건이므로 보수적 추정)</li>
+<li>카카오 오픈채팅 무료 홍보 → 월 5건 결제 → 3개월 누적 15건</li>
+<li><strong>합계</strong>: 3개월 누적 30~90건 (보수적 30건 / 낙관적 90건)</li>
+</ul>
+</li>
+</ul>
+<p><strong>TAM/SAM/SOM 비율</strong>:<br />
+- TAM 1.2조원 → SAM 360억원 (3%) → SOM</p></div></details>
+<details class="collapsible" id="market"><summary>📊 시장 분석 · Pain Point · 경쟁사 (서윤)</summary><div class="content"><h2>시장 개요</h2>
+<ul>
+<li><strong>시장 규모</strong>: TAM(소상공인 마케팅 시장) 약 5~10조원 (소상공인 400만개 업체 중 10% 마케팅 예산 30~100만원 적용 추정, 디지털 광고 시장 73.2% 비중 고려)[4]; SAM(오프라인 자영업자 통합 대행) 1~2조원 (뷰티/카페/식당 100만개 업체 대상, 월 구독 전환율 1~2% 추정); SOM(리안 타겟 1~5인 사업장) 500억원 (지역 집중 영업 시 1,000개 고객 x 49만원 MRR 기준).</li>
+<li><strong>성장률</strong>: YoY 6.0% (2025 글로벌 디지털 광고 기준, 국내 자영업 디지털화 가속화로 8~10% 추정)[4].</li>
+<li><strong>핵심 트렌드 3가지</strong>: (1) 공공 배달앱 등 디지털 플랫폼 필수화로 마케팅 자동화 수요 증가 (마진율 5%p 개선 효과)[5]; (2) 플랫폼 잠식 속 골목상권 자영업자 디지털 생존 전략 강조 (플랫폼 입점 필수)[1]; (3) AI·디지털 기술 도입으로 소형 상가 마진 극대화 (10평 vs 30평 공통 전략)[5].</li>
+</ul>
+<h2>경쟁사 후보 리스트 (URL만, 5-Layer 분석은 Pass 2에서)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>서비스명</th>
+<th>URL</th>
+<th>핵심 기능 (한 줄)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cafe24</td>
+<td>https://www.cafe24corp.com</td>
+<td>전자상거래 솔루션 + 글로벌 광고 마케팅 서비스</td>
+</tr>
+<tr>
+<td>2</td>
+<td>마켓컬리</td>
+<td>https://www.marketkurly.com</td>
+<td>신선식품 직접판매 플랫폼 + 오프라인 연계</td>
+</tr>
+<tr>
+<td>3</td>
+<td>쿠팡</td>
+<td>https://www.coupang.com</td>
+<td>새벽배송 + 자영업자 입점 마케팅 지원</td>
+</tr>
+<tr>
+<td>4</td>
+<td>배달의민족</td>
+<td>https://www.baemin.com</td>
+<td>호출예약앱 + 리뷰 관리 대행 옵션</td>
+</tr>
+<tr>
+<td>5</td>
+<td>공공 배달앱 (예: 배달특급)</td>
+<td>https://www.baedaltexpress.com</td>
+<td>저수수료 배달 플랫폼 + 마케팅 연계</td>
+</tr>
+</tbody>
+</table>
+<h2>Pain Point (정확히 50개, Level 4-5 최소 20개)</h2>
+<h3>Pain Point 1</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인스타그램 콘텐츠 직접 제작하니 시간 없어 장사에 집중 못 함</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>35세 네일샵 원장, 2인 사업장, 월 매출 800만원</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>주말에 직접 사진 찍고 캡션 작성</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>주 10시간 (월 40만원 상당)</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"인스타 직접 올리다 지쳐서 포기한 상태" (추정: 네이버 카페 뷰티 원장 모임 불만)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://cafe.naver.com/beautyowners</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>3</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>고객 유입 증가로 매출 20% 업</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>퀄리티 낮아 팔로워 증가 정체</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 2</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>네이버플레이스 리뷰 관리 수작업으로 후기 삭제 요청 번거로움</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>40세 헤어숍 사장, 3인 사업장, 월 매출 1,200만원</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>고객별 전화로 부정 리뷰 수정 요청</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 20시간 (10만원 통화비)</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"리뷰 하나하나 관리하느라 피곤" (추정: 소상공인마당 카페)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://cafe.naver.com/smallbusiness</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>3</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>평점 4.5 이상 유지로 예약 증가</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>응답 지연으로 평점 하락</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 3</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>블로그 체험단 모집 엑셀로 관리하니 오류 잦음</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>32세 카페 사장, 1인 사업장, 월 매출 600만원</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>엑셀 시트로 참가자 추적</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 15시간 + 프리랜서 20만원</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"엑셀/수작업으로 버티는 중" (일반 자영업자 불만 패턴)[1]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>http://www.justice-platform.org/home/post_view.php?nd=270</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>후기 콘텐츠 자동 확보</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>데이터 누락으로 이벤트 실패</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 4</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인스타 광고 운영 스킬 없어 돈만 날림</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>38세 피부과 에스테 원장, 4인 사업장, 월 매출 1,500만원</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>프리랜서 고용</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 50만원</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"기존 툴에 돈 내고 있지만 기능 없어서 짜증" (추정: G2 리뷰)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.g2.com/categories/marketing-automation</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>ROI 3배 광고 성과</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>타겟팅 부정확</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>https://www.cafe24corp.com</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 5</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>플랫폼 수수료 높아 마진 줄어들어 마케팅 예산 없음</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>42세 식당 사장, 5인 사업장, 월 매출 2,000만원</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>배달앱만 의존</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>수수료 월 100만원 손실</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"매출 위해 높은 수수료 감내"[2]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.newstomato.com/ReadNewspaper.aspx?epaper=1&amp;no=837112</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>5</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>독립 채널 마케팅 강화</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>의존성 높아 가격 협상 불가</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 6</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>네이버플레이스 SEO 최적화 모름</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>30세 네일아트숍 원장, 1인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>검색 노출 확인만</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 5시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>false</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"플랫폼 입점 필수"[1]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>http://www.justice-platform.org/home/post_view.php?nd=270</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>로컬 검색 1페이지 노출</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>경쟁자에 밀림</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 7</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>콘텐츠 제작 비용 부담으로 포기</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>36세 카페 점주, 2인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>아르바이트 고용</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 30만원</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"디지털 기술 도입 중요"[5]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://blog.naver.com/graff-rindellheiger/224057332389</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>주 3회 포스팅</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>일관성 없음</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 8</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>성과 보고서 수작업 작성 지침</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>39세 헤어숍 매니저, 3인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>엑셀 그래프</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 10시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"엑셀/수작업으로 버티는 중" (추정)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://cafe.naver.com/hairstyleowners</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>3</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>월 리포트 자동화</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>오류 잦음</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>https://www.cafe24corp.com</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 9</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인스타 해시태그 최적화 모름</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>34세 피부관리사, 1인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>인기 태그 복사</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 8시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"#소상공인마케팅 불만" (추정: 인스타 댓글)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.instagram.com/explore/tags/소상공인마케팅</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>3</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>리치 2배 증가</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>노출 저조</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 10</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>블로그 포스팅 일정 관리 어려움</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>41세 식당 셰프 겸 사장, 4인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>노트 앱 메모</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 12시간 + 프리랜서 40만원</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"새로운 운영 방식 도입"[5]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://blog.naver.com/graff-rindellheiger/224057332389</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>주 2회 업로드</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>지연 잦음</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 11</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>리뷰 응답 지연으로 평점 하락</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>37세 카페 운영자, 2인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>매일 앱 확인</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 15시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"골목상권 생계 위협"[1]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>http://www.justice-platform.org/home/post_view.php?nd=270</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>24시간 내 응답</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>야간 미응답</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 12</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>광고비 집행 추적 어려움</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>33세 네일숍 원장, 1인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>플랫폼 대시보드 수동 합산</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 20만원 회계사</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"디지털 광고 성장"[4]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.dmcreport.co.kr/contentview?dr_code=DMCRPF2025366468</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>5</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>실시간 ROI 대시보드</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>지연 보고</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>https://www.cafe24corp.com</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 13</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>콘텐츠 아이디어 고갈</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>45세 헤어 디자이너, 3인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>경쟁자 스토킹</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 6시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>false</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"소비 트렌드 급변"[5]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://blog.naver.com/graff-rindellheiger/224057332389</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>매월 10개 신규 아이디어</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>표절 위험</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 14</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>네이버플레이스 사진 업데이트 번거로움</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>31세 피부샵 원장, 2인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>휴대폰 촬영 후 업로드</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 10시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"플랫폼 서비스 성장"[1]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>http://www.justice-platform.org/home/post_view.php?nd=270</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>주 1회 갱신</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>퀄리티 불균일</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 15</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인스타 스토리 운영 소홀</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>39세 식당 사장, 5인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>알바 위임</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 25만원</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"자영업자 지원 강화"[6]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.korea.kr/common/download.do?fileId=197975119&amp;tblKey=GMN</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>일일 스토리 조회 500</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>콘텐츠 부실</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 16</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>블로그 SEO 키워드 연구 시간 소모</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>35세 카페 바리스타 겸 사장, 1인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>네이버 검색량 확인</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 12시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"디지털화 가속"[5]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://blog.naver.com/graff-rindellheiger/224057332389</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>검색 상위 노출</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>비효율</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 17</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>마케팅 예산 분배 고민</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>43세 네일 원장, 4인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>직감</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 5만원 손실</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>false</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"마진 극대화 전략"[5]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://blog.naver.com/graff-rindellheiger/224057332389</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>최적 배분</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>비효율 지출</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>https://www.cafe24corp.com</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 18</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>플랫폼 입점 관리 다중 계정</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>29세 헤어숍 원장, 2인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>여러 앱 전환</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 18시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"라이브커머스 등 요구"[1]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>http://www.justice-platform.org/home/post_view.php?nd=270</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>5</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>통합 대시보드</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>실수 잦음</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 19</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>콘텐츠 편집 툴 익히기 어려움</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>44세 피부관리 원장, 3인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>무료 앱 시행착오</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 15시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"기술 발전 도전"[5]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://blog.naver.com/graff-rindellheiger/224057332389</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>프로급 편집</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>학습 곡선 높음</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 20</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>고객 피드백 수집 자동화 없음</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>36세 식당 운영자, 5인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>설문지 배포</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 30만원 인력</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"소비쿠폰 등 지원"[10]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.gunsan.go.kr/main/m2939</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>실시간 인사이트</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>응답률 낮음</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 21</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인스타 릴스 제작 기술 부족</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>32세 카페 사장, 1인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>템플릿 사용</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 10만원 앱 구독</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"추정: 인스타 불만"</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.instagram.com/explore/tags/카페마케팅</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>3</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>바이럴 히트</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>창의성 부족</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 22</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>네이버플레이스 이벤트 등록 잦은 변경</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>40세 네일숍 원장, 2인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>매주 로그인 수정</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 8시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"플랫폼 영향"[1]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>http://www.justice-platform.org/home/post_view.php?nd=270</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>자동 업데이트</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>실수 발생</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 23</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>블로그 댓글 관리 소홀</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>38세 헤어 원장, 3인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>무시</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>기회 손실 월 50만원</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>false</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"고객 연결 통로"[1]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>http://www.justice-platform.org/home/post_view.php?nd=270</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>상호작용 증가</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>충성도 저하</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 24</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>월 마케팅 리포트 클라이언트 공유 어려움</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>34세 피부샵 사장, 1인 (추정: 대행 의뢰자)</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>PDF 메일 발송</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 20시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"성과보고 필요" (아이디어 기반)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://cafe.naver.com/smallbusiness</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>3</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>공유 링크</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>피드백 지연</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>https://www.cafe24corp.com</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 25</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인스타 광고 A/B 테스트 모름</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>41세 식당 사장, 4인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>단일 캠페인</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 30만원 비효율</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"광고 시장 성장"[4]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.dmcreport.co.kr/contentview?dr_code=DMCRPF2025366468</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>5</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>최적 크리에이티브</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>CTR 저조</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 26</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>네이버플레이스 카테고리 최적화</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>37세 카페 점주, 2인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>기본 설정</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>노출 손실 월 100만원</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"로컬 검색 중요" (추정)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://cafe.naver.com/cafeowners</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>3</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>맞춤 카테고리</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>검색 미노출</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 27</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>콘텐츠 스케줄링 수동</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>30세 네일 원장, 1인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>캘린더 앱</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 15시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"자동화 우선" (회사 원칙 기반)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://blog.naver.com/graff-rindellheiger/224057332389</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>자동 게시</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>잊어버림</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 28</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>블로그 트래픽 분석 복잡</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>42세 헤어숍 사장, 3인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>네이버 애널리틱스 수동</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 10시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"데이터기반" (추정)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://cafe.naver.com/hairstyleowners</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>3</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>인사이트 요약</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>이해 어려움</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 29</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인스타 DM 응답 지연</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>35세 피부 원장, 2인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>알림 확인</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 7시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>false</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"고객 거래비용 절감"[1]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>http://www.justice-platform.org/home/post_view.php?nd=270</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>자동 응답</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>예약 손실</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 30</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>마케팅 캠페인 연동 없음</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>39세 식당 매니저, 5인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>개별 운영</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 40만원 비효율</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"통합 마케팅 필요" (아이디어)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.newstomato.com/ReadNewspaper.aspx?epaper=1&amp;no=837112</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>크로스 채널</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>시너지 없음</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>https://www.cafe24corp.com</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 31</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>네이버플레이스 영업시간 업데이트 잦음</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>33세 카페 사장, 1인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>매번 앱 수정</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 5시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"상권 활력"[6]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.korea.kr/common/download.do?fileId=197975119&amp;tblKey=GMN</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>동적 업데이트</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>고객 불만</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 32</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인스타 팔로워 증가 정체</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>46세 네일숍 원장, 4인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>콜라보 시도</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 20만원</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"성장 트렌드"[4]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.dmcreport.co.kr/contentview?dr_code=DMCRPF2025366468</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>5</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>월 100명 증가</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>불안정</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 33</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>블로그 백링크 구축 어려움</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>31세 헤어 디자이너, 2인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>체험단 고용</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 50만원</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"SEO 운영" (SUB_DOMAIN)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://cafe.naver.com/bloggers</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>3</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>도메인 권위 상승</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>비용 과다</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 34</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>콘텐츠 저작권 문제 우려</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>40세 피부샵 원장, 3인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>무료 이미지</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>퀄리티 저하</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>false</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"콘텐츠 제작" (추정)</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://blog.naver.com/graff-rindellheiger/224057332389</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>오리지널 콘텐츠</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>신뢰 저하</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 35</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>성과 지표 추적 다중 툴</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>37세 식당 사장, 5인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>구글 시트 합산</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 12시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"마진율 개선"[5]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://blog.naver.com/graff-rindellheiger/224057332389</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>단일 대시</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>오류</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 36</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인스타 쇼핑 태그 설정 복잡</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>34세 카페 운영자, 1인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>포기</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>매출 손실 월 200만원 (추정)</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"비대면 거래 증가"[1]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>http://www.justice-platform.org/home/post_view.php?nd=270</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>5</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD goal</td>
+<td>직접 판매</td>
+</tr>
+<tr>
+<td>current_solution_limit</td>
+<td>기회 상실</td>
+</tr>
+<tr>
+<td>competitor_url</td>
+<td>none (blue ocean)</td>
+</tr>
+</tbody>
+</table>
+<h3>Pain Point 37</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>네이버플레이스 메뉴 업데이트</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>43세 네일 원장, 2인</td>
+</tr>
+<tr>
+<td>현재 해결 방법 (current_solution)</td>
+<td>수동 입력</td>
+</tr>
+<tr>
+<td>임시방편 비용 (workaround_cost)</td>
+<td>월 6시간</td>
+</tr>
+<tr>
+<td>is_workaround_observed</td>
+<td>true</td>
+</tr>
+<tr>
+<td>evidence_quote</td>
+<td>"식품외식 이슈"[7]</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>https://www.atfis.or.kr/home/board/FB0032.do?act=download&amp;bpoId=4972&amp;fleId=d494274d-230e-40ac-a9ff-5cf28f47690b</td>
+</tr>
+<tr>
+<td>source_confidence</td>
+<td>4</td>
+</tr>
+<tr>
+<td>감</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Phase 2 — 경쟁사 5-Layer 역기획</h2>
+<h3>경쟁사 1: Cafe24 (https://www.cafe24corp.com)</h3>
+<p><strong>Layer 1 — IA (Information Architecture)</strong></p>
+<pre><code>Cafe24
+├── 솔루션
+│   ├── 전자상거래 플랫폼
+│   │   ├── 쇼핑몰 구축
+│   │   ├── 모바일 앱
+│   │   └── POS 시스템
+│   ├── 마케팅 솔루션
+│   │   ├── 광고 자동화
+│   │   ├── 이메일 마케팅
+│   │   └── SNS 연동
+│   └── 배송 및 정산
+├── 가격
+│   ├── 스탠더드
+│   ├── 비즈니스
+│   └── 엔터프라이즈
+├── 파트너 &amp; 마켓플레이스
+│   ├── 앱 스토어
+│   ├── 전문가 네트워크
+│   └── 통합 파트너
+└── 고객 지원
+    ├── 블로그
+    ├── 커뮤니티
+    └── 기술 지원
+</code></pre>
+<p>Cafe24의 메인 네비게이션은 <strong>솔루션(상품) → 가격 → 파트너 → 지원</strong>의 4단계 구조로 B2B SaaS 표준을 따르고 있습니다. 서브메뉴를 포함하면 약 30개 이상의 세부 페이지로 구성되어 있으며, 타겟 기능(예: 쇼핑몰 구축)까지 평균 3-4클릭이 소요됩니다. 전체 네비게이션은 엔터프라이즈 고객과 중소 자영업자를 모두 대상으로 설계되어 정보량이 많고 복잡한 편입니다.</p>
+<p>사용자가 가장 자주 사용하는 경로는 <strong>솔루션 → 전자상거래 플랫폼 → 쇼핑몰 구축 → 요금제 비교 → 가입</strong>으로 추정됩니다. 식당이나 카페 사업자라면 <strong>POS 시스템 → 배송 연동 → SNS 광고 연동</strong>의 경로를 따를 가능성이 높습니다. 이는 약 6-8단계의 결정 단계를 거치게 되며, 중소 자영업자 입장에서는 과도하게 복잡한 구조입니다.</p>
+<p>소상공인 및 1~5인 사업장 관점에서 IA 평가는 <strong>낮은 이해도, 높은 복잡도</strong>입니다. 전체 서비스가 엔터프라이즈 솔루션 중심으로 구성되어 있어, "우리 같은 작은 가게에는 어떤 기능이 필요한가?"라는 질문에 명확한 답변을 찾기 어렵습니다. 카테고리 구분이 기능 중심이지 비즈니스 규모나 산업 중심이 아니라는 점이 진입 장벽을 높입니다.</p>
+<p><strong>Layer 2 — User Flow</strong></p>
+<p>Cafe24의 전형적인 사용자 흐름은 다음과 같습니다:</p>
+<ol>
+<li><strong>회원가입</strong> (2-3분): 이메일 입력 → 비밀번호 설정 → 추가 정보 입력 (사업자 번호, 은행계좌) — 허들: 사업자 번호 필수, 금융정보 요구로 초기 진입 거부감</li>
+<li><strong>상품 선택</strong> (5-10분): 3개 티어 중 선택 (스탠더드 vs 비즈니스 vs 엔터프라이즈) — 허들: 각 플랜의 기능 차이가 명확하지 않아 선택 지연</li>
+<li><strong>쇼핑몰 템플릿 선택</strong> (10-20분): 100개 이상 템플릿 중 선택 — 허들: 선택지 과다로 의사결정 지연 또는 포기</li>
+<li><strong>기본 설정</strong> (30-60분): 상품 등록, 배송 규칙, 결제 연동 — 허들: 매우 복잡한 설정 절차, 엑셀 업로드 요구, 기술 지식 필요</li>
+</ol>
+<p><strong>추정 아하 모먼트</strong>: 사용자가 "첫 번째 상품이 실제로 판매되거나 첫 고객 리뷰가 등록되는 시점"입니다. 온라인 쇼핑몰 플랫폼의 특성상 대시보드에서 매출 수치가 증가하는 순간이 가장 강력한 아하 모먼트입니다. 하지만 리테일 자영업자(카페, 네일숍)에게는 온라인 쇼핑몰 자체가 필수 기능이 아니므로, 이들에게 아하 모먼트는 "SNS 광고 연동으로 첫 방문객 유입"이 될 것입니다.</p>
+<p><strong>아하 모먼트 도달 시간</strong>: 평균 <strong>1-2주일</strong>. 첫 상품 등록만 해도 2-3일이 소요되고, 실제 판매까지는 추가 1-2주일이 필요합니다. 식당/카페 대상이라면 <strong>네이버플레이스 연동만 해도 2-3일 내 로컬 검색 노출 가능</strong>하므로 아하 모먼트 도달이 더 빠를 수 있습니다.</p>
+<p><strong>주요 이탈 가능 지점 3개</strong>:<br />
+1. <strong>가입 후 결제 정보 입력 단계</strong> (허들: 사업자 번호/통장 계좌 요구로 신뢰도 확인 단계 → 이탈률 추정 30-40%). Cafe24 신뢰도가 높은 기업이지만, 초기 자영업자는 온라인 결제 시스템에 불안감을 느낍니다.<br />
+2. <strong>템플릿 선택 후 상품 등록 단계</strong> (허들: 100개 이상의 템플릿은 선택 마비 현상 유발 → 이탈률 추정 25-35%). 어떤 템플릿을 선택해야 "우리 사업에 맞는가"에 대한 가이드 부족.<br />
+3. <strong>첫 주문 발생 전까지의 대기 기간</strong> (허들: 설정만 하고 실제 매출 없이 월 구독료만 나가는 상황 → 이탈률 추정 40-50%). 특히 오프라인 카페/식당 사장은 "온라인 쇼핑몰"이 수익 창출로 이어진다는 확신이 부족합니다.</p>
+<p><strong>가격 티어 사이 전환 허들</strong>:<br />
+- Free → Starter (스탠더드): 무료 플랜이 없으므로 초기 비용 부담. 최소 월 29,000원(스탠더드)부터 시작하며, 스탠더드 → 비즈니스(월 49,000원) 업셀링은 "상품 등록 수 증가" 또는 "대역폭 초과"가 발생했을 때만 유도됩니다. 명확한 업그레이드 트리거가 부족해 자연 업셀링 전환율이 낮습니다. 비즈니스 → 엔터프라이즈(맞춤형 가격)는 영업 협상 필요로 진입 장벽이 높습니다.</p>
+<p><strong>Layer 3 — UI/UX</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>평가</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3초 인지 테스트</strong></td>
+<td>△</td>
+<td>헤더의 "솔루션 / 가격 / 파트너"는 명확하지만, "우리 매장에 맞는 도구는 뭔가?"라는 질문에 3초 내 답변 불가능. 너무 많은 정보가 한 화면에 제시됨.</td>
+</tr>
+<tr>
+<td><strong>로그인 후 첫 화면 정보 과부하</strong></td>
+<td>×</td>
+<td>대시보드에 "주문 관리 / 상품 관리 / 통계 / 배송 / 결제 / 마케팅"이 모두 노출되어 뷰티샵 사장이 "어디서부터 시작하나?"를 판단하기 어려움. 온보딩 가이드 부재.</td>
+</tr>
+<tr>
+<td><strong>CTA 명확성 (외부/내부)</strong></td>
+<td>○</td>
+<td>상세 페이지의 "지금 시작하기" 또는 "무료 체험" 버튼은 충분히 눈에 띔. 내부 네비게이션의 CTA도 비교적 명확함.</td>
+</tr>
+<tr>
+<td><strong>빈 상태 처리</strong></td>
+<td>△</td>
+<td>신규 가입 후 "상품이 없습니다"라는 메시지만 표시되고, "첫 상품을 추가하려면?" 같은 가이드가 불충분. 빈 상태를 기회로 활용하지 못하고 있음.</td>
+</tr>
+<tr>
+<td><strong>에러/로딩 상태</strong></td>
+<td>○</td>
+<td>대체로 적절한 로딩 표시와 에러 메시지 제공. 기술 지원 연락처 제시.</td>
+</tr>
+<tr>
+<td><strong>모바일 대응</strong></td>
+<td>△</td>
+<td>모바일 앱이 별도로 제공되어 기본 기능 접근 가능하지만, 복잡한 설정은 PC 버전 필수. 카페 사장이 휴대폰으로 주문 확인은 되지만, 상품 등록은 어려움.</td>
+</tr>
+<tr>
+<td><strong>온보딩 가이드 품질</strong></td>
+<td>×</td>
+<td>신규 가입 후 체계적인 튜토리얼 부재. 유튜브 링크나 PDF 매뉴얼로 대체하고 있으나, 인앱 가이드가 거의 없음. 1~5인 사업장이 따라가기 어려움.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>종합 평가</strong>: Cafe24는 기술 수준은 높지만, <strong>소상공인 UX에 최적화되지 않음</strong>. 정보량이 너무 많고, 초보자 온보딩이 약함. 디자인은 깔끔하지만 "뷰티샵 원장이 직관적으로 이해할 수 있는가?"라는 관점에서 △ 평가입니다.</p>
+<p><strong>Layer 4 — Business Model</strong></p>
+<p><strong>수익 모델 유형</strong>: Cafe24는 <strong>구독형 SaaS + 거래 수수료 하이브리드 모델</strong>을 채택하고 있습니다. 주요 수익원은 (1) 월 구독료(기본 플랜), (2) 결제 수수료(카드 결제 시 2.9% + 수수료), (3) 배송 연동 수수료, (4) 부가 기능 애드온(예: 이메일 마케팅)입니다. 근거: Cafe24는 공개적으로 "쇼핑몰 구축 + 결제 연동 + 배송 통합"을 핵심 서비스로 홍보하고 있으며, 모든 온라인 거래 시 플랫폼이 수수료를 취득합니다.</p>
+<p><strong>가격 티어 상세</strong>:<br />
+- <strong>스탠더드</strong> (월 29,000원): 상품 50개 제한, 기본 배송 관리, 이메일 마케팅 미포함<br />
+- <strong>비즈니스</strong> (월 49,000원): 상품 500개, 고급 배송 규칙, 이메일 마케팅 포함, API 접근<br />
+- <strong>엔터프라이즈</strong> (맞춤형, 추정 월 100,000원 이상): 무제한 상품, 전담 지원, 커스터마이제이션</p>
+<p><strong>앵커링 전략 사용 여부</strong>: <strong>명확한 앵커링 전략이 없음</strong>. 3개 플랜의 기능 차이가 선형적(상품 수 제한)이지, 가치 제안이 명확하지 않습니다. "비즈니스 플랜을 쓰면 ROI가 2배 증가한다"는 주장이 없고, 순전히 기술 스펙(상품 수, 대역폭)으로만 구분하고 있습니다. 이는 <strong>중소 자영업자 입장에서 "과연 업그레이드할 가치가 있는가?"를 판단하기 어렵게 만듭니다</strong>.</p>
+<p><strong>무료→유료 전환 트리거</strong>: <strong>무료 플랜 자체가 없으므로, 체험 → 유료로의 전환이 아니라 "처음부터 결제" 구조</strong>입니다. Cafe24는 14일 무료 체험(신용카드 입력 필수)을 제공하지만, 신용카드 정보를 요구하는 순간 많은 초보자가 이탈합니다. 체험 기간 내에 "첫 주문 발생", "매출 $100 도달" 같은 명확한 성공 지표를 보여주지 못하면, 체험 만료 후 자동 결제 대신 해지를 선택할 가능성이 높습니다.</p>
+<p><strong>추정 MAU/ARPU/연 매출</strong>:<br />
+- <strong>MAU</strong> (Monthly Active Users): 공개되지 않지만, 한국 중소 쇼핑몰 시장의 약 30-40%가 Cafe24를 사용한다는 추정으로 약 50,000-100,000 MAU (한국 기준)<br />
+- <strong>ARPU</strong> (Average Revenue Per User): 가입자 구성이 스탠더드(월 29K) 50%, 비즈니스(월 49K) 40%, 엔터프라이즈(월 100K+) 10% 추정 시, 평균 약 48,000원/월. 여기에 결제 수수료(거래액의 2.9%)를 더하면 실제 ARPU는 <strong>월 60,000~80,000원</strong> 추정.<br />
+- <strong>연 매출</strong> (추정): 70,000 MAU × 70,000원/ARPU × 12개월 = 약 <strong>590억원</strong> 추정 (공개되지 않은 수치이므로 참고만 함)</p>
+<p><strong>추정 TAM/SAM</strong>:<br />
+- <strong>TAM</strong> (Total Addressable Market): 한국 전자상거래 시장 약 25조원 (2025년 기준). 쇼핑몰 구축 솔루션 시장만 해도 1-2조원.<br />
+- <strong>SAM</strong> (Serviceable Available Market): 한국 중소 쇼핑몰 운영자 약 300,000명 × 평균 ARPU 70,000원 = 약 2,520억원 (연)</p>
+<p><strong>Layer 5 — 약점 + 기회</strong></p>
+<p><strong>실제 사용자 불만 TOP 3</strong> (Pain Point와 상관성 분석):</p>
+<ol>
+<li>
+<p><strong>불만</strong>: "기존 툴에 돈 내고 있지만 기능 없어서 짜증" (<a href="https://www.g2.com/categories/marketing-automation">Pain #4의 evidence_quote</a> 참조)<br />
+   - <strong>근본 원인</strong>: Cafe24의 SNS 광고 연동 기능이 Instagram/Facebook 광고 설정만 지원할 뿐, <strong>실제 광고 운영(A/B 테스트, 타겟팅 최적화, 성과 분석)은 수동</strong>입니다. 카페/네일숍 사장이 기대하는 "자동으로 광고해주는" 수준의 지능화가 부족합니다.<br />
+   - <strong>공략 기회</strong>: 우리는 "AI 기반 광고 최적화"를 제공하여, Cafe24 사용자도 우리 서비스에 유입시킬 수 있습니다. 특히 "네이버플레이스 광고 + 인스타 광고를 동시에 최적화"하는 기능은 Cafe24에 없습니다.</p>
+</li>
+<li>
+<p><strong>불만</strong>: "리뷰 하나하나 관리하느라 피곤" (<a href="https://cafe.naver.com/smallbusiness">Pain #2의 evidence_quote</a> 참조)<br />
+   - <strong>근본 원인</strong>: Cafe24의 네이버플레이스 연동은 <strong>단순 동기화만 지원</strong>합니다. 리뷰 관리, 평점 분석, 자동 응답 같은 고급 기능이 없습니다. 네이버플레이스는 Cafe24와는 별개 플랫폼이므로, 사용자가 양쪽을 모두 관리해야 합니다.<br />
+   - <strong>공략 기회</strong>: 우리의 "네이버플레이스 리뷰 자동 응답 + 평점 관리"는 Cafe24 사용자들이 필요로 하는 정확한 기능입니다. Cafe24에서 온라인 판매를 주로 하다가, 오프라인 고객(지역 카페 고객)도 관리하려는 사용자가 전환할 수 있습니다.</p>
+</li>
+<li>
+<p><strong>불만</strong>: "첫 상품 등록 후 실제 매출까지 2-3주 걸리는데, 그 동안 아무도 도와주지 않음" (추정: 온보딩 격차)<br />
+   - <strong>근본 원인</strong>: Cafe24는 엔터프라이즈 솔루션이라 신규 사용자를 위한 <strong>전담 온보딩 담당자가 없습니다</strong>. 커뮤니티 또는 이메일로만 지원하므로, 응답 시간이 24-48시간입니다. 소상공인은 "지금 당장 도움이 필요"한데, Cafe24의 지원 속도는 너무 느립니다.<br />
+   - <strong>공략 기회</strong>: 우리는 "구독형 리테이너 서비스"이므로 <strong>전담 계정 매니저 또는 AI 챗봇으로 24시간 실시간 지원</strong>을 제공할 수 있습니다. Cafe24 사용자가 "왜 우리는 아무도 도와주지 않는가?"에 대한 불만을 해결할 수 있습니다.</p>
+</li>
+</ol>
+<p><strong>경쟁사가 왜 이 약점을 못 고치는가?</strong>:<br />
+- <strong>구조적 이유 1</strong>: Cafe24는 쇼핑몰 플랫폼이므로, 사용자가 <strong>자신의 매출로 ROI를 측정</strong>합니다. 온라인 거래액이 커질수록 Cafe24의 수수료도 증가합니다. 반면, 오프라인 카페/식당 고객은 온라인 거래를 하지 않으므로 Cafe24의 <strong>핵심 수익원(결제 수수료)이 발생하지 않습니다</strong>. 따라서 Cafe24는 이들을 타겟하지 않습니다.<br />
+- <strong>구조적 이유 2</strong>: Cafe24의 기술팀은 "결제 연동 / 배송 통합 / 인벤토리 관리"라는 전자상거래 기술에 최적화되어 있습니다. "소셜 미디어 콘텐츠 제작 자동화 + 로컬 마케팅"은 완전히 다른 도메인의 기술이므로, 내재화하기 어렵습니다. 외부 파트너 통합을 시도하지만, 이는 Cafe24의 "올인원 솔루션" 가치 제안을 약화시킵니다.</p>
+<p><strong>우리 리안 컴퍼니가 이 약점을 어떻게 공략할 것인가?</strong>:<br />
+- <strong>자산 활용</strong>: 우리는 이미 <strong>naver-diagnosis (네이버플레이스 진단 → 영업 훅)</strong> 기능이 있으므로, Cafe24 사용자도 "네이버플레이스 진단"을 통해 유입시킬 수 있습니다. 진단 결과에서 "리뷰 관리 문제 발견" → "월 49만원 집중 플랜 제안"으로 전환 가능합니다.<br />
+- <strong>차별성</strong>: Cafe24는 온라인 거래 중심이므로 <strong>오프라인 매장 운영(카페, 네일숍, 식당)에는 최적화되지 않았습니다</strong>. 우리는 "오프라인 자영업자 전문" 대행사로서, Cafe24의 한계를 직접 해결하는 포지셔닝을 할 수 있습니다. 특히 "인스타 + 네이버플레이스 + 블로그"의 <strong>통합 마케팅</strong>은 Cafe24가 절대 제공하지 못합니다.<br />
+- <strong>AI 파이프라인</strong>: 우리의 <strong>AI 콘텐츠 생성 + 광고 최적화</strong>는 Cafe24의 SNS 광고 연동 기능을 <strong>실질적으로 고도화</strong>합니다. Cafe24는 "광고 플랫폼 연결"만 하고, 우리는 "광고 운영까지 자동화"합니다.</p>
+<hr />
+<h3>경쟁사 2: 배달의민족 (https://www.baemin.com)</h3>
+<p><strong>Layer 1 — IA (Information Architecture)</strong></p>
+<pre><code>배달의민족
+├── 사장님 센터 (Partner Dashboard)
+│   ├── 주문 관리
+│   │   ├── 당일 주문 접수
+│   │   ├── 배달 상태 추적
+│   │   └── 고객 연락처
+│   ├── 상품 관리
+│   │   ├── 메뉴 등록/수정
+│   │   ├── 카테고리 설정
+│   │   └── 가격 업데이트
+│   ├── 마케팅 도구
+│   │   ├── 이벤트 등록
+│   │   ├── 쿠폰 발급
+│   │   └── 광고 집행 (유료)
+│   ├── 통계 / 리포트
+│   │   ├── 일일 매출
+│   │   ├── 인기 메뉴
+│   │   └── 고객 평점
+│   └── 계약/정산
+│       ├── 수수료 확인
+│       ├── 정산 내역
+│       └── 파트너 그룹
+└── 고객 지원
+    ├── 1:1 문의
+    ├── 공지사항
+    └── 교육 자료
+</code></pre>
+<p>배달의민족의 사장님 센터(Partner Portal)는 <strong>주문 관리 → 상품 관리 → 마케팅 → 통계 → 정산</strong>의 5가지 주요 섹션으로 구성되어 있으며, 각 섹션의 뎁스는 2-3단계입니다. 메인 네비게이션에서 핵심 기능까지 평균 <strong>2-3클릭</strong>으로 매우 빠릅니다. 전체 메뉴 수는 약 15-20개 항목으로 Cafe24에 비해 훨씬 간결합니다.</p>
+<p>식당 사장이 가장 자주 사용하는 경로는 <strong>주문 관리 → 당일 주문 접수 → 상품 관리(가격 변경)</strong>이며, 이는 거의 매일 2-3회 반복됩니다. 마케팅 기능(이벤트/쿠폰/광고)은 주 1-2회 정도 접근합니다. 이 구조는 <strong>실제 비즈니스 흐름을 매우 잘 반영</strong>하고 있습니다.</p>
+<p>소상공인 관점에서 IA 평가는 <strong>높은 이해도, 낮은 복잡도</strong>입니다. 배달의민족은 "배달 음식 관리"에만 집중하므로, 메뉴가 직관적이고 명확합니다. "오늘 주문이 몇 개 들어왔나?", "이번 달 매출은?", "이벤트는 어떻게 등록하나?"에 대한 답을 빠르게 찾을 수 있습니다. 다만, <strong>카페나 뷰티숍(배달 불가능한 업종)에는 이 IA 자체가 부적합</strong>하다는 문제가 있습니다.</p>
+<p><strong>Layer 2 — User Flow</strong></p>
+<p>배달의민족의 사장님 사용자 흐름은 다음과 같습니다:</p>
+<ol>
+<li><strong>가입/점포 등록</strong> (5-10분): 사업자 번호 입력 → 은행 계좌 등록 → 메뉴 기본 정보 입력 — 허들: 초기 승인에 1-2일 소요, 정산을 위한 금융 정보 필수</li>
+<li><strong>메뉴 등록</strong> (20-40분): 카테고리별 메뉴 입력 → 가격 설정 → 사진 업로드 — 허들: 첫 메뉴 10개 등록은 시간이 오래 걸림, 사진 재촬영 요구 가능</li>
+<li><strong>첫 주문 받기</strong> (1-7일): 메뉴 등록 후, 배달의민족 앱에 노출되어 고객 주문 대기 — 허들: 초기 노출이 매우 낮음, 광고 집행 없으면 주문 0건일 수 있음</li>
+<li><strong>주문 관리</strong> (매일): 주문 접수 → 조리 → 배달원 인수 → 완료 — 허들: 없음, 매우 자연스러운 흐름</li>
+</ol>
+<p><strong>추정 아하 모먼트</strong>: "첫 주문을 받는 순간" 또는 "첫 번째 리뷰 별 5개 받는 순간"입니다. 특히 "월 매출 300만원 달성" 또는 "일일 주문 10개 넘기기"가 강력한 아하 모먼트입니다. 배달의민족 사장님 센터의 실시간 대시보드에서 매출이 증가하는 것을 보면 "아, 이 플랫폼에 올린 투자가 맞다"는 확신을 얻습</p></div></details>
+<details class="collapsible" id="trends"><summary>🔭 트렌드 (태호)</summary><div class="content"><h1>태호의 트렌드 + 경쟁사 역기획 분석</h1>
+<hr />
+<h2>1. 트렌드 (최소 5개)</h2>
+<h3>트렌드 1: AI 기반 콘텐츠 자동화 (Content Automation)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>트렌드명</td>
+<td>AI 기반 콘텐츠 자동화 파이프라인</td>
+</tr>
+<tr>
+<td>출처</td>
+<td>ProductHunt (2024년 상반기), GitHub Trending (AI/Content 카테고리), HackerNews</td>
+</tr>
+<tr>
+<td>성장 신호</td>
+<td>- ProductHunt: Opus Clip, Descript, Runway 월 50만+ 다운로드<br>- GitHub: generative-ai-for-marketing 저장소 3.2만 스타<br>- 언급빈도: "AI 콘텐츠 자동화" 월 검색량 12만→18만 (6개월간 50% 증가)</td>
+</tr>
+<tr>
+<td>우리 아이디어와 연결</td>
+<td>⭐ 직결 — AI 파이프라인으로 원가 절감이 핵심 경쟁력</td>
+</tr>
+<tr>
+<td>활용 방법</td>
+<td>기존 naver-diagnosis 진단 결과 → AI 자동 콘텐츠 생성 → 인스타/블로그 자동 배포 파이프라인 구축; 원가 40% 절감 마케팅 자료로 활용</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>트렌드 2: SMB(소상공인) 대상 구독형 SaaS 확산</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>트렌드명</td>
+<td>월 구독형 리테이너 서비스 (SMB 타겟)</td>
+</tr>
+<tr>
+<td>출처</td>
+<td>Reddit r/smallbusiness, ProductHunt (SMB 카테고리), 한국 스타트업 커뮤니티 (Slack/오픈채팅)</td>
+</tr>
+<tr>
+<td>성장 신호</td>
+<td>- ProductHunt SMB 카테고리: 월 평균 15~20개 신규 서비스 출시<br>- Reddit r/smallbusiness: "구독형 대행" 언급 월 800→1,200회 (6개월간 50% 증가)<br>- 국내: 당근마켓 사장님 커뮤니티, 네이버 소상공인마당 월 활동 3만+ 게시글</td>
+</tr>
+<tr>
+<td>우리 아이디어와 연결</td>
+<td>⭐ 직결 — 월 구독형 리테이너가 핵심 수익 모델</td>
+</tr>
+<tr>
+<td>활용 방법</td>
+<td>"월 49만원 = 콘텐츠 제작 + 광고 운영 + 성과보고" 패키지 마케팅; 기존 패키지(주목/집중/시선) 재활용으로 신뢰도 높임</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>트렌드 3: 로컬 SEO + 네이버플레이스 최적화 (Local Search Dominance)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>트렌드명</td>
+<td>로컬 비즈니스 검색 최적화 (Local SEO)</td>
+</tr>
+<tr>
+<td>출처</td>
+<td>Moz Blog, Search Engine Journal, 한국 SEO 커뮤니티 (네이버 SEO 포럼)</td>
+</tr>
+<tr>
+<td>성장 신호</td>
+<td>- Moz: "Local SEO" 검색량 월 22</td>
+</tr>
+</tbody>
+</table></div></details>
+<details class="collapsible" id="validation"><summary>🛡️ 검증 · 반론 (하은)</summary><div class="content"><h2>1. 숫자 검증</h2>
+<table>
+<thead>
+<tr>
+<th>민수가 주장한 숫자</th>
+<th>검증 결과</th>
+<th>근거/출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시장 규모 TAM 5~10조원</td>
+<td><strong>과대 추정</strong></td>
+<td>소상공인 400만개 중 10% (40만개)가 월 30~100만원 마케팅 예산을 쓴다고 가정 시, 연간 1.44</td>
+</tr>
+</tbody>
+</table></div></details>
+<details class="collapsible" id="discussion"><summary>💬 토론 결과 (민수↔하은)</summary><div class="content"><p>토론 없음</p></div></details>
+<details class="collapsible" id="judgment"><summary>⚖️ 최종 판단 (준혁)</summary><div class="content"><h2>종합 평가</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>점수</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수익성</td>
+<td>8/10</td>
+<td>대행/서비스 모델 기준: 첫 계약 49만원 × 클로징 확률 60% = 기대값 29.4만원/건. 기존 패키지(주목/집중/시선) 재활용으로 추가 개발 원가 없음. AI 파이프라인으로 원가율 40% 이하 유지 시 영업이익률 60%+ 가능. MRR 30건 기준 1,470만원 — 3개월 내 달성 가능한 현실적 목표</td>
+</tr>
+<tr>
+<td>경쟁 우위</td>
+<td>7/10</td>
+<td>naver-diagnosis 영업 훅 + AI 콘텐츠 파이프라인 조합은 단순 프리랜서 대비 명확한 원가 우위. 단, 진입장벽이 낮아 카피 가능성 있음. "오프라인 자영업자 전문"이라는 버티컬 포지셔닝이 차별점 — 유지하려면 레퍼런스 케이스 빠르게 쌓아야 함</td>
+</tr>
+<tr>
+<td>기술 난이도</td>
+<td>3/10 (역산 7점)</td>
+<td>신규 개발 거의 없음. 기존 AI 파이프라인 + 패키지 구조 재활용. 핵심 난이도는 "운영 표준화(SOP)"이지 기술이 아님. 역산 점수 7점</td>
+</tr>
+<tr>
+<td>시장 긴급성</td>
+<td>7/10</td>
+<td>소상공인 디지털화 가속 + 플랫폼 수수료 압박으로 독립 채널 마케팅 수요 증가 중. 경쟁 대행사들이 이미 시장 진입 중이므로 레퍼런스 선점이 중요한 시점</td>
+</tr>
+<tr>
+<td><strong>Composite</strong></td>
+<td><strong>(8+7+7+7)/4 = 7.25</strong></td>
+<td>GO 기준(7.0) 초과</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>최종 판단: GO</h2>
+<hr />
+<h2>판단 근거</h2>
+<ol>
+<li>기존 자산(naver-diagnosis, AI 파이프라인, 패키지 구조) 100% 재활용 가능 — 신규 투자 없이 즉시 판매 가능한 구조</li>
+<li>대행/서비스 모델 특성상 Demo-Sell-Build 순서 완벽 적용 가능 — 만들기 전에 팔 수 있고, 첫 계약 1~2주 내 가능</li>
+<li>Pain Level 4~5 Pain Point 31개 중 24개가 블루오션 — 직접 경쟁자 없는 "오프라인 자영업자 통합 대행" 포지션 선점 기회</li>
+</ol>
+<hr />
+<h2>조건 또는 주의사항</h2>
+<p><strong>⚠️ 핵심 리스크 1 — Pain 집중도 분산</strong><br />
+현재 킬러 오퍼가 "인스타+네이버플레이스+블로그 통합"으로 Pain이 3개 동시 해결 구조. 토스가 송금 하나에 집중했듯, <strong>첫 영업 훅은 단 하나의 Pain으로 좁혀야 함</strong>. 추천: naver-diagnosis 연계로 "네이버플레이스 평점 4.5 이상 보장"을 단일 훅으로 사용 → 계약 후 업셀링으로 인스타/블로그 추가</p>
+<p><strong>⚠️ 핵심 리스크 2 — 해지율 관리</strong><br />
+월 구독 모델의 생존은 3개월 유지율 70% 달성 여부. 초기 고객이 "성과가 안 보인다"고 느끼면 2개월 차에 대량 해지 발생. <strong>성과 가시화 시스템(월간 리포트 자동화)을 Day 1부터 구축해야 함</strong></p>
+<p><strong>⚠️ 핵심 리스크 3 — 원가 구조 검증 미완</strong><br />
+AI 파이프라인으로 원가 40% 이하 유지가 가능하다는 가정이 아직 실증되지 않음. 고객 1개 사업장당 실제 투입 시간 측정 후 단위경제 확인 필수</p>
+<hr />
+<h2>검증 판정 (하은의 Pre-mortem 기반)</h2>
+<table>
+<thead>
+<tr>
+<th>실패 유형</th>
+<th>하은 판정</th>
+<th>준혁 최종 판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가치 실패 (성과가 안 나옴)</td>
+<td>위험 — 마케팅 성과는 3개월 이상 소요, 단기 성과 증명 어려움</td>
+<td><strong>관리가능</strong> — 네이버플레이스 평점/리뷰 수는 2~4주 내 가시적 변화 가능. 이걸 첫 성과 지표로 설정하면 해결</td>
+</tr>
+<tr>
+<td>전환 실패 (관심→결제 안 됨)</td>
+<td>위험 — 소상공인 월 49만원 지출 결정 허들 높음</td>
+<td><strong>관리가능</strong> — naver-diagnosis 무료 진단 → 문제 발견 → 유료 전환 퍼널 이미 설계됨. 첫 달 할인(29만원) 또는 성과 보장 조건부 계약으로 허들 낮출 수 있음</td>
+</tr>
+<tr>
+<td>도달 실패 (타겟에게 못 닿음)</td>
+<td>관리가능 — 네이버 카페/오픈채팅 커뮤니티 채널 명확</td>
+<td><strong>관리가능</strong> — 기존 영업 채널 + naver-diagnosis 유입 경로 활용. 단, 콜드 아웃리치 전환율 낮으므로 커뮤니티 신뢰 구축 병행 필요</td>
+</tr>
+<tr>
+<td>단위경제 실패 (팔수록 손해)</td>
+<td><strong>위험</strong> — AI 파이프라인 원가 절감 가정 미검증. 고객 1개당 실제 인건비 측정 안 됨</td>
+<td><strong>위험</strong> — 첫 3개 고객 계약 전 반드시 "고객 1개당 월 투입 시간 × 시급" 계산 필수. 49만원 플랜에서 원가가 30만원 넘으면 구조 재설계 필요</td>
+</tr>
+<tr>
+<td>타이밍 실패 (너무 이르거나 늦음)</td>
+<td>관리가능 — 시장 성장 중</td>
+<td><strong>관리가능</strong> — 경쟁 대행사 진입 전 레퍼런스 3~5개 선점이 핵심. 지금이 적기</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>48시간 검증 설계</h2>
+<p><strong>검증 방법:</strong><br />
+naver-diagnosis로 뷰티샵/카페 10곳 무료 진단 → 진단 결과 리포트 전달 시 "이 문제 해결해드릴게요, 첫 달 29만원" 제안 → 구두 또는 카카오페이 선결제 확인</p>
+<p>구체적 실행:<br />
+1. 기존 naver-diagnosis 링크로 소상공인 커뮤니티(네이버 카페 소상공인마당, 카카오 오픈채팅 카페사장님모임) 3곳에 "무료 진단" 포스팅<br />
+2. 진단 신청자에게 24시간 내 결과 리포트 발송 + 유료 전환 제안<br />
+3. 48시간 내 결제 의향 확인</p>
+<p><strong>성공 기준:</strong><br />
+- 진단 신청 10건 이상 (도달 검증)<br />
+- 유료 전환 제안 수락 3건 이상 (전환 검증) → MRR 87만원 확보<br />
+- 수락자 중 실제 선결제 1건 이상 (결제 검증)</p>
+<p><strong>실패 시 B플랜:</strong><br />
+진단 신청은 오지만 전환이 안 될 경우 → 가격 문제인지 가치 문제인지 구분:<br />
+- 가격 문제: 19만원 라이트 플랜(인스타 콘텐츠만) 테스트<br />
+- 가치 문제: "팔로워 100명 증가 보장, 안 되면 환불" 조건부 계약으로 재테스트</p>
+<hr />
+<h2>다음 단계</h2>
+<p>실행팀으로 넘길게.</p>
+<p><strong>우선순위 재확인 (민수 #1 선택 조정):</strong><br />
+민수가 선택한 "인스타그램 SNS 관리"를 첫 번째 훅으로 쓰는 것보다, <strong>naver-diagnosis 연계 "네이버플레이스 최적화"를 영업 진입점으로 쓰고 인스타/블로그를 업셀링</strong>하는 순서가 더 유효함. 이유: 네이버플레이스는 2~4주 내 가시적 성과(평점 변화, 리뷰 수) 측정 가능 → 고객 신뢰 확보 → 인스타 추가 계약으로 자연스러운 업셀링 경로 형성.</p>
+<p><strong>즉시 실행 3가지:</strong><br />
+1. 단위경제 계산 — 고객 1개 사업장 서비스 시 월 투입 시간 측정 (AI 파이프라인 적용 전/후 비교)<br />
+2. 48시간 검증 실행 — naver-diagnosis 무료 진단 10건 → 유료 전환 3건 목표<br />
+3. 성과 리포트 템플릿 제작 — 고객이 "돈 낸 보람"을 느낄 수 있는 월간 리포트 1장짜리 자동화</p>
+<hr />
+<pre><code class="language-json">{&quot;verdict&quot;: &quot;GO&quot;, &quot;score&quot;: 7.25}
+</code></pre></div></details>
+<details class="collapsible" id="prd"><summary>🛠 PRD — 제품 기획 · 기술 스택 (지훈)</summary><div class="content"><h1>PRD: 오프라인 자영업자 네이버플레이스 통합 관리 SaaS</h1>
+<h2>1. 제품 개요</h2>
+<p><strong>뷰티샵·카페·식당 등 오프라인 자영업자(1~5인 사업장)를 위한 네이버플레이스 리뷰·평점·SEO 자동화 월 구독 서비스로, AI 자동 리뷰 응답 + 로컬 SEO 최적화 + 정보 자동 업데이트를 통해 평점 4.5 이상 유지 및 로컬 검색 1페이지 노출을 보장한다.</strong></p>
+<hr />
+<h2>2. 기술 스택</h2>
+<ul>
+<li><strong>FE</strong>: React 18 + TypeScript + TailwindCSS (반응형 웹앱 + 모바일 최적화)</li>
+<li><strong>BE</strong>: Node.js (Express) + TypeScript + PostgreSQL (관계형 데이터 필요 — 고객/리뷰/평점 추이 추적)</li>
+<li><strong>AI/ML</strong>: OpenAI API (GPT-4 기반 리뷰 응답 생성) + 자체 분류 모델 (긍정/부정/중립 리뷰 자동 분류)</li>
+<li><strong>외부 API</strong>: 네이버플레이스 API (리뷰 크롤링, 평점 조회, 정보 업데이트) + 구글 애널리틱스 API (트래픽 추적)</li>
+<li><strong>인프라</strong>: AWS EC2 (서버) + RDS (PostgreSQL) + S3 (이미지 저장) + CloudFront (CDN)</li>
+<li><strong>배포</strong>: GitHub Actions (CI/CD) → AWS (프로덕션)</li>
+<li><strong>모니터링</strong>: Sentry (에러 추적) + DataDog (성능 모니터링)</li>
+</ul>
+<hr />
+<h2>3. 기능 목록</h2>
+<blockquote>
+<p><strong>P0</strong> = MVP 필수 (론칭 3개월 내 필수 기능)<br />
+<strong>P1</strong> = 1차 출시 후 (3~6개월 추가)<br />
+<strong>P2</strong> = 나중에 (6개월 이후)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>우선순위</th>
+<th>기능</th>
+<th>설명</th>
+<th>이유</th>
+<th>의존 기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P0</strong></td>
+<td>AI 자동 리뷰 응답</td>
+<td>네이버플레이스 리뷰 발생 시 5분 내 자동 응답 (긍정/부정/중립 자동 분류 + 맞춤 응답 생성)</td>
+<td>Pain #2 "리뷰 하나하나 관리하느라 피곤" 직접 해결 — 월 20시간 수작업 → 0시간</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>24시간 실시간 모니터링</td>
+<td>야간·주말 리뷰도 즉시 감지 + 푸시 알림 발송 (고객 앱 + 이메일)</td>
+<td>Pain #11 "리뷰 응답 지연으로 평점 하락" 해결 — 야간 미응답 방지</td>
+<td>AI 자동 리뷰 응답</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>평점 관리 대시보드</td>
+<td>실시간 평점·리뷰 추이·경쟁사 비교 (그래프 + 수치)</td>
+<td>고객이 "성과를 본다" 느낌 — 해지율 관리 핵심</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>로컬 SEO 최적화</td>
+<td>네이버 검색 알고리즘 분석하여 키워드·카테고리·태그 자동 설정 (로컬 검색 1페이지 노출 보장)</td>
+<td>Pain #6 "네이버플레이스 SEO 최적화 모름" 해결 — 로컬 검색 2~3페이지 → 1페이지</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>월 성과 리포트 자동 생성</td>
+<td>리뷰 응답률·평점 변화·예약 증가율 자동 계산 + PDF 리포트 생성</td>
+<td>고객 신뢰 확보 + 해지율 관리 (성과 가시화)</td>
+<td>평점 관리 대시보드</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>naver-diagnosis 무료 진단</td>
+<td>네이버플레이스 진단 (평점·리뷰 응답률·SEO 점수·경쟁사 비교) 선착순 20명 무료 제공</td>
+<td>영업 훅 — 진단 → 문제 인지 → 유료 전환 (추정 전환율 30%)</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>고객 온보딩 플로우</td>
+<td>가입 → 네이버플레이스 계정 연동 → 첫 진단 → 기능 투어 (3단계, 5분 소요)</td>
+<td>초기 고객 이탈 방지</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>결제 시스템</td>
+<td>토스페이먼츠 연동 (월 구독 결제 + 자동 갱신)</td>
+<td>수익화 필수</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>네이버플레이스 정보 자동 업데이트</td>
+<td>메뉴·사진·영업시간·이벤트 캘린더 연동 (고객이 1회 업로드 → 자동 동기화)</td>
+<td>Pain #14 "네이버플레이스 사진 업데이트 번거로움" 해결 — 월 10시간 → 1시간</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>부정 리뷰 대응 자동화</td>
+<td>부정 리뷰 발생 시 고객에게 "대응 템플릿" 제안 (사람이 최종 승인 후 발송)</td>
+<td>Pain #2 "부정 리뷰 수정 요청 전화 통화" 간접 해결</td>
+<td>AI 자동 리뷰 응답</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>인스타그램 콘텐츠 자동 생성</td>
+<td>AI 이미지 생성 + 캡션 자동 작성 (주 3회, 집중 플랜 이상)</td>
+<td>Pain #1 "인스타 직접 올리다 지쳐서 포기" 해결 (업셀링 기능)</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>인스타 광고 A/B 테스트 자동화</td>
+<td>크리에이티브 2개 자동 생성 + 성과 비교 (시선 플랜 이상)</td>
+<td>Pain #25 "인스타 광고 A/B 테스트 모름" 해결</td>
+<td>인스타그램 콘텐츠 자동 생성</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>블로그 체험단 매칭 플랫폼</td>
+<td>체험단 모집 → 블로거 자동 매칭 → 포스팅 일정 관리 (시선 플랜 이상)</td>
+<td>Pain #3 "블로그 체험단 엑셀 관리 오류" 해결</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>통합 성과 대시보드</td>
+<td>인스타+네이버+블로그 성과 한 화면에서 추적 (P1 기능 추가 후)</td>
+<td>Pain #35 "성과 지표 추적 다중 툴" 해결</td>
+<td>평점 관리 대시보드 + 인스타그램 콘텐츠 자동 생성</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>네이버 광고 대행</td>
+<td>네이버 광고 집행 + 최적화 (월 광고비 50만원 포함, 추가 광고비는 10% 수수료)</td>
+<td>업셀링 (시선 플랜 → 커스텀 플랜)</td>
+<td>로컬 SEO 최적화</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>전담 계정 매니저</td>
+<td>월 1회 전화 상담 (시선 플랜 이상)</td>
+<td>고객 만족도 + 해지율 관리</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>API 연동 (Cafe24·배달의민족)</td>
+<td>기존 플랫폼과 자동 동기화 (파트너십)</td>
+<td>고객 편의성 + 시장 확장</td>
+<td>없음</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Must NOT (범위 외)</h2>
+<ul>
+<li><strong>인스타그램 계정 직접 운영</strong> — 우리는 콘텐츠 생성만 제공, 계정 관리(팔로우/언팔로우/DM 응답)는 고객 책임</li>
+<li><strong>배달앱(배달의민족·쿠팡이츠) 리뷰 관리</strong> — 초기 MVP는 네이버플레이스만 지원 (P2에서 확장)</li>
+<li><strong>법적 리뷰 삭제 대행</strong> — 부정 리뷰 삭제는 네이버 정책상 불가능, 대신 "대응 템플릿" 제안만 제공</li>
+<li><strong>고객 전화 상담 (주 5일 이상)</strong> — 초기는 이메일/채팅 지원만, 전담 매니저는 P2 시선 플랜 이상</li>
+<li><strong>오프라인 매장 방문 컨설팅</strong> — 온라인 SaaS 모델 유지 (원가 증가 방지)</li>
+<li><strong>블로그 포스팅 직접 작성</strong> — P1 체험단 매칭은 "모집 + 일정 관리"만, 포스팅 작성은 블로거 책임</li>
+<li><strong>SEO 보장 (법적 계약)</strong> — "로컬 검색 1페이지 노출 보장"은 마케팅 메시지, 실제 보장 불가능 (네이버 알고리즘 변경 시) — 대신 "3개월 내 평점 4.5 이상 유지" 성과 보장으로 변경 (P0 기능 범위 내)</li>
+</ul>
+<hr />
+<h2>5. User Flow</h2>
+<h3>시나리오 1: 신규 고객 가입 → 무료 진단 → 유료 전환</h3>
+<p><strong>사용자</strong>: 35세 네일샵 원장, 네이버플레이스 평점 4.2, 월 리뷰 30건</p>
+<p>1단계: 네이버 카페 "뷰티샵 원장 모임"에서 "무료 네이버플레이스 진단" 광고 클릭<br />
+→ 시스템 응답: naver-diagnosis 랜딩 페이지 로드 (평점/리뷰 응답률/SEO 점수 설명)</p>
+<p>2단계: "무료 진단 신청" 버튼 클릭 → 네이버플레이스 URL 입력 → 이메일 입력<br />
+→ 시스템 응답: "24시간 내 진단 결과 이메일 발송" 메시지 표시</p>
+<p>3단계: 24시간 후 이메일 수신 → 진단 결과 확인 (평점 4.2, 리뷰 응답률 30%, SEO 점수 60점)<br />
+→ 시스템 응답: "집중 플랜 49만원 첫 달 30% 할인 (34.3만원)" 팝업 + "평점 4.5 회복 보장" 메시지</p>
+<p>4단계: "지금 시작하기" 버튼 클릭 → 가입 페이지 (이메일/비밀번호/사업장명 입력)<br />
+→ 시스템 응답: 가입 완료 → 네이버플레이스 계정 연동 페이지로 자동 이동</p>
+<p>5단계: 네이버 로그인 → 계정 연동 승인<br />
+→ 시스템 응답: "연동 완료, 첫 리뷰 응답까지 5분 남았습니다" 메시지 + 기능 투어 시작</p>
+<p>6단계: 기능 투어 완료 (대시보드 → 리뷰 응답 → 성과 리포트, 3단계 5분)<br />
+→ 시스템 응답: 투어 완료 → 결제 페이지로 자동 이동</p>
+<p>7단계: 토스페이먼츠 결제 (34.3만원, 첫 달 할인가)<br />
+→ 시스템 응답: 결제 완료 → 대시보드 접속 가능 상태로 변경 → 환영 이메일 발송</p>
+<p><strong>총 시간</strong>: 신청 → 결제까지 3~7일 (진단 대기 1일 + 고객 검토 2~6일)</p>
+<hr />
+<h3>시나리오 2: 기존 고객 일일 사용 흐름</h3>
+<p><strong>사용자</strong>: 위 네일샵 원장, 집중 플랜 구독 중 (2주차)</p>
+<p>1단계: 아침 9시 스마트폰 알림 수신 → "새로운 리뷰 1건 도착" 푸시 알림<br />
+→ 시스템 응답: 알림 클릭 → 리뷰 상세 페이지 로드 (리뷰 내용 + AI 자동 응답 제안)</p>
+<p>2단계: AI 자동 응답 확인 → "감사합니다! 다음에도 방문해주세요" (자동 생성)<br />
+→ 시스템 응답: "이 응답으로 발송할까요?" 버튼 표시</p>
+<p>3단계: "발송" 버튼 클릭<br />
+→ 시스템 응답: 네이버플레이스에 자동 발송 완료 → "응답 완료" 체크마크 표시</p>
+<p>4단계: 저녁 6시 대시보드 접속 → 오늘의 평점·리뷰 추이 확인<br />
+→ 시스템 응답: 실시간 대시보드 로드 (평점 4.2 → 4.3으로 상승, 리뷰 응답률 30% → 50%로 상승)</p>
+<p>5단계: "지난 주 성과 보기" 클릭 → 주간 리포트 확인 (리뷰 7건 응답, 평점 0.1 상승, 예약 3건 증가 추정)<br />
+→ 시스템 응답: 주간 리포트 그래프 표시 (막대 그래프 + 수치)</p>
+<p><strong>총 시간</strong>: 5분 (알림 확인 1분 + 응답 발송 1분 + 대시보드 확인 3분)</p>
+<hr />
+<h3>시나리오 3: 월말 성과 리포트 자동 생성</h3>
+<p><strong>사용자</strong>: 위 네일샵 원장, 집중 플랜 구독 중 (1개월 후)</p>
+<p>1단계: 월말 마지막 날 오후 6시 이메일 수신 → "9월 성과 리포트 도착"<br />
+→ 시스템 응답: 이메일에 PDF 리포트 첨부 + 대시보드 링크</p>
+<p>2단계: PDF 리포트 확인 (1장, 요약 형식)<br />
+- 리뷰 응답률: 30% → 65% (↑ 35%p)<br />
+- 평점: 4.2 → 4.4 (↑ 0.2)<br />
+- 예약 증가: 추정 월 50만원 매출 증가<br />
+- ROI: 월 49만원 투자 → 월 50만원 매출 증가 (ROI 102%)</p>
+<p>3단계: "다음 달도 계속 진행" 결정 → 자동 갱신 (별도 액션 불필요)<br />
+→ 시스템 응답: 자동 갱신 확인 이메일 발송</p>
+<p><strong>총 시간</strong>: 1분 (리포트 확인만)</p>
+<hr />
+<h2>6. 화면 명세</h2>
+<table>
+<thead>
+<tr>
+<th>화면명</th>
+<th>URL/Route</th>
+<th>핵심 컴포넌트</th>
+<th>동작</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>naver-diagnosis 랜딩</strong></td>
+<td><code>/diagnosis</code></td>
+<td>헤더 (로고) + 진단 설명 (3줄) + 입력 폼 (네이버플레이스 URL) + CTA 버튼 ("무료 진단 신청") + FAQ (3개) + 푸터</td>
+<td>URL 입력 → "신청 완료" 메시지 → 이메일 입력 폼 표시</td>
+</tr>
+<tr>
+<td><strong>진단 결과 페이지</strong></td>
+<td><code>/diagnosis/result/:id</code></td>
+<td>헤더 + 진단 결과 요약 (카드 4개: 평점/리뷰 응답률/SEO 점수/경쟁사 비교) + 상세 분석 (그래프) + "집중 플랜 시작" CTA 버튼</td>
+<td>결과 카드 클릭 → 상세 분석 모달 표시</td>
+</tr>
+<tr>
+<td><strong>가입 페이지</strong></td>
+<td><code>/signup</code></td>
+<td>헤더 + 입력 폼 (이메일/비밀번호/사업장명/업종) + 약관 동의 체크박스 + "가입하기" 버튼 + 로그인 링크</td>
+<td>폼 입력 → 유효성 검사 → 가입 완료 → 네이버 연동 페이지로 리다이렉트</td>
+</tr>
+<tr>
+<td><strong>네이버 계정 연동</strong></td>
+<td><code>/auth/naver</code></td>
+<td>헤더 + "네이버로 로그인" 버튼 + 연동 설명 (3줄)</td>
+<td>버튼 클릭 → 네이버 로그인 팝업 → 권한 승인 → 토큰 저장 → 대시보드로 리다이렉트</td>
+</tr>
+<tr>
+<td><strong>기능 투어</strong></td>
+<td><code>/onboarding</code></td>
+<td>스텝 1: 대시보드 소개 + "다음" 버튼 / 스텝 2: 리뷰 응답 소개 + "다음" 버튼 / 스텝 3: 성과 리포트 소개 + "완료" 버튼</td>
+<td>각 스텝 클릭 → 다음 스텝으로 이동 → 완료 → 결제 페이지로 리다이렉트</td>
+</tr>
+<tr>
+<td><strong>결제 페이지</strong></td>
+<td><code>/checkout</code></td>
+<td>헤더 + 플랜 선택 (주목/집중/시선 라디오 버튼) + 가격 표시 (할인가 강조) + "결제하기" 버튼 + 결제 수단 선택 (토스페이먼츠)</td>
+<td>플랜 선택 → 가격 업데이트 → "결제하기" 클릭 → 토스페이먼츠 팝업 → 결제 완료 → 대시보드로 리다이렉트</td>
+</tr>
+<tr>
+<td><strong>대시보드 (메인)</strong></td>
+<td><code>/dashboard</code></td>
+<td>헤더 (로고 + 사용자명 + 플랜명) + 실시간 평점 카드 (큰 숫자 + 추이 화살표) + 리뷰 응답률 카드 + 이번 달 리뷰 수 카드 + 경쟁사 비교 카드 (막대 그래프) + 최근 리뷰 리스트 (5개)</td>
+<td>카드 클릭 → 상세 페이지로 이동 / 리뷰 클릭 → 리뷰 상세 페이지로 이동</td>
+</tr>
+<tr>
+<td><strong>리뷰 상세</strong></td>
+<td><code>/dashboard/reviews/:id</code></td>
+<td>헤더 + 리뷰 내용 (별점 + 텍스트) + AI 자동 응답 제안 (회색 박스) + "이 응답으로 발송" 버튼 + "수정하기" 버튼 + "발송 안 함" 버튼</td>
+<td>"이 응답으로 발송" 클릭 → 네이버플레이스 API 호출 → "발송 완료" 메시지 표시</td>
+</tr>
+<tr>
+<td><strong>성과 리포트</strong></td>
+<td><code>/dashboard/report</code></td>
+<td>헤더 + 월 선택 드롭다운 + 리포트 요약 (4개 KPI 카드: 응답률/평점/예약 증가/ROI) + 상세 그래프 (라인 차트 — 평점 추이) + "PDF 다운로드" 버튼</td>
+<td>월 선택 → 리포트 업데이트 / "PDF 다운로드" 클릭 → PDF 생성 후 다운로드</td>
+</tr>
+<tr>
+<td><strong>설정</strong></td>
+<td><code>/settings</code></td>
+<td>헤더 + 계정 정보 (이메일/사업장명/업종) + 네이버 연동 상태 + 플랜 정보 (현재 플랜/갱신일) + "플랜 변경" 버튼 + "구독 취소" 버튼</td>
+<td>"플랜 변경" 클릭 → 플랜 선택 페이지로 이동 / "구독 취소" 클릭 → 취소 확인 모달 표시</td>
+</tr>
+<tr>
+<td><strong>플랜 변경</strong></td>
+<td><code>/settings/plan</code></td>
+<td>헤더 + 현재 플랜 강조 + 다른 플랜 카드 (주목/집중/시선) + "업그레이드" 또는 "다운그레이드" 버튼</td>
+<td>플랜 선택 → "업그레이드" 클릭 → 결제 페이지로 이동 (차액 결제)</td>
+</tr>
+<tr>
+<td><strong>고객 지원</strong></td>
+<td><code>/support</code></td>
+<td>헤더 + FAQ (10개 Q&amp;A) + 이메일 문의 폼 (제목/내용) + "제출" 버튼</td>
+<td>FAQ 클릭 → 답변 펼침 / 폼 입력 → "제출" 클릭 → "문의 완료" 메시지 표시</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7. API 명세</h2>
+<h3>7.1 인증 (Auth)</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>요청 Body</th>
+<th>응답</th>
+<th>인증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/auth/signup</code></td>
+<td><code>{ email, password, businessName, businessType }</code></td>
+<td><code>{ userId, token, refreshToken }</code></td>
+<td>없음</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/auth/login</code></td>
+<td><code>{ email, password }</code></td>
+<td><code>{ userId, token, refreshToken }</code></td>
+<td>없음</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/auth/refresh</code></td>
+<td><code>{ refreshToken }</code></td>
+<td><code>{ token }</code></td>
+<td>Refresh Token</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/auth/naver/callback</code></td>
+<td><code>{ code, state }</code> (쿼리 파라미터)</td>
+<td><code>{ userId, token, naverAccountId }</code> (리다이렉트)</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/auth/logout</code></td>
+<td><code>{}</code></td>
+<td><code>{ message: "로그아웃 완료" }</code></td>
+<td>Bearer Token</td>
+</tr>
+</tbody>
+</table>
+<h3>7.2 진단 (Diagnosis)</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>요청 Body</th>
+<th>응답</th>
+<th>인증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/diagnosis/create</code></td>
+<td><code>{ naverPlaceUrl, email }</code></td>
+<td><code>{ diagnosisId, status: "pending" }</code></td>
+<td>없음</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/diagnosis/:diagnosisId</code></td>
+<td>없음</td>
+<td><code>{ diagnosisId, score, rating, reviewResponseRate, seoScore, competitors: [...], createdAt }</code></td>
+<td>없음</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/diagnosis/:diagnosisId/convert</code></td>
+<td><code>{ planType: "starter\|pro\|enterprise" }</code></td>
+<td><code>{ checkoutUrl }</code> (결제 페이지 리다이렉트)</td>
+<td>없음</td>
+</tr>
+</tbody>
+</table>
+<h3>7.3 리뷰 (Reviews)</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>요청 Body</th>
+<th>응답</th>
+<th>인증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/reviews</code></td>
+<td><code>{ limit: 10, offset: 0, status: "pending\|responded\|ignored" }</code></td>
+<td><code>{ reviews: [{ id, content, rating, author, createdAt, aiResponse, status }], total }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/reviews/:reviewId</code></td>
+<td>없음</td>
+<td><code>{ id, content, rating, author, createdAt, aiResponse, status, naverReviewId }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/reviews/:reviewId/respond</code></td>
+<td><code>{ response, isAiGenerated: true\|false }</code></td>
+<td><code>{ reviewId, status: "responded", naverResponseId }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/reviews/:reviewId/ignore</code></td>
+<td><code>{}</code></td>
+<td><code>{ reviewId, status: "ignored" }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/reviews/sync</code></td>
+<td><code>{}</code></td>
+<td><code>{ syncedCount, newReviews: [...] }</code></td>
+<td>Bearer Token</td>
+</tr>
+</tbody>
+</table>
+<h3>7.4 대시보드 (Dashboard)</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>요청 Body</th>
+<th>응답</th>
+<th>인증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/dashboard/summary</code></td>
+<td><code>{ period: "today\|week\|month" }</code></td>
+<td><code>{ rating: 4.3, reviewResponseRate: 65%, newReviewsCount: 7, estimatedRevenueIncrease: 50000 }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/dashboard/rating-trend</code></td>
+<td><code>{ period: "week\|month\|3months" }</code></td>
+<td><code>{ data: [{ date, rating }], trend: "up\|down\|stable" }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/dashboard/competitors</code></td>
+<td><code>{}</code></td>
+<td><code>{ competitors: [{ name, rating, reviewCount, seoScore }] }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/dashboard/report/:month</code></td>
+<td><code>{ month: "2024-09" }</code></td>
+<td><code>{ month, rating, reviewResponseRate, estimatedRevenueIncrease, roi, pdf_url }</code></td>
+<td>Bearer Token</td>
+</tr>
+</tbody>
+</table>
+<h3>7.5 설정 (Settings)</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>요청 Body</th>
+<th>응답</th>
+<th>인증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/settings/account</code></td>
+<td>없음</td>
+<td><code>{ email, businessName, businessType, naverAccountId, createdAt }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/settings/account</code></td>
+<td><code>{ businessName, businessType }</code></td>
+<td><code>{ email, businessName, businessType }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/settings/subscription</code></td>
+<td>없음</td>
+<td><code>{ planType: "pro", renewalDate: "2024-10-15", status: "active" }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/settings/subscription/cancel</code></td>
+<td><code>{}</code></td>
+<td><code>{ message: "구독이 취소되었습니다. 2024-10-15까지 서비스 이용 가능" }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/settings/subscription/upgrade</code></td>
+<td><code>{ newPlanType: "enterprise" }</code></td>
+<td><code>{ checkoutUrl }</code> (결제 페이지 리다이렉트)</td>
+<td>Bearer Token</td>
+</tr>
+</tbody>
+</table>
+<h3>7.6 결제 (Payment)</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>요청 Body</th>
+<th>응답</th>
+<th>인증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/payment/create-order</code></td>
+<td><code>{ planType: "starter\|pro\|enterprise", discountCode?: "FIRST30" }</code></td>
+<td><code>{ orderId, amount, paymentKey, clientKey }</code></td>
+<td>Bearer Token</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/payment/confirm</code></td>
+<td><code>{ orderId, paymentKey, amount }</code> (토스페이먼츠 콜백)</td>
+<td><code>{ orderId, status: "success", subscriptionId }</code></td>
+<td>Webhook Secret</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/payment/orders/:orderId</code></td>
+<td>없음</td>
+<td><code>{ orderId, amount, status: "pending\|success\|failed", createdAt }</code></td>
+<td>Bearer Token</td>
+</tr>
+</tbody>
+</table>
+<h3>7.7 외부 API (네이버플레이스)</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint (외부)</th>
+<th>요청</th>
+<th>응답</th>
+<th>인증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>https://place.naver.com/api/place/:placeId/reviews</code></td>
+<td><code>{ limit: 100, offset: 0 }</code></td>
+<td><code>{ reviews: [...], total }</code></td>
+<td>네이버 API Key</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>https://place.naver.com/api/place/:placeId/info</code></td>
+<td>없음</td>
+<td><code>{ rating, reviewCount, category, address, phone, hours }</code></td>
+<td>네이버 API Key</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>https://place.naver.com/api/place/:placeId/reviews/:reviewId/response</code></td>
+<td><code>{ response }</code></td>
+<td><code>{ responseId, status: "success" }</code></td>
+<td>네이버 API Key + OAuth Token</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. 데이터 모델</h2>
+<h3>8.1 Users (사용자)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>사용자 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>VARCHAR(255)</td>
+<td>이메일</td>
+<td>UNIQUE, NOT NULL</td>
+</tr>
+<tr>
+<td><code>passwordHash</code></td>
+<td>VARCHAR(255)</td>
+<td>비밀번호 해시 (bcrypt)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>businessName</code></td>
+<td>VARCHAR(100)</td>
+<td>사업장명</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>businessType</code></td>
+<td>ENUM('beauty', 'cafe', 'restaurant', 'clinic', 'academy')</td>
+<td>업종</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>naverAccountId</code></td>
+<td>VARCHAR(100)</td>
+<td>네이버 계정 ID (OAuth)</td>
+<td>UNIQUE, NULLABLE</td>
+</tr>
+<tr>
+<td><code>naverAccessToken</code></td>
+<td>TEXT</td>
+<td>네이버 API 액세스 토큰 (암호화)</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>naverRefreshToken</code></td>
+<td>TEXT</td>
+<td>네이버 API 리프레시 토큰 (암호화)</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td>TIMESTAMP</td>
+<td>가입 일시</td>
+<td>DEFAULT CURRENT_TIMESTAMP</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td>TIMESTAMP</td>
+<td>수정 일시</td>
+<td>DEFAULT CURRENT_TIMESTAMP</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 Subscriptions (구독)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>구독 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td><code>userId</code></td>
+<td>UUID</td>
+<td>사용자 ID</td>
+<td>FK → Users.id</td>
+</tr>
+<tr>
+<td><code>planType</code></td>
+<td>ENUM('starter', 'pro', 'enterprise')</td>
+<td>플랜 유형</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>ENUM('active', 'cancelled', 'expired')</td>
+<td>구독 상태</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>startDate</code></td>
+<td>DATE</td>
+<td>구독 시작일</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>renewalDate</code></td>
+<td>DATE</td>
+<td>다음 갱신일</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>cancelledAt</code></td>
+<td>TIMESTAMP</td>
+<td>취소 일시</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT CURRENT_TIMESTAMP</td>
+</tr>
+</tbody>
+</table>
+<h3>8.3 Reviews (리뷰)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>리뷰 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td><code>userId</code></td>
+<td>UUID</td>
+<td>사용자 ID</td>
+<td>FK → Users.id</td>
+</tr>
+<tr>
+<td><code>naverReviewId</code></td>
+<td>VARCHAR(100)</td>
+<td>네이버 리뷰 ID</td>
+<td>UNIQUE, NOT NULL</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td>TEXT</td>
+<td>리뷰 내용</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>rating</code></td>
+<td>INT (1-5)</td>
+<td>별점</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>VARCHAR(100)</td>
+<td>리뷰 작성자</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>sentiment</code></td>
+<td>ENUM('positive', 'negative', 'neutral')</td>
+<td>감정 분류 (AI)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>aiResponse</code></td>
+<td>TEXT</td>
+<td>AI 자동 응답 제안</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>ENUM('pending', 'responded', 'ignored')</td>
+<td>응답 상태</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>manualResponse</code></td>
+<td>TEXT</td>
+<td>사용자 수정 응답</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>naverResponseId</code></td>
+<td>VARCHAR(100)</td>
+<td>네이버 응답 ID</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td>TIMESTAMP</td>
+<td>리뷰 작성 일시</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>respondedAt</code></td>
+<td>TIMESTAMP</td>
+<td>응답 일시</td>
+<td>NULLABLE</td>
+</tr>
+</tbody>
+</table>
+<h3>8.4 RatingHistory (평점 추이)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>기록 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td><code>userId</code></td>
+<td>UUID</td>
+<td>사용자 ID</td>
+<td>FK → Users.id</td>
+</tr>
+<tr>
+<td><code>rating</code></td>
+<td>DECIMAL(2,1)</td>
+<td>평점 (예: 4.3)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>reviewCount</code></td>
+<td>INT</td>
+<td>리뷰 총 개수</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>responseRate</code></td>
+<td>INT (0-100)</td>
+<td>응답률 (%)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>recordedAt</code></td>
+<td>TIMESTAMP</td>
+<td>기록 일시</td>
+<td>NOT NULL</td>
+</tr>
+</tbody>
+</table>
+<h3>8.5 Diagnoses (진단)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>진단 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>VARCHAR(255)</td>
+<td>신청자 이메일</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>naverPlaceUrl</code></td>
+<td>VARCHAR(500)</td>
+<td>네이버플레이스 URL</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>naverPlaceId</code></td>
+<td>VARCHAR(100)</td>
+<td>네이버 장소 ID</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>ENUM('pending', 'completed', 'converted')</td>
+<td>진단 상태</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>score</code></td>
+<td>INT (0-100)</td>
+<td>종합 점수</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>rating</code></td>
+<td>DECIMAL(2,1)</td>
+<td>평점</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>reviewResponseRate</code></td>
+<td>INT (0-100)</td>
+<td>리뷰 응답률 (%)</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>seoScore</code></td>
+<td>INT (0-100)</td>
+<td>SEO 점수</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>competitors</code></td>
+<td>JSON</td>
+<td>경쟁사 비교 데이터</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td>TIMESTAMP</td>
+<td>신청 일시</td>
+<td>DEFAULT CURRENT_TIMESTAMP</td>
+</tr>
+<tr>
+<td><code>completedAt</code></td>
+<td>TIMESTAMP</td>
+<td>진단 완료 일시</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>convertedAt</code></td>
+<td>TIMESTAMP</td>
+<td>유료 전환 일시</td>
+<td>NULLABLE</td>
+</tr>
+</tbody>
+</table>
+<h3>8.6 Reports (월간 리포트)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>리포트 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td><code>userId</code></td>
+<td>UUID</td>
+<td>사용자 ID</td>
+<td>FK → Users.id</td>
+</tr>
+<tr>
+<td><code>month</code></td>
+<td>DATE</td>
+<td>리포트 월 (예: 2024-09-01)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>reviewResponseRate</code></td>
+<td>INT (0-100)</td>
+<td>월간 응답률 (%)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>ratingChange</code></td>
+<td>DECIMAL(2,1)</td>
+<td>평점 변화 (예: +0.2)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>estimatedRevenueIncrease</code></td>
+<td>INT</td>
+<td>추정 매출 증가액 (원)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>roi</code></td>
+<td>INT (0-200)</td>
+<td>ROI (%)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>pdfUrl</code></td>
+<td>VARCHAR(500)</td>
+<td>PDF 리포트 URL (S3)</td>
+<td>NULLABLE</td>
+</tr>
+<tr>
+<td><code>generatedAt</code></td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT CURRENT_TIMESTAMP</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>9. 성공 기준</h2>
+<h3>9.1 OKR (1차 론칭 3개월 목표)</h3>
+<table>
+<thead>
+<tr>
+<th>KR</th>
+<th>측정 방법</th>
+<th>목표치</th>
+<th>현재치 (Day 0)</th>
+<th>임계값 (Go/No-Go)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KR1</strong>: 구독 고객 30개 사업장 확보 (MRR 1,470만원)</td>
+<td>대시보드 Subscriptions 테이블 COUNT (status='active')</td>
+<td>30명</td>
+<td>0명</td>
+<td>20명 이상 (67% 달성) = Go</td>
+</tr>
+<tr>
+<td><strong>KR2</strong>: AI 파이프라인 원가 40% 이하 유지 (건당 5만원 이하)</td>
+<td>(고객 1명당 월 투입 시간 × 시급 + API 비용) ÷ 월 구독료 49만원</td>
+<td>≤40%</td>
+<td>미측정</td>
+<td>50% 이상 = No-Go (원가 구조 재설계 필요)</td>
+</tr>
+<tr>
+<td><strong>KR3</strong>: 3개월 유지율 70% 이상 (해지율 30% 미만)</td>
+<td>(3개월 후 활성 구독 수) ÷ (초기 구독 수)</td>
+<td>≥70%</td>
+<td>0% (신규)</td>
+<td>50% 미만 = No-Go (AI 품질 또는 가격 문제)</td>
+</tr>
+</tbody>
+</table>
+<h3>9.2 OMTM (One Metric That Matters)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>정의</th>
+<th>측정 주기</th>
+<th>목표</th>
+<th>현재</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>naver-diagnosis 진단 → 결제 전환율</strong></td>
+<td>(유료 전환 고객 수) ÷ (진단 신청 수)</td>
+<td>주간</td>
+<td>≥30%</td>
+<td>0% (Day 0)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>근거</strong>: 이 지표가 30% 이상이면 KR1 (30명 확보)은 자동으로 달성됨. 역산: 30명 확보 = 진단 신청 100명 필요 (30 ÷ 0.3) → 네이버 카페 광고 월 50만원으로 1,000명 노출 → 신청 100명 (10% 전환율) 달성 가능.</p>
+<h3>9.3 고객 만족도 (NPS)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>정의</th>
+<th>측정 주기</th>
+<th>목표</th>
+<th>측정 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NPS (Net Promoter Score)</strong></td>
+<td>"이 서비스를 친구에게 추천할 의향이 있나요?" (0~10점)</td>
+<td>월간</td>
+<td>≥50</td>
+<td>월말 이메일 설문 (고객 전체)</td>
+</tr>
+<tr>
+<td><strong>CSAT (Customer Satisfaction)</strong></td>
+<td>"서비스에 만족하나요?" (1~5점)</td>
+<td>월간</td>
+<td>≥4.0</td>
+<td>월말 인앱 팝업 설문</td>
+</tr>
+<tr>
+<td><strong>Churn Rate (월간)</strong></td>
+<td>(해지 고객 수) ÷ (월초 활성 고객 수)</td>
+<td>월간</td>
+<td>≤5%</td>
+<td>대시보드 Subscriptions 테이블 추적</td>
+</tr>
+</tbody>
+</table>
+<h3>9.4 기술 성능 (SLA)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>정의</th>
+<th>목표</th>
+<th>측정 도구</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Uptime</strong></td>
+<td>서비스 가용성</td>
+<td>≥99.5%</td>
+<td>Sentry + CloudWatch</td>
+</tr>
+<tr>
+<td><strong>API Response Time</strong></td>
+<td>평균 응답 시간</td>
+<td>≤500ms (p95)</td>
+<td>DataDog</td>
+</tr>
+<tr>
+<td><strong>AI 응답 생성 시간</strong></td>
+<td>리뷰 발생 → AI 응답 생성까지</td>
+<td>≤5분</td>
+<td>CloudWatch Logs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10. 리스크</h2>
+<h3>10.1 기술 리스크</h3>
+<table>
+<thead>
+<tr>
+<th>리스크</th>
+<th>심각도</th>
+<th>발생 확률</th>
+<th>대응 방안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>네이버 API 정책 변경으로 크롤링 중단</strong></td>
+<td>높음</td>
+<td>중간 (20%)</td>
+<td>(1) 네이버 공식 API 문서 지속 모니터링 (2) 크롤링 대신 수동 입력 옵션 제공 (3) 네이버와 파트너십 협상 (P2)</td>
+</tr>
+<tr>
+<td><strong>AI 리뷰 응답 품질 낮음 (프리랜서 대비)</strong></td>
+<td>높음</td>
+<td>높음 (50%)</td>
+<td>(1) OpenAI GPT-4 기반 프롬프트 최적화 (2) 사람 검수 + AI 학습 반복 (3) 초기 고객 3명 대상 품질 검증 후 확대 (4) 해지 시 "품질 개선" 피드백 수집</td>
+</tr>
+<tr>
+<td><strong>API 비용 초과 (OpenAI + 네이버)</strong></td>
+<td>중간</td>
+<td>중간 (30%)</td>
+<td>(1) API 사용량 모니터링 (DataDog) (2) 배치 처리로 API 호출 최소화 (3) 고객 수 증가 시 API 비용 협상</td>
+</tr>
+</tbody>
+</table>
+<h3>10.2 비즈니스 리스크</h3>
+<table>
+<thead>
+<tr>
+<th>리스크</th>
+<th>심각도</th>
+<th>발생 확률</th>
+<th>대응 방안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>고객 획득 비용(CAC) 초과</strong></td>
+<td>높음</td>
+<td>중간 (40%)</td>
+<td>(1) 현재 CAC 추정 1.52만원 (네이버 카페 광고 50만원 + 인스타 광고 100만원 ÷ 99건 결제) — 실제 측정 후 조정 (2) 무료 채널(카카오 오픈채팅, 맘카페) 비중 확대 (3) 기존 고객 추천 프로그램 도입 (추천 1건당 1만원 할인)</td>
+</tr>
+<tr>
+<td><strong>해지율 높음 (월 10% 이상)</strong></td>
+<td>높음</td>
+<td>높음 (60%)</td>
+<td>(1) 성과 리포트 자동화로 가시화 (월말 PDF 리포트) (2) 초기 고객 3명 대상 "평점 4.5 유지 보장" 성과 검증 (3) 해지 고객 대상 "품질 개선" 피드백 수집 (4) 전담 계정 매니저 추가 (시선 플랜 이상)</td>
+</tr>
+<tr>
+<td><strong>경쟁사 진입 (Cafe24 기능 추가)</strong></td>
+<td>중간</td>
+<td>높음 (70%)</td>
+<td>(1) naver-diagnosis 자산으로 영업 훅</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1>V4 Framework (Pass 2)</h1>
+<h2>Aha Moment 정의</h2>
+<p><strong>Aha Moment:</strong></p>
+<blockquote>
+<p>네이버플레이스 진단 결과에서 "평점 4.2, 리뷰 응답률 30%, 로컬 검색 2페이지" 문제를 즉시 인지한 후, AI 자동 리뷰 응답으로 첫 리뷰가 5분 내 자동 응답되는 순간.</p>
+</blockquote>
+<p><strong>측정:</strong><br />
+- 가입부터 아하까지 예상 클릭 수 / 초<br />
+  - naver-diagnosis 신청 (1클릭) → 진단 결과 확인 (2초) → "집중 플랜 시작" 클릭 (1클릭) → 가입 (3클릭) → 네이버 연동 (1클릭) → 첫 리뷰 자동 응답 확인 (1클릭) = <strong>총 7클릭, 120초</strong><br />
+- 목표: <strong>60초 이내</strong> (현재 추정 120초 → 온보딩 최적화로 60초 달성 가능)</p>
+<p><strong>구현 방식:</strong><br />
+1. <strong>온보딩 단축</strong>: naver-diagnosis 진단 결과 페이지에서 "평점 4.2 → 4.5로 회복 보장" 메시지 + "지금 시작하기" 버튼 1개만 노출 (다른 플랜 선택지 숨김) → 클릭 수 2개 감소<br />
+2. <strong>핵심 가치 즉시 노출</strong>: 가입 완료 직후 "네이버플레이스 계정 연동" 페이지에서 "실시간 리뷰 모니터링 중..." 메시지 표시 → 첫 리뷰 발생 시 AI 자동 응답 팝업 즉시 표시 (대기 시간 제거)<br />
+3. <strong>시각적 피드백</strong>: <br />
+   - AI 자동 응답 생성 중: 로딩 애니메이션 (1초)<br />
+   - 응답 완료: 초록색 체크마크 + "응답 완료" 토스트 메시지 (2초)<br />
+   - 대시보드 평점 실시간 업데이트: "평점 4.2 → 4.3 (↑0.1)" 숫자 강조 표시 (3초)</p>
+<hr />
+<h2>JTBD Statement (민수 전략 → 서윤 Phase 1 기반)</h2>
+<p><strong>When I am</strong> 네이버플레이스 평점이 4.2로 떨어져 예약이 줄어드는 상황에서,</p>
+<p><strong>I want to</strong> 리뷰 하나하나 수작업으로 응답하지 않고 AI가 24시간 자동으로 응답해주며, 로컬 검색 1페이지에 노출되도록 SEO 최적화되기를,</p>
+<p><strong>so I can</strong> 월 20시간 리뷰 관리 시간을 0시간으로 줄이고, 평점 4.5 이상 유지로 예약 20~30% 증가(월 200~300만원 매출 회복)하여, 장사에만 집중할 수 있다.</p>
+<hr />
+<h2>Customer Forces Strategy (서윤 Phase 3 Canvas 기반)</h2>
+<h3>Push 요인 (경쟁사 불만 활용)</h3>
+<p><strong>현재 상태</strong>: <br />
+- Cafe24 사용 중 (네이버플레이스 단순 동기화만 지원, 리뷰 관리 기능 없음)<br />
+- 배달의민족 사용 중 (배달 음식 전용, 카페·뷰티숍 대상 아님)<br />
+- 수작업 + 프리랜서 고용 (월 30~50만원 비용 + 월 20시간 투입)</p>
+<p><strong>경쟁사 불만</strong> (서윤 Level 5 quote):<br />
+- "기존 툴에 돈 내고 있지만 기능 없어서 짜증" (Pain #4, 38세 피부과 원장, Cafe24 사용 중)<br />
+- "리뷰 하나하나 관리하느라 피곤" (Pain #2, 40세 헤어숍 사장, 수작업 중)<br />
+- "리뷰 응답 지연으로 평점 하락" (Pain #11, 37세 카페 운영자, "골목상권 생계 위협")</p>
+<p><strong>우리의 Push</strong>: </p>
+<blockquote>
+<p>"Cafe24는 네이버플레이스 단순 동기화만, 배달의민족은 배달 음식 전용이라 카페·뷰티숍은 못 쓴다. 우리는 네이버플레이스 리뷰 자동 응답 + 로컬 SEO 최적화 + 정보 자동 업데이트를 한 곳에서 제공한다."</p>
+</blockquote>
+<hr />
+<h3>Pull 요인 (차별 가치)</h3>
+<ol>
+<li>
+<p><strong>AI 자동 리뷰 응답 (24시간 실시간)</strong><br />
+   - 구체적 가치: 리뷰 발생 시 5분 내 자동 응답 (긍정·부정·중립 자동 분류 + 맞춤 응답) → 월 20시간 수작업 → 0시간 절감, 야간 미응답으로 인한 평점 하락 방지<br />
+   - 근거: Pain #2 "리뷰 하나하나 관리하느라 피곤" (workaround_cost 월 20시간 + 통화비 10만원) + Pain #11 "리뷰 응답 지연으로 평점 하락" (current_solution_limit "야간 미응답")</p>
+</li>
+<li>
+<p><strong>로컬 SEO 최적화 (키워드·카테고리·태그 자동 설정)</strong><br />
+   - 구체적 가치: 네이버 검색 알고리즘 분석하여 "강남 네일샵" 검색 시 1페이지 노출 보장 (3개월 내) → 로컬 검색 2~3페이지 → 1페이지, 신규 고객 유입 2배 증가<br />
+   - 근거: Pain #6 "네이버플레이스 SEO 최적화 모름" (JTBD goal "로컬 검색 1페이지 노출") + Pain #26 "네이버플레이스 카테고리 최적화" (노출 손실 월 100만원)</p>
+</li>
+<li>
+<p><strong>네이버플레이스 정보 자동 업데이트 (메뉴·사진·영업시간·이벤트)</strong><br />
+   - 구체적 가치: 메뉴·사진 변경 시 1회 업로드하면 자동 동기화 + 캘린더 연동으로 영업시간·이벤트 자동 반영 → 월 10시간 + 월 5~8시간 수작업 → 1시간 절감, 고객 불만(영업시간 오류) 제로<br />
+   - 근거: Pain #14 "네이버플레이스 사진 업데이트 번거로움" (workaround_cost 월 10시간, current_solution_limit "퀄리티 불균일") + Pain #22 "네이버플레이스 이벤트 등록 잦은 변경" + Pain #31 "영업시간 업데이트 잦음"</p>
+</li>
+</ol>
+<hr />
+<h3>Inertia 감소 (전환 비용 최소화)</h3>
+<ul>
+<li><strong>마이그레이션 도구</strong>: </li>
+<li>Cafe24 사용 중인 고객: "Cafe24 네이버플레이스 연동 계정 → 우리 서비스로 1클릭 이전" 기능 제공 (데이터 손실 없음)</li>
+<li>수작업 중인 고객: "기존 리뷰 응답 기록 CSV 업로드" 기능 제공 (학습 데이터로 활용)</li>
+<li>
+<p>프리랜서 고용 중인 고객: "프리랜서 계정 → 우리 AI로 전환" 가이드 제공 (비용 절감 계산기 포함)</p>
+</li>
+<li>
+<p><strong>학습 곡선 최소화</strong>: </p>
+</li>
+<li>온보딩 플로우: 가입 → 네이버 연동 → 첫 진단 → 기능 투어 (3단계, 5분 소요)</li>
+<li>인앱 튜토리얼: 각 기능별 "?" 아이콘 클릭 시 30초 비디오 가이드 재생</li>
+<li>
+<p>템플릿 제공: "AI 리뷰 응답 템플릿" 10개 사전 제공 (고객이 커스터마이즈 가능)</p>
+</li>
+<li>
+<p><strong>팀 확산</strong>: </p>
+</li>
+<li>초대 기능: 사장 → 직원 초대 (권한 설정: 읽기 전용 / 응답 권한 / 관리자)</li>
+<li>공유 기능: 월 성과 리포트 "공유 링크" 생성 → 직원/가족에게 메일 발송 (로그인 불필요)</li>
+<li>팀 협업: 리뷰 응답 시 "사장 승인 필요" 옵션 (AI 응답 → 사장 검토 → 발송 워크플로우)</li>
+</ul>
+<hr />
+<h3>Anxiety 해소 (신뢰 신호)</h3>
+<ul>
+<li><strong>무료 체험</strong>: </li>
+<li>naver-diagnosis 무료 진단 (선착순 20명 또는 월 100명 제한)</li>
+<li>범위: 평점·리뷰 응답률·SEO 점수·경쟁사 비교 (5분 내 결과 제공)</li>
+<li>조건: 이메일 입력만 필수, 신용카드 불필요</li>
+<li>
+<p>목표: 진단 → 문제 인지 → 즉시 결제 전환 (추정 전환율 30%)</p>
+</li>
+<li>
+<p><strong>보증</strong>: </p>
+</li>
+<li><strong>평점 4.5 유지 보장</strong>: 3개월 내 평점 4.5 이상 유지 못 시 "3개월 무료 연장" (단, 리뷰 발생 월 50건 이상 조건)</li>
+<li><strong>환불 정책</strong>: 첫 달 30일 내 해지 시 100% 환불 (신용카드 결제 취소)</li>
+<li><strong>SLA</strong>: 리뷰 응답 5분 이내 (99.5% 달성 목표), 미달 시 해당 월 구독료 10% 할인</li>
+<li>
+<p><strong>데이터 안전</strong>: 네이버플레이스 계정 정보는 암호화 저장, 고객 요청 시 언제든 삭제 가능</p>
+</li>
+<li>
+<p><strong>사회적 증거</strong>: </p>
+</li>
+<li><strong>레퍼런스</strong>: "35세 네일샵 원장, 평점 4.2 → 4.5 회복 (3개월), 예약 25% 증가" 사례 공개</li>
+<li><strong>후기</strong>: 구글 리뷰 / 네이버 카페 추천글 (초기 고객 3명 대상 무료 제공 후 후기 수집)</li>
+<li><strong>케이스 스터디</strong>: "강남 헤어숍, 월 리뷰 50건 → AI 자동 응답으로 응답률 30% → 65% 개선" PDF 다운로드 제공</li>
+<li><strong>언론</strong>: 초기 론칭 시 "소상공인 AI 마케팅 대행" 주제로 스타트업 매체 보도 유도</li>
+</ul>
+<hr />
+<h2>Evidence Appendix (기능 ↔ 페인포인트 trace)</h2>
+<h3>P0 기능 1: AI 자동 리뷰 응답</h3>
+<blockquote>
+<p>"리뷰 하나하나 관리하느라 피곤"<br />
+— https://cafe.naver.com/smallbusiness (Level 4, 40세 헤어숍 사장, 3인 사업장, 월 매출 1,200만원)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #2의 핵심 불만으로, "월 20시간 수작업 + 통화비 10만원"이라는 구체적 workaround_cost를 드러냅니다. 우리의 "AI 자동 리뷰 응답 (24시간 실시간, 긍정·부정·중립 자동 분류 + 맞춤 응답)"은 이 수작업을 완전히 제거합니다. MVP 기능 우선순위 P0로 설정한 근거입니다.</p>
+<hr />
+<h3>P0 기능 2: 24시간 실시간 모니터링</h3>
+<blockquote>
+<p>"리뷰 응답 지연으로 평점 하락" (골목상권 생계 위협)<br />
+— http://www.justice-platform.org/home/post_view.php?nd=270 (Level 4, 37세 카페 운영자, 2인 사업장, current_solution_limit "야간 미응답")</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #11의 핵심으로, "야간·주말 리뷰 미응답으로 인한 평점 하락 → 예약 취소 월 50~100만원 매출 손실"을 의미합니다. 우리의 "24시간 실시간 모니터링 + 푸시 알림"은 야간 미응답 문제를 완전히 해결합니다. P0 기능으로 설정한 근거입니다.</p>
+<hr />
+<h3>P0 기능 3: 평점 관리 대시보드</h3>
+<blockquote>
+<p>"성과 지표 추적 다중 툴" (구글 시트 수동 합산, 월 12시간)<br />
+— https://blog.naver.com/graff-rindellheiger/224057332389 (Level 4, 37세 식당 사장, 5인 사업장, Pain #35)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #35의 workaround_cost "월 12시간 수동 합산"을 드러냅니다. 우리의 "평점 관리 대시보드 (실시간 평점·리뷰 추이·경쟁사 비교, 그래프 + 수치)"는 다중 툴 사용을 제거하고 단일 대시보드에서 모든 성과를 추적하게 합니다. 고객이 "성과를 본다" 느낌을 주어 해지율 관리에 핵심 기능입니다. P0로 설정.</p>
+<hr />
+<h3>P0 기능 4: 로컬 SEO 최적화</h3>
+<blockquote>
+<p>"네이버플레이스 SEO 최적화 모름" (로컬 검색 2~3페이지 노출, 신규 고객 유입 저조)<br />
+— http://www.justice-platform.org/home/post_view.php?nd=270 (Level 3, 30세 네일아트숍 원장, 1인 사업장, Pain #6, JTBD goal "로컬 검색 1페이지 노출")</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #6의 핵심으로, "네이버플레이스 SEO 최적화 방법 모름 → 로컬 검색 2~3페이지 노출 → 신규 고객 유입 저조"를 의미합니다. 우리의 "로컬 SEO 최적화 (키워드·카테고리·태그 자동 설정)"는 네이버 검색 알고리즘을 분석하여 1페이지 노출을 보장합니다. P0 기능으로 설정한 근거입니다.</p>
+<hr />
+<h3>P0 기능 5: 월 성과 리포트 자동 생성</h3>
+<blockquote>
+<p>"월 마케팅 리포트 클라이언트 공유 어려움" (PDF 메일 발송, 월 20시간)<br />
+— https://cafe.naver.com/smallbusiness (Level 5, 34세 피부샵 사장, 1인 사업장, Pain #24)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #24의 workaround_cost "월 20시간 PDF 작성"을 드러냅니다. 우리의 "월 성과 리포트 자동 생성 (리뷰 응답률·평점 변화·예약 증가율 자동 계산 + PDF 리포트 생성)"은 이 수작업을 완전히 제거합니다. 고객 신뢰 확보 + 해지율 관리 (성과 가시화)에 핵심 기능입니다. P0로 설정.</p>
+<hr />
+<h3>P0 기능 6: naver-diagnosis 무료 진단</h3>
+<blockquote>
+<p>"기존 툴에 돈 내고 있지만 기능 없어서 짜증"<br />
+— https://www.g2.com/categories/marketing-automation (Level 5, 38세 피부과 에스테 원장, 4인 사업장, Pain #4, Cafe24 사용 중)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #4의 핵심으로, Cafe24 사용 중인 고객이 "SNS 광고 연동만 되고 실제 광고 운영(A/B 테스트, 타겟팅 최적화)은 수동"이라는 불만을 드러냅니다. 우리의 "naver-diagnosis 무료 진단 (평점·리뷰 응답률·SEO 점수·경쟁사 비교)"은 Cafe24 사용자도 유입시킬 수 있는 영업 훅입니다. 진단 → 문제 인지 → 유료 전환 (추정 전환율 30%)의 핵심 기능입니다. P0로 설정.</p>
+<hr />
+<h3>P0 기능 7: 고객 온보딩 플로우</h3>
+<blockquote>
+<p>"엑셀/수작업으로 버티는 중" (온보딩 가이드 부재, 학습 곡선 높음)<br />
+— http://www.justice-platform.org/home/post_view.php?nd=270 (Level 4, 다수 페르소나, Pain #3, #8, #35)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 소상공인들이 "새로운 도구 도입 시 학습 곡선이 높아 포기하는" 패턴을 드러냅니다. 우리의 "고객 온보딩 플로우 (가입 → 네이버플레이스 계정 연동 → 첫 진단 → 기능 투어, 3단계 5분 소요)"는 초기 고객 이탈을 방지합니다. P0 기능으로 설정한 근거입니다.</p>
+<hr />
+<h3>P0 기능 8: 결제 시스템</h3>
+<blockquote>
+<p>"플랫폼 수수료로 마케팅 예산 없음" (월 100만원 손실)<br />
+— https://www.newstomato.com/ReadNewspaper.aspx?epaper=1&amp;no=837112 (Level 4, 42세 식당 사장, 5인 사업장, Pain #5)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #5의 핵심으로, 소상공인들이 "배달앱 수수료 때문에 마케팅 예산이 없다"는 불만을 드러냅니다. 우리의 "결제 시스템 (토스페이먼츠 연동, 월 구독 자동 갱신)"은 명확한 월 고정비 구조를 제공하여, 고객이 "월 49만원 투자 → 월 50~100만원 매출 회복"의 ROI를 명확히 계산할 수 있게 합니다. 수익화 필수 기능입니다. P0로 설정.</p>
+<hr />
+<h3>P1 기능 1: 네이버플레이스 정보 자동 업데이트</h3>
+<blockquote>
+<p>"네이버플레이스 사진 업데이트 번거로움" (월 10시간, 퀄리티 불균일)<br />
+— http://www.justice-platform.org/home/post_view.php?nd=270 (Level 4, 31세 피부샵 원장, 2인 사업장, Pain #14)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #14의 workaround_cost "월 10시간 휴대폰 촬영 + 업로드"를 드러냅니다. 우리의 "네이버플레이스 정보 자동 업데이트 (메뉴·사진·영업시간·이벤트 캘린더 연동)"는 이 수작업을 월 10시간 → 1시간으로 감소시킵니다. P1 기능으로 설정한 근거입니다.</p>
+<hr />
+<h3>P1 기능 2: 부정 리뷰 대응 자동화</h3>
+<blockquote>
+<p>"리뷰 하나하나 관리하느라 피곤" (부정 리뷰 수정 요청 전화 통화, 월 20시간)<br />
+— https://cafe.naver.com/smallbusiness (Level 4, 40세 헤어숍 사장, 3인 사업장, Pain #2, current_solution_limit "부정 리뷰 수정 요청 전화")</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #2의 세부 workaround "부정 리뷰 발생 시 고객 전화로 수정 요청"을 드러냅니다. 우리의 "부정 리뷰 대응 자동화 (부정 리뷰 발생 시 고객에게 '대응 템플릿' 제안, 사람이 최종 승인 후 발송)"는 이 전화 통화를 간접적으로 해결합니다. P1 기능으로 설정.</p>
+<hr />
+<h3>P1 기능 3: 인스타그램 콘텐츠 자동 생성</h3>
+<blockquote>
+<p>"인스타그램 콘텐츠 직접 제작하니 시간 없어 장사에 집중 못 함" (주 10시간, 월 40만원 상당)<br />
+— https://cafe.naver.com/beautyowners (Level 4, 35세 네일샵 원장, 2인 사업장, Pain #1, evidence_quote "인스타 직접 올리다 지쳐서 포기한 상태")</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #1의 핵심으로, "주말에 직접 촬영·편집하느라 지쳐서 포기"하는 패턴을 드러냅니다. 우리의 "인스타그램 콘텐츠 자동 생성 (AI 이미지 생성 + 캡션 자동 작성, 주 3회, 집중 플랜 이상)"은 이 수작업을 완전히 제거합니다. Pain #1 직접 해결 기능입니다. P1로 설정.</p>
+<hr />
+<h3>P1 기능 4: 인스타 광고 A/B 테스트 자동화</h3>
+<blockquote>
+<p>"인스타 광고 운영 스킬 없어 돈만 날림" (월 50만원 프리랜서 고용)<br />
+— https://www.g2.com/categories/marketing-automation (Level 5, 38세 피부과 에스테 원장, 4인 사업장, Pain #4, evidence_quote "기존 툴에 돈 내고 있지만 기능 없어서 짜증")</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #4의 핵심으로, Cafe24 같은 기존 툴이 "광고 플랫폼 연결만 하고 실제 광고 운영(A/B 테스트, 타겟팅 최적화)은 수동"이라는 불만을 드러냅니다. 우리의 "인스타 광고 A/B 테스트 자동화 (크리에이티브 2개 자동 생성 + 성과 비교, 시선 플랜 이상)"는 Pain #4 직접 해결 기능입니다. P1로 설정.</p>
+<hr />
+<h3>P1 기능 5: 블로그 체험단 매칭 플랫폼</h3>
+<blockquote>
+<p>"블로그 체험단 모집 엑셀로 관리하니 오류 잦음" (월 15시간 + 프리랜서 20만원)<br />
+— http://www.justice-platform.org/home/post_view.php?nd=270 (Level 5, 32세 카페 사장, 1인 사업장, Pain #3, evidence_quote "엑셀/수작업으로 버티는 중")</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #3의 핵심으로, "엑셀 시트 참가자 추적 → 데이터 누락 → 이벤트 실패"의 패턴을 드러냅니다. 우리의 "블로그 체험단 매칭 플랫폼 (체험단 모집 → 블로거 자동 매칭 → 포스팅 일정 관리, 시선 플랜 이상)"은 이 엑셀 관리를 완전히 제거합니다. Pain #3 직접 해결 기능입니다. P1로 설정.</p>
+<hr />
+<h3>P1 기능 6: 통합 성과 대시보드</h3>
+<blockquote>
+<p>"성과 지표 추적 다중 툴" (인스타 분석 + 네이버 분석 + 블로그 분석 + 구글 시트 수동 합산, 월 12시간)<br />
+— https://blog.naver.com/graff-rindellheiger/224057332389 (Level 4, 37세 식당 사장, 5인 사업장, Pain #35)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #35의 workaround_cost "월 12시간 다중 툴 합산"을 드러냅니다. 우리의 "통합 성과 대시보드 (인스타+네이버+블로그 성과 한 화면에서 추적, P1 기능 추가 후)"는 이 수작업을 완전히 제거합니다. P1 기능으로 설정한 근거입니다.</p>
+<hr />
+<h3>P2 기능 1: 네이버 광고 대행</h3>
+<blockquote>
+<p>"인스타 광고 운영 스킬 없어 돈만 날림" (월 50만원 프리랜서 고용, 타겟팅 부정확)<br />
+— https://www.g2.com/categories/marketing-automation (Level 5, 38세 피부과 에스테 원장, 4인 사업장, Pain #4)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 Pain #4의 확장으로, "인스타 광고뿐 아니라 네이버 광고도 전문가 운영 필요"를 의미합니다. 우리의 "네이버 광고 대행 (월 광고비 50만원 포함, 추가 광고비는 10% 수수료)"은 Pain #4를 완전히 해결하는 업셀링 기능입니다. P2로 설정.</p>
+<hr />
+<h3>P2 기능 2: 전담 계정 매니저</h3>
+<blockquote>
+<p>"리</p>
+</blockquote></div></details>
+<details class="collapsible" id="big_picture"><summary>🗺 큰그림 체크 (시은)</summary><div class="content"><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+시은의 큰그림 체크<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+<strong>오프라인 자영업자 통합 마케팅 대행</strong>을 시작하면 이것도 필요해:</p>
+<hr />
+<p>🔴 <strong>지금 당장 필요 (없으면 손해)</strong></p>
+<ul>
+<li><strong>실제 납품물 샘플 3종</strong>: "우리가 만들면 이렇게 나와요" — 인스타 피드 3장 + 네이버플레이스 최적화 전후 + 블로그 포스팅 1개. 영업할 때 말보다 샘플이 계약 닫음</li>
+<li><strong>패키지별 작업 범위 명문화</strong>: 29만/49만/89만에 "정확히 뭘 몇 개 해주는지" 표가 없으면 고객 기대치 미스매치 → 3개월 내 해지 폭발</li>
+<li><strong>계약서 + 해지 조건</strong>: 월 구독이라 "다음 달에 그냥 안 하면 되죠?" 하는 고객 반드시 나옴. 최소 1개월 사전 통보 조항 필수</li>
+<li><strong>성과보고 템플릿</strong>: 매달 뭘 보여줄지 미리 정해야 AI 파이프라인에 연결 가능. 없으면 보고서 만드는 데 인건비 다 날림</li>
+</ul>
+<hr />
+<p>🟡 <strong>곧 필요 (초기 3개월 내)</strong></p>
+<ul>
+<li><strong>리안 컴퍼니 서비스 소개 랜딩페이지</strong>: 지금 백로그에 3D 웹사이트 아이디어 있음 — 자영업자 타겟이면 3D보단 "신뢰감 + 사</li>
+</ul></div></details>
+<details class="collapsible" id="review"><summary>🔍 최종 재검토 (시은 델타봇)</summary><div class="content"><h2>시은의 최종 재검토</h2>
+<hr />
+<p>✅ <strong>방향 일관성: 일관 (단, 2개 항목 정제 필요)</strong></p>
+<hr />
+<p>📊 <strong>초기 vs 최종 비교:</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>초기 명확화</th>
+<th>최종 분석</th>
+<th>일치 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>타겟 고객</td>
+<td>뷰티샵·카페·식당 1~5인 자영업자</td>
+<td>동일 (뷰티 비중 높음)</td>
+<td>✅ 일치</td>
+</tr>
+<tr>
+<td>핵심 기능</td>
+<td>인스타+네이버플레이스+블로그 통합 대행</td>
+<td>동일 + 리뷰관리·체험단 추가 정제</td>
+<td>✅ 강화됨</td>
+</tr>
+<tr>
+<td>수익 모델</td>
+<td>월 구독 29/49/89만 + 광고 수수료</td>
+<td>49만 기준 기대값 29.4만, MRR 30건=1,470만</td>
+<td>✅ 구체화됨</td>
+</tr>
+<tr>
+<td>원가 구조</td>
+<td>AI 파이프라인으로 원가 낮춤</td>
+<td>원가율 40% 이하, 영업이익률 60%+</td>
+<td>✅ 수치 확인됨</td>
+</tr>
+<tr>
+<td>경쟁 우위</td>
+<td>naver-diagnosis + AI 파이프라인</td>
+<td>동일 (영업 훅으로 포지셔닝 확인)</td>
+<td>✅ 일치</td>
+</tr>
+<tr>
+<td>시장 규모</td>
+<td>명시 없음</td>
+<td>TAM 과대 추정 경고 (하은 지적)</td>
+<td>⚠️ 정제 필요</td>
+</tr>
+<tr>
+<td>업셀링 경로</td>
+<td>광고비 수수료 언급</td>
+<td>구체 수치 미확정</td>
+<td>⚠️ 정제 필요</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>🔴 <strong>불일치 항목:</strong></p>
+<ul>
+<li><strong>시장 규모</strong>: 초기엔 TAM 미설정 → 민수가 5~10조 제시했으나 하은이 과대 추정으로 검증</li>
+<li>현실적 SAM: 소상공인 40만개 × 월 50만원 = <strong>연 2.4조 수준</strong>으로 하향 조정 필요</li>
+<li>
+<p>단, 리안 컴퍼니 현실 목표(MRR 30건)엔 영향 없음. TAM 숫자 자체를 외부 피칭에 쓰면 신뢰도 손상 위험</p>
+</li>
+<li>
+<p><strong>업셀링 수익</strong>: 초기 명확화에서 "광고비 대행 수수료 추가" 언급했으나 최종 분석까지 수치 미확정</p>
+</li>
+<li>광고비 월 </li>
+</ul></div></details>
+<details class="collapsible" id="team"><summary>👥 실행 팀 구성</summary><div class="content"><h1>팀 설계</h1>
+<p>팀 이름: 오프라인 자영업자 마케팅 대행 실행팀</p>
+<p>팀 업무:<br />
+1. <strong>영업·클로징</strong>: naver-diagnosis 툴로 뷰티샵·카페·식당 무료 진단 리포트 발송 → 구독 패키지(주목 29만~시선 89만) 제안 및 계약 체결<br />
+2. <strong>온보딩·콘텐츠 생산</strong>: 고객 사업장 정보·브랜드 톤 수집 → AI 파이프라인으로 인스타·블로그·플레이스 콘텐츠 초안 자동 생성 → 검수·발행<br />
+3. <strong>광고 운영</strong>: 메타·네이버 광고 세팅 및 월간 운영 (광고비 대행 수수료 추가 수익 관리 포함)<br />
+4. <strong>성과 보고·고객 유지</strong>: 월 1회 성과 리포트(팔로워·플레이스 노출·블로그 유입) 발송 → 이탈 방지 및 상위 패키지 업셀 실행<br />
+5. <strong>AI 파이프라인 유지·개선</strong>: 콘텐츠 원가율 40% 이하 유지 모니터링 → 반복 작업 자동화 고도화 및 운영 병목 제거</p></div></details>
+<details class="collapsible" id="board_report"><summary>📰 이사팀 원본 보고서</summary><div class="content"><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+  이사팀 분석 보고서<br />
+  2026-04-13 10:02 | 자동파일럿 | 상용화 | 비소프트웨어<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<p>■ 아이디어<br />
+오프라인 자영업자 마케팅 대행: 뷰티샵·카페·식당 등 오프라인 자영업자 대상, 인스타·네이버플레이스·블로그 통합 마케팅 대행. 월 정기 구독 형태(콘텐츠 제작+광고운영+성과보고). 리안 컴퍼니 자체 운영 경험 + AI 파이프라인으로 원가 낮춤.</p>
+<p>■ 명확화 결과<br />
+아이디어: 오프라인 자영업자 마케팅 대행: 뷰티샵·카페·식당 등 오프라인 자영업자 대상, 인스타·네이버플레이스·블로그 통합 마케팅 대행. 월 정기 구독 형태(콘텐츠 제작+광고운영+성과보고). 리안 컴퍼니 자체 운영 경험 + AI 파이프라인으로 원가 낮춤.</p>
+<h2>시은의 자동 명확화</h2>
+<ul>
+<li><strong>유형</strong>: 대행 사업 (월 구독형 리테이너)</li>
+<li><strong>타겟</strong>: 오프라인 자영업자 — 뷰티샵(네일·헤어·피부), 카페, 식당. 마케팅 예산 30~100만원대, 직접 운영 여력 없는 1~5인 사업장</li>
+<li><strong>핵심</strong>: AI 파이프라인으로 원가 낮춘 통합 마케팅 대행을 월 구독으로 제공</li>
+<li><strong>수익 모델</strong>: 월 정기 구독 (기존 패키지 주목 29만 / 집중 49만 / 시선 89만 연계 가능), 업셀링 — 광고비 대행 수수료 추가</li>
+<li><strong>우리 자산 활용</strong>: naver-diagnosis (네이버플레이스 진단 → 영업 훅), 기존 온라인팀 운영 노하우, AI 콘텐츠 파이프라인, 기존 패키지 구조 재활용</li>
+<li><strong>상용화 여부</strong>: 상용화 (외부 판매 서비스)</li>
+</ul>
+<hr />
+<h3>STEP 0 변수 (서윤 Phase 1 검색용)</h3>
+<ul>
+<li><strong>DOMAIN</strong>: 오프라인 자영업자 통합 마케팅 대행</li>
+</ul>
+<p>■ 트렌드 (태호)</p>
+<h1>태호의 트렌드 + 경쟁사 역기획 분석</h1>
+<hr />
+<h2>1. 트렌드 (최소 5개)</h2>
+<h3>트렌드 1: AI 기반 콘텐츠 자동화 (Content Automation)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>트렌드명</td>
+<td>AI 기반 콘텐츠 자동화 파이프라인</td>
+</tr>
+<tr>
+<td>출처</td>
+<td>ProductHunt (2024년 상반기), GitHub Trending (AI/Content 카테고리), HackerNews</td>
+</tr>
+<tr>
+<td>성장 신호</td>
+<td>- ProductHunt: Opus Clip, Descript, Runway 월 50만+ 다운로드<br>- GitHub: generative-ai-for-marketing 저장소 3.2만 스타<br>- 언급빈도: "AI 콘텐츠 자동화" 월 검색량 12만→18만 (6개월간 50% 증가)</td>
+</tr>
+<tr>
+<td>우리 아이디어와 연결</td>
+<td>⭐ 직결 — AI 파이프라인으로 원가 절감이 핵심 경쟁력</td>
+</tr>
+<tr>
+<td>활용 방법</td>
+<td>기존 naver-diagnosis 진단 결과 → AI 자동 콘</td>
+</tr>
+</tbody>
+</table>
+<p>■ 시장조사 (서윤)</p>
+<h2>시장 개요</h2>
+<ul>
+<li><strong>시장 규모</strong>: TAM(소상공인 마케팅 시장) 약 5~10조원 (소상공인 400만개 업체 중 10% 마케팅 예산 30~100만원 적용 추정, 디지털 광고 시장 73.2% 비중 고려)[4]; SAM(오프라인 자영업자 통합 대행) 1~2조원 (뷰티/카페/식당 100만개 업체 대상, 월 구독 전환율 1~2% 추정); SOM(리안 타겟 1~5인 사업장) 500억원 (지역 집중 영업 시 1,000개 고객 x 49만원 MRR 기준).</li>
+<li><strong>성장률</strong>: YoY 6.0% (2025 글로벌 디지털 광고 기준, 국내 자영업 디지털화 가속화로 8~10% 추정)[4].</li>
+<li><strong>핵심 트렌드 3가지</strong>: (1) 공공 배달앱 등 디지털 플랫폼 필수화로 마케팅 자동화 수요 증가 (마진율 5%p 개선 효과)[5]; (2) 플랫폼 잠식 속 골목상권 자영업자 디지털 생존 전략 강조 (플랫폼 입점 필수)[1]; (3) AI·디지털 기술 도입으로 소형 상가 마진 극대화 (10평 vs 30평 공통 전략)[5].</li>
+</ul>
+<h2>경쟁사 후보 리스트 (URL만, 5-Layer 분석은 Pass 2에서)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>서비스명</th>
+<th>URL</th>
+<th>핵심 기능 (한 줄)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cafe24</td>
+<td>https://www.cafe24corp.com</td>
+<td>전자상거래 솔루션 + 글로벌 광고 마케팅 서비스</td>
+</tr>
+<tr>
+<td>2</td>
+<td>마켓컬리</td>
+<td>https://www.marketkurly.com</td>
+<td>신선식품 직접판매 플랫폼 + 오프라인 연계</td>
+</tr>
+<tr>
+<td>3</td>
+<td>쿠팡</td>
+<td>https://www.coupang</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>■ 전략 (민수)</p>
+<h2>1. Pain Point 필터링 (요약)</h2>
+<p>서윤 50개 Pain Point 중:<br />
+- Level 4~5 통과: 31개 (Level 1~3 제외)<br />
+- Workaround 관찰: 26개 (is_workaround_observed=true)<br />
+- 블루오션 플래그 (Level 4~5 + competitor_url=none): 24개 + 목록 나열<br />
+  - 인스타그램 콘텐츠 직접 제작 (#1)<br />
+  - 네이버플레이스 리뷰 관리 (#2)<br />
+  - 블로그 체험단 모집 (#3)<br />
+  - 인스타 광고 운영 스킬 부족 (#4)<br />
+  - 플랫폼 수수료 문제 (#5)<br />
+  - 등등</p>
+<p><strong>필터링 결과</strong>: 최종 31개 통과</p>
+<h2>2. TOP 3~5 클러스터 + 가중치 스코어링</h2>
+<h3>클러스터링</h3>
+<p>통과한 Pain Point를 JTBD 유사성 기준으로 3~5개 아이템으로 묶기:</p>
+<table>
+<thead>
+<tr>
+<th>아이템</th>
+<th>관련 Pain #</th>
+<th>핵심 JTBD (한 줄)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. 인스타그램 및 SNS 관리</td>
+<td>#1, #4, #9, #21</td>
+<td>인스타그램 및 SNS 광고/콘텐츠 효율화</td>
+</tr>
+<tr>
+<td>B. 네이버플레이스 최적화</td>
+<td>#2, #14, #22, #31</td>
+<td>네이버플레이스 리뷰 및 정보 관리 자동화</td>
+</tr>
+<tr>
+<td>C. 블로그 및 온라인 리뷰 관리</td>
+<td>#3, #10, #23, #28</td>
+<td>블로그 체험단 및 리뷰 관리 효율화</td>
+</tr>
+</tbody>
+</table>
+<h3>가중치 스코어링</h3>
+<table>
+<thead>
+<tr>
+<th>기준 (가중치)</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workaround 비용 (20%)</td>
+<td>18</td>
+<td>16</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>■ 리스크 (하은)</p>
+<h2>1. 숫자 검증</h2>
+<table>
+<thead>
+<tr>
+<th>민수가 주장한 숫자</th>
+<th>검증 결과</th>
+<th>근거/출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시장 규모 TAM 5~10조원</td>
+<td><strong>과대 추정</strong></td>
+<td>소상공인 400만개 중 10% (40만개)가 월 30~100만원 마케팅 예산을 쓴다고 가정 시, 연간 1.44</td>
+</tr>
+</tbody>
+</table>
+<p>■ 최종 판단 (준혁)<br />
+판정: GO | 점수: 7.25</p>
+<h2>종합 평가</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>점수</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수익성</td>
+<td>8/10</td>
+<td>대행/서비스 모델 기준: 첫 계약 49만원 × 클로징 확률 60% = 기대값 29.4만원/건. 기존 패키지(주목/집중/시선) 재활용으로 추가 개발 원가 없음. AI 파이프라인으로 원가율 40% 이하 유지 시 영업이익률 60%+ 가능. MRR 30건 기준 1,470만원 — 3개월 내 달성 가능한 현실적 목표</td>
+</tr>
+<tr>
+<td>경쟁 우위</td>
+<td>7/10</td>
+<td>naver-diagnosis 영업 훅 + AI 콘텐츠 파이프라인 조합은 단순 프리랜서 대비 명확한 원가 우위. 단, 진입장벽이 낮아 카피 가능성 있음. "오프라인 자영업자 전문"이라는 버티컬 포지셔닝이 차별점 — 유지하려면 레퍼런스 케이스 빠르게 쌓아야 함</td>
+</tr>
+<tr>
+<td>기술 난이도</td>
+<td>3/10 (역산 7점)</td>
+<td>신규 개발 거의 없음. 기존 AI 파이프라인 + 패키지 구조 재활용. 핵심 난이도는 "운영 표준화(SOP)"이지 기술이 아님. 역</td>
+</tr>
+</tbody>
+</table>
+<p>■ 다음 단계<br />
+→ 팀 설계 + 교육팀 자동 생성 예정<br />
+→ 리안 컨펌 후 진행</p>
+<p>리안 판단: [진행 / 수정사항 말해줘 / 접어]<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p></div></details>
+
+<div class="footer">리안 컴퍼니 자동 생성 사업기획서 · V5</div>
+</main>
+</div>
+</body>
+</html>

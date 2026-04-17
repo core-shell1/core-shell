@@ -1,0 +1,13 @@
+{
+  "diagnosis_score": 65,
+  "search_visibility_score": 45,
+  "review_score": 92,
+  "main_problems": [
+    {
+      "problem": "네이버 검색 순위 낮음",
+      "impact": "월 예상 손실액: 2,000,000원",
+      "severity": "high"
+    }
+  ],
+  "monthly_estimated_loss": "2000000"
+}

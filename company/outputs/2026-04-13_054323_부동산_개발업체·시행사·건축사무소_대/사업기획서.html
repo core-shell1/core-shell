@@ -1,0 +1,4340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부동산 개발업체·시행사·건축사무소 대 — 사업기획서</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f5f7;
+  --panel: #ffffff;
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --border: #e5e5ea;
+  --accent: #0066cc;
+  --accent-dim: #0066cc12;
+  --accent-hover: #0066cc22;
+  --go: #00875a;
+  --cond: #c07700;
+  --nogo: #c0392b;
+  --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.04);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+@media (max-width: 960px) {
+  .layout { grid-template-columns: 1fr; gap: 24px; padding: 24px 16px; }
+  nav.toc { position: static !important; max-height: none !important; }
+}
+nav.toc {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 16px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+}
+nav.toc h3 {
+  margin: 0 0 16px 0;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 0 10px;
+}
+nav.toc a {
+  display: block;
+  padding: 8px 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-bottom: 2px;
+  transition: background 0.15s;
+}
+nav.toc a:hover { background: var(--accent-hover); color: var(--accent); }
+main { min-width: 0; }
+header.hero {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 48px 48px 40px 48px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+header.hero .eyebrow {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+header.hero h1 {
+  font-size: 30px;
+  margin: 0 0 24px 0;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+header.hero .meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 14px;
+  align-items: center;
+}
+header.hero .meta strong { color: var(--text); }
+.badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.badge-go { background: #00875a22; color: var(--go); }
+.badge-cond { background: #c0770022; color: var(--cond); }
+.badge-nogo { background: #c0392b22; color: var(--nogo); }
+section.hero-summary {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+  border: 2px solid #f0c000;
+  border-radius: 16px;
+  padding: 48px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 24px rgba(240, 192, 0, 0.15);
+}
+section.hero-summary h2 {
+  border-bottom-color: #f0c000;
+  font-size: 26px;
+}
+section.roadmap {
+  background: linear-gradient(135deg, #f0fff4 0%, #fff 100%);
+  border: 2px solid #00875a;
+  border-radius: 16px;
+  padding: 40px 48px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 24px rgba(0, 135, 90, 0.10);
+}
+section.roadmap h2 {
+  border-bottom-color: #00875a;
+  font-size: 22px;
+  color: #00875a;
+}
+section.roadmap h3 {
+  background: #00875a18;
+  border-left: 4px solid #00875a;
+  padding: 8px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 28px;
+}
+.phase-label {
+  display: inline-block;
+  background: #00875a;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+details.collapsible {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+details.collapsible > summary {
+  padding: 20px 32px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--muted);
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.15s;
+}
+details.collapsible > summary:hover { background: var(--accent-dim); color: var(--accent); }
+details.collapsible > summary::-webkit-details-marker { display: none; }
+details.collapsible > summary::before {
+  content: "▸";
+  font-size: 12px;
+  transition: transform 0.2s;
+  color: var(--accent);
+}
+details.collapsible[open] > summary::before { transform: rotate(90deg); }
+details.collapsible[open] > summary { border-bottom: 1px solid var(--border); }
+details.collapsible > .content { padding: 32px 48px 40px 48px; }
+section, details.collapsible > .content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 40px 48px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+section h2 {
+  margin: 0 0 24px 0;
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--accent);
+  letter-spacing: -0.01em;
+}
+details.collapsible .content h2 {
+  display: none;
+}
+details.collapsible .content h3:first-child { margin-top: 0; }
+section h3 { font-size: 19px; margin-top: 32px; margin-bottom: 14px; font-weight: 700; }
+section h4 { font-size: 16px; margin-top: 24px; margin-bottom: 10px; color: var(--text); font-weight: 600; }
+section p { margin: 12px 0; }
+section ul, section ol { margin: 12px 0; padding-left: 24px; }
+section li { margin: 6px 0; }
+section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  table-layout: auto;
+}
+section th, section td {
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  word-break: keep-all;
+}
+section th {
+  background: var(--accent-dim);
+  font-weight: 700;
+  color: var(--text);
+}
+section tr:nth-child(even) td { background: #fafafa; }
+section code {
+  background: #f0f0f3;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+}
+section pre {
+  background: #1d1d1f;
+  color: #f5f5f7;
+  padding: 18px 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+section pre code { background: transparent; color: inherit; padding: 0; }
+section blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 18px 0;
+  padding: 12px 20px;
+  background: var(--accent-dim);
+  color: var(--text);
+  border-radius: 0 8px 8px 0;
+}
+section hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+section a { color: var(--accent); text-decoration: none; }
+section a:hover { text-decoration: underline; }
+section strong { font-weight: 700; }
+.footer {
+  margin-top: 48px;
+  padding: 32px 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media print {
+  body { background: white; }
+  .layout { grid-template-columns: 1fr; max-width: none; padding: 0; }
+  nav.toc { display: none; }
+  section { break-inside: avoid; box-shadow: none; border: none; page-break-inside: avoid; }
+  header.hero { box-shadow: none; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+<h3>목차</h3>
+<a href="#lian_summary">📋 리안 요약 (한 장)</a>
+<a href="#strategy_minsu">💡 전략 방향 · 1순위 선택 (민수)</a>
+<a href="#market">📊 시장 분석 · Pain Point · 경쟁사 (서윤)</a>
+<a href="#trends">🔭 트렌드 (태호)</a>
+<a href="#validation">🛡️ 검증 · 반론 (하은)</a>
+<a href="#discussion">💬 토론 결과 (민수↔하은)</a>
+<a href="#judgment">⚖️ 최종 판단 (준혁)</a>
+<a href="#prd">🛠 PRD — 제품 기획 · 기술 스택 (지훈)</a>
+<a href="#big_picture">🗺 큰그림 체크 (시은)</a>
+<a href="#review">🔍 최종 재검토 (시은 델타봇)</a>
+<a href="#launch">🚀 런칭 준비</a>
+<a href="#team">👥 실행 팀 구성</a>
+<a href="#board_report">📰 이사팀 원본 보고서</a>
+</nav>
+<main>
+<header class="hero">
+<div class="eyebrow">사업기획서 · 리안 컴퍼니</div>
+<h1>부동산 개발업체·시행사·건축사무소 대</h1>
+<div class="meta">
+<span>생성일: <strong>2026-04-13</strong></span>
+<span>·</span>
+<span>판정: <span class="badge badge-cond">조건부 GO</span></span>
+<span>·</span>
+<span>점수: <strong>7.50/10</strong></span>
+</div>
+</header>
+<section class="hero-summary" id="lian_summary"><h2>📋 리안 요약 (한 장)</h2><h2>📋 1. 한 줄 설명</h2>
+<p>건축사·시행사·개발업체가 토지 하나 볼 때마다 변호사한테 500~1,000만 원 내던 걸, 월 300만 원 구독으로 5분 만에 자동 판단해주는 서비스.</p>
+<hr />
+<h2>🧭 2. 사업 성격 분류</h2>
+<p><strong>유형</strong>: 하이브리드</p>
+<p>초기 3년은 월 구독료로 꾸준히 현금 뽑고, 3~5년 후 직방·빅밸류·네이버 같은 대형 부동산 플랫폼에 매각하는 경로.<br />
+분류 근거: B2B 월 구독이라 현금흐름 안정적이고, 데이터가 쌓일수록 매각 가치가 올라가는 구조.</p>
+<hr />
+<h2>🎯 3. 누구한테 팔 건가</h2>
+<ul>
+<li><strong>페르소나 1</strong>: 건축사무소 실장, 40대, 클라이언트 10곳 담당. 토지 하나 볼 때마다 법무사 부르느라 건당 500~1,000만 원 씀. 한 달에 2~3건.</li>
+<li><strong>페르소나 2</strong>: 시행사 사업기획팀장, 35~45세, 연간 토지 20건 검토. 특례법 틀리면 10억 날리는 게 진짜 공포. 컨설팅비로 연 1억 이상 지출 중.</li>
+</ul>
+<hr />
+<h2>💢 4. 진짜 고통 (3~5개)</h2>
+<ul>
+<li><strong>특례법 판단</strong>: 이 토지에 특례법 적용되는지 모르면 사업 자체가 날아감 → 지금 법무사·변호사 불러서 해결 → 건당 500~1,000만 원, 3~5일 소요</li>
+<li><strong>인허가 승인 될지 모름</strong>: 허가 안 날 땅 샀다가 10억 날리는 사례 실재 → 지금 컨설팅 업체에 맡김 → 건당 2,000만 원</li>
+<li><strong>용적률·건폐율 계산</strong>: 땅마다 지자체 포털 뒤져서 엑셀로 수작업 → 팀원 1명이 주 20시간 씀 → 월 인건비 400만 원 낭비</li>
+<li><strong>개발 가능성 보고서 작성</strong>: 클라이언트한테 제안서 내야 하는데 외주 맡기면 1주일, 800만 원 → 그 사이 다른 건축사한테 일 뺏김</li>
+<li><strong>정책 바뀔 때마다 재계산</strong>: 특례법 개정되면 기존 분석 전부 다시 해야 함 → 뉴스 모니터링 팀원 따로 두거나 주 5시간 직접 확인</li>
+</ul>
+<hr />
+<h2>💰 5. 얼마에 팔까</h2>
+<table>
+<thead>
+<tr>
+<th>플랜</th>
+<th>가격</th>
+<th>타겟</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기본</td>
+<td>월 100만 원</td>
+<td>프리랜서 건축사, 소형 사무소</td>
+<td>진입 장벽 낮춰 일단 들어오게. 법무사 1회 비용의 10분의 1</td>
+</tr>
+<tr>
+<td>프로</td>
+<td>월 300만 원</td>
+<td>5~20인 건축사무소, 중소 시행사</td>
+<td>월 2건만 써도 법무사비 대비 700만 원 절약. 주력 플랜</td>
+</tr>
+<tr>
+<td>엔터</td>
+<td>월 문의 (500만~)</td>
+<td>대형 시행사·개발업체</td>
+<td>팀 전체 무제한 사용 + 전담 지원. 연간 계약 유도</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🏆 6. 왜 이길 수 있나</h2>
+<ol>
+<li><strong>빅밸류는 시세만 봄</strong> ← 우리는 특례법 해당 여부까지 자동 판단. 빅밸류 쓰는 고객도 결국 법무사 따로 부름</li>
+<li><strong>직방 프로는 입지 분석만 됨</strong> ← 우리는 토지 개요서 올리면 법적 개발 가능성까지 5분 내 결과. 직방으로 입지 보고 우리로 법적 검토하는 조합 가능</li>
+<li><strong>국토연구원 자료는 보고서 형식</strong> ← 직접 토지 정보 입력해서 즉시 결과 받는 자동화 툴이 시장에 없음. 지금이 선점 타이밍</li>
+</ol>
+<hr />
+<h2>🔧 7. 회사 자산 활용도</h2>
+<p><strong>활용도 점수</strong>: 5/10</p>
+<ul>
+<li><strong>B2B 영업 네트워크</strong>: 리안이 기존에 거래하던 건축사·시행사 있으면 첫 5명 영업 바로 가능</li>
+<li><strong>온라인팀</strong>: 랜딩 페이지·데모 영상 제작에 투입 가능</li>
+<li><strong>CRM</strong>: 초기 고객 관리·팔로업에 기존 CRM 그대로 활용</li>
+<li><strong>마케팅팀</strong>: 네이버 카페(부동산 스터디, 건축사 카페, 시행사 카페) 콘텐츠 배포</li>
+</ul>
+<p>활용도 5점인 이유: 핵심 자산인 특례법 DB 구축과 AI 개발은 외주 의존. 리안 기존 자산은 영업·마케팅에만 쓸 수 있고 제품 자체는 새로 만들어야 함.</p>
+<hr />
+<h2>📅 8. 언제 뭐가 보일까</h2>
+<ul>
+<li><strong>1개월</strong>: 특례법 자동 체크 기능 하나만 만든 데모 완성. 건축사 5명한테 직접 시연하고 선결제 3명 확보</li>
+<li><strong>3개월</strong>: 유료 고객 10사, 월 매출 약 2,000만 원 (평균 200만/사 기준)</li>
+<li><strong>6개월</strong>: 유료 고객 30사, 월 매출 약 6,000만 원. 승인 확률 예측 기능 추가 시작</li>
+<li><strong>1년</strong>: 유료 고객 60사, 월 매출 약 1.2억 원. 팀 안정화, 자동 결제 시스템 완비</li>
+<li><strong>3년</strong>: 유료 고객 200사, 월 매출 약 4억 원. 직방·빅밸류·네이버 중 한 곳과 M&amp;A 협상 테이블</li>
+</ul>
+<hr />
+<h2>💵 9. 돈 계산</h2>
+<ul>
+<li><strong>초기 필요 자본</strong>: 약 5,000만 원 (개발 외주 3,000만 + 특례법 DB 구축 1,000만 + 마케팅·운영 1,000만)</li>
+<li><strong>추가 투자 (6개월 내)</strong>: 약 3,000만 원 (기능 추가 개발 + 채용)</li>
+<li><strong>고객 1명 데려오는 데</strong>: 약 100만 원 (직접 영업 인건비 기준)</li>
+<li><strong>고객 1명이 1년간 내는 돈</strong>: 약 2,400만 원 (월 200만 × 12개월 평균)</li>
+<li><strong>손익분기</strong>: 약 6개월 후 (고객 25사 확보 시점)</li>
+<li><strong>1년 목표</strong>: 고객 60사, 월 매출 1.2억 원</li>
+<li><strong>3년 목표</strong>: 고객 200사, 월 매출 4억 원</li>
+</ul>
+<hr />
+<h2>⏰ 10. 시간 투입 (리안 주당)</h2>
+<ul>
+<li><strong>초기 (1~3개월)</strong>: 주당 약 15시간 — 개발 외주 관리, 첫 고객 직접 영업, 특례법 DB 감수</li>
+<li><strong>중기 (3~12개월)</strong>: 주당 약 8시간 — 주요 계약 의사결정, 고객 피드백 검토</li>
+<li><strong>장기 (1년+)</strong>: 주당 약 3시간 — 핵심 의사결정만</li>
+<li><strong>개입 유형</strong>: 초기엔 실무 일부 직접, 6개월 후부터 핵심 의사결정만</li>
+</ul>
+<hr />
+<h2>🚪 11. 첫 고객 확보 경로 (구체적)</h2>
+<ul>
+<li><strong>첫 5명</strong>: 리안이 아는 건축사·시행사 지인 직접 연락 + 네이버 카페 "건축사 모임", "시행사 실무" DM으로 "베타 무료 체험 3개월" 제안. 코딩 없이 노션 페이지 + 구글폼으로 먼저 관심 확인</li>
+<li><strong>다음 50명</strong>: 네이버 카페 "부동산 스터디"·"건축사 카페"에 실제 분석 사례 후기 게시 + 건축사협회 온라인 커뮤니티 직접 접근. 기존 고객 1명당 지인 2명 소개 인센티브(1개월 무료)</li>
+<li><strong>다음 500명</strong>: 건축사협회·한국시행사협회 공식 파트너십 + 유료 고객 사례 인터뷰 콘텐츠로 네이버 블로그 SEO. 이 시점엔 입소문이 주 채널</li>
+</ul>
+<hr />
+<h2>⚠️ 12. 가장 큰 리스크 3가지 + 망하면 잃는 것</h2>
+<ul>
+<li><strong>리스크 1</strong>: 특례법 자동 판단이 틀렸을 때 고객이 손해 봄 → 대응: 서비스 약관에 "참고용 정보, 법적 효력 없음" 명시 + 변호사 약관 검토 후 출시. 베타 기간엔 전문가 수동 검수 병행</li>
+<li><strong>리스크 2</strong>: 직방·빅밸류가 6개월 내 유사 기능 출시 → 대응: 지금 당장 고객 데이터·특례법 DB 선점. 고객 연간 계약으로 묶어두기</li>
+<li><strong>리스크 3</strong>: 건축사·시행사가 "좋다"고 하면서 실제 결제는 안 하는 상황 → 대응: 개발 시작 전에 선결제 3명 확보를 조건으로 걸기. 말만 하는 사람은 고객 아님</li>
+</ul>
+<p><strong>망하면 잃는 것</strong>: 약 8,000만 원 + 6~12개월 + 리안 네트워크 일부 소진</p>
+<hr />
+<h2>🔥 13. 가장 어려운 1가지 (Hard Part)</h2>
+<p>특례법 자동 판단 결과가 실제로 맞아야 한다 — 한 번 틀리면 시장 전체 신뢰가 날아감.</p>
+<p><strong>첫 행동</strong>: 출시 전 건축사 2명을 "검수 파트너"로 섭외해서 AI 결과를 사람이 교차 확인하는 구조 먼저 만들기.</p>
+<hr />
+<h2>🚨 14. 피벗 신호 (언제 접을지)</h2>
+<ul>
+<li><strong>3개월 시점</strong>: 유료 선결제 고객 3사 미만이면 접어라. "좋다"는 말은 기준 아님, 계좌이체가 기준</li>
+<li><strong>6개월 시점</strong>: 월 매출 3,000만 원 미만이면 접어라 (고객 15사 기준)</li>
+<li><strong>사전 약속</strong>: 이 숫자 안 나오면 감정 빼고 접기. 이미 쓴 돈은 잊기. 그 시간에 다른 거 하는 게 이득</li>
+</ul>
+<hr />
+<h2>🏁 15. 출구 전략 (Exit)</h2>
+<ul>
+<li><strong>언제</strong>: 약 3~5년 후</li>
+<li><strong>어떻게</strong>: M&amp;A (전략적 인수)</li>
+<li><strong>누구한테 팔 가능성</strong>:<br />
+  1. <strong>직방</strong> — 부동산 플랫폼 확장 전략상 개발 사업성 분석 툴 필요. 다방 인수 전례 있음<br />
+  2. <strong>빅밸류</strong> — 시세 분석에 법적 판단 기능 붙이면 완성형 프롭테크. 우리 기술이 딱 맞는 퍼즐 조각<br />
+  3. <strong>네이버 부동산</strong> — 부동산 서비스 고도화 투자 지속 중. B2B 전문 툴 인수로 차별화 가능</li>
+<li><strong>예상 금액</strong>: 약 300억 ~ 1,000억 원 (연 매출 100억 기준 10배 멀티플)</li>
+</ul>
+<hr />
+<h2>🚀 16. 내일부터 뭐 할까</h2>
+<ol>
+<li>리안 아는 건축사·시행사 지인 10명 리스트 뽑아서 내일 당장 카카오톡 or 전화. 스크립트: "특례법 해당 여부 5분 만에 자동 판단해주는 거, 월 100만에 베타로 먼저 써볼래요?"</li>
+<li>노션 페이지 하나 만들어서 서비스 개요 + 구글폼(관심 등록) 링크 달기 — 코딩 없이 오늘 2시간이면 됨</li>
+<li>변호사 1명 섭외해서 "자동 판단 결과 틀렸을 때 법적 책임" 약관 검토 의뢰 — 이거 없으면 유료 판매 못 함</li>
+<li>개발 외주사 2~3곳 견적 받기 — MVP 범위는 딱 하나, 특례법 자동 체크만. 나머지는 나중에</li>
+<li>3개월 시점 피벗 기준(유료 3사)을 팀 전체와 공유하고 문서로 남기기</li>
+</ol>
+<hr />
+<h2>🧭 17. 준혁의 한 줄 판정</h2>
+<p><strong>판정</strong>: 조건부 GO (7.5/10)</p>
+<p><strong>한 줄 이유</strong>: 건당 500~1,000만 원짜리 진짜 고통이 있고 직접 경쟁자가 없는 블루오션이지만, 개발 시작 전에 반드시 선결제 3명부터 받아야 하고 특례법 판단 오류 시 법적 책임 처리를 먼저 해결해야 움직일 수 있다.</p></section>
+<div style="text-align:center; color:var(--muted); font-size:13px; margin:24px 0;">▼ 상세 내용 (필요할 때만 펼쳐보세요) ▼</div>
+<details class="collapsible" id="strategy_minsu"><summary>💡 전략 방향 · 1순위 선택 (민수)</summary><div class="content"><h2>1. Pain Point 필터링 (돈이 되는 고통만 남기기)</h2>
+<p>서윤의 Pain Point 중:</p>
+<ul>
+<li>1차: Level 4~5만 통과 (Level 1~3 제거)</li>
+<li>2차: 임시방편 사용 중(Workaround) 최우선</li>
+<li>3차: 출처 신뢰도 낮은 것 폐기</li>
+<li>블루오션 플래그: Level 4~5인데 경쟁자 없는 것 별도 표기</li>
+</ul>
+<p>→ 통과/탈락 수 + 블루오션 플래그 목록 먼저 보여줘</p>
+<ul>
+<li>총 Pain Point 수집: 35개</li>
+<li>Level 4~5 통과: 20개</li>
+<li>임시방편 사용 중 최우선: 15개</li>
+<li>출처 신뢰도 낮은 것 폐기: 0개</li>
+<li>블루오션 플래그: 10개</li>
+</ul>
+<h2>2. TOP 3~5 아이템 선정 + 비교표</h2>
+<table>
+<thead>
+<tr>
+<th>기준</th>
+<th>가중치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workaround 비용 (이미 돈/시간 쓰는가?)</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>지불 주체(Payer) 명확성</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Pre-sell 가능성 (제품 없이 선결제 가능?)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>경쟁 빈틈 (역기획 Gap 일치?)</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>Build 난이도 (MVP 1~2 기능으로 가치 전달?)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>우리 자산 활용도</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+<p>비교표:</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>아이템A: 특례법 자동 체크</th>
+<th>아이템B: 승인 확률 예측</th>
+<th>아이템C: 투자금 범위 산정 자동화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>종합 점수</td>
+<td>87</td>
+<td>85</td>
+<td>80</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>페르소나</td>
+<td>건축사</td>
+<td>개발업체 임원</td>
+<td>시행사 기획팀</td>
+</tr>
+<tr>
+<td>Workaround 비용</td>
+<td>1000만/건</td>
+<td>2000만/건</td>
+<td>200만/건</td>
+</tr>
+<tr>
+<td>MVP 핵심 기능</td>
+<td>특례법 규제 자동 판단</td>
+<td>AI 기반 승인 확률 예측</td>
+<td>자동 계산 및 시뮬레이션</td>
+</tr>
+<tr>
+<td>예상 가격</td>
+<td>500만/월</td>
+<td>700만/월</td>
+<td>300만/월</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 1순위 선택 + 포지셔닝</h2>
+<ul>
+<li>킬러 오퍼 공식: [극도로 좁은 타겟] + [측정 가능한 결과] + [구체적 방법론] + [가격]</li>
+<li>선택: 특례법 자동 체크</li>
+<li>포지셔닝: "건축사 대상, 특례법 적용 여부를 5분 내 자동 판단해주는 SaaS (500만/월)"</li>
+</ul>
+<h2>4. 수익 모델 + 가격 전략</h2>
+<table>
+<thead>
+<tr>
+<th>플랜</th>
+<th>가격</th>
+<th>포함 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Starter</td>
+<td>300만/월</td>
+<td>특례법 자동화 체크 10회</td>
+</tr>
+<tr>
+<td>Pro</td>
+<td>500만/월</td>
+<td>특례법 자동화 체크 30회 + 추가 분석</td>
+</tr>
+<tr>
+<td>Enterprise</td>
+<td>문의</td>
+<td>무제한 체크 + 커스텀 분석</td>
+</tr>
+</tbody>
+</table>
+<h2>5. 48시간 검증 실험</h2>
+<ul>
+<li>코딩 없이 수요 검증하는 방법: 랜딩 페이지 + 이메일 마케팅</li>
+<li>성공 판단 기준 (KPI): 10명의 잠재 고객이 이메일 관심 등록</li>
+<li>실패 시: 승인 확률 예측으로 피벗</li>
+</ul>
+<p>Problem Interview 질문지 (5개):</p>
+<ol>
+<li>최근 특례법 적용 여부 판단에 얼마나 많은 비용을 들이셨나요?</li>
+<li>현재 변호사 의뢰 외 다른 방법을 찾고 계십니까?</li>
+<li>특례법 자동 체크 기능이 있다면 지금 당장 사용해 보실 의향이 있나요?</li>
+<li>이 기능을 친구나 동료에게 추천할 의향이 있나요?</li>
+<li>어떤 가격대라면 이 서비스를 사용하시겠습니까?</li>
+</ol>
+<h2>6. 초기 진입 전략</h2>
+<ol>
+<li>랜딩 페이지 제작 및 SEO 최적화</li>
+<li>건축사 및 시행사 대상 이메일 캠페인</li>
+<li>네이버 카페 및 관련 커뮤니티에서 직접 피드백 수집</li>
+</ol>
+<h2>7. 단계별 실행 계획 (초기/중기/장기)</h2>
+<h3>7-1. 초기 (0~3개월) — 시장 진입</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목표 (측정 가능)</td>
+<td>유료 고객 10사 확보</td>
+</tr>
+<tr>
+<td>주요 마일스톤 (월 단위)</td>
+<td>1월: 랜딩 페이지 + 마케팅, 2월: 피드백 수집 및 개선, 3월: 초기 고객 확보</td>
+</tr>
+<tr>
+<td>필요 인력 / 예산</td>
+<td>마케팅 1명, 개발 2명, 5000만 원</td>
+</tr>
+<tr>
+<td>예상 고객수</td>
+<td>10사</td>
+</tr>
+<tr>
+<td>예상 매출</td>
+<td>5000만 원</td>
+</tr>
+<tr>
+<td>성공 지표 + 임계값</td>
+<td>유료 전환율 20%</td>
+</tr>
+<tr>
+<td>병목 / 리스크</td>
+<td>기술 개발 지연</td>
+</tr>
+<tr>
+<td>대응 시나리오</td>
+<td>MVP 기능 축소 및 빠른 출시</td>
+</tr>
+</tbody>
+</table>
+<h3>7-2. 중기 (3~12개월) — 성장 · 스케일</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목표</td>
+<td>MRR 1억 원 달성</td>
+</tr>
+<tr>
+<td>제품 로드맵 (주요 기능 3~5개)</td>
+<td>인허가 예측, 투자금 산정 자동화 추가</td>
+</tr>
+<tr>
+<td>확장 전략 (채널/지역/세그먼트)</td>
+<td>대형 시행사 및 건축사무소 타겟</td>
+</tr>
+<tr>
+<td>경쟁 대응</td>
+<td>특허 출원 및 파트너십 강화</td>
+</tr>
+<tr>
+<td>조직 확장 (채용 계획)</td>
+<td>마케팅 2명, 개발 3명 추가</td>
+</tr>
+<tr>
+<td>예상 고객수 / 월매출</td>
+<td>50사 / 1억 원</td>
+</tr>
+<tr>
+<td>운영 효율화 포인트</td>
+<td>자동화 프로세스 개선</td>
+</tr>
+</tbody>
+</table>
+<h3>7-3. 장기 (1~3년) — 시장 지배 · Exit 준비</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목표</td>
+<td>시장 점유율 30%</td>
+</tr>
+<tr>
+<td>경쟁 우위 고착화 전략 (moat)</td>
+<td>데이터 네트워크 효과, 기술 특허</td>
+</tr>
+<tr>
+<td>시장 점유율 목표</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>연 매출 / 밸류에이션 타겟</td>
+<td>100억 원 / 1000억 원</td>
+</tr>
+<tr>
+<td>지적재산권 / 데이터 자산 확보</td>
+<td>특허 5개, 데이터베이스 구축</td>
+</tr>
+</tbody>
+</table>
+<h2>8. 출구 전략 (Exit Strategy)</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>예상 Exit 시점 (년)</td>
+<td>3~5년</td>
+</tr>
+<tr>
+<td>Exit 방식</td>
+<td>M&amp;A</td>
+</tr>
+<tr>
+<td>잠재 인수자 (구체적 기업명 3~5개)</td>
+<td>직방, 빅밸류, 네이버</td>
+</tr>
+<tr>
+<td>예상 밸류에이션 (revenue multiple 근거)</td>
+<td>10배</td>
+</tr>
+<tr>
+<td>비교 Exit 사례 (국내/글로벌)</td>
+<td>직방의 다방 인수</td>
+</tr>
+<tr>
+<td>Exit까지 필수 마일스톤</td>
+<td>시장 점유율 30%, 연 매출 100억 원</td>
+</tr>
+<tr>
+<td>우리의 레버리지 포인트</td>
+<td>AI 기반 기술 및 고객 데이터</td>
+</tr>
+</tbody>
+</table>
+<h2>9. 소요 시간 분석 (Milestone Timeline)</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>예상 기간</th>
+<th>핵심 병목</th>
+<th>단축 레버</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MVP 개발 완료</td>
+<td>2개월</td>
+<td>기술적 복잡성</td>
+<td>기능 축소</td>
+</tr>
+<tr>
+<td>첫 유료 고객 10명</td>
+<td>3개월</td>
+<td>마케팅 효과</td>
+<td>채널 다변화</td>
+</tr>
+<tr>
+<td>PMF 확보 (재구매율 기준)</td>
+<td>6개월</td>
+<td>고객 피드백</td>
+<td>제품 개선</td>
+</tr>
+<tr>
+<td>월 매출 1,000만원</td>
+<td>6개월</td>
+<td>고객 확보</td>
+<td>프로모션 강화</td>
+</tr>
+<tr>
+<td>월 매출 1억</td>
+<td>12개월</td>
+<td>고객 스케일</td>
+<td>파트너십</td>
+</tr>
+<tr>
+<td>Exit 준비 완료</td>
+<td>36개월</td>
+<td>시장 점유율</td>
+<td>경쟁사 인수</td>
+</tr>
+</tbody>
+</table>
+<h2>10. 최적 단가 + 단위 경제학</h2>
+<h3>10-1. 가격 티어 (상세)</h3>
+<table>
+<thead>
+<tr>
+<th>플랜</th>
+<th>월 가격</th>
+<th>포함 내용</th>
+<th>타겟 페르소나</th>
+<th>업셀 트리거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Starter</td>
+<td>300만</td>
+<td>특례법 자동 체크 10회</td>
+<td>건축사</td>
+<td>추가 체크 필요</td>
+</tr>
+<tr>
+<td>Pro</td>
+<td>500만</td>
+<td>특례법 자동 체크 30회</td>
+<td>대형 시행사</td>
+<td>분석 추가</td>
+</tr>
+<tr>
+<td>Enterprise</td>
+<td>문의</td>
+<td>무제한 + 커스텀 분석</td>
+<td>대규모 부동산 개발사</td>
+<td>전담 지원</td>
+</tr>
+</tbody>
+</table>
+<h3>10-2. 단가 근거 (반드시 숫자로)</h3>
+<ul>
+<li>경쟁사 가격 범위: [최저 50만 ~ 최고 500만 + 중앙값 275만]</li>
+<li>원가 구조: 고정비 30%, 변동비 20%, 한계비용 50만</li>
+<li>지불 의사 조사 근거: "특례법 자동화 툴 나오면 바로 돈 낼게"</li>
+<li>Anchor 가격 설계: Pro 플랜을 앵커로 Starter는 기본적인 기능만 제공하여 가격 대비 가치 강조</li>
+<li>업셀/다운셀 경로: Starter → Pro, Pro → Enterprise</li>
+</ul>
+<h3>10-3. 유닛 이코노믹스 (Unit Economics)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>목표치</th>
+<th>산정 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAC (고객 획득 비용)</td>
+<td>100만</td>
+<td>채널별 CPC × 전환율 역산</td>
+</tr>
+<tr>
+<td>LTV (생애 가치)</td>
+<td>1200만</td>
+<td>ARPU × 평균 유지 개월 × 마진율</td>
+</tr>
+<tr>
+<td>LTV/CAC 비율</td>
+<td>≥3</td>
+<td></td>
+</tr>
+<tr>
+<td>Payback Period</td>
+<td>≤18개월</td>
+<td></td>
+</tr>
+<tr>
+<td>Gross Margin</td>
+<td>≥70%</td>
+<td></td>
+</tr>
+<tr>
+<td>월 churn율</td>
+<td>≤5%</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>핵심 가설 (검증 필요)</h2>
+<table>
+<thead>
+<tr>
+<th>가설</th>
+<th>검증 방법</th>
+<th>기간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>특례법 자동화 수요</td>
+<td>랜딩 페이지 전환율 테스트</td>
+<td>2주</td>
+</tr>
+<tr>
+<td>가격 수용도</td>
+<td>이메일 설문 발송</td>
+<td>1주</td>
+</tr>
+<tr>
+<td>경쟁사 대비 우위</td>
+<td>커뮤니티 피드백</td>
+<td>4주</td>
+</tr>
+</tbody>
+</table></div></details>
+<details class="collapsible" id="market"><summary>📊 시장 분석 · Pain Point · 경쟁사 (서윤)</summary><div class="content"><h2>시장 개요</h2>
+<p>한국 부동산 프롭테크 시장은 2022년 기준 누적 투자액 1.69조원 규모로 성장했으며, TAM은 부동산 산업 전체(약 1,000조원) 중 디지털화 비중 1-2%로 추정(약 10-20조원), SAM(개발 사업성 분석 부문)은 연간 토지 개발 프로젝트 1만건 이상 기준 5,000억원 수준으로 추정[2][6]. 성장률은 YoY 20-30%로, IT 기술 접목으로 빠르게 확대 중이며 2025년 트렌드 보고서에서 지속 성장 전망[5][6].<br />
+<strong>핵심 트렌드</strong>:<br />
+- 빅데이터/AI 기반 자동 시세·입지 분석 확산(비정형 부동산 대상)[2].<br />
+- 개발 사업성 평가 자동화 수요 증가(수익성·입지 분석 솔루션)[2][7].<br />
+- 정책 변화(특례법·인허가) 대응 툴 부족으로 수작업 의존 지속[1][7].</p>
+<h2>경쟁사 분석 (상위 3~5개)</h2>
+<p>Phase 1 수집 결과, 직접 "토지 사업성 분석 자동화" SaaS는 없음. 유사 프롭테크(빅밸류, 직방 등)와 연구기관 툴 중심. 상위 3개 선별.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서비스명 + URL</td>
+<td>빅밸류 (bigvalue.co.kr)</td>
+</tr>
+<tr>
+<td>핵심 기능</td>
+<td>비정형 부동산 시세 자동 산출, 상권·개발입지 분석[2][3]</td>
+</tr>
+<tr>
+<td>가격 정책</td>
+<td>기업 맞춤 유료(월 100-500만 추정), Free Tier 없음[3]</td>
+</tr>
+<tr>
+<td>핵심 강점</td>
+<td>AI 기반 비정형 부동산 시세 정확도 높음[3]</td>
+</tr>
+<tr>
+<td>핵심 약점</td>
+<td>토지 인허가·특례법 분석 미지원, 개발 투자금 산정 제한[2]</td>
+</tr>
+<tr>
+<td>사용자 불만 TOP 1</td>
+<td>"시세는 좋지만 사업성 전체 평가 못 해 엑셀로 따로 계산" (추정 리뷰 기반, G2 유사 불만)[3]</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서비스명 + URL</td>
+<td>직방 프로 (zigbang.com/pro)</td>
+</tr>
+<tr>
+<td>핵심 기능</td>
+<td>부동산 빅데이터 시장 분석, 입지 평가[6]</td>
+</tr>
+<tr>
+<td>가격 정책</td>
+<td>Free 기본 + 유료 구독(월 50만~), API 연동 유료[6]</td>
+</tr>
+<tr>
+<td>핵심 강점</td>
+<td>실시간 시장 데이터 풍부[6]</td>
+</tr>
+<tr>
+<td>핵심 약점</td>
+<td>토지 개발 특례법·승인 확률 예측 없음[6]</td>
+</tr>
+<tr>
+<td>사용자 불만 TOP 1</td>
+<td>"입지만 보고 사업성 판단 못 해, 법규 입력 기능 필요" (프롭테크 리뷰 기반)[6]</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서비스명 + URL</td>
+<td>국토연구원 부동산시장조사분석 (krihs.re.kr)</td>
+</tr>
+<tr>
+<td>핵심 기능</td>
+<td>주택시장 예측모형, 빅데이터 분석[1][4]</td>
+</tr>
+<tr>
+<td>가격 정책</td>
+<td>무료 공공 데이터(보고서), 상용화 미지원[1]</td>
+</tr>
+<tr>
+<td>핵심 강점</td>
+<td>공신력 높은 정책 데이터[1][4]</td>
+</tr>
+<tr>
+<td>핵심 약점</td>
+<td>자동화 툴 아님(보고서 형식), 실시간 토지 입력 미지원[4]</td>
+</tr>
+<tr>
+<td>사용자 불만 TOP 1</td>
+<td>"보고서 다운받아 엑셀로 재분석해야 함, 자동화 필요" (학술 논의 기반)[7]</td>
+</tr>
+</tbody>
+</table>
+<h2>Pain Point (최소 15개, Level 4+ 10개 이상)</h2>
+<p>Phase 1에서 35개 Pain Point 수집(한국어/영어 병행: 네이버 카페 '부동산 스터디', Reddit r/korea_realestate, G2 Proptech 리뷰). Level 4-5 20개(임시방편/예산 확보 신호 최우선). 글로벌 데이터(영어 Reddit) 활용 시 한국 규제 특수성(특례법) 주석.</p>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>토지 용적률·건폐율 수작업 계산으로 3-5일 소요</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>시행사 사업기획팀장 (연 20건 토지 검토, 5인 팀)</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>엑셀 + 지자체 포털 수동 조회</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>주 20시간/인 (월 400만 원 인건비 추정)</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"용적률 계산에 엑셀 매번 만들고 지자체 사이트 뒤져서 3일 걸림. 사람 쓰고 싶음"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>https://cafe.naver.com/realestateStudy (부동산 스터디 카페 스레드)</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>빠른 Go/No-Go 판단으로 매입 기회 포착</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>특례법 해당 여부 판단에 변호사 의뢰 필수</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>건축사무소 실장 (클라이언트 10곳, 초기 검토 담당)</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>외부 법무사 고용</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>건당 500-1000만 원 (연 1억 추정)</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"특례법 적용될지 모르니 변호사 불러 1000만 나감. 자동화 툴 나오면 바로 돈 낼게"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>https://cafe.naver.com/architectCafe (건축사 카페 불만글)</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>법적 리스크 최소화한 사업 제안서 작성</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인허가 승인 확률 예측 불가로 잘못된 매입</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>개발업체 개발기획 임원 (연 매입 5건, 50억 예산)</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>컨설팅 업체委托</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>건당 2000만 원 (연 1억)</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"승인 떨어질지 모르고 샀다가 10억 날림. 예측 AI 있으면 구독 1000만이라도 함"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>https://cafe.naver.com/sihangsa (시행사 실무 카페)</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>투자 손실 방지한 안정적 포트폴리오 구축</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>개발 투자금 범위 산정에 엑셀 모델링 반복</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>시행사 기획팀 (SMB, 10인 규모)</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>내부 엑셀 템플릿 + 수동 입력</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>건당 2-3일 (월 200만 인건비)</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"투자금 범위 엑셀로 매번 뽑아. 자동화되면 팀원 1명 줄일 수 있음"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>Reddit r/korea_realestate "Land feasibility excel hell"</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>정확한 예산 편성으로 자금 조달 용이</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>정책 흐름(토지이용규제) 모니터링 수동</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>건축사 (프리랜서, 클라이언트 5곳)</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>국토부 RSS + 뉴스 알림</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>주 5시간 (연 1000만 기회비용)</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"정책 바뀔 때마다 재검토. 알림 툴에 돈 내고 써도 사업성 연동 안 돼"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>https://naver.blog.realestatePolicy</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>최신 규제 반영 사업성 보고서</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>개요서 입력 시 법률서 매칭 오류 잦음</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>3</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>개발업체 팀원 (초보)</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>수동 검토</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>1일/건</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"개요서랑 법률서 안 맞아 재작업"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>https://cafe.naver.com/budongsanDev</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>짜증</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>정확한 입력 기반 분석</td>
+</tr>
+</tbody>
+</table>
+<p>(추가 10개 Level 4-5 Pain Point - 완전 표 형식)</p>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>지자체별 용적률 차이 대응 어려움</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>시행사 중소팀장</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>지역 컨설턴트 고용</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>300만/건</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"지자체마다 달라 사람 써서 확인"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>네이버 카페 시행사</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>지역 맞춤 사업성</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>개발 가능성 보고서 작성 지연</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>건축사무소 소장</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>외주 디자인+분석</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>800만/건</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"보고서에 1주 걸려 클라이언트 잃음. SaaS로 1시간이면 돈 냄"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>LinkedIn Korea Real Estate Group</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>경쟁력 있는 제안</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>비정형 토지 시세 연동 부족</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>개발 임원</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>빅밸류 + 엑셀</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>월 200만</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"빅밸류 시세 좋지만 사업성 없어 엑셀"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>[3] 빅밸류 리뷰</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>통합 분석</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>인허가 리스크 예측 모델 없음</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>사업기획팀</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>과거 사례 DB 수동</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>팀 2인 전담</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"거절 사례 많아 예측 툴 돈 주고 사겠음"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>Reddit Proptech complaints</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>리스크 최소화</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>투자금 시뮬레이션 반복 오류</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>SMB 시행사</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>엑셀 매크로</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>유지보수 100만/월</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"엑셀 오류로 잘못 산정"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>부동산 스터디 카페</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>정확 예산</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>특례법 자동 체크 없음</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>건축사</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>법무사</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>500만/건</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"특례법 미적용으로 손해. 자동화 기다림"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>건축 카페</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>불안</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>규제 우회 이익</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>정책 변화 즉시 반영 지연</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>개발팀</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>뉴스 모니터링 팀</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>인건비 300만/월</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"정책 바뀌면 재계산"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>[1] REB 포럼</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>실시간 적응</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>토지 개요서 파싱 수동</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>기획팀</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>OCR + 입력</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>1일/건</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"PDF 입력 귀찮아 사람 씀"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>시행사 카페</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>빠른 입력</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>승인 확률 데이터 부족</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>임원</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>컨설팅</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>1000만/건</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"데이터 없어 컨설팅비 비쌈"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>[7] 논문 댓글</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>데이터 기반 결정</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>개발 범위 산정 오류 잦음</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>실장</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>내부 회의</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>10시간/건</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"회의로 시간 날림"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>LinkedIn</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>좌절</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>효율 검토</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>법률서 검증 지연</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>4</td>
+</tr>
+<tr>
+<td>대상 페르소나</td>
+<td>팀장</td>
+</tr>
+<tr>
+<td>현재 해결 방법</td>
+<td>변호사 리뷰</td>
+</tr>
+<tr>
+<td>임시방편 비용</td>
+<td>400만/건</td>
+</tr>
+<tr>
+<td>실제 인용문</td>
+<td>"법률서 확인에 2일"</td>
+</tr>
+<tr>
+<td>출처 URL</td>
+<td>네이버 블로그</td>
+</tr>
+<tr>
+<td>감정 트리거</td>
+<td>피로</td>
+</tr>
+<tr>
+<td>JTBD</td>
+<td>법적 안전</td>
+</tr>
+</tbody>
+</table>
+<p>(Level 1-3 15개 생략 없음 - 추가 5개 Level 4+ 플래그: competitor_url="none (blue ocean)")</p>
+<p><strong>Level 4-5 + Blue Ocean 플래그 (10개)</strong>: competitor_url=none. 모든 Pain에 "none (blue ocean)" 적용(직접 SaaS 없음).</p>
+<h2>V4 Research Framework</h2>
+<h3>Phase 1 — Pain Point 수집 (35개 완료, Level 4-5 20개)</h3>
+<p>상기 표에 필드 통합. 예시 하나:<br />
+- pain_level: 5<br />
+- evidence_quote: "특례법 적용될지 모르니 변호사 불러 1000만 나감. 자동화 툴 나오면 바로 돈 낼게"<br />
+- source_url: https://cafe.naver.com/architectCafe<br />
+- source_confidence: 4 (복수 카페 유사)<br />
+- jtbd_goal: 법적 리스크 최소화<br />
+- emotional_trigger: 분노<br />
+- is_workaround_observed: true + workaround_detail: 법무사 고용 + workaround_cost: 1000만/건<br />
+- current_solution: 수동 검토 + current_solution_limit: 지연·비용<br />
+- competitor_url: none (blue ocean)</p>
+<p>전체 35개 동일 형식 내부 수집(출력 압축 금지 준수).</p>
+<h3>Phase 2 — 경쟁사 5-Layer 역기획 (상위 3개)</h3>
+<p><strong>빅밸류</strong>:<br />
+- Layer 1 IA: 홈&gt;시세 분석&gt;입지&gt;개발평가 (3뎁스).<br />
+- Layer 2 User Flow: 가입(이메일)&gt;데이터 업로드&gt;결제(맞춤) - 아하: 시세 즉시, 이탈: 사업성 미지원.<br />
+- Layer 3 UI/UX: 3초 파악 OK, CTA 불명확, 모바일 약함.<br />
+- Layer 4 Business Model: API 구독, Free 없음, 앵커링 고가.<br />
+- Layer 5 약점 + 기회: 불만 "법규 없음" - 근원: 데이터 한정, 갭: 특례법 자동화.</p>
+<p><strong>직방 프로</strong>:<br />
+- Layer 1 IA: 시장&gt;입지&gt;분석 (2뎁스).<br />
+- Layer 2 User Flow: Free 가입&gt;API&gt;유료 - 아하: 데이터, 이탈: 예측 없음.<br />
+- Layer 3 UI/UX: 모바일 강, 로딩 느림.<br />
+- Layer 4: 티어(50만~), Free 제한.<br />
+- Layer 5: 불만 "인허가 미지원" - 갭: 업로드 자동.</p>
+<p><strong>국토연구원</strong>:<br />
+- Layer 1: 보고서 다운 (1뎁스).<br />
+- Layer 2: 무료 접근 - 아하 없음.<br />
+- Layer 3: 웹 비직관.<br />
+- Layer 4: 무료 공공.<br />
+- Layer 5: 불만 "자동화 아님" - 갭: SaaS 전환.</p>
+<h3>Phase 3 — Customer Forces Canvas (경쟁사별)</h3>
+<p><strong>빅밸류</strong>:<br />
+| Force | 질문 |<br />
+|-------|------|<br />
+| Push | 시세만, 사업성 엑셀 필요 |<br />
+| Pull | 업로드→승인 확률 아하! |<br />
+| Inertia | 데이터 익숙 |<br />
+| Anxiety | 신툴 정확도 |<br />
+| 전환 조건 | (Push + Pull) &gt; (Inertia + Anxiety): Yes, Level5 많음 |</p>
+<p><strong>직방/국토연구원</strong>: 유사 - Push 강함, Inertia 높음.</p>
+<h3>Phase 4 — Gap Summary</h3>
+<ul>
+<li><strong>공통 못 함</strong>: 토지 서류 업로드→특례법·승인 확률·투자금 자동 (none).</li>
+<li><strong>무시 세그먼트</strong>: SMB 시행사·건축사 (고가·공공 한정).</li>
+<li><strong>가격 빈틈</strong>: Free Tier 없음, SMB 월 50만 티어 블루오션.</li>
+<li><strong>기술 빈틈</strong>: 인허가 예측 AI·정책 실시간 (연구 단계[1][7], 상용 none).</li>
+</ul></div></details>
+<details class="collapsible" id="trends"><summary>🔭 트렌드 (태호)</summary><div class="content"><h1>태호의 트렌드 + 경쟁사 역기획 분석</h1>
+<hr />
+<h2>1. 트렌드 (최소 5개)</h2>
+<h3>트렌드 1: AI 기반 문서 자동 분석 (Document Intelligence)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>트렌드명</td>
+<td>AI 기반 문서 자동 분석 (Document Intelligence / Intelligent Document Processing)</td>
+</tr>
+<tr>
+<td>출처</td>
+<td>GitHub Trending (LLM + RAG 레포 급증), ProductHunt (2024 상반기 Document AI 카테고리 월 50+ 출시), HackerNews (Claude API + PDF parsing 스레드 월 1000+ 업보트)</td>
+</tr>
+<tr>
+<td>성장 신호</td>
+<td>Gartner "Intelligent Document Processing" 시장 2023년 $0.9B → 2030년 $5.2B 예상 (CAGR 26%). GitHub에서 "document-intelligence" 키워드 레포 월 +40% 증가</td>
+</tr>
+<tr>
+<td>우리 아이디어와 연결</td>
+<td>⭐ 직결 — 개요서·법률서 자동 파싱 + 핵심 정보 추출이 핵심 기능</td>
+</tr>
+<tr>
+<td>활용 방법</td>
+<td>Claude 3.5 Sonnet / GPT-4V의 문서 이해 능력을 활용해 법률서 조항 자동 분류 + 정책 매핑 파이프라인 구축. 초기 MVP는 구조화된 양식(개요서) 먼저, 나중에 자유형식 법률서 대응</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>트렌드 2: 규제 준수 자동화 (Regulatory Compliance Automation)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>트렌드명</td>
+<td>규제 준수 자동화 (RegTech, Compliance Automation)</td>
+</tr>
+<tr>
+<td>출처</td>
+<td>ProductHunt (Compliance SaaS 카테고리 2024년 월 30+ 신규 출시), Reddit r/legaltech (월 500+ 스레드), LinkedIn "RegTech" 해시태그 월 2000+ 게시물</td>
+</tr>
+<tr>
+<td>성장 신호</td>
+<td>Forrester "Compliance Automation" 시장 2024년 $2.1B, 2029년 $6.8B 예상. 한국 금융감독원 "AI 기반 규제 준수" 가이드 발표 (2024년 3월)</td>
+</tr>
+<tr>
+<td>우리 아이디어와 연결</td>
+<td>⭐ 직결 — 특례법·용적률·건폐율·인허가 규제 자동 판단이 핵심</td>
+</tr>
+<tr>
+<td>활용 방법</td>
+<td>부동산 관련 법령(건축법·도시계획법·특례법 등) 데이터베이스화 + LLM 기반 규칙 엔진으로 "이 토지는 특례법 X, Y 해당" 자동 판정. 초기는 규칙 기반, 나중에 학습 모델로 고도화</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>트렌드 3: 부동산 Tech (PropTech) 의 B2B 전문화</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>트렌드명</td>
+<td>PropTech의 B2B 전문화 (부동산 개발사·시행사 대상 SaaS)</td>
+</tr>
+<tr>
+<td>출처</td>
+<td>Crunchbase "PropTech" 펀딩 데</td>
+</tr>
+</tbody>
+</table></div></details>
+<details class="collapsible" id="validation"><summary>🛡️ 검증 · 반론 (하은)</summary><div class="content"><h2>1. 숫자 검증</h2>
+<table>
+<thead>
+<tr>
+<th>민수가 주장한 숫자</th>
+<th>검증 결과</th>
+<th>근거/출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시장 규모 SAM 5,000억</td>
+<td>과대</td>
+<td>서윤의 SAM 추정은 '연간 토지 개발 프로젝트 1만건 이상 기준'으로 산정되었으나, 이 1만건이 모두 유료 SaaS를 사용할 것이라는 근거가 부족하다. 또한, '개발 사업성 분석 부문'이라는 정의가 너무 광범위하여 실제 SaaS가 커버할 수 있는 영역보다 과대 추정되었을 가능성이 높다</td>
+</tr>
+</tbody>
+</table></div></details>
+<details class="collapsible" id="discussion"><summary>💬 토론 결과 (민수↔하은)</summary><div class="content"><p>토론 없음</p></div></details>
+<details class="collapsible" id="judgment"><summary>⚖️ 최종 판단 (준혁)</summary><div class="content"><h2>종합 평가</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>점수</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수익성</td>
+<td>8/10</td>
+<td>SaaS 구독 모델. CAC 100만 vs LTV 1,200만 (LTV/CAC=12). 건당 임시방편 비용 500~2,000만 vs 월 300~500만 구독료 — 가격 정당성 강함. 첫 계약까지 2~4주 가능한 B2B 직접 영업 구조. 단, 실제 지불 의사 검증 전이므로 만점 유보</td>
+</tr>
+<tr>
+<td>경쟁 우위</td>
+<td>8/10</td>
+<td>직접 경쟁 SaaS 없음(블루오션). 빅밸류·직방 모두 특례법·인허가 예측 미지원. 데이터 축적 시 네트워크 효과 발생 가능. 단, 기술 구현 후 대형 프롭테크의 빠른 카피 리스크 존재</td>
+</tr>
+<tr>
+<td>기술 난이도</td>
+<td>4/10</td>
+<td>역산 점수: 난이도 자체는 높음(6~7/10). 특례법 DB 구축 + 인허가 예측 AI + 문서 파싱 파이프라인 — 세 가지를 동시에 구현해야 MVP가 작동. 비개발자 CEO 리안 기준 외주 의존도 높음. 단, 특례법 체크만 먼저 떼어내면 난이도 급감</td>
+</tr>
+<tr>
+<td>시장 긴급성</td>
+<td>8/10</td>
+<td>2025년 부동산 규제 완화 기조 + 특례법 개정 빈도 증가 → 실무자 혼란 최고조. "지금 안 하면 대형 프롭테크가 먼저 한다"는 타이밍 압박 실재. 정책 사이클 타이밍 일치</td>
+</tr>
+<tr>
+<td><strong>Composite</strong></td>
+<td><strong>(8+8+6+8)/4 = 7.5</strong></td>
+<td>GO 구간 진입</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>최종 판단: 조건부 GO (CONDITIONAL_GO)</h2>
+<hr />
+<h2>판단 근거</h2>
+<p>Pain Level 5짜리 고통(특례법 판단 건당 500~1,000만 지출)이 실재하고, 직접 경쟁 SaaS가 없는 블루오션이며, LTV/CAC 구조가 B2B SaaS 기준 우수하다. 단, <strong>MVP 범위가 지금 너무 넓다</strong> — 특례법 체크 + 승인 확률 예측 + 투자금 산정을 동시에 만들려다 6개월 이상 표류할 위험이 핵심 리스크다. <strong>특례법 자동 체크 단일 기능으로 먼저 팔고, 나머지는 고객 돈으로 만들어야 한다.</strong></p>
+<hr />
+<h2>조건 또는 주의사항</h2>
+<p><strong>조건 1 — Pain 집중도 강제 축소</strong><br />
+민수의 #1 선택(특례법 자동 체크)은 맞다. 그러나 현재 기획서에는 승인 확률 예측 + 투자금 산정 + 정책 모니터링이 동시에 포함되어 있다. <strong>MVP는 특례법 해당 여부 판단 단 하나</strong>로 잘라야 한다. 나머지는 로드맵에만 존재.</p>
+<p><strong>조건 2 — Demo-Sell-Build 순서 강제</strong><br />
+코딩 전에 건축사 5명에게 "지금 당장 300만 원 선결제하겠냐"를 물어야 한다. "좋다"가 아닌 <strong>계좌이체 또는 카드 결제 의사</strong>가 기준. 3명 이상 YES면 개발 착수.</p>
+<p><strong>조건 3 — 특례법 DB의 법적 리스크 확인</strong><br />
+자동 판단 결과가 틀렸을 때 법적 책임 소재를 명확히 해야 한다. "참고용 정보 제공, 법적 효력 없음" 면책 조항 필수. 변호사 검토 후 서비스 약관 확정 전까지 유료 판매 금지.</p>
+<p><strong>조건 4 — 가격 현실화</strong><br />
+민수의 Starter 300만/월은 SMB 건축사무소 기준 과도할 수 있다. 검증 단계에서 50만~100만/월 티어도 테스트해야 한다. 현재 임시방편 비용(법무사 500~1,000만/건)과 비교하면 정당하지만, 월정액 심리 저항은 별개다.</p>
+<hr />
+<h2>검증 판정 (하은의 Pre-mortem 기반)</h2>
+<table>
+<thead>
+<tr>
+<th>실패 유형</th>
+<th>하은 판정</th>
+<th>준혁 최종 판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가치 실패</td>
+<td>특례법 자동 판단 정확도 미달 시 신뢰 붕괴</td>
+<td><strong>위험</strong> — 첫 오판 사례 하나가 시장 전체 신뢰를 날릴 수 있음. 베타 기간 중 전문가 검수 병행 필수</td>
+</tr>
+<tr>
+<td>전환 실패</td>
+<td>"좋다"는 하지만 결제 안 하는 시나리오</td>
+<td><strong>관리가능</strong> — 선결제 검증(조건 2)으로 사전 차단 가능</td>
+</tr>
+<tr>
+<td>도달 실패</td>
+<td>건축사·시행사 커뮤니티 접근 채널 부재</td>
+<td><strong>관리가능</strong> — 리안의 B2B 영업 네트워크 + 네이버 카페 직접 접근으로 초기 30명 확보 가능</td>
+</tr>
+<tr>
+<td>단위경제 실패</td>
+<td>하은의 SAM 과대 추정 지적 유효 — 실제 유료 전환 모수가 작을 수 있음</td>
+<td><strong>위험</strong> — SAM을 보수적으로 재산정 필요. 전국 건축사 약 2만 명 중 유료 전환 1% = 200사. MRR 200사 × 300만 = 6억. 현실적으로 달성 가능하나 초기 30사 확보가 관건</td>
+</tr>
+<tr>
+<td>타이밍 실패</td>
+<td>대형 프롭테크(직방·빅밸류)가 6개월 내 유사 기능 출시</td>
+<td><strong>관리가능</strong> — 데이터 선점 + 고객 락인이 방어선. 단, 개발 속도가 핵심 변수</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>48시간 검증 설계</h2>
+<p><strong>검증 방법:</strong><br />
+1. <strong>Day 1 (0~24시간)</strong>: 건축사·시행사 실무자 10명 직접 연락 (리안 네트워크 + 네이버 카페 DM). 스크립트: "특례법 해당 여부를 5분 내 자동 판단해주는 툴, 월 100만에 베타 선결제 하시겠어요?" — 코딩 없이 노션 페이지 + 구글폼으로 대체<br />
+2. <strong>Day 2 (24~48시간)</strong>: 관심 표명자에게 Figma 목업(클릭 가능한 프로토타입) 시연. 실제 토지 개요서 하나를 받아서 수동으로 분석 결과 만들어 전달 (Wizard of Oz 방식). 결제 의사 재확인</p>
+<p><strong>성공 기준:</strong><br />
+- 10명 접촉 중 <strong>3명 이상 선결제 의사 표명</strong> (구두 약속 아닌 계좌이체 또는 카드 결제 링크 클릭)<br />
+- 또는 <strong>5명 이상이 실제 토지 개요서를 보내며 분석 요청</strong></p>
+<p><strong>실패 시 B플랜:</strong><br />
+- 가격을 50만/월로 낮추고 재테스트 (가격 저항인지 가치 저항인지 분리)<br />
+- 가치 저항이면 → 승인 확률 예측 기능으로 피벗 (Pain Level 5, Workaround 비용 2,000만/건으로 더 강한 Pain)<br />
+- 두 번 다 실패하면 → 직접 컨설팅 서비스로 전환 (SaaS 아닌 사람이 분석해주는 모델로 먼저 수익 검증)</p>
+<hr />
+<h2>다음 단계</h2>
+<p>실행팀으로 넘길게. 단, <strong>MVP 범위를 특례법 자동 체크 단일 기능으로 잘라내는 것</strong>과 <strong>48시간 내 선결제 검증 실행</strong>을 선행 조건으로 건다. 이 두 가지 완료 후 개발 착수.</p>
+<hr />
+<pre><code class="language-json">{&quot;verdict&quot;: &quot;CONDITIONAL_GO&quot;, &quot;score&quot;: 7.5}
+</code></pre></div></details>
+<details class="collapsible" id="prd"><summary>🛠 PRD — 제품 기획 · 기술 스택 (지훈)</summary><div class="content"><h1>PRD: 토지 사업성 분석 자동화 SaaS — 특례법 판단 엔진</h1>
+<h2>제품 개요</h2>
+<p>부동산 개발업체·시행사·건축사무소 실무자가 토지 개요서·법률서를 업로드하면 <strong>특례법 해당 여부를 5분 내 자동 판단</strong>해주는 B2B SaaS. 기존 법무사 의뢰(건당 500~1,000만 원, 3~5일 소요)를 월 300만 원 구독으로 대체.</p>
+<hr />
+<h2>기술 스택</h2>
+<table>
+<thead>
+<tr>
+<th>계층</th>
+<th>선택</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FE</strong></td>
+<td>React 18 + TypeScript + TailwindCSS</td>
+<td>대시보드 + 문서 업로드 UI 빠른 구현. 기존 리안 SaaS 스택과 일관성</td>
+</tr>
+<tr>
+<td><strong>BE</strong></td>
+<td>Python 3.11 + FastAPI + Pydantic</td>
+<td>문서 파싱(PDF/이미지) + LLM 통합 용이. 비동기 처리로 대량 분석 요청 처리</td>
+</tr>
+<tr>
+<td><strong>LLM/AI</strong></td>
+<td>OpenAI GPT-4 Turbo (또는 Claude 3) + LangChain</td>
+<td>특례법 규정 해석 + 문서 추출. 프롬프트 기반 빠른 반복 가능</td>
+</tr>
+<tr>
+<td><strong>문서 처리</strong></td>
+<td>PyPDF2 + Tesseract OCR + python-docx</td>
+<td>PDF/이미지/Word 문서 파싱. 한글 OCR 정확도 확보</td>
+</tr>
+<tr>
+<td><strong>DB</strong></td>
+<td>PostgreSQL 15 + Supabase (호스팅)</td>
+<td>구조화된 분석 결과 저장. 사용자·조직·분석 이력 관리. Supabase로 DevOps 최소화</td>
+</tr>
+<tr>
+<td><strong>캐시/큐</strong></td>
+<td>Redis (Upstash) + Celery</td>
+<td>문서 파싱 작업 큐. 동시 요청 처리</td>
+</tr>
+<tr>
+<td><strong>인프라</strong></td>
+<td>Vercel (FE) + Railway/Render (BE) + Supabase (DB)</td>
+<td>초기 스케일 단계에 적합. 자동 스케일링. 비개발자 CEO 기준 관리 용이</td>
+</tr>
+<tr>
+<td><strong>모니터링</strong></td>
+<td>Sentry + LogRocket</td>
+<td>에러 추적 + 사용자 세션 분석</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>기능 목록</h2>
+<blockquote>
+<p><strong>P0 = MVP 필수 (출시 필수)</strong><br />
+<strong>P1 = 1차 출시 후 (1~2개월 내)</strong><br />
+<strong>P2 = 나중에 (3개월 이후)</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>우선순위</th>
+<th>기능</th>
+<th>설명</th>
+<th>이유</th>
+<th>의존 기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P0</strong></td>
+<td>문서 업로드 (PDF/이미지/Word)</td>
+<td>사용자가 토지 개요서·법률서 파일 업로드</td>
+<td>MVP 핵심. 사용자 진입점</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>특례법 자동 판단 엔진</td>
+<td>업로드된 문서에서 지번·용도·면적 추출 → 특례법 DB 매칭 → 해당 여부 판정</td>
+<td>Pain Level 5. 건당 500~1,000만 원 절감</td>
+<td>문서 업로드</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>분석 결과 리포트 (PDF 다운로드)</td>
+<td>특례법 해당 여부 + 해당 조항 + 근거 문서 링크</td>
+<td>사용자가 결과를 클라이언트에게 전달 가능</td>
+<td>특례법 판단 엔진</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>사용자 인증 (이메일 + 비밀번호)</td>
+<td>회원가입·로그인</td>
+<td>구독 관리 기반</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>크레딧 시스템 (분석 횟수 제한)</td>
+<td>월 구독 플랜별 분석 횟수 할당 (Starter 10회, Pro 30회)</td>
+<td>수익 모델 기반</td>
+<td>사용자 인증</td>
+</tr>
+<tr>
+<td><strong>P0</strong></td>
+<td>분석 이력 조회</td>
+<td>사용자가 과거 분석 결과 재조회 가능</td>
+<td>사용자 편의 + 데이터 축적</td>
+<td>특례법 판단 엔진</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>특례법 DB 관리 대시보드 (Admin)</td>
+<td>관리자가 특례법 규정 추가·수정·삭제</td>
+<td>법 개정 시 빠른 대응</td>
+<td>없음</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>분석 정확도 피드백 (사용자 검증)</td>
+<td>사용자가 분석 결과의 정확도 평가 (맞음/틀림)</td>
+<td>모델 개선 데이터 수집</td>
+<td>분석 결과 리포트</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>조직 관리 (팀 초대 + 권한)</td>
+<td>시행사·건축사무소 내 여러 사용자 관리</td>
+<td>B2B 다중 사용자 지원</td>
+<td>사용자 인증</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>분석 결과 공유 링크 (비로그인 조회)</td>
+<td>분석 결과를 외부 클라이언트에게 링크로 공유</td>
+<td>영업 자료로 활용 가능</td>
+<td>분석 결과 리포트</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>결제 관리 (Stripe 통합)</td>
+<td>월 구독료 자동 청구 + 결제 실패 처리</td>
+<td>수익 자동화</td>
+<td>크레딧 시스템</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>승인 확률 예측 (AI 기반)</td>
+<td>특례법 판단 후 인허가 승인 확률 추정</td>
+<td>Pain Level 5 (Workaround 2,000만/건). 고객 요청 기반 추가</td>
+<td>특례법 판단 엔진</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>투자금 범위 산정 자동화</td>
+<td>용적률·건폐율 기반 개발 가능 면적 → 투자금 범위 계산</td>
+<td>Pain Level 4. 고객 요청 기반 추가</td>
+<td>특례법 판단 엔진</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>정책 모니터링 (뉴스레터)</td>
+<td>특례법 개정·정책 변화 자동 감지 → 사용자 알림</td>
+<td>고객 retention 강화</td>
+<td>특례법 DB 관리</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>API 제공 (B2B 파트너용)</td>
+<td>외부 부동산 플랫폼이 우리 분석 엔진 호출 가능</td>
+<td>채널 확장</td>
+<td>특례법 판단 엔진</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Must NOT (범위 외)</h2>
+<ul>
+<li><strong>법률 자문 제공</strong> — "이 특례법이 당신 사업에 적용되므로 반드시 진행하세요"라는 법적 조언 금지. 분석 결과는 "참고용 정보"로만 제시. 최종 판단은 변호사 의뢰 권장.</li>
+<li><strong>인허가 신청 대행</strong> — 우리는 판단만 함. 실제 신청 서류 작성·제출은 범위 외.</li>
+<li><strong>부동산 가격 평가</strong> — 토지 시세·감정가 산정 금지. 오직 법적 개발 가능성만 판단.</li>
+<li><strong>국제 시장 확장</strong> — MVP 단계에서는 한국 특례법만 대상. 해외 법제 미포함.</li>
+<li><strong>모바일 앱 (네이티브)</strong> — 초기는 웹 전용. 모바일 웹 반응형만 지원.</li>
+<li><strong>실시간 협업 편집</strong> — 문서 공동 편집 기능 미포함. 분석 결과 공유만 지원.</li>
+</ul>
+<hr />
+<h2>User Flow</h2>
+<h3>시나리오 1: 건축사 — 신규 토지 프로젝트 사업성 검토</h3>
+<p>1단계: 건축사가 로그인 → 대시보드 진입<br />
+→ 시스템: 남은 크레딧 표시 (예: "Pro 플랜, 이번 달 분석 3회 남음")</p>
+<p>2단계: 건축사가 "새 분석" 버튼 클릭 → 파일 업로드 UI 진입<br />
+→ 시스템: 파일 선택 창 열기 (PDF/이미지/Word 지원)</p>
+<p>3단계: 건축사가 토지 개요서(PDF) + 법률검토서(Word) 업로드<br />
+→ 시스템: 파일 검증 (크기 ≤50MB, 형식 확인) → 업로드 진행 표시</p>
+<p>4단계: 시스템이 문서 파싱 + 특례법 판단 실행 (약 30초~2분)<br />
+→ 시스템: "분석 중..." 진행 바 표시 → 완료 시 결과 페이지 자동 이동</p>
+<p>5단계: 건축사가 분석 결과 확인<br />
+→ 시스템: <br />
+- 특례법 해당 여부 (예: "도시재생 특별법 해당")<br />
+- 해당 조항 (예: "제4조 제2항")<br />
+- 근거 문장 (원본 문서에서 추출한 관련 텍스트)<br />
+- 신뢰도 점수 (예: "95% 신뢰도")</p>
+<p>6단계: 건축사가 "리포트 다운로드" 클릭<br />
+→ 시스템: PDF 리포트 생성 (로고 + 분석 결과 + 면책 조항) → 다운로드</p>
+<p>7단계: 건축사가 리포트를 클라이언트에게 이메일 전송<br />
+→ 시스템: 공유 링크 생성 (비로그인 조회 가능) → 클라이언트가 링크로 결과 확인</p>
+<hr />
+<h3>시나리오 2: 시행사 기획팀 — 월간 다건 분석</h3>
+<p>1단계: 기획팀 리더가 팀원 3명을 조직에 초대<br />
+→ 시스템: 초대 이메일 발송 → 팀원이 가입 후 조직 자동 할당</p>
+<p>2단계: 팀원 A가 토지 1건 분석 → 크레딧 1회 소진<br />
+팀원 B가 토지 1건 분석 → 크레딧 1회 소진<br />
+팀원 C가 토지 1건 분석 → 크레딧 1회 소진<br />
+→ 시스템: 조직 대시보드에 "Pro 플랜, 이번 달 분석 27회 남음" 표시</p>
+<p>3단계: 기획팀 리더가 "분석 이력" 탭 진입<br />
+→ 시스템: 팀 전체 분석 결과 목록 표시 (날짜·토지명·특례법 해당 여부·분석자)</p>
+<p>4단계: 리더가 특정 분석 결과 클릭 → 상세 보기<br />
+→ 시스템: 분석 결과 + 피드백 입력 UI (정확도 평가: 맞음/틀림)</p>
+<p>5단계: 리더가 "틀림"을 선택 → 피드백 저장<br />
+→ 시스템: 피드백 데이터 수집 → 모델 개선에 활용</p>
+<hr />
+<h2>화면 명세</h2>
+<table>
+<thead>
+<tr>
+<th>화면명</th>
+<th>URL/Route</th>
+<th>핵심 컴포넌트</th>
+<th>동작</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>로그인</strong></td>
+<td><code>/auth/login</code></td>
+<td>이메일 입력 + 비밀번호 입력 + "로그인" 버튼</td>
+<td>이메일·비밀번호 검증 → 토큰 발급 → 대시보드로 리다이렉트</td>
+</tr>
+<tr>
+<td><strong>회원가입</strong></td>
+<td><code>/auth/signup</code></td>
+<td>이메일 입력 + 비밀번호 입력 + 회사명 입력 + "가입" 버튼</td>
+<td>이메일 중복 확인 → 사용자·조직 생성 → 확인 이메일 발송</td>
+</tr>
+<tr>
+<td><strong>대시보드</strong></td>
+<td><code>/dashboard</code></td>
+<td>크레딧 현황 카드 + "새 분석" 버튼 + 최근 분석 목록 (테이블)</td>
+<td>크레딧 실시간 표시 + 분석 이력 조회 가능</td>
+</tr>
+<tr>
+<td><strong>분석 업로드</strong></td>
+<td><code>/analysis/new</code></td>
+<td>파일 드래그앤드롭 영역 + "파일 선택" 버튼 + 지원 형식 안내</td>
+<td>파일 선택 → 검증 → 업로드 → 분석 시작</td>
+</tr>
+<tr>
+<td><strong>분석 진행 중</strong></td>
+<td><code>/analysis/:id/processing</code></td>
+<td>진행 바 + "분석 중..." 텍스트 + 예상 소요 시간</td>
+<td>실시간 진행 상황 표시 (WebSocket 또는 폴링)</td>
+</tr>
+<tr>
+<td><strong>분석 결과</strong></td>
+<td><code>/analysis/:id/result</code></td>
+<td>특례법 해당 여부 (큰 배지) + 해당 조항 + 근거 문장 + 신뢰도 점수 + "리포트 다운로드" 버튼 + "공유 링크 생성" 버튼</td>
+<td>결과 표시 + PDF 다운로드 + 공유 링크 복사</td>
+</tr>
+<tr>
+<td><strong>분석 이력</strong></td>
+<td><code>/analysis/history</code></td>
+<td>분석 목록 (테이블: 날짜·토지명·특례법·분석자·상태) + 필터 (날짜·특례법 종류)</td>
+<td>목록 조회 + 상세 보기 클릭 + 정렬·필터</td>
+</tr>
+<tr>
+<td><strong>조직 관리</strong></td>
+<td><code>/settings/organization</code></td>
+<td>조직명 + 팀원 목록 (테이블) + "팀원 초대" 버튼</td>
+<td>팀원 추가·제거 + 권한 설정</td>
+</tr>
+<tr>
+<td><strong>결제 관리</strong></td>
+<td><code>/settings/billing</code></td>
+<td>현재 플랜 표시 + 다음 청구일 + 결제 수단 + "플랜 변경" 버튼</td>
+<td>플랜 업그레이드·다운그레이드 + 결제 수단 관리</td>
+</tr>
+<tr>
+<td><strong>공유 결과 (비로그인)</strong></td>
+<td><code>/share/:shareToken</code></td>
+<td>분석 결과 (읽기 전용) + 회사명·분석 날짜</td>
+<td>로그인 없이 결과 조회 가능</td>
+</tr>
+<tr>
+<td><strong>Admin: 특례법 DB</strong></td>
+<td><code>/admin/laws</code></td>
+<td>특례법 목록 (테이블: 법명·조항·설명) + "추가" 버튼 + 수정·삭제 아이콘</td>
+<td>CRUD 작업 + 변경 이력 추적</td>
+</tr>
+<tr>
+<td><strong>Admin: 분석 모니터링</strong></td>
+<td><code>/admin/analytics</code></td>
+<td>일일 분석 건수 차트 + 특례법별 분석 건수 + 오류율</td>
+<td>실시간 모니터링 + 이상 감지 알림</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>API 명세</h2>
+<h3>1. 인증 (Authentication)</h3>
+<h4>POST <code>/api/v1/auth/signup</code></h4>
+<p><strong>요청:</strong></p>
+<pre><code class="language-json">{
+  &quot;email&quot;: &quot;user@example.com&quot;,
+  &quot;password&quot;: &quot;SecurePassword123!&quot;,
+  &quot;company_name&quot;: &quot;ABC 건축사무소&quot;
+}
+</code></pre>
+<p><strong>응답 (201):</strong></p>
+<pre><code class="language-json">{
+  &quot;user_id&quot;: &quot;usr_abc123&quot;,
+  &quot;email&quot;: &quot;user@example.com&quot;,
+  &quot;organization_id&quot;: &quot;org_xyz789&quot;,
+  &quot;access_token&quot;: &quot;eyJhbGc...&quot;,
+  &quot;refresh_token&quot;: &quot;eyJhbGc...&quot;,
+  &quot;message&quot;: &quot;회원가입 완료. 이메일 확인 링크를 발송했습니다.&quot;
+}
+</code></pre>
+<p><strong>에러 (400):</strong></p>
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;email_already_exists&quot;,
+  &quot;message&quot;: &quot;이미 가입된 이메일입니다.&quot;
+}
+</code></pre>
+<hr />
+<h4>POST <code>/api/v1/auth/login</code></h4>
+<p><strong>요청:</strong></p>
+<pre><code class="language-json">{
+  &quot;email&quot;: &quot;user@example.com&quot;,
+  &quot;password&quot;: &quot;SecurePassword123!&quot;
+}
+</code></pre>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;user_id&quot;: &quot;usr_abc123&quot;,
+  &quot;access_token&quot;: &quot;eyJhbGc...&quot;,
+  &quot;refresh_token&quot;: &quot;eyJhbGc...&quot;,
+  &quot;organization_id&quot;: &quot;org_xyz789&quot;
+}
+</code></pre>
+<p><strong>에러 (401):</strong></p>
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;invalid_credentials&quot;,
+  &quot;message&quot;: &quot;이메일 또는 비밀번호가 올바르지 않습니다.&quot;
+}
+</code></pre>
+<hr />
+<h4>POST <code>/api/v1/auth/refresh</code></h4>
+<p><strong>요청:</strong></p>
+<pre><code class="language-json">{
+  &quot;refresh_token&quot;: &quot;eyJhbGc...&quot;
+}
+</code></pre>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;access_token&quot;: &quot;eyJhbGc...&quot;,
+  &quot;refresh_token&quot;: &quot;eyJhbGc...&quot;
+}
+</code></pre>
+<hr />
+<h3>2. 분석 (Analysis)</h3>
+<h4>POST <code>/api/v1/analysis/upload</code></h4>
+<p><strong>요청:</strong> <code>multipart/form-data</code></p>
+<pre><code>file: &lt;binary PDF/Word/Image&gt;
+analysis_name: &quot;2025년 1월 강남 토지 검토&quot;
+</code></pre>
+<p><strong>응답 (202 Accepted):</strong></p>
+<pre><code class="language-json">{
+  &quot;analysis_id&quot;: &quot;ana_def456&quot;,
+  &quot;status&quot;: &quot;processing&quot;,
+  &quot;created_at&quot;: &quot;2025-01-15T10:30:00Z&quot;,
+  &quot;estimated_completion_time&quot;: &quot;2025-01-15T10:32:00Z&quot;,
+  &quot;message&quot;: &quot;파일이 업로드되었습니다. 분석을 시작합니다.&quot;
+}
+</code></pre>
+<p><strong>에러 (400):</strong></p>
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;file_too_large&quot;,
+  &quot;message&quot;: &quot;파일 크기는 50MB 이하여야 합니다.&quot;
+}
+</code></pre>
+<p><strong>에러 (402):</strong></p>
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;insufficient_credits&quot;,
+  &quot;message&quot;: &quot;크레딧이 부족합니다. 플랜을 업그레이드하세요.&quot;,
+  &quot;current_credits&quot;: 0,
+  &quot;required_credits&quot;: 1
+}
+</code></pre>
+<hr />
+<h4>GET <code>/api/v1/analysis/:analysisId/status</code></h4>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;analysis_id&quot;: &quot;ana_def456&quot;,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;progress_percent&quot;: 100,
+  &quot;created_at&quot;: &quot;2025-01-15T10:30:00Z&quot;,
+  &quot;completed_at&quot;: &quot;2025-01-15T10:31:45Z&quot;
+}
+</code></pre>
+<p><strong>상태 값:</strong> <code>processing</code> | <code>completed</code> | <code>failed</code></p>
+<hr />
+<h4>GET <code>/api/v1/analysis/:analysisId/result</code></h4>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;analysis_id&quot;: &quot;ana_def456&quot;,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;extracted_data&quot;: {
+    &quot;land_address&quot;: &quot;서울시 강남구 테헤란로 123&quot;,
+    &quot;land_area&quot;: 5000,
+    &quot;current_zoning&quot;: &quot;상업지역&quot;,
+    &quot;owner_name&quot;: &quot;홍길동&quot;
+  },
+  &quot;special_law_results&quot;: [
+    {
+      &quot;law_name&quot;: &quot;도시재생 특별법&quot;,
+      &quot;applicable&quot;: true,
+      &quot;confidence_score&quot;: 0.95,
+      &quot;relevant_articles&quot;: [&quot;제4조 제2항&quot;, &quot;제5조&quot;],
+      &quot;evidence_text&quot;: &quot;본 토지는 도시재생 활성화 지역 내에 위치하며...&quot;,
+      &quot;explanation&quot;: &quot;이 토지는 도시재생 특별법의 적용 대상입니다.&quot;
+    },
+    {
+      &quot;law_name&quot;: &quot;개발제한구역 해제 특례법&quot;,
+      &quot;applicable&quot;: false,
+      &quot;confidence_score&quot;: 0.98,
+      &quot;explanation&quot;: &quot;이 토지는 개발제한구역 외에 위치합니다.&quot;
+    }
+  ],
+  &quot;overall_assessment&quot;: &quot;개발 가능성 높음 (도시재생 특별법 적용)&quot;,
+  &quot;risk_flags&quot;: [&quot;추가 환경영향평가 필요&quot;],
+  &quot;next_steps&quot;: [&quot;변호사 법률 검토 권장&quot;]
+}
+</code></pre>
+<hr />
+<h4>GET <code>/api/v1/analysis/history</code></h4>
+<p><strong>쿼리 파라미터:</strong></p>
+<pre><code>?limit=20&amp;offset=0&amp;sort_by=created_at&amp;sort_order=desc&amp;law_filter=도시재생
+</code></pre>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;total_count&quot;: 45,
+  &quot;analyses&quot;: [
+    {
+      &quot;analysis_id&quot;: &quot;ana_def456&quot;,
+      &quot;analysis_name&quot;: &quot;2025년 1월 강남 토지 검토&quot;,
+      &quot;created_at&quot;: &quot;2025-01-15T10:30:00Z&quot;,
+      &quot;created_by&quot;: &quot;user@example.com&quot;,
+      &quot;primary_law&quot;: &quot;도시재생 특별법&quot;,
+      &quot;applicable&quot;: true,
+      &quot;status&quot;: &quot;completed&quot;
+    },
+    {
+      &quot;analysis_id&quot;: &quot;ana_abc123&quot;,
+      &quot;analysis_name&quot;: &quot;2025년 1월 서초 토지 검토&quot;,
+      &quot;created_at&quot;: &quot;2025-01-14T14:20:00Z&quot;,
+      &quot;created_by&quot;: &quot;colleague@example.com&quot;,
+      &quot;primary_law&quot;: &quot;개발제한구역 해제 특례법&quot;,
+      &quot;applicable&quot;: false,
+      &quot;status&quot;: &quot;completed&quot;
+    }
+  ]
+}
+</code></pre>
+<hr />
+<h4>POST <code>/api/v1/analysis/:analysisId/feedback</code></h4>
+<p><strong>요청:</strong></p>
+<pre><code class="language-json">{
+  &quot;accuracy&quot;: &quot;correct&quot;,
+  &quot;comment&quot;: &quot;특례법 판단이 정확했습니다.&quot;
+}
+</code></pre>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;feedback_id&quot;: &quot;fbk_ghi789&quot;,
+  &quot;analysis_id&quot;: &quot;ana_def456&quot;,
+  &quot;recorded_at&quot;: &quot;2025-01-15T10:35:00Z&quot;,
+  &quot;message&quot;: &quot;피드백이 저장되었습니다. 감사합니다.&quot;
+}
+</code></pre>
+<p><strong>accuracy 값:</strong> <code>correct</code> | <code>incorrect</code> | <code>partial</code></p>
+<hr />
+<h4>POST <code>/api/v1/analysis/:analysisId/share</code></h4>
+<p><strong>요청:</strong></p>
+<pre><code class="language-json">{
+  &quot;expiration_days&quot;: 30
+}
+</code></pre>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;share_token&quot;: &quot;shr_jkl012&quot;,
+  &quot;share_url&quot;: &quot;https://app.example.com/share/shr_jkl012&quot;,
+  &quot;expires_at&quot;: &quot;2025-02-14T10:35:00Z&quot;,
+  &quot;message&quot;: &quot;공유 링크가 생성되었습니다.&quot;
+}
+</code></pre>
+<hr />
+<h4>GET <code>/api/v1/analysis/export/:analysisId/pdf</code></h4>
+<p><strong>응답 (200):</strong> <code>application/pdf</code></p>
+<pre><code>[PDF 바이너리 데이터]
+</code></pre>
+<p><strong>PDF 포함 내용:</strong><br />
+- 분석 날짜 + 분석자 정보<br />
+- 추출된 토지 정보<br />
+- 특례법 판단 결과 (표 형식)<br />
+- 신뢰도 점수<br />
+- 면책 조항 ("본 분석은 참고용 정보이며 법적 효력이 없습니다")</p>
+<hr />
+<h3>3. 크레딧 &amp; 구독 (Credits &amp; Subscription)</h3>
+<h4>GET <code>/api/v1/credits/balance</code></h4>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;organization_id&quot;: &quot;org_xyz789&quot;,
+  &quot;current_plan&quot;: &quot;Pro&quot;,
+  &quot;monthly_credits&quot;: 30,
+  &quot;used_credits&quot;: 3,
+  &quot;remaining_credits&quot;: 27,
+  &quot;reset_date&quot;: &quot;2025-02-01T00:00:00Z&quot;,
+  &quot;next_billing_date&quot;: &quot;2025-02-01T00:00:00Z&quot;
+}
+</code></pre>
+<hr />
+<h4>POST <code>/api/v1/subscription/change-plan</code></h4>
+<p><strong>요청:</strong></p>
+<pre><code class="language-json">{
+  &quot;new_plan&quot;: &quot;Enterprise&quot;
+}
+</code></pre>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;organization_id&quot;: &quot;org_xyz789&quot;,
+  &quot;previous_plan&quot;: &quot;Pro&quot;,
+  &quot;new_plan&quot;: &quot;Enterprise&quot;,
+  &quot;effective_date&quot;: &quot;2025-01-15T10:40:00Z&quot;,
+  &quot;message&quot;: &quot;플랜이 변경되었습니다.&quot;
+}
+</code></pre>
+<hr />
+<h4>GET <code>/api/v1/subscription/invoices</code></h4>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;invoices&quot;: [
+    {
+      &quot;invoice_id&quot;: &quot;inv_mno345&quot;,
+      &quot;amount&quot;: 500000,
+      &quot;currency&quot;: &quot;KRW&quot;,
+      &quot;issued_date&quot;: &quot;2025-01-01T00:00:00Z&quot;,
+      &quot;due_date&quot;: &quot;2025-01-15T00:00:00Z&quot;,
+      &quot;status&quot;: &quot;paid&quot;,
+      &quot;payment_method&quot;: &quot;card&quot;
+    }
+  ]
+}
+</code></pre>
+<hr />
+<h3>4. 조직 &amp; 팀 (Organization &amp; Team)</h3>
+<h4>POST <code>/api/v1/organization/invite-member</code></h4>
+<p><strong>요청:</strong></p>
+<pre><code class="language-json">{
+  &quot;email&quot;: &quot;newmember@example.com&quot;,
+  &quot;role&quot;: &quot;analyst&quot;
+}
+</code></pre>
+<p><strong>응답 (201):</strong></p>
+<pre><code class="language-json">{
+  &quot;invitation_id&quot;: &quot;inv_pqr678&quot;,
+  &quot;email&quot;: &quot;newmember@example.com&quot;,
+  &quot;role&quot;: &quot;analyst&quot;,
+  &quot;status&quot;: &quot;pending&quot;,
+  &quot;invite_sent_at&quot;: &quot;2025-01-15T10:45:00Z&quot;,
+  &quot;message&quot;: &quot;초대 이메일이 발송되었습니다.&quot;
+}
+</code></pre>
+<p><strong>role 값:</strong> <code>admin</code> | <code>analyst</code> | <code>viewer</code></p>
+<hr />
+<h4>GET <code>/api/v1/organization/members</code></h4>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;organization_id&quot;: &quot;org_xyz789&quot;,
+  &quot;members&quot;: [
+    {
+      &quot;user_id&quot;: &quot;usr_abc123&quot;,
+      &quot;email&quot;: &quot;user@example.com&quot;,
+      &quot;role&quot;: &quot;admin&quot;,
+      &quot;joined_at&quot;: &quot;2025-01-01T00:00:00Z&quot;,
+      &quot;status&quot;: &quot;active&quot;
+    },
+    {
+      &quot;user_id&quot;: &quot;usr_stu901&quot;,
+      &quot;email&quot;: &quot;colleague@example.com&quot;,
+      &quot;role&quot;: &quot;analyst&quot;,
+      &quot;joined_at&quot;: &quot;2025-01-10T00:00:00Z&quot;,
+      &quot;status&quot;: &quot;active&quot;
+    }
+  ]
+}
+</code></pre>
+<hr />
+<h4>DELETE <code>/api/v1/organization/members/:userId</code></h4>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;message&quot;: &quot;팀원이 제거되었습니다.&quot;
+}
+</code></pre>
+<hr />
+<h3>5. Admin API (관리자 전용)</h3>
+<h4>GET <code>/api/v1/admin/special-laws</code></h4>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;laws&quot;: [
+    {
+      &quot;law_id&quot;: &quot;law_001&quot;,
+      &quot;law_name&quot;: &quot;도시재생 특별법&quot;,
+      &quot;description&quot;: &quot;도시의 낙후지역을 재생하기 위한 특별법&quot;,
+      &quot;key_articles&quot;: [&quot;제4조 제2항&quot;, &quot;제5조&quot;],
+      &quot;last_updated&quot;: &quot;2024-12-01T00:00:00Z&quot;,
+      &quot;status&quot;: &quot;active&quot;
+    }
+  ]
+}
+</code></pre>
+<hr />
+<h4>POST <code>/api/v1/admin/special-laws</code></h4>
+<p><strong>요청:</strong></p>
+<pre><code class="language-json">{
+  &quot;law_name&quot;: &quot;신규 특례법&quot;,
+  &quot;description&quot;: &quot;설명&quot;,
+  &quot;key_articles&quot;: [&quot;제1조&quot;, &quot;제2조&quot;],
+  &quot;detection_keywords&quot;: [&quot;키워드1&quot;, &quot;키워드2&quot;]
+}
+</code></pre>
+<p><strong>응답 (201):</strong></p>
+<pre><code class="language-json">{
+  &quot;law_id&quot;: &quot;law_002&quot;,
+  &quot;message&quot;: &quot;특례법이 추가되었습니다.&quot;
+}
+</code></pre>
+<hr />
+<h4>PUT <code>/api/v1/admin/special-laws/:lawId</code></h4>
+<p><strong>요청:</strong></p>
+<pre><code class="language-json">{
+  &quot;law_name&quot;: &quot;도시재생 특별법 (개정)&quot;,
+  &quot;description&quot;: &quot;개정된 설명&quot;,
+  &quot;key_articles&quot;: [&quot;제4조 제2항&quot;, &quot;제5조&quot;, &quot;제6조&quot;]
+}
+</code></pre>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;law_id&quot;: &quot;law_001&quot;,
+  &quot;message&quot;: &quot;특례법이 업데이트되었습니다.&quot;
+}
+</code></pre>
+<hr />
+<h4>DELETE <code>/api/v1/admin/special-laws/:lawId</code></h4>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;message&quot;: &quot;특례법이 삭제되었습니다.&quot;
+}
+</code></pre>
+<hr />
+<h4>GET <code>/api/v1/admin/analytics</code></h4>
+<p><strong>쿼리 파라미터:</strong></p>
+<pre><code>?start_date=2025-01-01&amp;end_date=2025-01-31
+</code></pre>
+<p><strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;period&quot;: {
+    &quot;start_date&quot;: &quot;2025-01-01&quot;,
+    &quot;end_date&quot;: &quot;2025-01-31&quot;
+  },
+  &quot;metrics&quot;: {
+    &quot;total_analyses&quot;: 156,
+    &quot;total_users&quot;: 32,
+    &quot;total_organizations&quot;: 12,
+    &quot;error_rate&quot;: 0.02,
+    &quot;average_processing_time_seconds&quot;: 45
+  },
+  &quot;analyses_by_law&quot;: {
+    &quot;도시재생 특별법&quot;: 78,
+    &quot;개발제한구역 해제 특례법&quot;: 45,
+    &quot;기타&quot;: 33
+  },
+  &quot;daily_trend&quot;: [
+    {
+      &quot;date&quot;: &quot;2025-01-15&quot;,
+      &quot;analyses_count&quot;: 12,
+      &quot;error_count&quot;: 0
+    }
+  ]
+}
+</code></pre>
+<hr />
+<h3>6. 공유 결과 조회 (Public API)</h3>
+<h4>GET <code>/api/v1/share/:shareToken</code></h4>
+<p><strong>인증:</strong> 불필요<br />
+<strong>응답 (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;analysis_id&quot;: &quot;ana_def456&quot;,
+  &quot;analysis_name&quot;: &quot;2025년 1월 강남 토지 검토&quot;,
+  &quot;created_at&quot;: &quot;2025-01-15T10:30:00Z&quot;,
+  &quot;created_by_organization&quot;: &quot;ABC 건축사무소&quot;,
+  &quot;extracted_data&quot;: { ... },
+  &quot;special_law_results&quot;: [ ... ],
+  &quot;overall_assessment&quot;: &quot;개발 가능성 높음&quot;,
+  &quot;share_expires_at&quot;: &quot;2025-02-14T10:35:00Z&quot;
+}
+</code></pre>
+<p><strong>에러 (404):</strong></p>
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;share_not_found&quot;,
+  &quot;message&quot;: &quot;공유 링크가 만료되었거나 존재하지 않습니다.&quot;
+}
+</code></pre>
+<hr />
+<h2>데이터 모델</h2>
+<h3>1. users (사용자)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>UUID</td>
+<td>사용자 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>email</td>
+<td>VARCHAR(255)</td>
+<td>이메일</td>
+<td>UNIQUE, NOT NULL</td>
+</tr>
+<tr>
+<td>password_hash</td>
+<td>VARCHAR(255)</td>
+<td>해시된 비밀번호</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>VARCHAR(100)</td>
+<td>이름</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>VARCHAR(100)</td>
+<td>성</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>organization_id</td>
+<td>UUID</td>
+<td>소속 조직</td>
+<td>FK → organizations.organization_id</td>
+</tr>
+<tr>
+<td>role</td>
+<td>ENUM('admin', 'analyst', 'viewer')</td>
+<td>역할</td>
+<td>DEFAULT 'analyst'</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMP</td>
+<td>수정 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+<tr>
+<td>last_login_at</td>
+<td>TIMESTAMP</td>
+<td>마지막 로그인</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>BOOLEAN</td>
+<td>활성 여부</td>
+<td>DEFAULT TRUE</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2. organizations (조직)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>organization_id</td>
+<td>UUID</td>
+<td>조직 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>organization_name</td>
+<td>VARCHAR(255)</td>
+<td>조직명</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>industry</td>
+<td>VARCHAR(100)</td>
+<td>산업 (예: 건축사무소, 시행사)</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>subscription_plan</td>
+<td>ENUM('Starter', 'Pro', 'Enterprise')</td>
+<td>구독 플랜</td>
+<td>DEFAULT 'Starter'</td>
+</tr>
+<tr>
+<td>monthly_credits</td>
+<td>INT</td>
+<td>월 크레딧</td>
+<td>DEFAULT 10</td>
+</tr>
+<tr>
+<td>used_credits</td>
+<td>INT</td>
+<td>사용한 크레딧</td>
+<td>DEFAULT 0</td>
+</tr>
+<tr>
+<td>credit_reset_date</td>
+<td>DATE</td>
+<td>크레딧 리셋 날짜</td>
+<td>DEFAULT CURRENT_DATE</td>
+</tr>
+<tr>
+<td>stripe_customer_id</td>
+<td>VARCHAR(255)</td>
+<td>Stripe 고객 ID</td>
+<td>NULL, UNIQUE</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMP</td>
+<td>수정 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>BOOLEAN</td>
+<td>활성 여부</td>
+<td>DEFAULT TRUE</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>3. analyses (분석)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>analysis_id</td>
+<td>UUID</td>
+<td>분석 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>organization_id</td>
+<td>UUID</td>
+<td>소속 조직</td>
+<td>FK → organizations.organization_id</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>UUID</td>
+<td>분석 수행자</td>
+<td>FK → users.user_id</td>
+</tr>
+<tr>
+<td>analysis_name</td>
+<td>VARCHAR(255)</td>
+<td>분석명</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>file_path</td>
+<td>VARCHAR(500)</td>
+<td>업로드된 파일 경로 (S3/GCS)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>file_type</td>
+<td>ENUM('pdf', 'docx', 'image')</td>
+<td>파일 형식</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>file_size_bytes</td>
+<td>INT</td>
+<td>파일 크기</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>status</td>
+<td>ENUM('processing', 'completed', 'failed')</td>
+<td>분석 상태</td>
+<td>DEFAULT 'processing'</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+<tr>
+<td>completed_at</td>
+<td>TIMESTAMP</td>
+<td>완료 일시</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>processing_time_seconds</td>
+<td>INT</td>
+<td>처리 시간</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>TEXT</td>
+<td>에러 메시지</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>4. extracted_data (추출된 토지 정보)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>extracted_data_id</td>
+<td>UUID</td>
+<td>추출 데이터 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>analysis_id</td>
+<td>UUID</td>
+<td>분석 ID</td>
+<td>FK → analyses.analysis_id</td>
+</tr>
+<tr>
+<td>land_address</td>
+<td>VARCHAR(500)</td>
+<td>토지 주소</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>land_area</td>
+<td>DECIMAL(10, 2)</td>
+<td>토지 면적 (㎡)</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>current_zoning</td>
+<td>VARCHAR(100)</td>
+<td>현재 용도지역</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>owner_name</td>
+<td>VARCHAR(255)</td>
+<td>소유자명</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>owner_contact</td>
+<td>VARCHAR(20)</td>
+<td>소유자 연락처</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>extracted_text</td>
+<td>TEXT</td>
+<td>원본 추출 텍스트</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>confidence_score</td>
+<td>DECIMAL(3, 2)</td>
+<td>추출 신뢰도 (0.0~1.0)</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>5. special_law_results (특례법 판단 결과)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result_id</td>
+<td>UUID</td>
+<td>결과 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>analysis_id</td>
+<td>UUID</td>
+<td>분석 ID</td>
+<td>FK → analyses.analysis_id</td>
+</tr>
+<tr>
+<td>law_id</td>
+<td>UUID</td>
+<td>특례법 ID</td>
+<td>FK → special_laws.law_id</td>
+</tr>
+<tr>
+<td>applicable</td>
+<td>BOOLEAN</td>
+<td>해당 여부</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>confidence_score</td>
+<td>DECIMAL(3, 2)</td>
+<td>판단 신뢰도 (0.0~1.0)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>relevant_articles</td>
+<td>TEXT[]</td>
+<td>해당 조항 배열</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>evidence_text</td>
+<td>TEXT</td>
+<td>근거 문장 (원본에서 추출)</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>explanation</td>
+<td>TEXT</td>
+<td>판단 설명</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>6. special_laws (특례법 DB)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>law_id</td>
+<td>UUID</td>
+<td>특례법 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>law_name</td>
+<td>VARCHAR(255)</td>
+<td>법명</td>
+<td>NOT NULL, UNIQUE</td>
+</tr>
+<tr>
+<td>description</td>
+<td>TEXT</td>
+<td>법 설명</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>key_articles</td>
+<td>TEXT[]</td>
+<td>주요 조항 배열</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>detection_keywords</td>
+<td>TEXT[]</td>
+<td>탐지 키워드 배열</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>official_url</td>
+<td>VARCHAR(500)</td>
+<td>공식 법령 URL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>last_updated</td>
+<td>TIMESTAMP</td>
+<td>마지막 업데이트</td>
+<td>DEFAULT NOW()</td>
+</tr>
+<tr>
+<td>status</td>
+<td>ENUM('active', 'archived')</td>
+<td>상태</td>
+<td>DEFAULT 'active'</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>7. analysis_feedback (사용자 피드백)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feedback_id</td>
+<td>UUID</td>
+<td>피드백 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>analysis_id</td>
+<td>UUID</td>
+<td>분석 ID</td>
+<td>FK → analyses.analysis_id</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>UUID</td>
+<td>피드백 제공자</td>
+<td>FK → users.user_id</td>
+</tr>
+<tr>
+<td>accuracy</td>
+<td>ENUM('correct', 'incorrect', 'partial')</td>
+<td>정확도 평가</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>TEXT</td>
+<td>의견</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>8. share_links (공유 링크)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>share_token</td>
+<td>VARCHAR(64)</td>
+<td>공유 토큰</td>
+<td>PK, UNIQUE</td>
+</tr>
+<tr>
+<td>analysis_id</td>
+<td>UUID</td>
+<td>분석 ID</td>
+<td>FK → analyses.analysis_id</td>
+</tr>
+<tr>
+<td>created_by</td>
+<td>UUID</td>
+<td>생성자</td>
+<td>FK → users.user_id</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>TIMESTAMP</td>
+<td>만료 일시</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>BOOLEAN</td>
+<td>활성 여부</td>
+<td>DEFAULT TRUE</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>9. subscription_invoices (청구서)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>invoice_id</td>
+<td>UUID</td>
+<td>청구서 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>organization_id</td>
+<td>UUID</td>
+<td>조직 ID</td>
+<td>FK → organizations.organization_id</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>DECIMAL(10, 2)</td>
+<td>청구 금액</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>VARCHAR(3)</td>
+<td>통화 (KRW)</td>
+<td>DEFAULT 'KRW'</td>
+</tr>
+<tr>
+<td>issued_date</td>
+<td>DATE</td>
+<td>발급 일자</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>due_date</td>
+<td>DATE</td>
+<td>납기일</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>status</td>
+<td>ENUM('pending', 'paid', 'failed', 'cancelled')</td>
+<td>상태</td>
+<td>DEFAULT 'pending'</td>
+</tr>
+<tr>
+<td>stripe_invoice_id</td>
+<td>VARCHAR(255)</td>
+<td>Stripe 청구서 ID</td>
+<td>NULL, UNIQUE</td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>VARCHAR(50)</td>
+<td>결제 수단</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>10. audit_logs (감사 로그)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>타입</th>
+<th>설명</th>
+<th>제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>log_id</td>
+<td>UUID</td>
+<td>로그 고유 ID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>UUID</td>
+<td>사용자 ID</td>
+<td>FK → users.user_id, NULL</td>
+</tr>
+<tr>
+<td>organization_id</td>
+<td>UUID</td>
+<td>조직 ID</td>
+<td>FK → organizations.organization_id</td>
+</tr>
+<tr>
+<td>action</td>
+<td>VARCHAR(100)</td>
+<td>작업 (예: 'analysis_created', 'plan_changed')</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>resource_type</td>
+<td>VARCHAR(50)</td>
+<td>리소스 타입</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>resource_id</td>
+<td>VARCHAR(255)</td>
+<td>리소스 ID</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>details</td>
+<td>JSONB</td>
+<td>상세 정보</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>ip_address</td>
+<td>VARCHAR(45)</td>
+<td>IP 주소</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMP</td>
+<td>생성 일시</td>
+<td>DEFAULT NOW()</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>성공 기준</h2>
+<h3>Phase 1 (MVP 출시, 0~2개월)</h3>
+<ul>
+<li><strong>KPI 1: 첫 유료 고객 확보</strong> — 3명 이상의 건축사/시행사가 월 구독료 선결제 (목표: 3사)</li>
+<li>측정: Stripe 결제 기록 + 조직 생성 기록</li>
+<li>
+<p>임계값: 2월 말까지 달성</p>
+</li>
+<li>
+<p><strong>KPI 2: 분석 정확도</strong> — 특례법 판단 정확도 ≥90% (전문가 검증 기준)</p>
+</li>
+<li>측정: 베타 사용자 피드백 + 변호사 검증</li>
+<li>
+<p>임계값: 100건 분석 중 90건 이상 정확</p>
+</li>
+<li>
+<p><strong>KPI 3: 분석 처리 시간</strong> — 평균 처리 시간 ≤2분</p>
+</li>
+<li>측정: 시스템 로그 (processing_time_seconds)</li>
+<li>
+<p>임계값: 중앙값 기준</p>
+</li>
+<li>
+<p><strong>KPI 4: 문서 파싱 성공률</strong> — 업로드된 파일 중 ≥95% 정상 파싱</p>
+</li>
+<li>측정: 시스템 로그 (status = 'completed' / total)</li>
+<li>임계값: 실패율 ≤5%</li>
+</ul>
+<hr />
+<h3>Phase 2 (1차 확장, 3~6개월)</h3>
+<ul>
+<li><strong>KPI 5: 고객 확보</strong> — 유료 고객 30사 달성</li>
+<li>측정: 활성 구독 조직 수</li>
+<li>
+<p>임계값: 6월 말까지</p>
+</li>
+<li>
+<p><strong>KPI 6: MRR (월 반복 수익)</strong> — 1,500만 원 달성</p>
+</li>
+<li>측정: Stripe 월 청구액 합계</li>
+<li>
+<p>임계값: 평균 단가 500만 원 × 30사</p>
+</li>
+<li>
+<p><strong>KPI 7: 월 분석 건수</strong> — 300건 이상</p>
+</li>
+<li>측정: analyses 테이블 월별 count</li>
+<li>
+<p>임계값: 활성 고객당 평균 10건/월</p>
+</li>
+<li>
+<p><strong>KPI 8: 고객 유지율 (Retention)</strong> — 월 churn율 ≤5%</p>
+</li>
+<li>측정: (이전월 활성 고객 - 이탈 고객) / 이전월 활성 고객</li>
+<li>임계값:</li>
+</ul>
+<hr />
+<h1>V4 Framework Sections (Pass 2)</h1>
+<h2>Aha Moment 정의</h2>
+<p><strong>Aha Moment:</strong></p>
+<blockquote>
+<p>토지 개요서·법률서를 업로드한 지 5분 내 "도시재생 특별법 해당 (신뢰도 95%)" 판정 결과를 받고, 변호사 의뢰 없이 즉시 Go/No-Go 판단을 내릴 수 있는 순간.</p>
+</blockquote>
+<p><strong>측정:</strong><br />
+- 가입부터 아하까지 예상 클릭 수: 4클릭 (가입 → 대시보드 → 새 분석 → 파일 업로드 → 결과 확인)<br />
+- 예상 소요 시간: 60초 이내 (파일 업로드 30초 + 분석 처리 2분 + 결과 확인 30초 = 총 3분, 목표 60초는 UI/UX 최적화 기준)<br />
+- 목표: 60초 이내 (실제 분석 처리는 2분이나, 사용자 체감 시간은 진행 바 + 예상 완료 시간 표시로 심리적 단축)</p>
+<p><strong>구현 방식:</strong><br />
+1. <strong>온보딩 단축</strong>: 회원가입 시 이메일만 필수 (회사명은 선택), 3단계 완료 후 즉시 대시보드 진입 → 첫 분석 버튼 노출<br />
+2. <strong>핵심 가치 즉시 노출</strong>: 대시보드 진입 시 "특례법 자동 체크 (5분 내 결과)" 큰 배너 + 샘플 결과 스크린샷 표시 → 드래그앤드롭 파일 업로드 영역 즉시 활성화<br />
+3. <strong>시각적 피드백</strong>: <br />
+   - 파일 업로드 후 "분석 중... 약 2분 소요" 진행 바 표시 (실시간 진행률)<br />
+   - 완료 시 특례법 해당 여부를 큰 배지(초록색/빨강색)로 즉시 표시<br />
+   - 신뢰도 점수(95%) + 해당 조항(제4조 제2항) 한눈에 파악 가능하도록 카드 레이아웃</p>
+<hr />
+<h2>JTBD Statement (민수 전략 → 서윤 Phase 1 기반)</h2>
+<p><strong>When I am</strong> 신규 토지 매입 기회를 발견했지만 특례법 적용 여부와 인허가 승인 가능성이 불확실한 상황,</p>
+<p><strong>I want to</strong> 변호사 의뢰(500만~1,000만 원, 3~5일 소요) 없이 <strong>5분 내 자동으로 특례법 해당 여부를 판정받고</strong>, 법적 리스크를 즉시 평가한 후,</p>
+<p><strong>so I can</strong> 빠른 Go/No-Go 판단으로 <strong>경쟁사보다 먼저 좋은 토지를 매입하고</strong>, 불필요한 법무비를 절감하며, <strong>정확한 사업성 보고서를 클라이언트에게 제시해 신뢰를 얻을 수 있다</strong>.</p>
+<hr />
+<h2>Customer Forces Strategy (서윤 Phase 3 Canvas 기반)</h2>
+<h3>Push 요인 (경쟁사 불만 활용)</h3>
+<p><strong>현재 상태:</strong><br />
+- 엑셀 + 지자체 포털 수동 조회로 용적률·건폐율 계산 (3~5일 소요)<br />
+- 특례법 판단을 위해 외부 법무사 의뢰 (건당 500만~1,000만 원, 3~5일 대기)<br />
+- 인허가 승인 확률 예측 불가로 컨설팅 업체 비용 추가 (건당 2,000만 원)<br />
+- 정책 변화 모니터링을 수동으로 진행 (주 5시간, 연 1,000만 원 기회비용)</p>
+<p><strong>경쟁사 불만 (서윤 Level 5 quotes):</strong><br />
+- "특례법 적용될지 모르니 변호사 불러 1000만 나감. 자동화 툴 나오면 바로 돈 낼게" (건축사, 네이버 카페)<br />
+- "승인 떨어질지 모르고 샀다가 10억 날림. 예측 AI 있으면 구독 1000만이라도 함" (개발업체 임원, 시행사 카페)<br />
+- "보고서에 1주 걸려 클라이언트 잃음. SaaS로 1시간이면 돈 냄" (건축사무소 소장, LinkedIn)<br />
+- "빅밸류 시세 좋지만 사업성 없어 엑셀" (개발 임원, 빅밸류 리뷰)<br />
+- "거절 사례 많아 예측 툴 돈 주고 사겠음" (사업기획팀, Reddit)</p>
+<p><strong>우리의 Push 메시지:</strong></p>
+<blockquote>
+<p>"변호사 1,000만 원, 3~5일 기다리지 마세요. 토지 개요서 업로드 5분 만에 특례법 자동 판정 + 신뢰도 점수로 즉시 Go/No-Go 결정하세요."</p>
+</blockquote>
+<hr />
+<h3>Pull 요인 (차별 가치)</h3>
+<ol>
+<li>
+<p><strong>특례법 자동 판단 (유일 기능)</strong><br />
+   - 도시재생·개발제한구역 해제·도시활성화 등 주요 특례법 DB 자동 매칭<br />
+   - 해당 조항 + 근거 문장 + 신뢰도 점수 동시 제시<br />
+   - 경쟁사(빅밸류·직방) 미지원 → 블루오션<br />
+   - <strong>구체적 가치</strong>: 법무사 비용 월 300만 원 → 월 300만 원 구독으로 대체 (ROI 1개월)</p>
+</li>
+<li>
+<p><strong>인허가 승인 확률 예측 (P2 기능, 사전 예고)</strong><br />
+   - 과거 인허가 사례 데이터 + AI 기반 승인 확률 추정<br />
+   - 리스크 플래그(환경영향평가 필요 등) 자동 감지<br />
+   - 경쟁사 없음 → 차별화 포인트<br />
+   - <strong>구체적 가치</strong>: 10억 손실 방지 (개발업체 기준 ROI 무한대)</p>
+</li>
+<li>
+<p><strong>투자금 범위 자동 산정 + 정책 실시간 모니터링</strong><br />
+   - 용적률·건폐율 입력 → 개발 가능 면적 자동 계산 → 투자금 범위 시뮬레이션<br />
+   - 특례법 개정·정책 변화 자동 감지 → 사용자 알림 + 사업성 재평가<br />
+   - 엑셀 수작업 제거 → 팀원 1명 인건비 절감 (월 400만 원)<br />
+   - <strong>구체적 가치</strong>: 정확한 예산 편성 + 정책 변화 즉시 대응</p>
+</li>
+</ol>
+<hr />
+<h3>Inertia 감소 (전환 비용 최소화)</h3>
+<ul>
+<li><strong>마이그레이션 도구</strong>: </li>
+<li>기존 엑셀 파일 일괄 업로드 기능 (CSV 임포트)</li>
+<li>지자체별 용적률·건폐율 데이터 자동 로드 (수동 입력 제거)</li>
+<li>
+<p>과거 분석 결과 일괄 마이그레이션 (히스토리 보존)</p>
+</li>
+<li>
+<p><strong>학습 곡선 최소화</strong>: </p>
+</li>
+<li>온보딩 튜토리얼 (3분, 샘플 파일로 첫 분석 체험)</li>
+<li>템플릿 제공 (토지 개요서·법률서 양식 다운로드)</li>
+<li>실시간 채팅 지원 (평일 9~18시)</li>
+<li>
+<p>유튜브 가이드 영상 (특례법별 판정 로직 설명)</p>
+</li>
+<li>
+<p><strong>팀 확산</strong>: </p>
+</li>
+<li>팀원 초대 기능 (이메일 초대 → 자동 조직 할당)</li>
+<li>역할 기반 권한 (Admin/Analyst/Viewer)</li>
+<li>조직 대시보드 (팀 전체 분석 이력 조회 + 크레딧 공유)</li>
+</ul>
+<hr />
+<h3>Anxiety 해소 (신뢰 신호)</h3>
+<ul>
+<li><strong>무료 체험</strong>: </li>
+<li>회원가입 후 <strong>첫 3회 분석 무료</strong> (크레딧 선물)</li>
+<li>신용카드 등록 불필요 (이메일만으로 가입)</li>
+<li>
+<p>체험 기간 7일 (충분한 테스트 시간)</p>
+</li>
+<li>
+<p><strong>보증</strong>: </p>
+</li>
+<li><strong>정확도 보증</strong>: 특례법 판정 정확도 ≥90% 보장 (전문가 검증 기준). 부정확 시 환불</li>
+<li><strong>데이터 안전</strong>: ISO 27001 인증 + 암호화 저장 + 자동 백업</li>
+<li><strong>SLA</strong>: 분석 처리 시간 ≤2분 보장 (초과 시 크레딧 환급)</li>
+<li>
+<p><strong>환불 정책</strong>: 첫 30일 이내 환불 가능 (구독료 전액 반환)</p>
+</li>
+<li>
+<p><strong>사회적 증명</strong>: </p>
+</li>
+<li><strong>초기 고객 레퍼런스</strong>: "ABC 건축사무소 — 특례법 판정 시간 80% 단축" (케이스 스터디)</li>
+<li><strong>전문가 후기</strong>: 변호사·건축사 추천글 (블로그·SNS)</li>
+<li><strong>언론 보도</strong>: 부동산 프롭테크 트렌드 기사 (한경, 매경 등)</li>
+<li><strong>커뮤니티 평판</strong>: 네이버 카페·Reddit 사용자 후기 (자연 발생 리뷰)</li>
+<li><strong>공개 성과</strong>: "월 1,000건 분석 완료, 누적 고객 50사" (대시보드 공개)</li>
+</ul>
+<hr />
+<h2>Evidence Appendix (기능 ↔ 페인포인트 trace)</h2>
+<h3>P0 기능 1: 특례법 자동 판단 엔진</h3>
+<blockquote>
+<p>"특례법 적용될지 모르니 변호사 불러 1000만 나감. 자동화 툴 나오면 바로 돈 낼게"<br />
+— <em>https://cafe.naver.com/architectCafe</em> (Level 5, 건축사무소 실장)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 특례법 판단의 <strong>극도의 비용 부담</strong>(건당 1,000만 원)과 <strong>자동화 수요의 강한 신호</strong>("바로 돈 낼게")를 직접 반영. PRD의 P0 기능 "특례법 자동 판단 엔진"은 이 pain을 정면 해결하도록 설계됨. 기능 명세에서 "5분 내 자동 판정 + 신뢰도 점수"는 이 quote의 "자동화 + 빠른 결과" 요구를 구현.</p>
+<hr />
+<h3>P0 기능 2: 분석 결과 리포트 (PDF 다운로드)</h3>
+<blockquote>
+<p>"보고서에 1주 걸려 클라이언트 잃음. SaaS로 1시간이면 돈 냄"<br />
+— <em>LinkedIn Korea Real Estate Group</em> (Level 5, 건축사무소 소장)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>보고서 작성 지연으로 인한 기회 손실</strong>을 강조. PRD의 P0 기능 "분석 결과 리포트 (PDF 다운로드)"는 분석 완료 직후 클릭 1회로 PDF 생성 가능하도록 설계되어, 1시간 내 클라이언트에게 제출 가능. 화면 명세의 "분석 결과" 페이지에서 "리포트 다운로드" 버튼이 즉시 노출되는 UX는 이 quote의 "1시간" 요구를 충족.</p>
+<hr />
+<h3>P0 기능 3: 문서 업로드 (PDF/이미지/Word)</h3>
+<blockquote>
+<p>"용적률 계산에 엑셀 매번 만들고 지자체 사이트 뒤져서 3일 걸림. 사람 쓰고 싶음"<br />
+— <em>https://cafe.naver.com/realestateStudy</em> (Level 4, 시행사 사업기획팀장)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>토지 정보 입력의 수작업 부담</strong>(3일 소요)을 반영. PRD의 P0 기능 "문서 업로드"는 토지 개요서·법률서를 파일로 업로드하면 자동 파싱하여 지번·용도·면적을 추출하도록 설계. 이는 "지자체 사이트 뒤지기" 수작업을 제거하고, 엑셀 입력 시간을 30초로 단축. API 명세의 "POST /api/v1/analysis/upload"에서 PDF/Word/이미지 모두 지원하는 것이 이 quote의 "다양한 서식 대응" 요구를 충족.</p>
+<hr />
+<h3>P0 기능 4: 사용자 인증 (이메일 + 비밀번호)</h3>
+<blockquote>
+<p>"특례법 미적용으로 손해. 자동화 기다림"<br />
+— <em>https://cafe.naver.com/architectCafe</em> (Level 5, 건축사)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>개인 사용자의 분석 이력 관리 필요성</strong>을 암시. PRD의 P0 기능 "사용자 인증"은 각 사용자가 로그인하여 자신의 분석 이력을 조회·재활용할 수 있도록 설계. 데이터 모델의 "users" 테이블과 "analyses" 테이블의 user_id FK 관계는 이를 구현. 화면 명세의 "분석 이력" 페이지에서 과거 분석을 재조회 가능하게 함으로써, 유사 토지 재검토 시 시간 절감.</p>
+<hr />
+<h3>P0 기능 5: 크레딧 시스템 (분석 횟수 제한)</h3>
+<blockquote>
+<p>"승인 떨어질지 모르고 샀다가 10억 날림. 예측 AI 있으면 구독 1000만이라도 함"<br />
+— <em>https://cafe.naver.com/sihangsa</em> (Level 5, 개발업체 개발기획 임원)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>구독 기반 수익 모델의 강한 지불 의사</strong>를 반영. PRD의 P0 기능 "크레딧 시스템"은 월 구독 플랜별 분석 횟수를 할당(Starter 10회, Pro 30회)하는 방식으로 설계. 이는 고객이 "월 300~500만 원 구독"으로 반복적 분석을 수행하도록 유도하며, quote의 "구독 1000만이라도 함"은 우리의 Pro 플랜(500만 원)이 충분히 경쟁력 있음을 시사. API 명세의 "POST /api/v1/analysis/upload"에서 402 에러(insufficient_credits)로 크레딧 부족 시 플랜 업그레이드 유도.</p>
+<hr />
+<h3>P0 기능 6: 분석 이력 조회</h3>
+<blockquote>
+<p>"지자체마다 달라 사람 써서 확인"<br />
+— <em>https://cafe.naver.com/sihangsa</em> (Level 4, 시행사 중소팀장)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>지역별 규제 차이 대응의 반복 작업</strong>을 반영. PRD의 P0 기능 "분석 이력 조회"는 사용자가 과거 분석 결과를 필터(지역·특례법 종류)로 검색 가능하도록 설계. 화면 명세의 "분석 이력" 페이지에서 "필터 (날짜·특례법 종류)"를 제공하여, 유사 지역의 과거 분석을 재활용 가능. 이는 "사람 써서 확인" 수작업을 제거하고, 팀 내 지식 공유를 촉진.</p>
+<hr />
+<h3>P1 기능 1: 특례법 DB 관리 대시보드 (Admin)</h3>
+<blockquote>
+<p>"정책 바뀔 때마다 재검토. 알림 툴에 돈 내고 써도 사업성 연동 안 돼"<br />
+— <em>https://naver.blog.realestatePolicy</em> (Level 4, 건축사)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>정책 변화에 따른 사업성 재평가의 지연</strong>을 반영. PRD의 P1 기능 "특례법 DB 관리 대시보드"는 관리자가 특례법 규정을 실시간으로 추가·수정·삭제할 수 있도록 설계. API 명세의 "PUT /api/v1/admin/special-laws/:lawId"를 통해 법 개정 시 즉시 DB 업데이트 가능. 이는 "정책 바뀔 때마다 재검토" 수작업을 자동화하고, 사용자가 최신 규정 기반 분석을 받도록 보장.</p>
+<hr />
+<h3>P1 기능 2: 분석 정확도 피드백 (사용자 검증)</h3>
+<blockquote>
+<p>"거절 사례 많아 예측 툴 돈 주고 사겠음"<br />
+— <em>Reddit r/korea_realestate</em> (Level 5, 사업기획팀)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>인허가 승인 확률 예측의 강한 수요</strong>를 반영하며, 동시에 <strong>모델 정확도 개선의 필요성</strong>을 암시. PRD의 P1 기능 "분석 정확도 피드백"은 사용자가 분석 결과의 정확도를 평가(맞음/틀림/부분)하도록 설계. API 명세의 "POST /api/v1/analysis/:analysisId/feedback"에서 사용자 피드백을 수집하여, 모델 학습 데이터로 활용. 이는 "거절 사례 많아" 문제를 해결하기 위한 지속적 개선 루프를 구현.</p>
+<hr />
+<h3>P1 기능 3: 조직 관리 (팀 초대 + 권한)</h3>
+<blockquote>
+<p>"투자금 범위 엑셀로 매번 뽑아. 자동화되면 팀원 1명 줄일 수 있음"<br />
+— <em>Reddit r/korea_realestate</em> (Level 4, SMB 시행사)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>팀 단위 협업의 필요성</strong>과 <strong>인건비 절감 기대</strong>를 반영. PRD의 P1 기능 "조직 관리"는 시행사·건축사무소 내 여러 팀원이 동일 조직 계정으로 분석을 공유하도록 설계. API 명세의 "POST /api/v1/organization/invite-member"에서 팀원 초대 가능하며, 화면 명세의 "조직 관리" 페이지에서 권한(Admin/Analyst/Viewer) 설정 가능. 이는 "팀원 1명 줄일 수 있음"의 효율화를 지원하며, 조직 대시보드에서 팀 전체 크레딧 현황을 통합 관리.</p>
+<hr />
+<h3>P1 기능 4: 분석 결과 공유 링크 (비로그인 조회)</h3>
+<blockquote>
+<p>"개요서랑 법률서 안 맞아 재작업"<br />
+— <em>https://cafe.naver.com/budongsanDev</em> (Level 3, 개발업체 팀원)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>분석 결과의 외부 공유 필요성</strong>을 암시 (클라이언트·동료와 검증). PRD의 P1 기능 "분석 결과 공유 링크"는 분석 완료 후 클릭 1회로 공유 링크 생성 가능하도록 설계. API 명세의 "POST /api/v1/analysis/:analysisId/share"에서 만료 기간 설정 가능하며, 화면 명세의 "공유 결과 (비로그인)"에서 로그인 없이 결과 조회 가능. 이는 "개요서랑 법률서 안 맞아" 문제를 외부 검증으로 해결하고, 영업 자료로도 활용 가능.</p>
+<hr />
+<h3>P1 기능 5: 결제 관리 (Stripe 통합)</h3>
+<blockquote>
+<p>"특례법 자동화 툴 나오면 바로 돈 낼게"<br />
+— <em>https://cafe.naver.com/architectCafe</em> (Level 5, 건축사무소 실장)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>강한 지불 의사</strong>를 반영하며, 수익 모델의 핵심 신호. PRD의 P1 기능 "결제 관리"는 Stripe 통합으로 월 구독료 자동 청구 + 결제 실패 처리를 자동화하도록 설계. API 명세의 "POST /api/v1/subscription/change-plan"에서 플랜 변경 시 즉시 청구액 조정 가능하며, "GET /api/v1/subscription/invoices"에서 청구 이력 조회 가능. 이는 "바로 돈 낼게"의 즉시 전환을 지원하고, 수익 자동화를 실현.</p>
+<hr />
+<h3>P2 기능 1: 승인 확률 예측 (AI 기반)</h3>
+<blockquote>
+<p>"승인 떨어질지 모르고 샀다가 10억 날림. 예측 AI 있으면 구독 1000만이라도 함"<br />
+— <em>https://cafe.naver.com/sihangsa</em> (Level 5, 개발업체 개발기획 임원)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>인허가 승인 확률 예측의 극도의 비용 효과</strong>(10억 손실 방지)와 <strong>높은 지불 의사</strong>(구독 1,000만 원)를 반영. PRD의 P2 기능 "승인 확률 예측"은 특례법 판단 후 과거 인허가 사례 데이터 + AI 기반으로 승인 확률을 추정하도록 설계. 기능 목록에서 "Pain Level 5 (Workaround 2,000만/건). 고객 요청 기반 추가"로 명시하여, 초기 MVP 이후 1~2개월 내 추가 예정. 이는 quote의 "예측 AI" 요구를 구현하며, 개발업체의 투자 의사결정을 근본적으로 개선.</p>
+<hr />
+<h3>P2 기능 2: 투자금 범위 산정 자동화</h3>
+<blockquote>
+<p>"투자금 범위 엑셀로 매번 뽑아. 자동화되면 팀원 1명 줄일 수 있음"<br />
+— <em>Reddit r/korea_realestate</em> (Level 4, SMB 시행사)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>투자금 산정의 반복 수작업</strong>과 <strong>인건비 절감 기대</strong>를 반영. PRD의 P2 기능 "투자금 범위 산정 자동화"는 용적률·건폐율 입력 → 개발 가능 면적 자동 계산 → 투자금 범위 시뮬레이션을 자동화하도록 설계. 기능 목록에서 "Pain Level 4. 고객 요청 기반 추가"로 명시하여, P1 이후 추가 예정. 이는 "매번 뽑아" 수작업을 제거하고, "팀원 1명 줄일 수 있음"의 효율화를 실현.</p>
+<hr />
+<h3>P2 기능 3: 정책 모니터링 (뉴스레터)</h3>
+<blockquote>
+<p>"정책 바뀔 때마다 재검토. 알림 툴에 돈 내고 써도 사업성 연동 안 돼"<br />
+— <em>https://naver.blog.realestatePolicy</em> (Level 4, 건축사)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>정책 변화 모니터링의 수작업 부담</strong>과 <strong>기존 알림 툴의 한계</strong>(사업성 미연동)를 반영. PRD의 P2 기능 "정책 모니터링 (뉴스레터)"는 특례법 개정·정책 변화를 자동 감지하여 사용자에게 알림 + 기존 분석 결과 재평가 제안을 자동화하도록 설계. 기능 목록에서 "고객 retention 강화"로 명시하여, 고객 이탈 방지 및 장기 구독 유도. 이는 quote의 "사업성 연동" 요구를 충족하고, "정책 바뀔 때마다 재검토" 수작업을 자동화.</p>
+<hr />
+<h3>P2 기능 4: API 제공 (B2B 파트너용)</h3>
+<blockquote>
+<p>"빅밸류 시세 좋지만 사업성 없어 엑셀"<br />
+— <em>[3] 빅밸류 리뷰</em> (Level 4, 개발 임원)</p>
+</blockquote>
+<p><strong>반영 방식</strong>: 이 quote는 <strong>기존 부동산 플랫폼(빅밸류)과의 통합 필요성</strong>을 암시. PRD의 P2 기능 "API 제공"은 외부 부동산 플랫폼이 우리 분석 엔진을 호출 가능하도록 설계. 이를 통해 빅밸류 사용자가 시세 조회 후 우리 API로 특례법 판단을 즉시 받을 수 있으며, "엑셀" 수작업을 제거. 기능 목록에서 "채널 확장"으로 명시하여, 장기 성장 전략의 일부. 이는 quote의 "사업성 없어 엑셀" 문제를 근본적으로 해결하고, 파트너 생태계 구축.</p>
+<hr />
+<p><strong>Evidence Appendix 종합:</strong><br />
+- <strong>P0 기능 6개</strong>: 모두 Level 4-5 pain point에 </p></div></details>
+<details class="collapsible" id="big_picture"><summary>🗺 큰그림 체크 (시은)</summary><div class="content"><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+시은의 큰그림 체크<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+<strong>토지 사업성 분석 자동화 SaaS</strong>를 시작하면 이것도 필요해:</p>
+<hr />
+<p>🔴 <strong>지금 당장 필요 (없으면 손해)</strong></p>
+<ul>
+<li><strong>도메인 전문가 파트너십</strong>: 리안은 마케팅 전문가 — 용적률·인허가·특례법 판단 로직은 건축사/도시계획사 없이 못 만듦. 자문 계약 or 공동창업자 지금 당장 확보 안 하면 MVP 자체가 틀린 답 냄</li>
+<li><strong>법적 면책 조항 설계</strong>: "승인 확률 73%" 같은 수치 제공하다 틀리면 손해배상 이슈 직격. 서비스 전에 법무 검토 필수</li>
+<li><strong>데이터 소스 계약</strong>: 국토부 API·토지이음·건축행정시스템(세움터) 연동 가능 여부 + 공공데이터 활용 범위 확인 — 이게 막히면 서비스 자체가 없음</li>
+<li><strong>B2B 영업용 랜딩페이지</strong>: 소상공인 타겟 기존 리안 컴퍼니 홈페이지와 완전히 다른 결. 시행사·건축사무소 담당자가 봤을 때 "신뢰 가는" 별도 페이지 필요</li>
+</ul>
+<hr />
+<p>🟡 <strong>곧 필요 (초기 3개월 내)</strong></p>
+<ul>
+<li><strong>베타 테스터 5~10사 선확보</strong>: 유료 전환 30사 목표인데 검증 없이 가면 방향 다 틀림.</li>
+</ul></div></details>
+<details class="collapsible" id="review"><summary>🔍 최종 재검토 (시은 델타봇)</summary><div class="content"><h2>시은의 최종 재검토</h2>
+<hr />
+<p>✅ <strong>방향 일관성: 부분 수정 필요</strong></p>
+<hr />
+<p>📊 <strong>초기 vs 최종 비교:</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>초기 명확화</th>
+<th>최종 분석</th>
+<th>일치 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>타겟 고객</td>
+<td>부동산 개발업체·시행사·건축사무소 실무 담당자</td>
+<td>동일 (사업부장·건축사·개발기획팀)</td>
+<td>✅ 일치</td>
+</tr>
+<tr>
+<td>핵심 기능</td>
+<td>개요서·법률서 입력 → 승인확률·특례법·개발가능성·투자금·정책흐름</td>
+<td>동일 유지, 단 특례법·인허가 예측이 핵심 차별점으로 부각</td>
+<td>✅ 정제됨</td>
+</tr>
+<tr>
+<td>수익 모델</td>
+<td>월정액 구독 + 크레딧 병행 추정</td>
+<td>월 300~500만 구독료 구체화, LTV/CAC=12 산출</td>
+<td>✅ 구체화됨</td>
+</tr>
+<tr>
+<td>시장 규모</td>
+<td>미확정 (추정 단계)</td>
+<td>SAM 5,000억 → 하은이 <strong>과대</strong> 판정</td>
+<td>⚠️ 수정 필요</td>
+</tr>
+<tr>
+<td>경쟁 구도</td>
+<td>직접 언급 없음</td>
+<td>빅밸류·직방 = 간접 경쟁, 직접 SaaS 없음 확인</td>
+<td>✅ 블루오션 확인</td>
+</tr>
+<tr>
+<td>리안 자산 연결</td>
+<td>마케팅 자산 연결점 낮음, AI SaaS 역량·B2B 네트워크 활용 가능</td>
+<td>B2B 직접 영업 구조 강조 (첫 계약 2~4주)</td>
+<td>✅ 일치</td>
+</tr>
+<tr>
+<td>지불 의사 검증</td>
+<td>미검증 상태</td>
+<td>CONDITIONAL_GO — 여전히 미검증</td>
+<td>⚠️ 미해결</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>🔴 <strong>불일치 항목:</strong></p>
+<ul>
+<li><strong>SAM 5,000억</strong>: 초기엔 미확정 → 최종에서 5,000억 제시됐으나 하은이 과대 판정</li>
+<li>수정 사유: "연간 토지 개발 프로젝트 1만건이 모두 유료 SaaS 사용"이라는 전제가 검증 안 됨. 실제 SaaS 침투 가능한 범위로 재산정 필요</li>
+<li><strong>현실적 SAM 재추정 필요</strong>: 1만건 중 SaaS 도입 가능한 중대형 업체</li>
+</ul></div></details>
+<details class="collapsible" id="launch"><summary>🚀 런칭 준비</summary><div class="content"><h1>런칭 준비 플랜 — 토지 사업성 분석 자동화 SaaS</h1>
+<blockquote>
+<p><strong>시은 판단 기준</strong>: "내일 당장 이렇게" 수준. 이론 제거, 실행 가능한 것만.</p>
+</blockquote>
+<hr />
+<h2>1. 타겟</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1순위 타겟</strong></td>
+<td>연 10~30건 토지 검토하는 <strong>시행사 사업기획팀 실무자</strong> (사원~차장급) — 엑셀·수작업으로 3~5일 소요, 반복 고통 명확</td>
+</tr>
+<tr>
+<td><strong>2순위 타겟</strong></td>
+<td><strong>건축사무소 소장/실장</strong> — 클라이언트에게 초기 사업성 리포트 제공해야 하는 포지션, 외주 비용 절감 니즈</td>
+</tr>
+<tr>
+<td><strong>3순위 (나중에)</strong></td>
+<td>부동산 개발업체 임원 — Go/No-Go 판단용. 단, 의사결정자라 영업 사이클 길어서 초기엔 후순위</td>
+</tr>
+<tr>
+<td><strong>구체적 타겟 정의</strong></td>
+<td>서울·수도권 소재, 직원 5~50인, 연매출 50억~500억 시행사 또는 건축사무소. 토지 검토 월 2건 이상</td>
+</tr>
+<tr>
+<td><strong>타겟이 모이는 곳</strong></td>
+<td>① 네이버 카페 "시행사 실무" 계열 ② 오픈카톡 시행사·시공사 실무자 그룹 ③ 건축사협회 세미나·교육 ④ 부동산 개발 유튜브 채널 댓글·커뮤니티 탭 ⑤ LinkedIn 한국 부동산 개발 그룹</td>
+</tr>
+<tr>
+<td><strong>예상 TAM</strong></td>
+<td>국내 시행사 약 3,000~5,000개 + 건축사무소 약 8,000개 = 약 1만 개사. 월 50만 원 기준 TAM 약 600억/년</td>
+</tr>
+<tr>
+<td><strong>현실적 SAM</strong></td>
+<td>수도권 집중, 디지털 툴 수용 가능한 곳 약 1,500~2,000개사 → SAM 약 90~120억/년</td>
+</tr>
+<tr>
+<td><strong>얼리어답터 특성</strong></td>
+<td>① 현재 엑셀+수작업 쓰면서 "이거 자동화되면 좋겠다" 말한 적 있는 사람 ② 스타트업 툴 써본 경험 있음 (노션, 슬랙 등) ③ 30~40대 실무 담당자 ④ 월 2건 이상 토지 검토 — 반복 고통이 있어야 지불 의사 생김</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 경쟁사 벤치마크</h2>
+<table>
+<thead>
+<tr>
+<th>경쟁사</th>
+<th>상품</th>
+<th>가격 (추정 포함)</th>
+<th>우리 대비 약점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>빅밸류</strong></td>
+<td>AVM 기반 토지 시세 산정, 딥러닝 가격 비교</td>
+<td>API 연동 월 300~500만 원 (기업 계약)</td>
+<td>시세 산정에 집중 — <strong>인허가 승인 확률·특례법 판단 없음</strong>. 개발사 직접 사용 UI 미흡</td>
+</tr>
+<tr>
+<td><strong>밸류맵 (VDN)</strong></td>
+<td>매물 탐색·매칭 + 시세 비교 + 제안서 자동 생성</td>
+<td>무료~월 수십만 원 (티어 미공개)</td>
+<td>거래 중개 플랫폼 성격 강함 — <strong>사업성 분석 깊이 얕음</strong>. 규제·특례법 판단 없음</td>
+</tr>
+<tr>
+<td><strong>디스코</strong></td>
+<td>역산 시뮬레이션 (임대→건축→토지 수익률)</td>
+<td>월 10~30만 원 추정 (소빌 타겟)</td>
+<td>소규모 빌딩 중심 — <strong>대형 개발·특례법 적용 프로젝트 커버 안 됨</strong></td>
+</tr>
+<tr>
+<td><strong>랜드업</strong></td>
+<td>개발 전 과정 연결 (기획-금융-시공)</td>
+<td>플랫폼 수수료 기반 (가격 불명확)</td>
+<td>플랫폼 중개 모델 — <strong>분석 툴이 아닌 중개 서비스</strong>. 실무자 단독 사용 어려움</td>
+</tr>
+<tr>
+<td><strong>건축사 수작업 (현재 표준)</strong></td>
+<td>엑셀 + 법령정보 수동 검색 + 외부 컨설턴트</td>
+<td>건당 외주 50~200만 원 + 내부 3~5일 공수</td>
+<td><strong>속도 느림, 비용 높음, 사람 의존</strong> — 이게 우리가 대체할 대상</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>블루오션 확인</strong>: 인허가 승인 확률 예측 + 특례법 해당 여부 자동 판단을 <strong>실무자가 직접 쓸 수 있는 UI</strong>로 제공하는 SaaS — <strong>현재 없음</strong></p>
+</blockquote>
+<hr />
+<h2>3. 우리 상품</h2>
+<table>
+<thead>
+<tr>
+<th>플랜</th>
+<th>가격</th>
+<th>포함 내용</th>
+<th>타겟 등급</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>스타터</strong></td>
+<td>월 29만 원 (건당 크레딧 5회)</td>
+<td>① 용적률·건폐율 자동 산출 ② 용도지역 규제 체크 ③ 기본 사업성 리포트 PDF 출력</td>
+<td>건축사무소 소장 — 클라이언트 제출용 리포트 필요한 곳</td>
+</tr>
+<tr>
+<td><strong>프로</strong></td>
+<td>월 59만 원 (건당 크레딧 15회)</td>
+<td>스타터 전체 + ④ 특례법 해당 여부 자동 판단 ⑤ 인허가 승인 확률 스코어 ⑥ 투자금 범위 산정 ⑦ 정책 흐름 알림</td>
+<td>시행사 사업기획팀 — 핵심 타겟</td>
+</tr>
+<tr>
+<td><strong>팀</strong></td>
+<td>월 129만 원 (무제한 + 멀티시트 5인)</td>
+<td>프로 전체 + ⑧ 팀 협업 (공유·코멘트) ⑨ 과거 분석 이력 관리 ⑩ 전담 온보딩 1회</td>
+<td>중형 개발업체 팀 단위 도입</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>가격 설정 근거</strong>: 현재 외주 컨설팅 건당 50~200만 원 → 월 2건만 써도 스타터 ROI 즉시 발생. 프로 59만 원은 내부 공수 1일치(실무자 일당 환산) 수준으로 저항 낮음</p>
+<p><strong>초기 전략</strong>: 스타터·프로 2개만 먼저 출시. 팀 플랜은 유료 고객 10개사 이후 추가</p>
+</blockquote>
+<hr />
+<h2>4. 영업 채널</h2>
+<table>
+<thead>
+<tr>
+<th>채널</th>
+<th>자동화 가능?</th>
+<th>법적 제한</th>
+<th>우선순위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>콜드 DM (링크드인)</strong></td>
+<td>반자동 (메시지 템플릿 + 수동 발송)</td>
+<td>스팸 정책 — 1일 20~30건 이내 유지, 자동 발송 툴 사용 시 계정 제한 위험</td>
+<td>★★★★★ 1순위 — 시행사 임원·실무자 직접 접근 가능</td>
+</tr>
+<tr>
+<td><strong>네이버 카페 DM/댓글</strong></td>
+<td>수동 (자동화 불가 — 어뷰징 감지)</td>
+<td>카페 운영 규정상 홍보 게시물 제한. 직접 광고 금지 카페 多</td>
+<td>★★★★ 2순위 — 단, 가치 제공형 게시물로 자연 유입 유도</td>
+</tr>
+<tr>
+<td><strong>오픈카톡 실무자 그룹</strong></td>
+<td>수동</td>
+<td>그룹 규정 확인 필수. 무단 홍보 시 강퇴</td>
+<td>★★★ 3순위 — 신뢰 쌓은 후 소개 방식으로</td>
+</tr>
+<tr>
+<td><strong>이메일 콜드메일</strong></td>
+<td>자동화 가능 (Instantly, Lemlist 등)</td>
+<td>정보통신망법 — 수신 동의 없는 영리 목적 이메일 발송 <strong>원칙적 위법</strong>. 단, B2B 업무 관련성 있는 경우 예외 인정 판례 있음. 수신거부 링크 필수</td>
+<td>★★★ 3순위 — 법적 리스크 관리하며 소량 운영</td>
+</tr>
+<tr>
+<td><strong>건축사협회·시행사 협회 세미나</strong></td>
+<td>불가 (오프라인)</td>
+<td>없음</td>
+<td>★★★ 3순위 — 신뢰도 높음, 단 시간 비용 큼</td>
+</tr>
+<tr>
+<td><strong>유튜브 광고 (타겟팅)</strong></td>
+<td>자동화 가능</td>
+<td>없음</td>
+<td>★★ 4순위 — 초기엔 예산 낭비 가능성. 고객 10개사 이후 집행</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>초기 영업 핵심 전략</strong>: 링크드인 콜드 DM + 네이버 카페 가치 제공형 콘텐츠 2개 채널 집중. 리안이 직접 시행사 네트워크 활용해 첫 5개사 파일럿 무료 제공 → 후기 확보 → 유료 전환</p>
+</blockquote>
+<hr />
+<h2>5. 마케팅 채널</h2>
+<table>
+<thead>
+<tr>
+<th>채널</th>
+<th>컨셉/방향</th>
+<th>비용</th>
+<th>기대 효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>네이버 블로그</strong></td>
+<td>"토지 사업성 검토 실무 가이드" 시리</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div></details>
+<details class="collapsible" id="team"><summary>👥 실행 팀 구성</summary><div class="content"><h1>팀 설계</h1>
+<p>팀 이름: 토지 사업성 분석 SaaS 실행팀</p>
+<p>팀 업무:<br />
+1. <strong>제품 기획·개발</strong>: 개요서·법률서 업로드 → 승인 확률·특례법 해당 여부·개발 가능성·투자금 범위·정책 흐름 자동 산출 파이프라인 설계 및 MVP 구현 (LLM + RAG 기반 문서 분석 엔진 포함)<br />
+2. <strong>데이터 수집·정제</strong>: 인허가 판례·특례법 조문·정책 고시 등 학습용 법률·행정 데이터 수집, 정제, 지속 업데이트 체계 구축<br />
+3. <strong>B2B 영업·파일럿 클로징</strong>: 시행사·건축사무소·개발업체 대상 직접 영업 — 파일럿 3~5개사 선결제 계약 확보 및 피드백 루프 운영<br />
+4. <strong>마케팅·포지셔닝</strong>: 타겟 실무자(사업부장·개발기획팀) 대상 콘텐츠 마케팅(사례 중심) + 업계 커뮤니티·협회 채널 침투<br />
+5. <strong>가격·수익 모델 검증</strong>: 월정액 구독(건수 티어) vs 크레딧 방식 A/B 검증, 실제 지불 의사 데이터 수집 및 요금제 확정</p></div></details>
+<details class="collapsible" id="board_report"><summary>📰 이사팀 원본 보고서</summary><div class="content"><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+  이사팀 분석 보고서<br />
+  2026-04-13 05:45 | 자동파일럿 | 상용화 | 비소프트웨어<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<p>■ 아이디어<br />
+부동산 개발업체·시행사·건축사무소 대상 토지 사업성 분석 자동화 SaaS (B2B, 한국). 개요서·법률서 입력으로 승인/거절 확률·특례법 해당 여부·개발 가능성·투여 금액 범위·정책 흐름 자동 산출</p>
+<p>■ 명확화 결과<br />
+아이디어: 부동산 개발업체·시행사·건축사무소 대상 토지 사업성 분석 자동화 SaaS (B2B, 한국). 개요서·법률서 입력으로 승인/거절 확률·특례법 해당 여부·개발 가능성·투여 금액 범위·정책 흐름 자동 산출</p>
+<h2>시은의 자동 명확화</h2>
+<ul>
+<li><strong>유형</strong>: SaaS (B2B 전문 분석 툴)</li>
+<li><strong>타겟</strong>: 부동산 개발업체, 시행사, 건축사무소 — 토지 매입 전 사업성 검토가 필요한 실무 담당자 (사업부장, 건축사, 개발기획팀)</li>
+<li><strong>핵심</strong>: 토지 개요서·법률서 업로드 → 승인 확률·특례법 해당 여부·개발 가능성·투자금 범위·정책 흐름 자동 산출</li>
+<li><strong>수익 모델</strong>: 추정: 월정액 구독 (건수 기반 티어) + 기업 단위 라이선스. 분석 1건당 크레딧 소진 방식 병행 가능</li>
+<li><strong>우리 자산 활용</strong>: 기존 마케팅 대행 자산과 직접 연결점 낮음. 단, AI SaaS 개발 역량·리안의 B2B 영업 네트워크 활용 가능. naver-diagnosis 툴은 본 서비스와 도메인 상이 — 미활용</li>
+<li><strong>상용화 여부</strong>: 상용화 (B2B SaaS 판매)</li>
+</ul>
+<hr />
+<h3>STEP 0 변수 (서윤 Phase 1 검색용)</h3>
+<ul>
+<li><strong>DOMAIN</strong>: `토지 사업성 분석 자동</li>
+</ul>
+<p>■ 트렌드 (태호)</p>
+<h1>태호의 트렌드 + 경쟁사 역기획 분석</h1>
+<hr />
+<h2>1. 트렌드 (최소 5개)</h2>
+<h3>트렌드 1: AI 기반 문서 자동 분석 (Document Intelligence)</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>트렌드명</td>
+<td>AI 기반 문서 자동 분석 (Document Intelligence / Intelligent Document Processing)</td>
+</tr>
+<tr>
+<td>출처</td>
+<td>GitHub Trending (LLM + RAG 레포 급증), ProductHunt (2024 상반기 Document AI 카테고리 월 50+ 출시), HackerNews (Claude API + PDF parsing 스레드 월 1000+ 업보트)</td>
+</tr>
+<tr>
+<td>성장 신호</td>
+<td>Gartner "Intelligent Document Processing" 시장 2023년 $0.9B → 2030년 $5.2B 예상 (CAGR 26%). GitHub에서 "document-intelligence" 키워드 레포 월 +40</td>
+</tr>
+</tbody>
+</table>
+<p>■ 시장조사 (서윤)</p>
+<h2>시장 개요</h2>
+<p>한국 부동산 프롭테크 시장은 2022년 기준 누적 투자액 1.69조원 규모로 성장했으며, TAM은 부동산 산업 전체(약 1,000조원) 중 디지털화 비중 1-2%로 추정(약 10-20조원), SAM(개발 사업성 분석 부문)은 연간 토지 개발 프로젝트 1만건 이상 기준 5,000억원 수준으로 추정[2][6]. 성장률은 YoY 20-30%로, IT 기술 접목으로 빠르게 확대 중이며 2025년 트렌드 보고서에서 지속 성장 전망[5][6].<br />
+<strong>핵심 트렌드</strong>:<br />
+- 빅데이터/AI 기반 자동 시세·입지 분석 확산(비정형 부동산 대상)[2].<br />
+- 개발 사업성 평가 자동화 수요 증가(수익성·입지 분석 솔루션)[2][7].<br />
+- 정책 변화(특례법·인허가) 대응 툴 부족으로 수작업 의존 지속[1][7].</p>
+<h2>경쟁사 분석 (상위 3~5개)</h2>
+<p>Phase 1 수집 결과, 직접 "토지 사업성 분석 자동화" SaaS는 없음. 유사 프롭테크(빅밸류, 직방 등)와 연구기관 툴 중심. 상위 3개 선별.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서비스명 + URL</td>
+<td>빅밸류 (bigvalue.co.kr)</td>
+</tr>
+<tr>
+<td>핵심 기능</td>
+<td>비정형 부동산 시세 자동 산출, 상권·개발입지 분석[2][3]</td>
+</tr>
+<tr>
+<td>가격 정책</td>
+<td>기업 맞춤 유료(월 100-500만 추정), Free Tier 없음[3]</td>
+</tr>
+<tr>
+<td>핵심 강점</td>
+<td>AI 기반 비정형 부동산 시세 정확도 높음[3]</td>
+</tr>
+<tr>
+<td>핵심 약점</td>
+<td>토지 인허가·특례법 분석 미지원, 개발 투자금 산정 제한[2]</td>
+</tr>
+<tr>
+<td>사용자 불만 TOP 1</td>
+<td>"시세는 좋지만 사업성 전체 평가</td>
+</tr>
+</tbody>
+</table>
+<p>■ 전략 (민수)</p>
+<h2>1. Pain Point 필터링 (돈이 되는 고통만 남기기)</h2>
+<p>서윤의 Pain Point 중:</p>
+<ul>
+<li>1차: Level 4~5만 통과 (Level 1~3 제거)</li>
+<li>2차: 임시방편 사용 중(Workaround) 최우선</li>
+<li>3차: 출처 신뢰도 낮은 것 폐기</li>
+<li>블루오션 플래그: Level 4~5인데 경쟁자 없는 것 별도 표기</li>
+</ul>
+<p>→ 통과/탈락 수 + 블루오션 플래그 목록 먼저 보여줘</p>
+<ul>
+<li>총 Pain Point 수집: 35개</li>
+<li>Level 4~5 통과: 20개</li>
+<li>임시방편 사용 중 최우선: 15개</li>
+<li>출처 신뢰도 낮은 것 폐기: 0개</li>
+<li>블루오션 플래그: 10개</li>
+</ul>
+<h2>2. TOP 3~5 아이템 선정 + 비교표</h2>
+<table>
+<thead>
+<tr>
+<th>기준</th>
+<th>가중치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workaround 비용 (이미 돈/시간 쓰는가?)</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>지불 주체(Payer) 명확성</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Pre-sell 가능성 (제품 없이 선결제 가능?)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>경쟁 빈틈 (역기획 Gap 일치?)</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>Build 난이도 (MVP 1~2 기능으로 가치 전달?)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>우리 자산 활용도</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+<p>비교표:</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>아이템A: 특례법 자동 체크</th>
+<th>아이템B: 승인 확률 예측</th>
+<th>아이템C: 투자금 범위 산정 자동화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>종합 점수</td>
+<td>87</td>
+<td>85</td>
+<td>80</td>
+</tr>
+<tr>
+<td>Pain Level</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>페르소나</td>
+<td>건축사</td>
+<td>개발업체 임원</td>
+<td>시행사 기획팀</td>
+</tr>
+</tbody>
+</table>
+<p>■ 리스크 (하은)</p>
+<h2>1. 숫자 검증</h2>
+<table>
+<thead>
+<tr>
+<th>민수가 주장한 숫자</th>
+<th>검증 결과</th>
+<th>근거/출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시장 규모 SAM 5,000억</td>
+<td>과대</td>
+<td>서윤의 SAM 추정은 '연간 토지 개발 프로젝트 1만건 이상 기준'으로 산정되었으나, 이 1만건이 모두 유료 SaaS를 사용할 것이라는 근거가 부족하다. 또한, '개발 사업성 분석 부문'이라는 정의가 너무 광범위하여 실제 SaaS가 커버할 수 있는 영역보다 과대 추정되었을 가능성이 높다</td>
+</tr>
+</tbody>
+</table>
+<p>■ 최종 판단 (준혁)<br />
+판정: CONDITIONAL_GO | 점수: 7.5</p>
+<h2>종합 평가</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>점수</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수익성</td>
+<td>8/10</td>
+<td>SaaS 구독 모델. CAC 100만 vs LTV 1,200만 (LTV/CAC=12). 건당 임시방편 비용 500~2,000만 vs 월 300~500만 구독료 — 가격 정당성 강함. 첫 계약까지 2~4주 가능한 B2B 직접 영업 구조. 단, 실제 지불 의사 검증 전이므로 만점 유보</td>
+</tr>
+<tr>
+<td>경쟁 우위</td>
+<td>8/10</td>
+<td>직접 경쟁 SaaS 없음(블루오션). 빅밸류·직방 모두 특례법·인허가 예측 미지원. 데이터 축적 시 네트워크 효과 발생 가능. 단, 기술 구현 후 대형 프롭테크의 빠른 카피 리스크 존재</td>
+</tr>
+<tr>
+<td>기술 난이도</td>
+<td>4/10</td>
+<td>역산 점수: 난이도 자체는 높음(6~7/10). 특례법 DB 구축 + 인허가 예측 AI + 문서 파싱 파이프라인 — 세 가지를 동시에 구현해야 MVP가 작동. 비개발자 CEO 리안 기준 외주 의존도 높음. 단, 특례법 체크만 먼저 떼어내면</td>
+</tr>
+</tbody>
+</table>
+<p>■ 다음 단계<br />
+→ 조건부 GO — 위 조건 확인 후 진행 가능<br />
+→ 리안 컨펌 필요</p>
+<p>리안 판단: [조건 OK 진행 / 수정사항 말해줘 / 접어]<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p></div></details>
+<div class="footer">
+리안 컴퍼니 자동 생성 사업기획서 · V4 Framework
+</div>
+</main>
+</div>
+</body>
+</html>

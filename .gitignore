@@ -54,13 +54,7 @@ company/answers.txt
 company/대화.txt
 company/새 텍스트 문서.txt
 company/TEST_RESULT_*.md
-company/outputs/
 company/utils/video_cloner_tmp/
-company/knowledge/base/
-company/knowledge/teams/
-company/knowledge/inbox/
-company/knowledge/layers/data/
-company/knowledge/index.json
 company/knowledge/__pycache__/
 
 # 빌드 결과물
