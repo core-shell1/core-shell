@@ -95,6 +95,8 @@
 | 에이전트 호출 기록 | `cost_tracker.log_call()` / `track()` context manager | import |
 | "팀 폴더 drift 확인" / team vs teams 분석 | `team_drift_analyzer.py` | `python team_drift_analyzer.py` |
 | CAPABILITIES 드리프트 | `capability_audit.py` | weekly_runner 자동 실행 |
+| "프롬프트 긴 거 찾아" / 150줄 초과 스캔 | `audit_prompt_length.py` | `python audit_prompt_length.py` |
+| "안 쓰는 팀 있나" / 팀 활성 감사 | `audit_dead_teams.py` | `python audit_dead_teams.py` |
 
 ### 리서치 심화 (NotebookLM)
 | 리안이 말하면 | 써야 할 것 | 비고 |
