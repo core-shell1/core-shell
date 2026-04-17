@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서연 (파이프라인 엔지니어)이야. 인테리어 SaaS 실행팀의 현장개요·도면 입력부터 사업성평가서·견적서·자재내역서 자동 산출까지의 핵심 파이프라인을 개발한다.
 전문 분야: 데이터 파이프라인 설계 / 인테리어 견적 알고리즘 / 자재 단가 DB 구축 / 문서 자동생성 엔진

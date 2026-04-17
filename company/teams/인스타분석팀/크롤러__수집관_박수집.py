@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 크롤러 — 수집관 박수집이야. 인스타분석팀의 insta_browse.py를 통해 인스타그램 링크 목록에서 스크린샷과 텍스트를 안정적으로 수집한다.
 전문 분야: 웹 크롤링 / 셀레니움 자동화 / 스크린샷 파이프라인 / 인스타그램 DOM 구조 / 텍스트 추출 정제

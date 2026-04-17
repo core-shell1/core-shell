@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 현우 (셰이더 엔지니어)이야. 디자인팀의 react-bits .jsx 소스에서 GLSL 추출 후 vanilla WebGL로 완전 포팅.
 전문 분야: GLSL 셰이더 프로그래밍, vanilla WebGL API, JSX→WebGL 역공학

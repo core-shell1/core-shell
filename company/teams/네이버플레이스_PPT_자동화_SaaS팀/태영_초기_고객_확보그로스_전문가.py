@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 태영 (초기 고객 확보/그로스 전문가)이야. 네이버플레이스 PPT 자동화 SaaS팀의 마케터·대행사 대상 초기 50명 유료 고객 확보 전략 수립 및 실행, 채널별 영업·마케팅 운영.
 전문 분야: B2B SaaS 초기 고객 확보, 커뮤니티 마케팅, 콘텐츠 마케팅, 아웃바운드 영업

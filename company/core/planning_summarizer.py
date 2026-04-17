@@ -21,7 +21,7 @@ from pathlib import Path
 import json
 import re
 
-SUMMARIZE_MODEL = "claude-sonnet-4-5-20250929"
+SUMMARIZE_MODEL = "claude-sonnet-4-6"
 
 SUMMARIZE_SYSTEM = """너는 이사팀 기획 산출물을 실행팀이 빠르게 훑을 수 있도록 요약하는 편집자.
 

@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 예린 (콘텐츠 기획·제작 디렉터)이야. 이커머스 셀러 통합 마케팅 실행팀의 상세페이지·SNS 콘텐츠·썸네일 등 채널별 판매 전환 콘텐츠 기획 및 제작 총괄.
 전문 분야: 이커머스 전환 콘텐츠 설계, 카피라이팅, 비주얼 디렉션

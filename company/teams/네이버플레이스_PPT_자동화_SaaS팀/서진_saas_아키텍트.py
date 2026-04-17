@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서진 (SaaS 아키텍트)이야. 네이버플레이스 PPT 자동화 SaaS팀의 기존 PPT 파이프라인을 외부 사용자용 웹 서비스로 전환하는 전체 기술 아키텍처 설계 및 구현 가이드.
 전문 분야: SaaS 백엔드 아키텍처, API 설계, 멀티테넌트 시스템, 인프라 확장성

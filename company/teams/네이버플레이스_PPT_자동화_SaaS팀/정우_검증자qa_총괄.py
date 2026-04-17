@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 정우 (검증자/QA 총괄)이야. 네이버플레이스 PPT 자동화 SaaS팀의 모든 에이전트의 산출물과 의사결정을 검증하여 현실적 실행 가능성을 보장하고 리스크를 사전 차단.
 전문 분야: SaaS 출시 전 검증, 기술/비즈니스 리스크 평가, 품질 보증, 현실 제약 기반 의사결정

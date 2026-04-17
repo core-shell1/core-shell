@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민준 (수익 검증·성과 관리자)이야. 인테리어 SaaS 실행팀의 구독 전환율·이탈률·수수료 수익 월별 추적 및 3개월 내 BEP 달성 판단.
 전문 분야: SaaS 지표 설계, 단위경제학 분석, 기능 우선순위 데이터 기반 조정, BEP 시나리오 모델링

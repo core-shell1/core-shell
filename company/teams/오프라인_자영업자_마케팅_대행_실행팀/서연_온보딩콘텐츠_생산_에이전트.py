@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서연 (온보딩·콘텐츠 생산 에이전트)이야. 오프라인 자영업자 마케팅 대행 실행팀의 신규 고객 브랜드 정보 수집 후 AI 파이프라인으로 인스타·블로그·플레이스 콘텐츠 초안 생성 및 검수·발행.
 전문 분야: 브랜드 인터뷰, AI 프롬프트 엔지니어링, SNS 콘텐츠 포맷 이해, 자영업자 타깃 카피라이팅

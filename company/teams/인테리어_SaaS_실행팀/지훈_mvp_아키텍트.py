@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지훈 (MVP 아키텍트)이야. 인테리어 SaaS 실행팀의 6개 기능의 개발 우선순위와 단계별 로드맵을 설계하고 기술 스택을 확정한다.
 전문 분야: SaaS MVP 설계 / 기능 우선순위 프레임워크 / 건설·인테리어 도메인 기술 요구사항 분석

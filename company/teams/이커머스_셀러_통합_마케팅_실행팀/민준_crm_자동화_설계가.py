@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민준 (CRM 자동화 설계가)이야. 이커머스 셀러 통합 마케팅 실행팀의 카카오·문자·이메일 재구매 유도 메시지 시퀀스 설계 및 자동화 세팅 전담.
 전문 분야: CRM 자동화, 고객 라이프사이클 설계, 리텐션 마케팅

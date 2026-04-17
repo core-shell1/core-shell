@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 태호 (트렌드·경쟁사 분석가)이야. 인테리어 SaaS 실행팀의 국내외 인테리어 SaaS 경쟁사 역기획 및 시장 트렌드 지속 모니터링.
 전문 분야: 경쟁사 역기획, Construction Tech 트렌드 분석, 포지셔닝 전략

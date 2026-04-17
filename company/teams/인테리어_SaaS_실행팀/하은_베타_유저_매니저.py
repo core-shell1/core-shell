@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하은 (베타 유저 매니저)이야. 인테리어 SaaS 실행팀의 중소 인테리어 업체 베타 유저를 모집하고, 인터뷰·사용성 테스트로 지불 의향 가격과 핵심 기능을 검증한다.
 전문 분야: B2B 고객 개발 / 소상공인 네트워크 활용 / 사용성 테스트 설계 / 지불 의향 가격 검증 방법론

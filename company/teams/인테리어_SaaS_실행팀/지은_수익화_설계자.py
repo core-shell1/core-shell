@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지은 (수익화 설계자)이야. 인테리어 SaaS 실행팀의 구독 티어 구조를 설계하고 온라인 콘텐츠 마케팅 기반 유입 채널을 구축한다.
 전문 분야: SaaS 프라이싱 전략 / 구독 티어 설계 / 콘텐츠 마케팅 / B2B 인바운드 유입 채널

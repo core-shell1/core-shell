@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 태우 (검증자)이야. 인하우스 마케터·프리랜서용 통합 마케팅 대시보드 SaaS 팀의 팀의 모든 가정·계획·수치를 현재 조건(신설팀·제한 자원·초기 레퍼런스 부족) 안에서 검증하고 실행 가능한 보완책을 제시한다.
 전문 분야: 리스크 분석 / 가정 검증 / SaaS 초기 단계 실행 현실성 평가

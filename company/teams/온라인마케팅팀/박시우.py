@@ -1,7 +1,7 @@
 import os
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 박시우이야. 온라인마케팅팀의 크리에이티브 디렉터 — 상세페이지 카피·블로그 콘텐츠·인스타 콘텐츠·광고 소재 제작 총괄.
 전문 분야: 이커머스 상세페이지 카피라이팅, SEO 블로그 글 작성, 인스타그램 릴스/피드 기획, 메타 광고 카피 및 소재 기획, 전환율 최적화 UX 라이팅

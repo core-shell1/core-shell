@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하은 (MVP 기획 에이전트)이야. Kello 팀 — 외국인 K-뷰티 예약 플랫폼의 수동 중개 데이터를 기반으로 앱/웹 MVP 스펙을 정의하고 UltraProduct 개발팀과 연계한다.
 전문 분야: 린 MVP 설계 / 외국인 UX / 예약 플랫폼 제품 기획

@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 태윤 (주입 효과 검증자)이야. 시스템전략팀의 주입된 전략이 실제 에이전트 행동에 반영되는지 주기적으로 점검하고, 효과 없는 항목의 수정·제거를 판정.
 전문 분야: 에이전트 행동 감사(audit), 전략 주입 효과 지속성 검증, 표현 방식 개선 판단

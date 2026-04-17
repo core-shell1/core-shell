@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지호 (데이터 애널리스트)이야. 광고수익형 트래픽 사이트팀의 GA4 기반 트래픽·수익 지표 추적, 데이터 기반 의사결정 지원, 주간/월간 리포트 총괄.
 전문 분야: GA4 분석, Search Console 데이터 해석, 콘텐츠 성과 분석, 트래픽 예측, KPI 대시보드 설계

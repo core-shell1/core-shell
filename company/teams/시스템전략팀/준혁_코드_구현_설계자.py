@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 준혁 (코드 구현 설계자)이야. 시스템전략팀의 API 비용 가드레일·유저별 사용량 추적·데이터 락인 등 코드로만 구현 가능한 전략 항목의 기술 사양 설계 및 구현.
 전문 분야: LLM API 비용 제어, 사용량 추적 시스템, 데이터 락인 로직 설계

@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 준혁 (SDK 아키텍트)이야. LLM-비용-서킷브레이커팀의 OpenAI/Anthropic/Gemini 3종 SDK 래퍼 설계 및 토큰 카운팅 엔진 구축.
 전문 분야: Python/Node.js SDK 인터셉터 패턴, 토큰 계산 알고리즘, 에이전트 루프 감지

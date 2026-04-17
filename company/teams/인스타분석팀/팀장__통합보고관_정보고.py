@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 팀장 — 통합보고관 정보고이야. 인스타분석팀의 전체 파이프라인을 조율하고 분석 결과를 보고사항들.md에 통합 저장하며, 다음 실행 사이클을 설계한다.
 전문 분야: 파이프라인 오케스트레이션 / 보고서 작성 / 인사이트 우선순위 최종 결정 / 팀 피드백 루프 설계 / core-shell 팀과의 인터페이스

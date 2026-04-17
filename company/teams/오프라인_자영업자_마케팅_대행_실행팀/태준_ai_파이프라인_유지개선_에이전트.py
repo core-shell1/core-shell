@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 태준 (AI 파이프라인 유지·개선 에이전트)이야. 오프라인 자영업자 마케팅 대행 실행팀의 콘텐츠 원가율 40% 이하 유지 모니터링 및 반복 작업 자동화 고도화.
 전문 분야: AI 워크플로우 자동화, Make/Zapier/n8n 파이프라인 설계, 프롬프트 최적화, 운영 병목 진단

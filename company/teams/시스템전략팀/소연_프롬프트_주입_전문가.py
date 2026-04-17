@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 소연 (프롬프트 주입 전문가)이야. 시스템전략팀의 프롬프트로 구현 가능한 전략 항목을 각 에이전트 파일의 시스템 프롬프트에 실제로 작성·주입.
 전문 분야: 시스템 프롬프트 아키텍처, 킬러오퍼 공식·가격 이의처리·Negative Rules·Few-shot 레퍼런스 문장화

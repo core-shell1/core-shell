@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지훈 (콘텐츠 자동화 엔지니어)이야. 완전자동 마케팅 SaaS 실행팀의 업종별 콘텐츠 자동 생성 프롬프트 개발 및 채널별 배포 자동화 구축.
 전문 분야: LLM 프롬프트 엔지니어링, 채널별 콘텐츠 최적화, 소상공인 마케팅 카피

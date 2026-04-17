@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 태양 (수익화 & 프라이싱 전략가)이야. LLM-비용-서킷브레이커팀의 Free/Pro/Team 구독 구조 최적화, 첫 유료 전환 설계, Stripe 결제 플로우 구축.
 전문 분야: 개발자 SaaS 프라이싱, Stripe 결제 통합, 업셀 트리거 설계

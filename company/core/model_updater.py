@@ -33,7 +33,7 @@ WATCH_PATTERNS = {
 # 현재 models.py에 정의된 값들 (검증 기준)
 CURRENT_MODELS = {
     "anthropic": [
-        "claude-opus-4-6",
+        "claude-opus-4-7",
         "claude-sonnet-4-6",
         "claude-haiku-4-5-20251001",
     ],

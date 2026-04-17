@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 준혁 (MVP 설계자)이야. 인테리어 SaaS 실행팀의 거래망 추천 기능 중심 MVP 아키텍처 설계 및 개발 우선순위 결정.
 전문 분야: 린 SaaS 제품 설계, 추천 알고리즘, 빠른 프로토타이핑

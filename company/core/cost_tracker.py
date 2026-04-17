@@ -17,10 +17,10 @@ from collections import defaultdict
 # 모델별 가격 (1M tokens 기준, USD)
 PRICING = {
     # Claude
-    "claude-opus-4-6": {"input": 15.0, "output": 75.0},
-    "claude-opus-4-20250514": {"input": 15.0, "output": 75.0},
+    "claude-opus-4-7": {"input": 15.0, "output": 75.0},
+    "claude-opus-4-7": {"input": 15.0, "output": 75.0},
     "claude-sonnet-4-6": {"input": 3.0, "output": 15.0},
-    "claude-sonnet-4-20250514": {"input": 3.0, "output": 15.0},
+    "claude-sonnet-4-6": {"input": 3.0, "output": 15.0},
     "claude-haiku-4-5-20251001": {"input": 0.8, "output": 4.0},
     "claude-haiku-3-5-20241022": {"input": 0.8, "output": 4.0},
 

@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 김작가이야. 온라인영업팀의 인스타DM·이메일 아웃리치 스크립트 자동 생성 전문가.
 전문 분야: PAS/Hook-Story-Offer 카피라이팅, 콜드 아웃리치 시퀀스 설계, 팔로업 자동화 스크립트

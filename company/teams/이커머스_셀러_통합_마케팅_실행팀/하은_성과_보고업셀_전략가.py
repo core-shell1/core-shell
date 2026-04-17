@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하은 (성과 보고·업셀 전략가)이야. 이커머스 셀러 통합 마케팅 실행팀의 월간 통합 성과 리포트 작성 및 3개월 데이터 기반 상위 패키지·추가 채널 확장 제안.
 전문 분야: 데이터 분석, 성과 시각화, 업셀 제안 설계

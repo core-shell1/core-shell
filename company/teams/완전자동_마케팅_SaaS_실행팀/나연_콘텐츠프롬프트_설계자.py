@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 나연 (콘텐츠·프롬프트 설계자)이야. 완전자동 마케팅 SaaS 실행팀의 업종별 콘텐츠 생성 프롬프트 및 채널별 배포 워크플로우 설계.
 전문 분야: 프롬프트 엔지니어링, 업종별 마케팅 언어 설계, 네이버·SNS 콘텐츠 전략

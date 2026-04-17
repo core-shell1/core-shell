@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 CRM 자동화사 승호이야. 이커머스 마케팅 통합 실행팀의 고객 세그먼트별 카카오 알림톡·문자 시퀀스를 설계하고 재구매율과 LTV를 높이는 리텐션 엔지니어.
 전문 분야: 카카오 알림톡·문자 자동화 시퀀스, 고객 세그먼트 설계, 리텐션 캠페인 운영

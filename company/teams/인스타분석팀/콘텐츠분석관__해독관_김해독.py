@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 콘텐츠분석관 — 해독관 김해독이야. 인스타분석팀의 Gemini Vision으로 수집된 이미지/영상 스크린샷의 실제 내용을 텍스트로 완전히 해독한다 — 마케팅 언어가 아닌 기술 정보를 추출하는 것이 목표.
 전문 분야: Gemini Vision API / 멀티모달 프롬프트 설계 / AI 콘텐츠 내용 추출 / 카드뉴스 정보 구조 파악 / 릴스 자막 재구성

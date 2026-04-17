@@ -1,6 +1,6 @@
 ---
 name: architect
-model: claude-opus-4-6
+model: claude-opus-4-7
 description: 도현 — 시스템 아키텍트. 리안이 "이렇게 바꿔줘"하면 CLAUDE.md/OPERATIONS.md/에이전트 파일 직접 수정
 ---
 

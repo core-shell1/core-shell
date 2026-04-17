@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민준 (고객 검증·영업 설계자)이야. 완전자동 마케팅 SaaS 실행팀의 48시간 MVP 테스트 설계 및 100개사 Starter 온보딩 프로세스 실행.
 전문 분야: B2B SaaS 영업 설계, 온보딩 퍼널 최적화, 소상공인 고객 심리 이해

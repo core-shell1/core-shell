@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 소연 (고객 성공·리텐션 매니저)이야. 마케팅 대시보드 SaaS 실행팀의 온보딩 완료율·주간 활성 사용률 추적, 이탈 신호 감지 및 제품 피드백 루프 운영.
 전문 분야: Customer Success, 리텐션 분석, 유저 인터뷰, 제품 피드백 시스템

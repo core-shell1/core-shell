@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 승현 (API 연동 개발자)이야. 마케팅 대시보드 SaaS 실행팀의 GA4·메타·네이버SA 데이터 파이프라인 구축 및 실시간 동기화 관리.
 전문 분야: 데이터 엔지니어링, API 통합, ETL 파이프라인, SaaS 백엔드

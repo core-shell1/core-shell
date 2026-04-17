@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민지 (PPT 품질 최적화 전문가)이야. 네이버플레이스 PPT 자동화 SaaS팀의 외부 판매 수준의 PPT 품질을 확보하고, 사용자 피드백 기반으로 PPT 템플릿과 분석 로직을 지속 개선.
 전문 분야: 프레젠테이션 디자인, 네이버플레이스 데이터 분석, 마케팅 보고서 품질 관리

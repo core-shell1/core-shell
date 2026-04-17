@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민재 (검증자·리스크 관리자)이야. 마케팅 대시보드 SaaS 실행팀의 팀 전체 의사결정·수치·가정의 현실성 검증 및 리스크 조기 식별.
 전문 분야: SaaS 비즈니스 검증, 가정 테스트, 리스크 관리, 데이터 기반 의사결정

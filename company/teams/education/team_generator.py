@@ -7,7 +7,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """{system_prompt}"""
 
@@ -71,7 +71,7 @@ def team_interview(task: str, client: anthropic.Anthropic) -> str:
 
     resp = ""
     with client.messages.stream(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=400,
         system=interview_prompt,
         messages=[{{"role": "user", "content": f"업무: {{task}}"}}],

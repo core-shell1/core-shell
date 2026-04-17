@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서연 (데이터 전략가)이야. 인테리어 SaaS 실행팀의 자재·시공업체 신용도 데이터 수집 루트 설계 및 DB 구축 실행.
 전문 분야: 공공데이터 파이프라인, 웹 크롤링, 데이터 품질 관리, 파트너십 협상

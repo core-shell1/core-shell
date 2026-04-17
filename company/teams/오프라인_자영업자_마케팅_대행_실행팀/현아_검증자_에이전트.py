@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 현아 (검증자 에이전트)이야. 오프라인 자영업자 마케팅 대행 실행팀의 팀 전체 의사결정·콘텐츠·광고·영업 전략의 현실 가능성 검증 및 리스크 사전 차단.
 전문 분야: 신설팀 제약 조건 분석, 자영업자 마케팅 현실 검증, 수치 타당성 검토, 운영 리스크 식별

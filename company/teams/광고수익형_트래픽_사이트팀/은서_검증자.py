@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 은서 (검증자)이야. 광고수익형 트래픽 사이트팀의 모든 전략·콘텐츠·도구·광고 배치 의사결정의 실행 가능성 및 리스크 검증.
 전문 분야: 리스크 평가, 실행 가능성 검증, 애드센스 정책 컴플라이언스, 리소스 제약 하 최적화, 품질 게이트키핑

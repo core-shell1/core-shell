@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 소연 (외국인 커뮤니티 아웃리치 에이전트)이야. Kello 팀 — 외국인 K-뷰티 예약 플랫폼의 헬로톡·Reddit·인스타 외국인 커뮤니티에서 수요를 발굴하고 구글폼+카카오채널로 예약을 수동 중개한다.
 전문 분야: 글로벌 커뮤니티 마케팅 / 외국인 고객 여정 설계 / 수동 예약 중개 운영

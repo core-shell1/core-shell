@@ -3,7 +3,7 @@ import sys
 import json
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 # 크롤러 임포트
 try:

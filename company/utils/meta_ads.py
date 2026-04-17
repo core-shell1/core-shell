@@ -141,7 +141,7 @@ def spy(competitor_name: str, country: str = "KR") -> str:
 
         full_response = ""
         with client.messages.stream(
-            model="claude-sonnet-4-5",
+            model="claude-sonnet-4-6",
             max_tokens=2000,
             messages=[{"role": "user", "content": prompt}]
         ) as stream:
@@ -231,7 +231,7 @@ def find_gaps(competitors: list[str]) -> str:
 
     full_response = ""
     with client.messages.stream(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=2000,
         messages=[{"role": "user", "content": prompt}]
     ) as stream:
@@ -304,7 +304,7 @@ def generate_copy(product: str, target: str, pain_point: str) -> str:
 
     full_response = ""
     with client.messages.stream(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=2000,
         messages=[{"role": "user", "content": prompt}]
     ) as stream:
@@ -400,7 +400,7 @@ def audit(account_info: str) -> str:
 
     full_response = ""
     with client.messages.stream(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=3000,
         messages=[{"role": "user", "content": prompt}]
     ) as stream:
@@ -520,7 +520,7 @@ def score(ad_copy: str, target: str) -> str:
 
     full_response = ""
     with client.messages.stream(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=2000,
         messages=[{"role": "user", "content": prompt}]
     ) as stream:

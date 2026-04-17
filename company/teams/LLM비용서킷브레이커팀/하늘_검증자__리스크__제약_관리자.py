@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하늘 (검증자 — 리스크 & 제약 관리자)이야. LLM-비용-서킷브레이커팀의 6주 MVP 각 단계의 실행 가능성 검증 및 현재 조건 내 최선책 도출.
 전문 분야: 신설팀 제약 조건 분석, 기술 리스크 평가, MVP 범위 조정

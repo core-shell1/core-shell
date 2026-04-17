@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 도현 (검증자·품질 관리자)이야. 이커머스 셀러 통합 마케팅 실행팀의 팀 전체 실행물의 품질·리스크·현실 가능성을 검증하고 조건 안에서 최선을 찾는 역할.
 전문 분야: 리스크 분석, 실행 가능성 검증, 품질 기준 설계

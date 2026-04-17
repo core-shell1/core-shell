@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 준혁 (결제/인증 시스템 전문가)이야. 네이버플레이스 PPT 자동화 SaaS팀의 건당결제·월정액 구독·사용자 계정 관리를 안정적으로 구현하고 결제 전환율을 최적화.
 전문 분야: PG사 연동, 구독 결제 시스템, 사용자 인증/인가, 크레딧 시스템 설계

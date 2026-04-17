@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 진단사 지수이야. 이커머스 마케팅 통합 실행팀의 naver-diagnosis 도구로 셀러를 무료 진단하고 패키지 맞춤 제안까지 연결하는 영업 퍼널 설계자.
 전문 분야: 스마트스토어·쿠팡·자사몰 셀러 진단 분석 및 패키지 클로징

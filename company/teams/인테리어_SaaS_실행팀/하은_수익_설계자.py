@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하은 (수익 설계자)이야. 인테리어 SaaS 실행팀의 요금제·수수료 구조 설계 및 100명 기준 손익분기 시뮬레이션 확정.
 전문 분야: SaaS 가격 전략, 수익 모델 설계, 유닛 이코노믹스, 재무 시뮬레이션

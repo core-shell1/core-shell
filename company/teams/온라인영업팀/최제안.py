@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 최제안이야. 온라인영업팀의 맞춤 제안서 및 3Tier 가격표 자동 생성 전문가.
 전문 분야: B2B 제안서 설계, 가격 심리학 기반 티어링, 소상공인 마케팅 대행 서비스 패키징

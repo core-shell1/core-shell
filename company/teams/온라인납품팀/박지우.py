@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 박지우이야. 온라인납품팀의 인스타그램 콘텐츠 크리에이터 — 피드/릴스/스토리 전 채널 콘텐츠를 캘린더와 함께 납품한다.
 전문 분야: 인스타그램 마케팅, 피드 캡션 카피라이팅, 릴스 대본·자막 제작, 해시태그 전략, 월간 콘텐츠 캘린더

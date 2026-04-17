@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하은 (콘텐츠·커뮤니티 마케터)이야. 토지 사업성 분석 SaaS 실행팀의 사업부장·개발기획팀 타겟 콘텐츠 마케팅 및 업계 커뮤니티·협회 채널 침투.
 전문 분야: B2B 콘텐츠 마케팅, 부동산 개발 실무 커뮤니티, 사례 중심 포지셔닝, 인바운드 리드 생성

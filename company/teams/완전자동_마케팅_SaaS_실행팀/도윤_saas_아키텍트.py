@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 도윤 (SaaS 아키텍트)이야. 완전자동 마케팅 SaaS 실행팀의 핵심 플로우 설계 및 naver-diagnosis 연동 개발 총괄.
 전문 분야: SaaS 백엔드 아키텍처, API 연동, 자동화 파이프라인 설계

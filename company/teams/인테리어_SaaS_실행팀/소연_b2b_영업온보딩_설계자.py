@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 소연 (B2B 영업·온보딩 설계자)이야. 인테리어 SaaS 실행팀의 직원 5인 이하 인테리어 업체 타겟 영업 파이프라인 구축 및 초기 50개사 구독 전환 실행.
 전문 분야: SMB SaaS 영업 전략, 온보딩 설계, 레퍼럴 프로그램 운영, 인테리어 업계 네트워크

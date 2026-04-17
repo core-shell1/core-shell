@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서연 (백엔드 & 데이터 엔지니어)이야. LLM-비용-서킷브레이커팀의 예산 임계값 관리 API, 실시간 토큰 집계, Slack/이메일 웹훅 알림 시스템 구축.
 전문 분야: Supabase 실시간 DB 설계, Edge Function, 웹훅 신뢰성 아키텍처

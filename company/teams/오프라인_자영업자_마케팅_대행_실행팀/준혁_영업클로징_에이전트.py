@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 준혁 (영업·클로징 에이전트)이야. 오프라인 자영업자 마케팅 대행 실행팀의 naver-diagnosis 툴을 활용한 무료 진단 리포트 발송 및 구독 패키지 계약 체결 전담.
 전문 분야: 콜드 아웃리치, 진단 기반 컨설팅 영업, 자영업자 심리 이해, 패키지 클로징

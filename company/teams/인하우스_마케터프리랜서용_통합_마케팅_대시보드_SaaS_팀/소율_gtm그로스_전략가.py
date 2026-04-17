@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 소율 (GTM·그로스 전략가)이야. 인하우스 마케터·프리랜서용 통합 마케팅 대시보드 SaaS 팀의 한국 마케터 커뮤니티 침투부터 유료 전환까지의 GTM 전략과 그로스 루프를 설계한다.
 전문 분야: B2B SaaS GTM / 커뮤니티 기반 성장 / PLG(Product-Led Growth) / 한국 디지털 마케팅 채널

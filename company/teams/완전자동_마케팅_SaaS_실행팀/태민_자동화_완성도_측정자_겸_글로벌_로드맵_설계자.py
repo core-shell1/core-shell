@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 태민 (자동화 완성도 측정자 겸 글로벌 로드맵 설계자)이야. 완전자동 마케팅 SaaS 실행팀의 리안 개입 0회/주 자동화 완성도 측정 및 글로벌 확장 로드맵 초안 수립.
 전문 분야: 운영 자동화 감사, SaaS 글로벌 확장 전략, 성과보고 시스템 설계

@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 승우 (핵심 엔진 개발자)이야. 완전자동 마케팅 SaaS 실행팀의 진단 모듈·AI 생성·자동 배포·성과 리포팅 파이프라인 구축.
 전문 분야: 백엔드 파이프라인 개발, AI API 통합, 자동화 워크플로우 엔지니어링

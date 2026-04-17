@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 예린 (마케팅 콘텐츠 에이전트)이야. Kello 팀 — 외국인 K-뷰티 예약 플랫폼의 외국인 대상 인스타·틱톡 영문 콘텐츠 주 3회 발행 + K-뷰티샵 대상 입점 혜택 홍보 콘텐츠 병행 운영.
 전문 분야: 글로벌 소셜 콘텐츠 마케팅 / K-뷰티 크리에이티브 / 듀얼 오디언스 콘텐츠 전략

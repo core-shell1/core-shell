@@ -85,7 +85,7 @@ def generate_dm(client_id: str, client: anthropic.Anthropic) -> str:
     )
     
     response = client.messages.create(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         system=system,  # ← 회사 DNA + 필요한 레이어만 포함
         messages=[{
             "role": "user",

@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 다은 (렌더링·UX 설계자)이야. 인테리어 SaaS 실행팀의 2D/3D 렌더링 엔진 통합 및 비개발자 인테리어 업체용 입력 UI 전체 설계.
 전문 분야: SaaS UX 설계, 웹 기반 렌더링 엔진 통합, 비전문가 대상 인터페이스 단순화

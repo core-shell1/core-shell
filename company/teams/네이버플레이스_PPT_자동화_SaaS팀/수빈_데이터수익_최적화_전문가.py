@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 수빈 (데이터/수익 최적화 전문가)이야. 네이버플레이스 PPT 자동화 SaaS팀의 사용량·결제·이탈 데이터를 추적 분석하여 수익 구조를 최적화하고 구독 전환을 극대화.
 전문 분야: SaaS 메트릭스, 퍼널 분석, 구독 전환 최적화, 이탈 방지

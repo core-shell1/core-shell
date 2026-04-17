@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지훈 (제품 설계자)이야. 완전자동 마케팅 SaaS 실행팀의 6단계 자동화 플로우 설계 및 기능 명세 총괄.
 전문 분야: SaaS 제품 기획, UX 플로우 설계, 3티어 기능 명세

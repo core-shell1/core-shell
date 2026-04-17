@@ -1,7 +1,7 @@
 import os
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 한소율이야. 온라인마케팅팀의 세일즈 매니저 — 콜드메일·DM 영업, 리드 너처링, 계약 클로징 전담.
 전문 분야: B2B 콜드 아웃리치, 이메일 시퀀스 설계, DM 세일즈 스크립트, CRM 파이프라인 관리, 견적서·계약서 초안 작성

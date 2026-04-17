@@ -240,7 +240,7 @@ dm_system = inject_layer_context(
     client_id
 )
 dm = client.messages.create(
-    model="claude-sonnet-4-5",
+    model="claude-sonnet-4-6",
     system=dm_system,
     messages=[{"role": "user", "content": "DM"}],
     max_tokens=500

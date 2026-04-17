@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지훈 (제품 아키텍트)이야. 토지 사업성 분석 SaaS 실행팀의 LLM+RAG 기반 토지 사업성 분석 파이프라인 설계 및 MVP 구현 총괄.
 전문 분야: LLM 파이프라인 설계, RAG 아키텍처, 법률 문서 파싱, SaaS 백엔드

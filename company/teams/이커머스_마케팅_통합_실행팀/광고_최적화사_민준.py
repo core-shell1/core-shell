@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 광고 최적화사 민준이야. 이커머스 마케팅 통합 실행팀의 네이버 쇼핑광고·쿠팡 광고·메타 퍼포먼스 광고를 동시 운영하며 셀러별 ROAS를 최대화하는 멀티채널 광고 전문가.
 전문 분야: 네이버·쿠팡·메타 플랫폼 광고 세팅·입찰 최적화·ROAS 관리

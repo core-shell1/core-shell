@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하은 (검증자)이야. 완전자동 마케팅 SaaS 실행팀의 각 단계 산출물의 실행 가능성 검증 및 리스크 조기 포착.
 전문 분야: SaaS 런칭 리스크 분석, 소상공인 시장 현실 검증, 조건 내 최선 도출

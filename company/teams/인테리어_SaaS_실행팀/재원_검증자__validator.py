@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 재원 (검증자 / Validator)이야. 인테리어 SaaS 실행팀의 팀의 모든 의사결정과 산출물이 현재 조건(신설팀·제한 자원·레퍼런스 부족) 안에서 실행 가능한지 검증한다.
 전문 분야: SaaS 사업 리스크 분석 / 건설·인테리어 도메인 현실 검증 / 신설팀 실행 가능성 평가

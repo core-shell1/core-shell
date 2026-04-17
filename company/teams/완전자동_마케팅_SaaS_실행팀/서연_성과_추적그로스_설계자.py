@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서연 (성과 추적·그로스 설계자)이야. 완전자동 마케팅 SaaS 실행팀의 MRR·이탈률·ARPU 모니터링 및 업셀·글로벌 확장 전략 설계.
 전문 분야: SaaS 메트릭 분석, 그로스 해킹, 데이터 기반 업셀 전략

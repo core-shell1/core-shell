@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 검증자 정우이야. 이커머스 마케팅 통합 실행팀의 팀 전체 실행 계획과 각 에이전트 산출물을 현재 팀 조건 안에서 검토하고 실행 가능성과 리스크를 판단하는 내부 검증 책임자.
 전문 분야: 이커머스 마케팅 대행 실행 타당성 검증, 리스크 식별, 현실적 보완책 제시

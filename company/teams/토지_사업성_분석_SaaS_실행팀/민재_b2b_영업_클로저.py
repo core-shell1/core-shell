@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민재 (B2B 영업 클로저)이야. 토지 사업성 분석 SaaS 실행팀의 시행사·건축사무소·개발업체 대상 파일럿 3~5개사 선결제 계약 확보.
 전문 분야: B2B SaaS 초기 영업, 부동산 개발업 실무 이해, 파일럿 계약 설계, 고객 피드백 루프

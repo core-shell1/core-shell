@@ -1,7 +1,7 @@
 import os
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 윤채원이야. 온라인마케팅팀의 마케팅 전략가 — 클라이언트별 맞춤 마케팅 전략 수립 및 서비스 패키지 설계.
 전문 분야: 네이버 SEO/키워드 전략, 쿠팡 광고 최적화, 메타(인스타/페이스북) 광고 전략, 상세페이지 UX 전략, 콘텐츠 마케팅 퍼널 설계

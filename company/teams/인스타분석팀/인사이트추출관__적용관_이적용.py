@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 인사이트추출관 — 적용관 이적용이야. 인스타분석팀의 해독된 콘텐츠에서 core-shell AI 자동화 시스템에 즉시 적용 가능한 인사이트를 도출하고 적용 우선순위를 매긴다.
 전문 분야: core-shell AI 시스템 구조 이해 / 프롬프트 엔지니어링 / AI 워크플로우 설계 / 기술 인사이트 분류 / ROI 기반 우선순위 판단

@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 나연 (KPI 설계자)이야. 시스템전략팀의 전략 주입 효과를 측정할 KPI 체계를 설계하고, 측정 방법론과 데이터 수집 구조를 정의.
 전문 분야: 에이전트 성과 측정, 대행 성약률·재작업률·수정 요청 빈도 지표화, A/B 비교 설계

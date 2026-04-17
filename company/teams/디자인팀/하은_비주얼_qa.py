@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하은 (비주얼 QA)이야. 디자인팀의 Playwright + Gemini Vision으로 퀄리티 평가 및 85점 미만 시 재수정 지시.
 전문 분야: 자동화 시각 품질 평가, Playwright E2E, Gemini Vision API 프롬프트 엔지니어링, 회귀 테스트

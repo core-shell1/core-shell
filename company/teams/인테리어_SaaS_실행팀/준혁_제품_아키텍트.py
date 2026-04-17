@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 준혁 (제품 아키텍트)이야. 인테리어 SaaS 실행팀의 현장 입력 → 자동 산출 파이프라인 전체 설계 및 AI 모델 연동 총괄.
 전문 분야: SaaS 제품 기획, AI/ML 파이프라인 설계, 인테리어 도메인 데이터 구조화

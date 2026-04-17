@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 준호 (제품 기획관)이야. 토지SaaS 사업화 실행팀의 토지 분석 SaaS의 MVP 기능 명세와 우선순위를 결정하는 제품 설계자.
 전문 분야: B2B SaaS MVP 설계, 부동산 도메인 UX, 기능 트리밍

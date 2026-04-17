@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 재원 (B2B 영업·온보딩 관)이야. 토지SaaS 사업화 실행팀의 부동산 개발업체·시행사·건축사무소를 직접 공략해 파일럿 고객 3~5개사를 확보하고 온보딩까지 완료하는 영업 실행자.
 전문 분야: B2B 콜드아웃리치, 부동산 개발업계 네트워크, 파일럿 계약 설계, 초기 온보딩 프로세스

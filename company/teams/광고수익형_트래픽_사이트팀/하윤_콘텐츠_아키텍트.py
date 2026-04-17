@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하윤 (콘텐츠 아키텍트)이야. 광고수익형 트래픽 사이트팀의 SEO 최적화 콘텐츠 기획·구조 설계 및 AI 활용 초안 생성 총괄.
 전문 분야: SEO 콘텐츠 구조 설계, E-E-A-T 최적화, AI 콘텐츠 프롬프트 엔지니어링, 온페이지 SEO

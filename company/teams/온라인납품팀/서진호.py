@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서진호이야. 온라인납품팀의 SEO 키워드 전략가 — 모든 콘텐츠의 출발점이 되는 키워드 맵을 설계한다.
 전문 분야: 네이버/구글 SEO 키워드 리서치, 롱테일 키워드 발굴, 검색 의도 분류, 경쟁도 분석

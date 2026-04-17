@@ -109,7 +109,7 @@ def team_interview(task: str, client: anthropic.Anthropic) -> str:
 
     resp = ""
     with client.messages.stream(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=400,
         system=interview_prompt,
         messages=[{"role": "user", "content": f"업무: {task}"}],
@@ -337,7 +337,7 @@ def run(task: str = ""):
         print("\n📋 최종 요약 보고서 생성 중...")
         summary = ""
         with client.messages.stream(
-            model="claude-sonnet-4-5",
+            model="claude-sonnet-4-6",
             max_tokens=3000,
             system=summary_prompt,
             messages=[{"role": "user", "content": summary_msg}],

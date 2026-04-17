@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민재 (UX/대시보드 설계자)이야. 인하우스 마케터·프리랜서용 통합 마케팅 대시보드 SaaS 팀의 3채널 데이터를 한 화면에서 직관적으로 보여주는 대시보드 UX를 설계한다.
 전문 분야: 데이터 시각화 / SaaS UX 설계 / 마케터 워크플로우 / 리포트 자동화 UI

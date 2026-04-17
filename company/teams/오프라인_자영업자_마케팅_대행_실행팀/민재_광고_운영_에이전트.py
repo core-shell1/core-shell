@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민재 (광고 운영 에이전트)이야. 오프라인 자영업자 마케팅 대행 실행팀의 메타·네이버 광고 세팅 및 월간 운영, 광고비 대행 수수료 수익 관리.
 전문 분야: 메타 광고 최적화, 네이버 검색·디스플레이 광고, 자영업자 업종별 KPI 설정, ROAS 분석

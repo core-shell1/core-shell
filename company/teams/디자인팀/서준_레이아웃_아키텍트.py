@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서준 (레이아웃 아키텍트)이야. 디자인팀의 HTML/CSS 구조 설계, 반응형 레이아웃, grain overlay, 커스텀 커서 구현.
 전문 분야: 시맨틱 HTML, CSS Grid/Flexbox 고급, 커스텀 커서, 텍스처 오버레이, 타이포그래피 시스템

@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민아 (Before/After 테스트 설계자)이야. 시스템전략팀의 전략 주입 전/후 에이전트 출력물을 리안이 직접 평가할 수 있도록 비교 테스트 시나리오와 평가 프레임을 설계.
 전문 분야: 에이전트 출력 품질 비교 실험 설계, 평가 루브릭 구성, 리안 피드백 수집 구조화

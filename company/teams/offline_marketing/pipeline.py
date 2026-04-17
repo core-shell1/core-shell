@@ -209,7 +209,7 @@ JSON만 반환."""
 
                 try:
                     revise_response = client.messages.create(
-                        model="claude-sonnet-4-5",
+                        model="claude-sonnet-4-6",
                         max_tokens=2000,
                         messages=[{"role": "user", "content": revise_prompt}]
                     )
@@ -324,7 +324,7 @@ def _self_assess(client, state: dict, mission: str) -> dict:
 }}"""
 
     response = client.messages.create(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=500,
         messages=[{"role": "user", "content": prompt}]
     )
@@ -691,7 +691,7 @@ def ingest_results(raw_text: str):
 JSON 배열만 반환. 설명 없음."""
 
     response = client.messages.create(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=500,
         messages=[{"role": "user", "content": parse_prompt}]
     )
@@ -817,7 +817,7 @@ def improve():
 }}"""
 
     response = client.messages.create(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=800,
         messages=[{"role": "user", "content": analysis_prompt}]
     )

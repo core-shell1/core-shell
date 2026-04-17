@@ -27,7 +27,7 @@ except ImportError:
     scrape_url = None
     scrape_naver_place = None
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 박탐정이야. 온라인영업팀의 타겟 소상공인 잠재고객 분석 및 식별 기준 설계 전문가.
 전문 분야: 소상공인 온라인 취약점 식별, 업종별 타겟팅 기준 수립, 수작업 가능한 잠재고객 발굴 프로세스 설계

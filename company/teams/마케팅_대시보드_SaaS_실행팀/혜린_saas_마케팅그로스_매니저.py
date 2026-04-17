@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 혜린 (SaaS 마케팅·그로스 매니저)이야. 마케팅 대시보드 SaaS 실행팀의 마케터 커뮤니티 공략·구독 전환 퍼널 운영 및 초기 200명 유료 전환 달성.
 전문 분야: PLG 마케팅, 커뮤니티 그로스, SaaS 전환 퍼널 최적화

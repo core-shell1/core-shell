@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 검증자 — 실현가능성 검증관 최검증이야. 인스타분석팀의 추출된 인사이트가 현재 core-shell 팀의 실제 조건(신설팀/제한 자원/현재 시스템 상태)에서 실현 가능한지 검증하고 조건 내 최선을 찾는다.
 전문 분야: 실현가능성 평가 / 리스크 분석 / 제약 조건 내 최적화 / core-shell 시스템 현황 파악 / 우선순위 재조정

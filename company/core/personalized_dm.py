@@ -66,7 +66,7 @@ def generate_dm(place_data: Dict, service_package: str = "주목") -> str:
 
     try:
         response = client.messages.create(
-            model="claude-opus-4-1-20250805",
+            model="claude-opus-4-7",
             max_tokens=500,
             messages=[{"role": "user", "content": prompt}],
         )
@@ -118,7 +118,7 @@ def generate_dm_with_variations(
 
         try:
             response = client.messages.create(
-                model="claude-opus-4-1-20250805",
+                model="claude-opus-4-7",
                 max_tokens=500,
                 messages=[{"role": "user", "content": prompt}],
             )
@@ -169,7 +169,7 @@ def generate_dm_interactive(place_data: Dict) -> str:
     )
 
     response = client.messages.create(
-        model="claude-opus-4-1-20250805",
+        model="claude-opus-4-7",
         max_tokens=500,
         system=system_prompt,
         messages=conversation_history,
@@ -192,7 +192,7 @@ def generate_dm_interactive(place_data: Dict) -> str:
         conversation_history.append({"role": "user", "content": user_input})
 
         response = client.messages.create(
-            model="claude-opus-4-1-20250805",
+            model="claude-opus-4-7",
             max_tokens=500,
             system=system_prompt,
             messages=conversation_history,

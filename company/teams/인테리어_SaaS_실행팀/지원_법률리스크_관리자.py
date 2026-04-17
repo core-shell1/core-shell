@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지원 (법률·리스크 관리자)이야. 인테리어 SaaS 실행팀의 신용도 데이터 활용·자동 문서 산출 관련 법적 리스크 사전 정의 및 컴플라이언스 설계.
 전문 분야: 개인정보보호법, 신용정보법, 전자상거래법, SaaS 이용약관 설계

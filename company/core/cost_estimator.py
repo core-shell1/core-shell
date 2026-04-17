@@ -7,7 +7,7 @@ main.py 시작 시 호출 → 과금 예정 금액 출력
 PRICES = {
     "claude-sonnet-4-6":       {"input": 3.0,   "output": 15.0},
     "claude-haiku-4-5-20251001": {"input": 0.8,  "output": 4.0},
-    "claude-opus-4-6":         {"input": 15.0,  "output": 75.0},
+    "claude-opus-4-7":         {"input": 15.0,  "output": 75.0},
     "gpt-4o":                  {"input": 2.5,   "output": 10.0},
     "gemini-2.5-flash":        {"input": 0.075, "output": 0.30},
     "sonar-pro":               {"input": 3.0,   "output": 15.0},  # Perplexity
@@ -60,7 +60,7 @@ AGENTS = [
     },
     {
         "name": "준혁 - GO/NO-GO 최종 판단",
-        "model": "claude-opus-4-6",
+        "model": "claude-opus-4-7",
         "input":  (7_000, 12_000),
         "output": (1_500, 3_000),
         "note": "Claude Opus ← 가장 비쌈",
@@ -81,7 +81,7 @@ AGENTS = [
     },
     {
         "name": "도윤 - 교육팀 커리큘럼 설계",
-        "model": "claude-opus-4-6",
+        "model": "claude-opus-4-7",
         "input":  (5_000, 9_000),
         "output": (2_500, 5_000),
         "note": "Claude Opus ← 가장 비쌈",

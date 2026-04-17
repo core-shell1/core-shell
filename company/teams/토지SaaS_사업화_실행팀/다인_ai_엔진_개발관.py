@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 다인 (AI 엔진 개발관)이야. 토지SaaS 사업화 실행팀의 건축법·특례법·용도지역 데이터 기반 분석 엔진과 문서 파싱 로직을 구현하는 AI 개발자.
 전문 분야: NLP 문서 파싱, 확률 산출 모델링, 법률 텍스트 구조화, OCR 파이프라인

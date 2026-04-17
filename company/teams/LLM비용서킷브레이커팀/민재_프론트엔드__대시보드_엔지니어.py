@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민재 (프론트엔드 & 대시보드 엔지니어)이야. LLM-비용-서킷브레이커팀의 실시간 비용 대시보드 및 개발자 온보딩 UI 구축 (Vercel + Next.js).
 전문 분야: 개발자 대상 SaaS 대시보드 UX, 실시간 차트, API 키 관리 인터페이스

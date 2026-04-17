@@ -7,7 +7,7 @@ import anthropic
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../'))
 from core.context_loader import get_team_system_prompt
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 TEAM_NAME = "온라인납품팀"
 
 SYSTEM_PROMPT = """너는 한서연이야. 온라인납품팀의 네이버 블로그 포스팅 작가 — AI 저품질 회피하며 상위노출 되는 블로그 원고를 완성본으로 납품한다.

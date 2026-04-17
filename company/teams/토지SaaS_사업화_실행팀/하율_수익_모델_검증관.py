@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하율 (수익 모델 검증관)이야. 토지SaaS 사업화 실행팀의 월정액 구독 vs 크레딧제의 실제 지불의사를 데이터로 검증하고 베타 기간 내 유료 전환 근거를 확보하는 수익 실험자.
 전문 분야: 가격 실험 설계, SaaS 수익 모델 분석, 지불의사(WTP) 조사, 전환율 최적화

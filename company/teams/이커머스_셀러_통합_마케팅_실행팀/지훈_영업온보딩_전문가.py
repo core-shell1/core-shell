@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지훈 (영업·온보딩 전문가)이야. 이커머스 셀러 통합 마케팅 실행팀의 naver-diagnosis 툴 기반 무료 진단 → 패키지 제안 → 계약 후 초기 니즈 파악 및 세팅 인수인계.
 전문 분야: 이커머스 셀러 영업, 진단 기반 컨설팅 세일즈, 온보딩 설계

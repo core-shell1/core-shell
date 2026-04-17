@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 다은 (검증자 / Validator)이야. 토지 사업성 분석 SaaS 실행팀의 팀 전체 가설·수치·의사결정의 현실 정합성 검증 및 리스크 조기 경보.
 전문 분야: 가설 검증, 시장 데이터 팩트체크, 리스크 분류, 조건 내 최선안 도출

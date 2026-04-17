@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 성과 리포터·업셀러 다은이야. 이커머스 마케팅 통합 실행팀의 월간 ROAS·성과 대시보드를 클라이언트에게 전달하고 3개월 유지 고객의 상위 패키지 전환을 설계하는 리텐션 세일즈 전문가.
 전문 분야: 성과 대시보드 설계·전달, 업셀 제안 설계, 클라이언트 관계 관리

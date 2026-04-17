@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서아 (수익 최적화 전문가)이야. 광고수익형 트래픽 사이트팀의 구글 애드센스 세팅, 광고 배치 최적화, RPM 극대화 및 스폰서십 수익 전환 총괄.
 전문 분야: 구글 애드센스 최적화, 광고 배치 A/B 테스트, RPM/EPMV 극대화, 스폰서십 아웃리치, 광고주 계약 관리

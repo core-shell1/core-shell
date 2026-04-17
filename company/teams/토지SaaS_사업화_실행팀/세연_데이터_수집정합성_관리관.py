@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 세연 (데이터 수집·정합성 관리관)이야. 토지SaaS 사업화 실행팀의 국토부·지자체 법령 데이터를 실시간 수집·정제·유지하여 분석 엔진의 데이터 신선도를 보장하는 데이터 운영자.
 전문 분야: 공공 API 연동, 법령 크롤링, 데이터 정합성 검증, 개정 이력 관리

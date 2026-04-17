@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민재 (영업 실행자)이야. 인테리어 SaaS 실행팀의 소규모~중형 인테리어 시공업체 대상 콜드 아웃리치 및 얼리버드 선결제 10건 확보.
 전문 분야: B2B 콜드 아웃리치, 인테리어 업계 영업, Pre-sell 검증, CAC 최적화

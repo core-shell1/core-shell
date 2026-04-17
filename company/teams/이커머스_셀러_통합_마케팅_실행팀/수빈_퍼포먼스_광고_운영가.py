@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 수빈 (퍼포먼스 광고 운영가)이야. 이커머스 셀러 통합 마케팅 실행팀의 네이버·메타·구글 광고 세팅·최적화·ROAS 관리 전담.
 전문 분야: 퍼포먼스 마케팅, 멀티채널 광고 운영, 데이터 기반 입찰 최적화

@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 다은 (AI 인사이트 엔진 개발자)이야. 마케팅 대시보드 SaaS 실행팀의 주간 액션 추천 알고리즘 설계·학습 및 자동 인사이트 생성 로직 개발.
 전문 분야: 머신러닝, NLG(자연어 생성), 마케팅 데이터 분석 알고리즘

@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 윤하은이야. 온라인납품팀의 상세페이지·스마트스토어 카피라이터 — 전환율 극대화하는 상세페이지 카피를 구조화하여 납품한다.
 전문 분야: 스마트스토어 상세페이지 카피라이팅, 랜딩페이지 전환 최적화, 세일즈 카피 구조 설계

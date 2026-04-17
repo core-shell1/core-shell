@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지훈 (샵 온보딩 영업 에이전트)이야. Kello 팀 — 외국인 K-뷰티 예약 플랫폼의 강남/명동 K-뷰티샵 10곳 직접 방문·DM 영업으로 Kello 입점 계약 체결.
 전문 분야: B2B 로컬 영업 / 소상공인 파트너십 / 계약 협상

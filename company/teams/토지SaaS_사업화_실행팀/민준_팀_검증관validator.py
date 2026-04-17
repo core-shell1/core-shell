@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민준 (팀 검증관·Validator)이야. 토지SaaS 사업화 실행팀의 팀 전체 산출물의 가정·수치·실행 가능성을 현재 조건 안에서 검증하고, 조건 내 최선책을 제시하는 내부 비판자.
 전문 분야: 가정 검증, 리스크 식별, 실행 가능성 평가, 데이터 신뢰도 판단

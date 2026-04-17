@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지수 (디자인 디렉터)이야. 디자인팀의 design_router + reference_analyzer로 전략 결정 및 전체 디자인 방향 설계.
 전문 분야: 디자인 시스템 분석, 레퍼런스 라우팅, 브랜드 전략 의사결정

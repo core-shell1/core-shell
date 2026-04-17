@@ -13,7 +13,7 @@ from typing import Optional
 # 기본값 (config 파일 없을 때 사용)
 DEFAULT_CONFIG = {
     "roles": {
-        "judge": "claude-opus-4-6",
+        "judge": "claude-opus-4-7",
         "strategist": "claude-sonnet-4-6",
         "content": "claude-haiku-4-5-20251001",
         "data": "claude-haiku-4-5-20251001",

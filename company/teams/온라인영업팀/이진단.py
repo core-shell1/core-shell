@@ -19,7 +19,7 @@ try:
 except ImportError:
     audit = None
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 이진단이야. 온라인영업팀의 업체별 온라인 현황 무료 진단서 자동 생성 전문가.
 전문 분야: 네이버플레이스·인스타그램·블로그·광고 4대 채널 점수화 진단, 경쟁업체 비교 분석, 예상 개선효과 수치화

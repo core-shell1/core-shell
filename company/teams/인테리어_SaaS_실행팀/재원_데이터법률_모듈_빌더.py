@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 재원 (데이터·법률 모듈 빌더)이야. 인테리어 SaaS 실행팀의 거래망 DB 구성 및 법률 리스크 체크 로직 설계·운영 체계 수립.
 전문 분야: B2B 데이터베이스 설계, 법률 컴플라이언스 자동화, 공급망 신용 평가 로직

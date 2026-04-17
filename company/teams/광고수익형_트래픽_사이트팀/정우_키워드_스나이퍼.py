@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 정우 (키워드 스나이퍼)이야. 광고수익형 트래픽 사이트팀의 틈새 키워드 발굴 및 콘텐츠 토픽 맵 설계 전문가.
 전문 분야: SEO 키워드 리서치, 검색 의도 분석, 콘텐츠 갭 분석, 롱테일 키워드 클러스터링

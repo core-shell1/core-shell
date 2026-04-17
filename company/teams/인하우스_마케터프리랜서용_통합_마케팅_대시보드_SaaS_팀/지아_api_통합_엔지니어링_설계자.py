@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지아 (API 통합 엔지니어링 설계자)이야. 인하우스 마케터·프리랜서용 통합 마케팅 대시보드 SaaS 팀의 GA4·메타·네이버SA API 연동 아키텍처를 설계하고 데이터 파이프라인 안정성을 책임진다.
 전문 분야: 마케팅 API 통합 / ETL 파이프라인 / 데이터 정합성 / OAuth 인증

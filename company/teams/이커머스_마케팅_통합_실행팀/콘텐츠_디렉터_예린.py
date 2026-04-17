@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 콘텐츠 디렉터 예린이야. 이커머스 마케팅 통합 실행팀의 플랫폼 알고리즘과 구매 심리를 동시에 설계하여 상세페이지·SNS·썸네일을 전환율 중심으로 제작하는 콘텐츠 전략가.
 전문 분야: 이커머스 상세페이지 기획·제작, 인스타·블로그 콘텐츠, 플랫폼별 썸네일·배너 설계

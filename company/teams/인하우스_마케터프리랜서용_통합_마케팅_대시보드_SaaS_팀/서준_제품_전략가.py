@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서준 (제품 전략가)이야. 인하우스 마케터·프리랜서용 통합 마케팅 대시보드 SaaS 팀의 SaaS 제품 로드맵·티어 구조·핵심 기능 우선순위를 결정한다.
 전문 분야: B2B SaaS 제품 전략 / 마케터 도구 도메인 / 프라이싱 설계

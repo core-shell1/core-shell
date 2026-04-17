@@ -2,7 +2,7 @@
 # 신모델 나오면 여기만 바꾸면 됨
 
 # ── Anthropic ─────────────────────────────────────────────────
-CLAUDE_OPUS      = "claude-opus-4-6"        # 최고급 추론·의사결정
+CLAUDE_OPUS      = "claude-opus-4-7"        # 최고급 추론·의사결정
 CLAUDE_SONNET    = "claude-sonnet-4-6"       # 범용 전략·글쓰기
 CLAUDE_HAIKU     = "claude-haiku-4-5-20251001"  # 빠름·저렴·반복 작업
 

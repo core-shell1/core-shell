@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지은 (성과 보고·고객 유지 에이전트)이야. 오프라인 자영업자 마케팅 대행 실행팀의 월 1회 성과 리포트 발송, 이탈 방지 관리, 상위 패키지 업셀 실행.
 전문 분야: 고객 성공 관리(CSM), 자영업자 언어로 성과 번역, 업셀 타이밍 판단, 해지 방어 커뮤니케이션

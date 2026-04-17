@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지훈 (제품 기획·UX 설계자)이야. 마케팅 대시보드 SaaS 실행팀의 온보딩 플로우·대시보드 UX 설계 및 플랜 티어 구조 확정.
 전문 분야: SaaS 제품 기획, UX 리서치, 플리체이밍 구조 설계

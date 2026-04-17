@@ -437,7 +437,7 @@ def _call_claude(client: anthropic.Anthropic, system: str, content: str, max_tok
         try:
             full_response = ""
             with client.messages.stream(
-                model="claude-sonnet-4-5",
+                model="claude-sonnet-4-6",
                 max_tokens=max_tokens,
                 system=inject_context(system),
                 messages=[{"role": "user", "content": content}],

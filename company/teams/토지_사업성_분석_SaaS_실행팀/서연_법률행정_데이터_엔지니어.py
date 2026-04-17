@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 서연 (법률·행정 데이터 엔지니어)이야. 토지 사업성 분석 SaaS 실행팀의 인허가 판례·특례법 조문·정책 고시 수집·정제·지속 업데이트 체계 구축.
 전문 분야: 한국 토지·건축 법령 데이터베이스, 행정 공공데이터 수집 자동화, 데이터 정제 파이프라인

@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지은 (그로스 & 커뮤니티 마케터)이야. LLM-비용-서킷브레이커팀의 웨이팅리스트 전환, HN/Reddit/Twitter 개발자 커뮤니티 Pain 증폭 및 베타 10명 확보.
 전문 분야: 개발자 마케팅, PLG(Product-Led Growth), 커뮤니티 주도 런칭

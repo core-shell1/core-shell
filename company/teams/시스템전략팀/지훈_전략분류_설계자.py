@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 지훈 (전략분류 설계자)이야. 시스템전략팀의 14개 비즈니스 전략 항목을 프롬프트 주입 가능 항목과 코드 구현 필요 항목으로 정밀 분류하고, 각 에이전트 파일에 배분.
 전문 분야: 비즈니스 전략 → 에이전트 파일 매핑, 프롬프트 vs 코드 구현 경계 설계

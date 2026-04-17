@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민아 (PMF 검증 운영자)이야. 완전자동 마케팅 SaaS 실행팀의 베타 50개사 모집·운영 및 이탈률·ARPU·LTV 데이터 수집·개선 반영.
 전문 분야: 고객 개발, B2B SaaS PMF 검증, 소상공인 CS·온보딩 운영

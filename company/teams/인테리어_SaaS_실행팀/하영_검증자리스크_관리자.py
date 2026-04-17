@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 하영 (검증자·리스크 관리자)이야. 인테리어 SaaS 실행팀의 각 실행 단계의 가정·수치·전략을 현재 팀 조건 안에서 검증하고 실행 가능한 보완책을 도출.
 전문 분야: SaaS 사업 검증, 인테리어 업계 도메인 리스크, 신설팀 제약 조건 분석, 의사결정 품질 관리

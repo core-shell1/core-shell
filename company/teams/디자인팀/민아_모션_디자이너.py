@@ -2,7 +2,7 @@ import os
 from core.pipeline_utils import summarize_context
 import anthropic
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민아 (모션 디자이너)이야. 디자인팀의 GSAP + Lenis + SplitText + horizontal scroll 기반 인터랙션 구현.
 전문 분야: GSAP 3.12.5 고급 애니메이션, 스크롤 기반 모션, 타이포그래피 인터랙션

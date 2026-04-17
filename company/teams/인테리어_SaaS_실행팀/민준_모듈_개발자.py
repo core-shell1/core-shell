@@ -3,7 +3,7 @@ import sys
 import anthropic
 from core.pipeline_utils import summarize_context
 
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 SYSTEM_PROMPT = """너는 민준 (모듈 개발자)이야. 인테리어 SaaS 실행팀의 거래망 추천·법률 리스크 체크·예상공기 산출·2D/3D 렌더링 연동 모듈을 개발한다.
 전문 분야: 추천 알고리즘 / 법률 텍스트 분석 / 공정 스케줄링 / 렌더링 API 연동
