@@ -26,12 +26,14 @@ push_team() {
   # 임시 브랜치
   git checkout -b _team_push_temp 2>/dev/null
 
-  # team/ 강제 스테이징 (team/ 자체는 .gitignore에 있으므로 -f 필요)
-  git add -f team/ 2>/dev/null || true
-
-  # 대용량/빌드 폴더 언스테이지 (GitHub 100MB 제한 회피)
-  git ls-files --cached "team/" | grep -E "(node_modules|\.next|\.yarn/cache|/dist/|/build/)/" | \
-    tr '\n' '\0' | xargs -0 git rm -r --cached --ignore-unmatch 2>/dev/null || true
+  # team/ 강제 스테이징
+  # team/ 디렉토리가 .gitignore에 통째로 있으면 git add -f team/ 가 재귀 안 함
+  # → find로 개별 파일을 직접 추가 (node_modules/.next 등 대용량 제외)
+  find team/ -type f \
+    ! -path "*/node_modules/*" \
+    ! -path "*/.next/*" \
+    ! -path "*/.yarn/cache/*" \
+    -print0 | xargs -0 git add -f 2>/dev/null || true
 
   # 변경사항 있으면 커밋
   git diff --cached --quiet || git commit -m "chore: team/ 포함 (core-shell 전용 임시)"
