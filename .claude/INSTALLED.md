@@ -58,9 +58,14 @@
 ## MCP Servers
 
 ### 현재 활성 (`.mcp.json`)
-| 서버명 | 상태 |
-|---|---|
-| (없음) | — |
+| 서버명 | 패키지 | env | 상태 |
+|---|---|---|---|
+| `mcp-kling` | `npx mcp-kling@latest` | KLING_ACCESS_KEY, KLING_SECRET_KEY | ✅ 활성 |
+| `notebooklm` | `npx notebooklm-mcp@latest` | NOTEBOOKLM_EMAIL, NOTEBOOKLM_PASSWORD | ⏸ 키 없음 |
+| `higgsfield` | `pip higgsfield-mcp` (venv) | HF_API_KEY, HF_SECRET | ⏸ 키 없음 (설치 필요) |
+
+> API 키 추가: `company/.env` → `HF_API_KEY=`, `HF_SECRET=`
+> 패키지 설치: `cd company && ./venv/Scripts/pip install higgsfield-mcp`
 
 ---
 
