@@ -24,6 +24,16 @@
       }
     }
   },
+    "higgsfield": {
+      "_comment": "API 키 필요: HF_API_KEY + HF_SECRET → company/.env에 추가. 설치: cd company && ./venv/Scripts/pip install higgsfield-mcp",
+      "command": "C:\\Users\\lian1\\Documents\\Work\\core\\company\\venv\\Scripts\\python.exe",
+      "args": ["-m", "higgsfield_mcp.server"],
+      "env": {
+        "HF_API_KEY": "${HF_API_KEY}",
+        "HF_SECRET": "${HF_SECRET}"
+      }
+    }
+  },
   "_disabled_fal_ai": {
     "reason": "fal-mcp-server uvx 연결 불안정. 대신 company/tools/nano_banana.py 사용",
     "restore": "이 블록 복원 + mcpServers 안으로 이동"
