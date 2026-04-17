@@ -24,6 +24,14 @@ if sys.platform == "win32":
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
+# 실패 시 디스코드 자동 알림
+sys.path.insert(0, os.path.dirname(__file__))
+try:
+    from core.notifier import install_crash_notifier
+    install_crash_notifier("audit_hub")
+except Exception:
+    pass  # notifier 임포트 실패해도 감사는 진행
+
 ROOT = Path(__file__).parent.parent
 LOGS = ROOT / "company" / "logs"
 LOGS.mkdir(parents=True, exist_ok=True)
