@@ -73,6 +73,8 @@ zip/.wrangler/
 **/*.pack
 **/*.sst
 **/node.exe
+**/.yarn/cache/
+**/*.zip
 
 # 미디어 / 비디오 임시
 **/video_cloner_tmp/
