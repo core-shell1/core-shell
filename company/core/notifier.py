@@ -130,3 +130,41 @@ def notify_error(stage: str, error: str):
         f"```\n{error}\n```",
         color=0xE74C3C
     )
+
+
+def install_crash_notifier(stage: str):
+    """unhandled exception 발생 시 자동 디스코드 알림.
+
+    스크립트 맨 위에 한 줄만 추가:
+        from core.notifier import install_crash_notifier
+        install_crash_notifier("daily_auto")
+    """
+    import sys
+    import traceback
+    original = sys.excepthook
+
+    def hook(exc_type, exc_value, exc_tb):
+        try:
+            tb = "".join(traceback.format_exception(exc_type, exc_value, exc_tb))
+            # 디스코드 임베드 description 제한 4096자 — 마지막 1500자만
+            notify_error(stage, f"{exc_type.__name__}: {exc_value}\n\n{tb[-1500:]}")
+        except Exception:
+            pass  # 알림 자체 실패는 조용히
+        original(exc_type, exc_value, exc_tb)
+
+    sys.excepthook = hook
+
+
+def notify_on_failure(stage: str):
+    """데코레이터 — 특정 함수만 감싸서 실패 알림."""
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                import traceback
+                tb = traceback.format_exc()[-1500:]
+                notify_error(stage, f"{type(e).__name__}: {e}\n\n{tb}")
+                raise
+        return wrapper
+    return decorator
